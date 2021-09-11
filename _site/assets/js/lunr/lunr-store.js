@@ -1,14 +1,14 @@
 var store = [{
         "title": "1. 삼각형 가능 조건",
-        "excerpt":" console.log   ","categories": ["algorithm"],
+        "excerpt":" console.log   ","categories": ["Algorithm"],
         "tags": ["Programming"],
         "url": "/algorithm/cat-test/",
         "teaser": null
       },{
         "title": "github.io 블로그 시작하기",
-        "excerpt":" ","categories": ["jslanguage"],
+        "excerpt":" ","categories": ["JavaScript"],
         "tags": ["Programming"],
-        "url": "/jslanguage/first-post/",
+        "url": "/javascript/first-post/",
         "teaser": null
       },{
         "title": "github.io 블로그 시작하기",

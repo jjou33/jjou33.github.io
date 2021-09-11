@@ -1,9 +1,9 @@
-I"�
+I"�
 <div class=" list__item">
     <article class="archive-item">
         <div>
             <span>
-                <a href="/jslanguage/first-post/">github.io 블로그 시작하기</a>
+                <a href="/javascript/first-post/">github.io 블로그 시작하기</a>
             </span>
             <small>
                 <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.09
@@ -11,10 +11,10 @@
 <!--page__taxonomy.html에서 가져 옴-->
 
 <span class="page__taxonomy">
-    <span itemprop="keywords"><a href="/categories/jslanguage" class="page__taxonomy-item-category" rel="tag">jslanguage</a>
+    <span itemprop="keywords"><a href="/categories/javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
         
         
-        <a href="/tags/programming" class="page__taxonomy-item-tag" rel="tag">Programming</a>
+        <a class="page__taxonomy-item-tag" rel="tag">Programming</a>
         
     </span>
 </span>

@@ -1,4 +1,4 @@
-I"�
+I"�
 <div class=" list__item">
     <article class="archive-item">
         <div>
@@ -11,10 +11,10 @@
 <!--page__taxonomy.html에서 가져 옴-->
 
 <span class="page__taxonomy">
-    <span itemprop="keywords"><a href="/categories/algorithm" class="page__taxonomy-item-category" rel="tag">algorithm</a>
+    <span itemprop="keywords"><a href="/categories/algorithm" class="page__taxonomy-item-category" rel="tag">Algorithm</a>
         
         
-        <a href="/tags/programming" class="page__taxonomy-item-tag" rel="tag">Programming</a>
+        <a class="page__taxonomy-item-tag" rel="tag">Programming</a>
         
     </span>
 </span>

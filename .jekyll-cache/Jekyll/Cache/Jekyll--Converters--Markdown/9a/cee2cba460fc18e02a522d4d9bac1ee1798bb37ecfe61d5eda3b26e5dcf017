@@ -1,4 +1,4 @@
-I"z
+I"�
 <div class=" list__item">
     <article class="archive-item">
         <div>
@@ -11,7 +11,12 @@
 <!--page__taxonomy.html에서 가져 옴-->
 
 <span class="page__taxonomy">
-    <span itemprop="keywords"><a href="/categories/vuestudy" class="page__taxonomy-item-category" rel="tag">vuestudy</a></span>
+    <span itemprop="keywords"><a href="/categories/vuestudy" class="page__taxonomy-item-category" rel="tag">vuestudy</a>
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Blog</a>
+        
+    </span>
 </span>
             </small>
         </div>

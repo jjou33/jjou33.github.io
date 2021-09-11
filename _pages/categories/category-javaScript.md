@@ -1,11 +1,11 @@
 ---
 title: "JavsScript 문법"
 layout: archive
-permalink: categories/jslanguage
+permalink: categories/JavaScript
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.jslanguage %}
+{% assign posts = site.categories.JavaScript %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

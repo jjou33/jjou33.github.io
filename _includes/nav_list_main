@@ -16,15 +16,15 @@
         <i class="far fa-keyboard"></i>  Algorithm(JavaScript)</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "algorithm" %}
-                        <li><a href="/categories/algorithm" class=""> - Algorithm 문제리뷰 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Algorithm" %}
+                        <li><a href="/categories/Algorithm" class=""> - Algorithm 문제리뷰 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "jslanguage" %}
-                        <li><a href="/categories/jslanguage" class=""> - 자주사용문법(Javascript) ({{category[1].size}})</a></li>
+                    {% if category[0] == "JavaScript" %}
+                        <li><a href="/categories/JavaScript" class=""> - 자주사용문법(Javascript) ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
