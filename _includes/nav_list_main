@@ -24,7 +24,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "jslanguage" %}
-                        <li><a href="/categories/programmers" class=""> 자주사용문법(Javascript) ({{category[1].size}})</a></li>
+                        <li><a href="/categories/jslanguage" class=""> - 자주사용문법(Javascript) ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -36,28 +36,28 @@
             <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "vuestudy" %}
-                    <li><a href="/categories/vueStudy" class="">Vue 기록노트 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/vueStudy" class="">- Vue 기록노트 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "hcv" %}
-                    <li><a href="/categories/hcv" class="">HTML, CSS, Vanilla JS 기록노트 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/hcv" class=""> - HTML, CSS, Vanilla JS 기록노트 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "webpack" %}
-                    <li><a href="/categories/webpack" class="">Webpack 기록노트 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/webpack" class=""> - Webpack 기록노트 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "frontend" %}
-                    <li><a href="/categories/fe" class="">Front End 개발팁 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/frontend" class="">Front End 개발팁 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -69,14 +69,14 @@
             <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "giterr" %}
-                    <li><a href="/categories/" class="">GitHub 이슈 해결({{category[1].size}})</a></li>
+                    <li><a href="/categories/giterr" class="">GitHub 이슈 해결({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "gitblog" %}
-                    <li><a href="/categories/stl" class="">Git 블로그 만들기 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/gitblog" class="">Git 블로그 만들기 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

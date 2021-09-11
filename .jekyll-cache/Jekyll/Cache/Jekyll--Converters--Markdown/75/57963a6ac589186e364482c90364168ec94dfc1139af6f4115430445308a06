@@ -1,0 +1,20 @@
+I"z
+<div class=" list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+                <a href="/vuestudy/cat-test2/">github.io 블로그 시작하기</a>
+            </span>
+            <small>
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.10
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords"><a href="/categories/vuestudy" class="page__taxonomy-item-category" rel="tag">vuestudy</a></span>
+</span>
+            </small>
+        </div>
+    </article>
+</div>
+:ET
