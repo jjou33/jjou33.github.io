@@ -8,35 +8,35 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            :books: <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">
-        <i class="far fa-keyboard"></i>  Algorithm(JavaScript)</span>
+         :closed_book: Algorithm(JavaScript)</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/Algorithm" class=""> - Algorithm 문제리뷰 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Algorithm" class=""> Algorithm 문제리뷰 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "JavaScript" %}
-                        <li><a href="/categories/JavaScript" class=""> - 자주사용문법(Javascript) ({{category[1].size}})</a></li>
+                        <li><a href="/categories/JavaScript" class=""> Javascript 문법 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
         <span class="nav__sub-title">
-        <i class="fas fa-tv"></i> Web - Front End </span>
+        :green_book: Web - Front End </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
             <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
-                {% if category[0] == "vuestudy" %}
-                    <li><a href="/categories/vueStudy" class="">- Vue 기록노트 ({{category[1].size}})</a></li>
+                {% if category[0] == "Vue" %}
+                    <li><a href="/categories/Vue" class=""> Vue 기록노트 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -62,7 +62,7 @@
             {% endfor %}
         </ul>
         <span class="nav__sub-title">
-        <i class="fas fa-laptop-house"></i> GitHub 관련 </span>
+        :blue_book: GitHub 관련 </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->

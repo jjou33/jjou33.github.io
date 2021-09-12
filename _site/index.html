@@ -9,19 +9,19 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>H.Woo's Room</title>
+<!-- begin _includes/seo.html --><title>Hippo Dev Blog</title>
 <meta name="description" content="공부한 것을 기록하고 공유하는 방">
 
 
-  <meta name="author" content="H.W.DEV">
+  <meta name="author" content=":raising_hand:HELLO WORLD">
   
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="H.Woo's Room">
-<meta property="og:title" content="H.Woo’s Room">
-<meta property="og:url" content="/">
+<meta property="og:site_name" content="Hippo Dev Blog">
+<meta property="og:title" content="Hippo Dev Blog">
+<meta property="og:url" content="http://localhost:4000/">
 
 
   <meta property="og:description" content="공부한 것을 기록하고 공유하는 방">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="/">
+<link rel="canonical" href="http://localhost:4000/">
 
 
 
@@ -52,7 +52,7 @@
     
       "@type": "Person",
       "name": "Hippo's",
-      "url": "/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -67,7 +67,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="H.Woo's Room Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Hippo Dev Blog Feed">
 
 
 <!-- https://t.co/dKP3o1e -->
@@ -113,12 +113,17 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          H.Woo's Room
-          
+          Hippo Dev Blog
+          <span class="site-subtitle"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"><img class="emoji" title=":notebook:" alt=":notebook:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20">  STUDY, LIFE, ENJOY</span>
         </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/categories/">카테고리</a>
-            </li></ul>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li>
+</ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -148,7 +153,7 @@
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="/" itemprop="url">H.W.DEV</a>
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">HELLO WORLD</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
@@ -248,22 +253,19 @@
 
 
 <nav class="nav__list">
-  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <input id="ac-toc" name="accordion-toc" type="checkbox">
   <label for="ac-toc">Toggle menu</label>
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">3</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
-      </li>
+            <img class="emoji" title=":books:" alt=":books:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" height="20" width="20"> <span style="font-family:'Cafe24Oneprettynight';">전체 글 수 <span style="font-family:'Coming Soon';">3 <span style="font-family:'Cafe24Oneprettynight';">개 
+      </span></span></span>
+</li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">
-        <i class="far fa-keyboard"></i>  Algorithm(JavaScript)</span>
+         <img class="emoji" title=":closed_book:" alt=":closed_book:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d5.png" height="20" width="20"> Algorithm(JavaScript)</span>
             <ul>
-                
-                    
-                        <li><a href="/categories/Algorithm" class=""> - Algorithm 문제리뷰 (1)</a></li>
-                    
                 
                     
                 
@@ -273,16 +275,14 @@
             <ul>
                 
                     
-                
-                    
-                        <li><a href="/categories/JavaScript" class=""> - 자주사용문법(Javascript) (1)</a></li>
+                        <li><a href="/categories/JavaScript" class=""> Javascript 문법 (2)</a></li>
                     
                 
                     
                 
             </ul>
         <span class="nav__sub-title">
-        <i class="fas fa-tv"></i> Web - Front End </span>
+        <img class="emoji" title=":green_book:" alt=":green_book:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d7.png" height="20" width="20"> Web - Front End </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
@@ -291,9 +291,7 @@
                 
             
                 
-            
-                
-                    <li><a href="/categories/vueStudy" class="">- Vue 기록노트 (1)</a></li>
+                    <li><a href="/categories/Vue" class=""> Vue 기록노트 (1)</a></li>
                 
             
         </ul>
@@ -303,8 +301,6 @@
             
                 
             
-                
-            
         </ul>
         <ul>
             
@@ -312,12 +308,8 @@
             
                 
             
-                
-            
         </ul>
         <ul>
-            
-                
             
                 
             
@@ -325,7 +317,7 @@
             
         </ul>
         <span class="nav__sub-title">
-        <i class="fas fa-laptop-house"></i> GitHub 관련 </span>
+        <img class="emoji" title=":blue_book:" alt=":blue_book:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d8.png" height="20" width="20"> GitHub 관련 </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
@@ -335,12 +327,8 @@
             
                 
             
-                
-            
         </ul>
         <ul>
-            
-                
             
                 
             
@@ -357,12 +345,13 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title"></h1>
-      <hr>
+      
+          <h1 id="page-title" class="page__title"></h1>
+      
     
     
 
-<h3 class="archive__subtitle">Recent posts</h3>
+<h3 class="archive__subtitle">최근 포스트</h3>
 
 
 
@@ -378,7 +367,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/vuestudy/cat-test2/" rel="permalink">github.io 블로그 시작하기
+        <a href="/vue/cat-test2/" rel="permalink">github.io 블로그 시작하기
 </a>
       
     </h2>
@@ -438,9 +427,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/algorithm/cat-test/" rel="permalink"><ol>
-  <li>삼각형 가능 조건</li>
-</ol>
+        <a href="/javascript/first-post-copy/" rel="permalink">github.io 블로그 시작하기
 </a>
       
     </h2>
@@ -455,7 +442,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">3개의 입력값으로 삼각형의 가능 여부를 확인하라.
+    <p class="archive__item-excerpt" itemprop="description">GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
 </p>
   </article>
 </div>
@@ -505,7 +492,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Hippo's. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2021 Hippo's. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

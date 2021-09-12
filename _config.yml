@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "H.Woo's Room"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+title                    : "Hippo Dev Blog"
+title_separator          : "YeYe"
+subtitle                 : "STUDY, LIFE, ENJOY"
 name                     : "Hippo's"
 description              : "공부한 것을 기록하고 공유하는 방"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "H.W.DEV"
+  name             : ":raising_hand:HELLO WORLD"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : " "
   # location         : "Seoul"
@@ -227,6 +227,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jemoji
 
 # mimic GitHub Pages with --safe
 whitelist:

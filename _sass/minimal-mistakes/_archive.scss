@@ -38,7 +38,7 @@
   color: mix(#fff,$primary-color, 40%);
   border-bottom: 1px solid $border-color;
   font-family: $serif;
-
+  margin-bottom: 0.5em;
   + .list__item .archive__item-title {
     margin-top: 0.5em;
   }
@@ -77,8 +77,7 @@
 
 .archive__item-excerpt {
   margin-top: 0;
-  font-size: $type-size-6;
-
+  font-size: 0.7em;
   & + p {
     text-indent: 0;
   }
@@ -133,7 +132,13 @@
     font-size: 0.6em;
   }
 }
-
+.archive-item {
+  a {
+    font-size: 0.9em;
+    font-family: $global-font-family;
+    color: #dadaa0;
+  }
+}
 /*
    Grid view
    ========================================================================== */
@@ -219,7 +224,6 @@
 
   .archive__item-excerpt {
     display: none;
-
     @include breakpoint($medium) {
       display: block;
       font-size: $type-size-6;
