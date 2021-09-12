@@ -20,7 +20,9 @@
 
 .archive__item {
   position: relative;
-
+  h2 {
+    margin: 0.5em 0 0em;
+  }
   a {
     position: relative;
     z-index: 10;
@@ -33,37 +35,46 @@
 
 .archive__subtitle {
   margin: 0.8em 0 0;
-  padding-bottom: 0.5em;
-  font-size: $type-size-3;
-  color: mix(#fff,$primary-color, 40%);
+  padding-bottom: 0.7em;
+  font-size: 1.1em;
+  color: #dadaa0;
   border-bottom: 1px solid $border-color;
-  font-family: $serif;
+  font-family: $helvetica;
   margin-bottom: 0.5em;
   + .list__item .archive__item-title {
     margin-top: 0.5em;
   }
 }
 
+/* 사용처 
+  - Home / 리스트 CSS
+
+*/
 .archive__item-title {
-  margin-bottom: 0.9em;
+  margin-bottom: 0.5em;
   font-family: $sans-serif-narrow;
   line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: $sans-serif-narrow;
-  font-size: $type-size-4;
-
+  font-size: $type-size-5;
+  
   a[rel="permalink"]::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0em;
   }
 
   a + a {
     opacity: 0.5;
+  }
+
+  a {
+    color: #8cd2d5;
+    
   }
 }
 
@@ -131,6 +142,8 @@
     margin: 0 0 4px;
     font-size: 0.6em;
   }
+  margin-top: 1.3em;
+  margin-bottom: 2.5em;
 }
 .archive-item {
   a {
@@ -154,6 +167,10 @@
     @include breakpoint($x-large) {
       margin-right: -1 * $right-sidebar-width;
     }
+  }
+  .page__title {
+    font-size: 1.2em;
+    color: #dadaa0;
   }
 }
 
@@ -251,6 +268,7 @@
   border-bottom: 1px solid $border-color;
 
   .archive__item-title {
+    
     margin-bottom: 0;
   }
 }

@@ -69,15 +69,13 @@ body {
 }
 
 .page__title {
-  font-family: $global-font-family;
+  font-family: $serif;
   margin-top: 0;
   line-height: 1.2;
   color: #8cd2d5;
   font-size: 1.2em;
   margin-bottom: 0.5em;
-  a {
-    font-size: 2.0em;
-  }
+
   & + .page__meta {
     margin-top: -0.5em;
   }
@@ -331,10 +329,13 @@ body {
   text-decoration: none;
   border: 1px solid $background-color;
   border-radius: $border-radius;
-  background-color: #8dc09d;
+  background-color: #e2cbf0;
   font-family: $serif;
-  color: #43433c ;
+  color: #000 ;
 
+  a {
+    color: #000;
+  }
   &:hover {
     text-decoration: none;
     color:  #da1b64;/* 커서 댈 때 색깔 */
@@ -380,7 +381,7 @@ body {
   }
 
   .archive__subtitle {
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #dadaa0;
     clear: both;
     border: 0;
@@ -421,7 +422,7 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    color: #dadaa0;
+    color: #8cd2d5;
     text-decoration: none;
     border-bottom: 1px solid $border-color;
     font-family: $global-font-family;

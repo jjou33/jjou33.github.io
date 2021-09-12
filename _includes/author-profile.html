@@ -50,7 +50,7 @@
         <li>
           <a href="mailto:{{ author.email }}" rel="me" class="u-email">
             <meta itemprop="email" content="{{ author.email }}" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</span>
+            :incoming_envelope:<span class="label">{{ site.data.ui-text[site.locale].email_label | default: "Edail" }}</span>
           </a>
         </li>
       {% endif %}
@@ -122,7 +122,7 @@
       {% if author.github %}
         <li>
           <a href="https://github.com/{{ author.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+            :link:<span class="label">GitHub</span>
           </a>
         </li>
       {% endif %}
@@ -130,7 +130,7 @@
       {% if author.gitlab %}
         <li>
           <a href="https://gitlab.com/{{ author.gitlab }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-gitlab" aria-hidden="true"></i><span class="label">GitLab</span>
+            :link:<span class="label">GitLab</span>
           </a>
         </li>
       {% endif %}

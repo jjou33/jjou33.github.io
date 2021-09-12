@@ -8,7 +8,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            :books: <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            :books: <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅 </style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -16,15 +16,15 @@
          :closed_book: Algorithm(JavaScript)</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/Algorithm" class=""> Algorithm 문제리뷰 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Algorithm Test" %}
+                        <li><a href="/categories/Algorithm Test" class=""> Algorithm Coding Test ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "JavaScript" %}
-                        <li><a href="/categories/JavaScript" class=""> Javascript 문법 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/JavaScript" class=""> Javascript Language ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -36,28 +36,28 @@
             <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "Vue" %}
-                    <li><a href="/categories/Vue" class=""> Vue 기록노트 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/Vue" class=""> Vue Study Note ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "hcv" %}
-                    <li><a href="/categories/hcv" class=""> - HTML, CSS, Vanilla JS 기록노트 ({{category[1].size}})</a></li>
+                {% if category[0] == "Basic Web Develope" %}
+                    <li><a href="/categories/hcv" class=""> - HTML, CSS, Vanilla JS Study Note ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "webpack" %}
-                    <li><a href="/categories/webpack" class=""> - Webpack 기록노트 ({{category[1].size}})</a></li>
+                {% if category[0] == "Webpack" %}
+                    <li><a href="/categories/Webpack" class=""> - Webpack Study Note ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "frontend" %}
-                    <li><a href="/categories/frontend" class="">Front End 개발팁 ({{category[1].size}})</a></li>
+                {% if category[0] == "FrontTips" %}
+                    <li><a href="/categories/FrontTips" class="">Front End Develope Tips ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
