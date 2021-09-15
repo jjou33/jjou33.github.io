@@ -293,10 +293,6 @@ body {
   p {
     margin: 0;
   }
-
-  a {
-    color: inherit;
-  }
 }
 
 .page__meta-title {
@@ -329,12 +325,11 @@ body {
   text-decoration: none;
   border: 1px solid $background-color;
   border-radius: $border-radius;
-  background-color: #e2cbf0;
+  background-color: #dadaa0;
   font-family: $serif;
-  color: #000 ;
-
+  color:#000;
   a {
-    color: #000;
+    color:#000
   }
   &:hover {
     text-decoration: none;
@@ -350,9 +345,9 @@ body {
   text-decoration: none;
   border: 1px solid $background-color;
   border-radius: $border-radius;
-  background-color:#4c5dda;
+  background-color:#8cd2d5;
   font-family: $serif;
-  color: #43433c ;
+  color: #000;
 
   &:hover {
     text-decoration: none;
