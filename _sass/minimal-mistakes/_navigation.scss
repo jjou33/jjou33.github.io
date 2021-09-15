@@ -505,7 +505,7 @@
      ========================================================================== */
 
 .toc {
-  font-family: $sans-serif-narrow;
+  font-family: $myfont;
   color: $gray;
   background-color: $background-color;
   border: 1px solid $border-color;
@@ -514,9 +514,9 @@
   box-shadow: $box-shadow;
 
   .nav__title {
-    color: #fff;
+    color: rgba(0, 0, 0, 0.541);
     font-size: $type-size-6;
-    background: $primary-color;
+    background: #ffd24d;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
@@ -532,7 +532,7 @@
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: $type-size-6;
+  font-size: 0.8em;
 
   @include breakpoint($large) {
     font-size: $type-size-7;

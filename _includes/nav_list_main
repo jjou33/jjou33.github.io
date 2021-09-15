@@ -16,8 +16,8 @@
          :closed_book: Algorithm(JavaScript)</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Algorithm Test" %}
-                        <li><a href="/categories/Algorithm Test" class=""> Algorithm Coding Test ({{category[1].size}})</a></li>
+                    {% if category[0] == "Algorithm" %}
+                        <li><a href="/categories/Algorithm" class=""> Algorithm Coding Test ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
