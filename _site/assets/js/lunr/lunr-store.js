@@ -5,10 +5,10 @@ var store = [{
         "url": "/javascript/first-post-copy/",
         "teaser": null
       },{
-        "title": "github.io 블로그 시작하기",
-        "excerpt":" ","categories": ["JavaScript"],
+        "title": "등수 구하기",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N 명의 점수를 입력한 배열 이 주어지고 그 배열의 등수 구하기 2. 코드 기본 솔루션 function solution(arr) { let n = arr.length // 길이 // 신규배열 생성(등수초기화) 및 1로 초기화 let tarr = Array.from({length: n},...","categories": ["Algorithm"],
         "tags": ["Programming"],
-        "url": "/javascript/first-post/",
+        "url": "/algorithm/%EB%93%B1%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
         "title": "앞 수들 보다 큰 수만 구하기",

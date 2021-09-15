@@ -130,6 +130,10 @@ body {
     }
   }
 
+  p strong {
+    color: #f0dc9c;
+  }
+
   a:not(.btn) {
     &:hover {
       text-decoration: underline;
