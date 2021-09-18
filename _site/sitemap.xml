@@ -17,6 +17,14 @@
 <lastmod>2021-09-15T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/%EA%B2%A9%EC%9E%90%ED%8C%90-%ED%95%A9-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
+<lastmod>2021-09-18T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/algorithm/%EB%B4%89%EC%9A%B0%EB%A6%AC-%EA%B0%AF%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
+<lastmod>2021-09-18T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/Algorithm</loc>
 </url>
 <url>
@@ -33,5 +41,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>

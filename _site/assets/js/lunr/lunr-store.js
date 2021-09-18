@@ -22,4 +22,16 @@ var store = [{
         "tags": ["Programming"],
         "url": "/algorithm/1.-%EC%B5%9C%EC%86%8C%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "격자판 합 구하기",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N X N 2차원 배열을 주어지고 행,열,대각선의 합 중 가장 큰 부분을 구하여라 2. 코드 먼저 문제를 보자마자 기억나는 아이디어는 합을 모두 구해서 배열에 담고 비교하자 였다. 그래서 보자마자 아래와 같이 빠르게 작성을 해보았다. 단순...","categories": ["Algorithm"],
+        "tags": ["Programming"],
+        "url": "/algorithm/%EA%B2%A9%EC%9E%90%ED%8C%90-%ED%95%A9-%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "봉우리 갯수 구하기",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N X N 길이의 격자판에서 상하좌우 값보다 큰 경우 봉우리로 인정 및 Count 주어진 N X N 배열 가장자리는 0 으로 가정하여 전체 봉우리의 갯수 를 구하라. 2. 코드 먼저 문제를 보자마자 기억나는 아이디어는 합을...","categories": ["Algorithm"],
+        "tags": ["Programming"],
+        "url": "/algorithm/%EB%B4%89%EC%9A%B0%EB%A6%AC-%EA%B0%AF%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
