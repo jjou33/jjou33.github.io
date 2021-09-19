@@ -40,6 +40,9 @@
 <loc>http://localhost:4000/categories/Vue</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/webpack</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>

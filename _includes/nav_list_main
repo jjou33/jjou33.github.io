@@ -43,14 +43,14 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "Basic Web Develope" %}
-                    <li><a href="/categories/hcv" class=""> - HTML, CSS, Vanilla JS Study Note ({{category[1].size}})</a></li>
+                    <li><a href="/categories/hcv" class="">HTML, CSS, Vanilla JS Study Note ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "Webpack" %}
-                    <li><a href="/categories/Webpack" class=""> - Webpack Study Note ({{category[1].size}})</a></li>
+                {% if category[0] == "webpack" %}
+                    <li><a href="/categories/webpack" class="">Webpack Study Note ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

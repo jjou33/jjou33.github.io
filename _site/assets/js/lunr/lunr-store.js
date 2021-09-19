@@ -13,7 +13,7 @@ var store = [{
       },{
         "title": "앞 수들 보다 큰 수만 구하기",
         "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 입력값으로 N X N 행의 배열이 주어지고 해당 배열은 사람의 키를 의미한다. 맨앞에서 볼 때 보이는 사람일경우 즉, 자신의 앞 모든사람보다 키가 큰 사람을 구하라 2. 코드 기본 솔루션 function solution(arr) { let count =...","categories": ["Algorithm"],
-        "tags": ["Programming"],
+        "tags": ["Programming","test","test1"],
         "url": "/algorithm/2.%EC%95%9E-%EC%88%98%EB%93%A4-%EB%B3%B4%EB%8B%A4-%ED%81%B0-%EC%88%98%EB%A7%8C-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
