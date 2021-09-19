@@ -9,11 +9,11 @@
 <lastmod>2021-09-09T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/algorithm/2.%EC%95%9E-%EC%88%98%EB%93%A4-%EB%B3%B4%EB%8B%A4-%ED%81%B0-%EC%88%98%EB%A7%8C-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
+<loc>http://localhost:4000/algorithm/%EC%95%9E-%EC%88%98%EB%93%A4-%EB%B3%B4%EB%8B%A4-%ED%81%B0-%EC%88%98%EB%A7%8C-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
 <lastmod>2021-09-10T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/algorithm/1.-%EC%B5%9C%EC%86%8C%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
+<loc>http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
 <lastmod>2021-09-15T00:00:00+09:00</lastmod>
 </url>
 <url>
@@ -23,6 +23,10 @@
 <url>
 <loc>http://localhost:4000/algorithm/%EB%B4%89%EC%9A%B0%EB%A6%AC-%EA%B0%AF%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
 <lastmod>2021-09-18T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/algorithm/%ED%9A%8C%EB%AC%B8-%EB%AC%B8%EC%9E%90%EC%97%B4/</loc>
+<lastmod>2021-09-19T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/Algorithm</loc>
