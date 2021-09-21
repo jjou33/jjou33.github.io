@@ -1,10 +1,4 @@
 var store = [{
-        "title": "github.io 블로그 시작하기",
-        "excerpt":"1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   1. 최소값 구하기   ","categories": ["JavaScript"],
-        "tags": ["Programming"],
-        "url": "/javascript/first-post-copy/",
-        "teaser": null
-      },{
         "title": "등수 구하기",
         "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N 명의 점수를 입력한 배열 이 주어지고 그 배열의 등수 구하기 2. 코드 기본 솔루션 function solution(arr) { let n = arr.length // 길이 // 신규배열 생성(등수초기화) 및 1로 초기화 let tarr = Array.from({length: n},...","categories": ["Algorithm"],
         "tags": ["Programming"],
@@ -51,5 +45,11 @@ var store = [{
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. NPM 이란? NPM(Node Package Manager)는 전 세계 자바스크립트 개발자들이 올려놓은 공개된 라이브러리 저장소에 올라와 있는 자바스크립트 라이브러리를 명령어로 설치 및 관리할 수 있는 패키지 매니저 이다. 2. Node.js Node.js 가 나오기 전까지 자바스크립트는 브라우저에서만 동작을 제어하는 용도로 한정적으로 사용되었지만,...","categories": ["webpack"],
         "tags": ["Webpack","NPM(Node Package Manager)"],
         "url": "/webpack/NPM(Node-Package-Manager)/",
+        "teaser": null
+      },{
+        "title": "가장 짧은 거리 구하기",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 문자열(String) 과 특정 문자를 입력받고 String안에서 특정문자와 각각의 이외의 문자와의 차이 중 가장 짧은 거리를 구하자. 2. 코드 //ASCII Code 값 비교를 통한 문자 제거 function solution(str, char) { let answer = [] let checkIdx...","categories": ["Algorithm"],
+        "tags": ["Programming"],
+        "url": "/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
       }]

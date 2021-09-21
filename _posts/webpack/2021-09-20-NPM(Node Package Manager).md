@@ -120,6 +120,33 @@ webPack, js-compression, sass 등 개발간 보조로 도움을 주는 라이브
 #### 5. NPM 관련 Command
 ***
 
+* Node 버전 확인
+
+```
+node -v
+```
+
+* NPM 버전 확인
+
+```
+npm -v
+```
+
+* NPM 초기화
+
+```
+npm init (-y)
+```
+
+* NPM 설치
+
+```
+npm install
+
+-- 특정 라이브러리 설치
+
+npm install [라이브러리명]
+```
 * NPM 삭제
 
 ```
