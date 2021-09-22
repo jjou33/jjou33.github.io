@@ -52,4 +52,16 @@ var store = [{
         "tags": ["Programming"],
         "url": "/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "Webpack 정리",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack 이란? 웹팩(Webpack)이란 최신 프런트엔드 프레임워크에서 가장 많이 사용되는 모듈 번들러(Module Bundler)입니다. 모듈 번들러란 웹 애플리케이션을 구성하는 자원(HTML, CSS, Javscript, Images 등)을 모두 각각의 모듈로 보고 이를 조합해서 병합된 하나의 결과물을 만드는 도구를 의미한다. 2. 모듈 번들링 이란? 웹...","categories": ["webpack"],
+        "tags": ["Webpack","모듈 번들러(Module Bundler)"],
+        "url": "/webpack/Webpack-%EC%A0%95%EB%A6%AC/",
+        "teaser": null
+      },{
+        "title": "자릿수의 합",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N 개의 숫자가 배열로 주어지고 각 요소의 자릿수의 합 중 큰것 구하기. (같은 경우 실제로 요소값이 큰 값을 리턴) 2. 코드 // 반복문을 통해 직접 자릿수 합 계산 function solution(arr) { let max = Number.MIN_SAFE_INTEGER...","categories": ["Algorithm"],
+        "tags": ["Programming"],
+        "url": "/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98%EC%9D%98-%ED%95%A9/",
+        "teaser": null
       }]

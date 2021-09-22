@@ -37,6 +37,14 @@
 <lastmod>2021-09-21T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/webpack/Webpack-%EC%A0%95%EB%A6%AC/</loc>
+<lastmod>2021-09-21T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98%EC%9D%98-%ED%95%A9/</loc>
+<lastmod>2021-09-22T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/Algorithm</loc>
 </url>
 <url>
@@ -59,5 +67,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page3/</loc>
 </url>
 </urlset>
