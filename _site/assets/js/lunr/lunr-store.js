@@ -64,4 +64,10 @@ var store = [{
         "tags": ["Programming"],
         "url": "/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98%EC%9D%98-%ED%95%A9/",
         "teaser": null
+      },{
+        "title": "소수 구하기",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 주어진 숫자들의 역수를 검사하여 소수임을 확인하라. 2. 코드 // 소수 판별 function isPrime(num) { if (num === 1) return false; for (let i = 2; i &lt;= parseInt(Math.sqrt(num)); i++) { if (num % i ===...","categories": ["Algorithm"],
+        "tags": ["Programming"],
+        "url": "/algorithm/%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
