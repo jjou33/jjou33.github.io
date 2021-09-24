@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Webpack 정리 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+<!-- begin _includes/seo.html --><title>멘토링(완전탐색) - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Webpack 정리">
-<meta property="og:url" content="http://localhost:4000/webpack/Webpack-%EC%A0%95%EB%A6%AC/">
+<meta property="og:title" content="멘토링(완전탐색)">
+<meta property="og:url" content="http://localhost:4000/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/">
 
 
-  <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-09-21T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-09-24T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/webpack/Webpack-%EC%A0%95%EB%A6%AC/">
+
+<link rel="canonical" href="http://localhost:4000/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/">
 
 
 
@@ -348,15 +348,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Webpack 정리">
-    <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-    <meta itemprop="datePublished" content="2021-09-21T00:00:00+09:00">
+    <meta itemprop="headline" content="멘토링(완전탐색)">
+    <meta itemprop="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2021-09-24T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Webpack 정리
+            멘토링(완전탐색)
 
           </h1>
           
@@ -384,9 +384,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Brute Force</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">모듈 번들러(Module Bundler)</a>
+      <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">완전탐색</a>
     
     </span>
   </p>
@@ -408,7 +410,7 @@
     
     
     
-    <a href="/categories/#webpack" class="page__taxonomy-item-category" rel="tag">webpack</a>
+    <a href="/categories/#algorithm" class="page__taxonomy-item-category" rel="tag">Algorithm</a>
     
 
   </span>
@@ -417,7 +419,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-21T00:00:00+09:00">September 21, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-24T00:00:00+09:00">September 24, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -427,9 +429,10 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-webpack-%EC%9D%B4%EB%9E%80">1. Webpack 이란?</a></li>
-<li><a href="#2-%EB%AA%A8%EB%93%88-%EB%B2%88%EB%93%A4%EB%A7%81-%EC%9D%B4%EB%9E%80">2. 모듈 번들링 이란?</a></li>
-<li><a href="#3-npm-%EC%9C%BC%EB%A1%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0">3. NPM 으로 프로젝트 관리하기</a></li>
+<li><a href="#1-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EA%B1%B4">1. 문제 요건</a></li>
+<li><a href="#2-%EC%BD%94%EB%93%9C">2. 코드</a></li>
+<li><a href="#3-%EA%B2%B0%EA%B3%BC%EC%A0%95%EB%A6%AC">3. 결과정리</a></li>
+<li><a href="#4-key-point">4. Key Point</a></li>
 </ul>
 
             </nav>
@@ -437,42 +440,82 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</code></p>
 <hr>
 
-<h4 id="1-webpack-이란">1. Webpack 이란?</h4>
+<h4 id="1-문제-요건">1. 문제 요건</h4>
+<hr>
+<p><strong>M 번의 테스트에 대한 등수값</strong>이 주어지고 그안에서 <strong>N 명의 멘토, 멘티가 가능한 경우의 수</strong>를 구하라
+(단, 멘토는 모든 테스트에서 멘티보다 등수가 높아야함)</p>
+
+<h4 id="2-코드">2. 코드</h4>
 <hr>
 
-<p>웹팩(Webpack)이란 <strong>최신 프런트엔드 프레임워크에서 가장 많이 사용되는 모듈 번들러(Module Bundler)</strong>입니다. 
-<strong>모듈 번들러</strong>란 웹 애플리케이션을 구성하는 자원(HTML, CSS, Javscript, Images 등)을 모두 각각의 모듈로 보고 이를 조합해서 병합된 하나의 결과물을 만드는 도구를 의미한다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">let</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 테스트 횟수</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">test</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span> <span class="c1">// 학생수</span>
+    <span class="kd">let</span> <span class="nx">flag</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">// i 멘토 , j 멘티</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// 초기화</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">k</span><span class="o">&lt;</span> <span class="nx">m</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="nx">pj</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// 초기화</span>
+                <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">s</span><span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">s</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// i, j 의 등수를 pi, pj 에 치환</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nx">test</span><span class="p">[</span><span class="nx">k</span><span class="p">][</span><span class="nx">s</span><span class="p">]</span> <span class="o">===</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">pi</span> <span class="o">=</span> <span class="nx">s</span>
+                    <span class="p">}</span> 
+                    <span class="k">if</span><span class="p">(</span><span class="nx">test</span><span class="p">[</span><span class="nx">k</span><span class="p">][</span><span class="nx">s</span><span class="p">]</span> <span class="o">===</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">pj</span> <span class="o">=</span> <span class="nx">s</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="c1">// 멘토 i 가 j 보다 등수가 높을경우</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">pi</span> <span class="o">&lt;</span> <span class="nx">pj</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">flag</span><span class="o">++</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="c1">// 3번의 테스트 모두에서 멘티 j 보다 i가 등수가 높을 경우</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">flag</span> <span class="o">===</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="p">)</span>
+                <span class="nx">answer</span><span class="o">++</span>
+            <span class="p">}</span>
+            
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<h4 id="2-모듈-번들링-이란">2. 모듈 번들링 이란?</h4>
-<hr>
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
 
-<p><strong>웹 어플리케이션을 구성하는 수많은 자원들을 하나의 파일로 병합 및 압축 해주는 동작을 모듈 번들링 이라고 한다.</strong></p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/134348698-67e6edd7-9bdb-408a-b6e7-64b49d9184ae.png" alt="image"></p>
-
-<p>필요에 의해 압축, 분할 등 다양한 역할을 한다.
-즉, <strong>하나의 웹서비스를 구성하는 파일들을 해석 후 하나로 합쳐주는 역할을 하는 것이다.</strong></p>
-
-<h4 id="3-npm-으로-프로젝트-관리하기">3. NPM 으로 프로젝트 관리하기</h4>
-<hr>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init -y
-npm i webpack webpack-cli -D
---------------------------------------
-npm install webpack webpack-cli --save-dev
-npm i loadash
+<span class="kd">let</span> <span class="nx">test</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]];</span>
 </code></pre></div></div>
 
-<p>신규 프로젝트 생성 후 NPM 으로 관리하기 위해 npm 설치 후 webpack 을 개발용 dependecies 로 설치해준다.</p>
+<h4 id="3-결과정리">3. 결과정리</h4>
+<hr>
 
-<p>앞서 설명하였지만, <strong>실제 개발에서 Application 에 직접적인 패키지가 아닌경우에 개발용으로 설치하여 운영 배포때는 배포가 되지않게 하는것이 좋다.</strong></p>
+<p>이번에 풀어본 문제는 <strong>블루투포스 완전탐색</strong>에 관련된 문제이다.</p>
 
-<p>경량화를 위해 <strong>Package.json 을 확인</strong>하여 <strong>정상적으로 devDependencies 가 추가</strong>되었는지 확인한다.</p>
+<p>여기서 <strong>중요</strong>한점은 4번의 반복문을 통해 모든 경우의 수를 구하는 것이다.</p>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/134348932-6a0f4252-4b8a-4286-8d24-1e5b257481cb.png" alt="image"></p>
+<p>먼저 <strong>i,j 를 시작값으로 한 반복문으로 4명의 인원이 각각 멘토, 멘티가 될 수 있는 경우의 수 16번을 모두 탐색</strong>한다는 의미이다.</p>
+
+<p>그리고 그안에 <strong>k 반복문을 통해서 모든 테스트를 반복</strong>하고 <strong>s 를 통해 각 테스트에서 i,j 의 등수를 확인</strong>한다.</p>
+
+<p><strong>i,j 의 등수를 확인</strong> 후 <strong>i가 j 의 멘토가 될 수 있는 조건</strong> 즉, <strong>등수가 3번의 테스트에서 모두 높다면 flag 값이 3이 되어있으며 이후 이러한 경우만 answer 값을 올려주어 멘토,멘티가 가능한 조건을 찾는다.</strong></p>
+
+<p>이방법은 사실 모두 검사해야하니 좋은방법은 아닌것 같지만 기록은 해두도록 한다.</p>
+
+<h4 id="4-key-point">4. Key Point</h4>
+<hr>
+
+<p>문제를 고민하고 또 고민하면서 풀어보고 강의를 통해 해답을 비교하며 찾게된 이번의 <strong>놓친 포인트는 첫번째 문제를 잘못 이해한 부분</strong>이 있었다.</p>
+
+<p><strong>문제가 복잡할 수록 조금 더 꼼꼼히</strong> 문제부터 제대로 이해한 뒤 알고리즘을 들어가야 할것이다.</p>
+
+<p><strong>두번째 놓친 포인트는 항상 그래왔지만 너무 복잡하게 생각하면 오히려 더 풀기가 힘들어 진다는 것이다.</strong></p>
+
+<p>이번에도 다시한번 위 풀이를 바탕으로 이해하고 다시한번 풀어보면서 유형을 익히도록 한다.</p>
 
         
       </section>
@@ -481,23 +524,22 @@ npm i loadash
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Webpack+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%25A0%2595%25EB%25A6%25AC%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%A9%98%ED%86%A0%EB%A7%81%28%EC%99%84%EC%A0%84%ED%83%90%EC%83%89%29%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25A9%2598%25ED%2586%25A0%25EB%25A7%2581%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%25A0%2595%25EB%25A6%25AC%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25A9%2598%25ED%2586%25A0%25EB%25A7%2581%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%25A0%2595%25EB%25A6%25AC%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25A9%2598%25ED%2586%25A0%25EB%25A7%2581%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="가장 짧은 거리 구하기
+      <a href="/algorithm/%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="소수 구하기
 ">Previous</a>
     
     
-      <a href="/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98%EC%9D%98-%ED%95%A9/" class="pagination--pager" title="자릿수의 합
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -511,62 +553,6 @@ npm i loadash
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/" rel="permalink">멘토링(완전탐색)
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.24
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Brute Force</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">완전탐색</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -654,6 +640,57 @@ npm i loadash
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/webpack/Webpack-%EC%A0%95%EB%A6%AC/" rel="permalink">Webpack 정리
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.21
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">모듈 번들러(Module Bundler)</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
 </p>
   </article>
 </div>

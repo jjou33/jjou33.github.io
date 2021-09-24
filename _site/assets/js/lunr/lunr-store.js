@@ -70,4 +70,10 @@ var store = [{
         "tags": ["Programming"],
         "url": "/algorithm/%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "멘토링(완전탐색)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 M 번의 테스트에 대한 등수값이 주어지고 그안에서 N 명의 멘토, 멘티가 가능한 경우의 수를 구하라 (단, 멘토는 모든 테스트에서 멘티보다 등수가 높아야함) 2. 코드 function solution(test) { let answer = 0 let m = test.length...","categories": ["Algorithm"],
+        "tags": ["Programming","Brute Force","완전탐색"],
+        "url": "/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/",
+        "teaser": null
       }]
