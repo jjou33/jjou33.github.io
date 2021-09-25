@@ -76,4 +76,10 @@ var store = [{
         "tags": ["Programming","Brute Force","완전탐색"],
         "url": "/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/",
         "teaser": null
+      },{
+        "title": "졸업선물(완전탐색)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 M(자본금) 과 학생 선물의 가격(가격, 배송비) 배열을 입력받고 최대로 살 수 있는 갯수 구하기(상품50% 쿠폰1개 존재) 2. 코드 ffunction solution(product, m) { let answer = Number.MIN_SAFE_INTEGER let n = product.length // 할인받은 상품 // 상품가격,...","categories": ["Algorithm"],
+        "tags": ["Programming","Brute Force","완전탐색"],
+        "url": "/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/",
+        "teaser": null
       }]
