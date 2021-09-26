@@ -82,4 +82,10 @@ var store = [{
         "tags": ["Programming","Brute Force","완전탐색"],
         "url": "/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/",
         "teaser": null
+      },{
+        "title": "Two Pointers Algorithm",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 1차원 배열이 주어지면 2개의 가상의 포인터 즉, 각각 다른 원소를 가르키고 있는 포인터를 가지고 조작하며 원하는 비교를 통해 결과값을 얻어낸다. 2. 코드 2-1. 주어진 2개의 배열을 합쳐 오름차순으로 리턴하기 function solution2(arr1, arr2) { let answer...","categories": ["Algorithm"],
+        "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘"],
+        "url": "/algorithm/Two-Pointers-Algorithm/",
+        "teaser": null
       }]
