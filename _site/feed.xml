@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-26T20:56:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Two Pointers Algorithm</title><link href="http://localhost:4000/algorithm/Two-Pointers-Algorithm/" rel="alternate" type="text/html" title="Two Pointers Algorithm" /><published>2021-09-26T00:00:00+09:00</published><updated>2021-09-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/Two%20Pointers%20Algorithm</id><content type="html" xml:base="http://localhost:4000/algorithm/Two-Pointers-Algorithm/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-09-28T23:21:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Two Pointers Algorithm</title><link href="http://localhost:4000/algorithm/Two-Pointers-Algorithm/" rel="alternate" type="text/html" title="Two Pointers Algorithm" /><published>2021-09-26T00:00:00+09:00</published><updated>2021-09-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/Two%20Pointers%20Algorithm</id><content type="html" xml:base="http://localhost:4000/algorithm/Two-Pointers-Algorithm/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -66,7 +66,46 @@
 &lt;h4 id=&quot;3-결과정리&quot;&gt;3. 결과정리&lt;/h4&gt;
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;두 문제 모두 반복문&lt;/strong&gt;을 통해 충분히 풀 수 있지만, &lt;strong&gt;투 포인터 알고리즘의 개념&lt;/strong&gt;을 잡기 위해 풀어보면 &lt;strong&gt;p1,p2 2개의 포인터를 가지고 증감&lt;/strong&gt;을 통해 주어진 배열을 &lt;strong&gt;비교&lt;/strong&gt;하며 로직을 풀어나가는 형태이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Two Pointers Algorithm" /><category term="투포인터 알고리즘" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">졸업선물(완전탐색)</title><link href="http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/" rel="alternate" type="text/html" title="졸업선물(완전탐색)" /><published>2021-09-25T00:00:00+09:00</published><updated>2021-09-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/">&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;두 문제 모두 반복문&lt;/strong&gt;을 통해 충분히 풀 수 있지만, &lt;strong&gt;투 포인터 알고리즘의 개념&lt;/strong&gt;을 잡기 위해 풀어보면 &lt;strong&gt;p1,p2 2개의 포인터를 가지고 증감&lt;/strong&gt;을 통해 주어진 배열을 &lt;strong&gt;비교&lt;/strong&gt;하며 로직을 풀어나가는 형태이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Two Pointers Algorithm" /><category term="투포인터 알고리즘" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">연속부분수열</title><link href="http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/" rel="alternate" type="text/html" title="연속부분수열" /><published>2021-09-26T00:00:00+09:00</published><updated>2021-09-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-문제-요건&quot;&gt;1. 문제 요건&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;N 개의 원소&lt;/strong&gt;를 갖는 배열에서 연속된 수의 합이 6이 되는 경우 구하기&lt;/p&gt;
+
+&lt;h4 id=&quot;2-코드&quot;&gt;2. 코드&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3-결과정리&quot;&gt;3. 결과정리&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;투포인터 알고리즘&lt;/strong&gt;의 &lt;strong&gt;이점&lt;/strong&gt;은 중복 for 문으로 n2 의 &lt;strong&gt;시간복잡도&lt;/strong&gt;보다 줄일 수 있다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;이 알고리즘으로 풀때 &lt;strong&gt;중요한 부분&lt;/strong&gt;은 &lt;strong&gt;각각의 포인터&lt;/strong&gt;를 어떤 기준으로 잡는지와 빠져나가는 조건을 잘 잡는 것이다.&lt;/p&gt;
+
+&lt;p&gt;위 문제에서도 rt, lt 의 조건과 반복문을 빠져나가는데 있어서 끝나는 조건을 잡는것이 중요하다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Two Pointers Algorithm" /><category term="투포인터 알고리즘" /><category term="연속부분수열" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">졸업선물(완전탐색)</title><link href="http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/" rel="alternate" type="text/html" title="졸업선물(완전탐색)" /><published>2021-09-25T00:00:00+09:00</published><updated>2021-09-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A1%B8%EC%97%85%EC%84%A0%EB%AC%BC/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -750,96 +789,4 @@ npm install [라이브러리명]
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 시스템상에서 명령어를 제공할 수 있도록하기 위함
 2. CLI 를 사용할 수 있도록 하는 라이브러리들은 우리가 실제 운영배포에 필요한 내용이 아니기 때문에
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 정리하면 될 것이며, 본인이 참고하고 강의를 듣는 &lt;a href=&quot;https://joshua1988.github.io/webpack-guide/build/npm-module-install.html#npm-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%B9%98-%EA%B2%BD%EB%A1%9C&quot;&gt;강사의 사이트&lt;/a&gt;에서 더 자세하게 확인 할 수 있다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="NPM(Node Package Manager)" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">회문 문자열</title><link href="http://localhost:4000/algorithm/%ED%9A%8C%EB%AC%B8-%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="alternate" type="text/html" title="회문 문자열" /><published>2021-09-19T00:00:00+09:00</published><updated>2021-09-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%9A%8C%EB%AC%B8%20%EB%AC%B8%EC%9E%90%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%9A%8C%EB%AC%B8-%EB%AC%B8%EC%9E%90%EC%97%B4/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-문제-요건&quot;&gt;1. 문제 요건&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;특정 문자열(String)&lt;/strong&gt; 이 주어지고 해당 문자열이 회문 문자열에 해당하는지 여부를 판단하라.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-코드&quot;&gt;2. 코드&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;기본 솔루션&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;// 직접비교&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 어차피 짝수,홀수 개일경우에도 중간은 검증할 필요가 없음&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;gOdog&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;// reverse 사용&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solution2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 빈문자열로 split 할 경우 str 이 배열이됨 / str.split(&apos;&apos;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// reverse 는 배열로 변환이 필요함 / str.split(&apos;&apos;).reverse()&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// join 의 경우 배열을 string 으로 변환함 / str.split(&apos;&apos;).reverse().join(&apos;&apos;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;answerFlag&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;gOdog&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;3-결과정리&quot;&gt;3. 결과정리&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;이 문제는 정말 간단한 &lt;strong&gt;회문문자열&lt;/strong&gt; 검증 문제였다.&lt;/p&gt;
-
-&lt;p&gt;먼저 javascript 를 사용하여 알고리즘을 풀때 여러가지 내부 모듈을 사용하게 된다.
-이번 문제의 경우 &lt;strong&gt;직접 비교&lt;/strong&gt;하는 방식으로 풀어보았고, 추가적으로 &lt;strong&gt;내부모듈(reverse)&lt;/strong&gt;을 한껏 사용하여 간단하게도 풀어보았다.&lt;/p&gt;
-
-&lt;p&gt;풀면 풀수록 느끼는 바이지만 &lt;strong&gt;javascript 의 내부모듈은 정말 많고 알면 알수록 좋은것 같다.&lt;/strong&gt;
-다만, 이 많은 내부모듈들을 잘 기억하여 적제 적소에 사용할 수 있도록 많이 연습해야 겠다.&lt;/p&gt;
-
-&lt;h4 id=&quot;4-key-point&quot;&gt;4. Key Point&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;이번 문제에서 기억해야 할 부분은 크게 &lt;strong&gt;3가지&lt;/strong&gt;가 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;아주 기본적인 부분이지만 어떤 값을 비교해서 접근할 때 &lt;strong&gt;그들만의 규칙을 찾아내어 한번에 검사&lt;/strong&gt;할 수 있는지 먼저 고민해보자.
-&lt;br /&gt;&lt;br /&gt;
-위 문제의 경우에도 직접비교의 경우에는 아래 규칙을 찾는것이 핵심이라 생각한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;반복문을 사용하게 되더라도 &lt;strong&gt;불필요한 검증을 반복하는 부분&lt;/strong&gt;은 고려해보도록 하자
-&lt;br /&gt;&lt;br /&gt;
-위 문제에서 직접비교 간 우리는 for 문을 array 의 길이만큼 돌 필요가 없다. 
-규칙으로 인해서 양쪽 가장자리 부터 검증을 진행하고 있고 때문에 홀수 혹은 짝수의 글자가 오게 되더라도 홀수일 경우는 가운데 글자는 상관이 없고 짝수의 경우는 가운데 글자가 없게 된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 어차피 짝수,홀수 개일경우에도 중간은 검증할 필요가 없음&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;split , reverse, join 
-&lt;br /&gt;&lt;br /&gt;
-split 의 경우 특정 문자를 기준으로 분리하는 모듈이다. 위 문제에서는 빈문자 ‘’ 로 split 하여 string 을 배열로 바꾸었다.
-reverse 는 바뀌어진 배열을 반대로 뒤집어주며 join 으로 다시 합칠 수 있다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Palindrome" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;이렇게 정리하면 될 것이며, 본인이 참고하고 강의를 듣는 &lt;a href=&quot;https://joshua1988.github.io/webpack-guide/build/npm-module-install.html#npm-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%B9%98-%EA%B2%BD%EB%A1%9C&quot;&gt;강사의 사이트&lt;/a&gt;에서 더 자세하게 확인 할 수 있다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="NPM(Node Package Manager)" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry></feed>

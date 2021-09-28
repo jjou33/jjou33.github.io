@@ -61,6 +61,10 @@
 <lastmod>2021-09-26T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/</loc>
+<lastmod>2021-09-26T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/Algorithm</loc>
 </url>
 <url>
@@ -86,5 +90,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 </urlset>

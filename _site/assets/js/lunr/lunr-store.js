@@ -88,4 +88,10 @@ var store = [{
         "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘"],
         "url": "/algorithm/Two-Pointers-Algorithm/",
         "teaser": null
+      },{
+        "title": "연속부분수열",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N 개의 원소를 갖는 배열에서 연속된 수의 합이 6이 되는 경우 구하기 2. 코드 function solution(arr, m) { let lt = sum = 0 let n = arr.length let cnt = 0 for(let rt=0; rt...","categories": ["Algorithm"],
+        "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘","연속부분수열"],
+        "url": "/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/",
+        "teaser": null
       }]
