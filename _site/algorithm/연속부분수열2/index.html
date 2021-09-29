@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>가장 짧은 거리 구하기 - Hippo Dev Blog</title>
+<!-- begin _includes/seo.html --><title>연속부분수열2 - Hippo Dev Blog</title>
 <meta name="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="가장 짧은 거리 구하기">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="연속부분수열2">
+<meta property="og:url" content="http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42/">
 
 
   <meta property="og:description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-09-21T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-09-29T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/">
+<link rel="canonical" href="http://localhost:4000/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42/">
 
 
 
@@ -348,15 +348,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="가장 짧은 거리 구하기">
+    <meta itemprop="headline" content="연속부분수열2">
     <meta itemprop="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-09-21T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-09-29T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            가장 짧은 거리 구하기
+            연속부분수열2
 
           </h1>
           
@@ -384,7 +384,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Programming</a>
+      <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">Two Pointers Algorithm</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">연속부분수열</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">투포인터 알고리즘</a>
     
     </span>
   </p>
@@ -415,7 +421,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-21T00:00:00+09:00">September 21, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-29T00:00:00+09:00">September 29, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -441,98 +447,51 @@
 
 <h4 id="1-문제-요건">1. 문제 요건</h4>
 <hr>
-<p><strong>문자열(String) 과 특정 문자</strong>를 입력받고 String안에서 <strong>특정문자</strong>와 각각의 <strong>이외의 문자와의 차이 중 가장 짧은 거리</strong>를 구하자.</p>
+<p><strong>N개의 숫자</strong>가 주어지면 연속부분수열의 합이 5 이하가 되는 경우를 구하여라</p>
 
 <h4 id="2-코드">2. 코드</h4>
 <hr>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//ASCII Code 값 비교를 통한 문자 제거</span>
-<span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">char</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="kd">let</span> <span class="nx">checkIdx</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="nx">char</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">checkIdx</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">lt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">rt</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">rt</span><span class="o">&lt;</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">rt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">rt</span><span class="p">]</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">sum</span> <span class="o">&gt;</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">sum</span> <span class="o">-=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">lt</span><span class="o">++</span><span class="p">]</span>
         <span class="p">}</span>
+        <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">rt</span><span class="o">-</span><span class="nx">lt</span><span class="o">+</span><span class="mi">1</span> <span class="c1">// 연속 부분수열에서 추가되는 갯수 +</span>
     <span class="p">}</span>
 
-    <span class="c1">// max 함수 사용</span>
-    <span class="c1">// for(let i=0; i &lt;str.length; i++) {</span>
-    <span class="c1">//     let tempArr = []</span>
-    <span class="c1">//     for(let j=0; j&lt; checkIdx.length; j++) {</span>
-    <span class="c1">//         tempArr.push(Math.abs(checkIdx[j]-i))</span>
-    <span class="c1">//     }</span>
-    <span class="c1">//     answer.push(Math.min(...tempArr))</span>
-    <span class="c1">// }</span>
-
-    <span class="c1">// max 함수 미사용</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">tempArr</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="kd">let</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">MAX_SAFE_INTEGER</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">checkIdx</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">checkIdx</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">-</span><span class="nx">i</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nx">min</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">checkIdx</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="o">-</span><span class="nx">i</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">min</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="nx">answer</span>
-<span class="p">}</span>
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">teachermode</span><span class="dl">'</span>
-<span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">e</span><span class="dl">'</span>
-</code></pre></div></div>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 시간복잡도 O(n) 으로 훨씬 짧다.</span>
-<span class="c1">// 배열을 양방향으로 훑으면서 작은 값을 넣어주는 방식</span>
-<span class="kd">function</span> <span class="nx">solution2</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">char</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="kd">let</span> <span class="nx">flag</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">!==</span> <span class="nx">char</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">flag</span><span class="o">++</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">flag</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="p">}</span>
-        <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">flag</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="nx">flag</span> <span class="o">=</span> <span class="mi">1000</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!==</span> <span class="nx">char</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">flag</span><span class="o">++</span>
-            <span class="nx">answer</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">answer</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">flag</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">flag</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
     <span class="k">return</span> <span class="nx">answer</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">teachermode</span><span class="dl">'</span>
-<span class="kd">let</span> <span class="nx">char</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">e</span><span class="dl">'</span>
+<span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">m</span> <span class="o">=</span> <span class="mi">5</span>
 </code></pre></div></div>
 
 <h4 id="3-결과정리">3. 결과정리</h4>
 <hr>
 
-<p>이 문제를 푸는데 가장 중요한 부분은 <strong>문제 해결을 위한 접근 방법</strong> 이다.</p>
+<p>이문제 또한 연속 부분수열에 대한 코드이다.</p>
 
-<p>어떻게 비교를 할 지에 대한 두가지 방법을 기록한다.</p>
+<p>이번 문제에서 중요했던 부분은 역시 <strong>lt,rt 기준점을 잡는것</strong>과 <strong>연속부분수열에 대한 갯수를 더하는 부분</strong>이다.</p>
 
-<p><strong>첫번째 solution</strong> 의 경우 str 내에 ‘e’ 의 인덱스를 가지는 배열을 구한다.
-이후 2중 for 문을 통해 str 각 문자의 인덱스와 ‘e’ 의 인덱스 배열의 차이의 절대값중 가장 짧은 것을 구하여 return 하는 방법으로 풀었다</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">answer</span> <span class="o">+=</span> <span class="nx">rt</span><span class="o">-</span><span class="nx">lt</span><span class="o">+</span><span class="mi">1</span> <span class="c1">// 연속 부분수열에서 추가되는 갯수 +</span>
+</code></pre></div></div>
+<p><strong>연속된 숫자 lt를 고정 후 rt 를 증가시켜가면서 rt 가 증가하였을때 N 개의 연속된 숫자에 추가되는 갯수는 rt - lt + 1 개이다.</strong></p>
 
-<p>이후 강의를 보면서 solution2 의 아이디어를 알게 되었다.</p>
+<p><strong>즉, lt = 0, rt = 1 인경우 통과 후 rt 가 증가하면서 rt = 2 가되고 내부 arr 값중 1,3,1 까지 오게되며 이 사이의 마지막 1이 추가되면서 발생하는 연속부분수열 갯수는 {1}, {3,1} , {1,3,1} 3개이며 이는 2 - 0 + 1 이렇게 3개가 나온다.</strong></p>
 
-<p><strong>solution2 의 경우</strong>는 무엇보다 <strong>시간복잡도에서 O(n)</strong>으로 내가 풀어본 것(solution)보다 효율적일 수 있다고 생각한다.
-요지는 <strong>양방향으로 for 문을 2번 돌려 첫번째는 e 로부터의 cnt 값을 1씩 올리며 문자열마다 e 와의 거리를 배열에 넣은 후</strong> 
-<strong>반대쪽에서 다시 동일하게 검사하되 만약 작다면 바꿔치기 한다.</strong></p>
+<p>이부분을 명심하며 기록하고 추후 사용하도록한다.</p>
 
 <h4 id="4-key-point">4. Key Point</h4>
 <hr>
 
-<p><strong>문자 인덱스 간의 거리를 구할 때 양방향으로 검사하는 아이디어</strong></p>
+<ol>
+  <li>lt , rt 기준 구하기</li>
+  <li>연속된 숫자에 추가되는 부분수열 갯수 rt - lt + 1</li>
+</ol>
 
         
       </section>
@@ -541,23 +500,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EA%B0%80%EC%9E%A5+%EC%A7%A7%EC%9D%80+%EA%B1%B0%EB%A6%AC+%EA%B5%AC%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EA%25B0%2580%25EC%259E%25A5-%25EC%25A7%25A7%25EC%259D%2580-%25EA%25B1%25B0%25EB%25A6%25AC-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2597%25B0%25EC%2586%258D%25EB%25B6%2580%25EB%25B6%2584%25EC%2588%2598%25EC%2597%25B42%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EA%25B0%2580%25EC%259E%25A5-%25EC%25A7%25A7%25EC%259D%2580-%25EA%25B1%25B0%25EB%25A6%25AC-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2597%25B0%25EC%2586%258D%25EB%25B6%2580%25EB%25B6%2584%25EC%2588%2598%25EC%2597%25B42%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EA%25B0%2580%25EC%259E%25A5-%25EC%25A7%25A7%25EC%259D%2580-%25EA%25B1%25B0%25EB%25A6%25AC-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2597%25B0%25EC%2586%258D%25EB%25B6%2580%25EB%25B6%2584%25EC%2588%2598%25EC%2597%25B42%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/webpack/NPM(Node-Package-Manager)/" class="pagination--pager" title="NPM(Node Package Manager)
+      <a href="/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/" class="pagination--pager" title="연속부분수열
 ">Previous</a>
     
     
-      <a href="/webpack/Webpack-%EC%A0%95%EB%A6%AC/" class="pagination--pager" title="Webpack 정리
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -571,67 +529,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42/" rel="permalink">연속부분수열2
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.29
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Two Pointers Algorithm</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">연속부분수열</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">투포인터 알고리즘</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -765,6 +662,62 @@
     </h2>
     <small>
       <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.25
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Brute Force</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">완전탐색</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%A9%98%ED%86%A0%EB%A7%81/" rel="permalink">멘토링(완전탐색)
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.09.24
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 

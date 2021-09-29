@@ -94,4 +94,10 @@ var store = [{
         "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘","연속부분수열"],
         "url": "/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/",
         "teaser": null
+      },{
+        "title": "연속부분수열2",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N개의 숫자가 주어지면 연속부분수열의 합이 5 이하가 되는 경우를 구하여라 2. 코드 function solution(arr, m) { let sum = 0, lt = 0 let answer = 0 for(let rt=0; rt&lt;arr.length; rt++) { sum += arr[rt]...","categories": ["Algorithm"],
+        "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘","연속부분수열"],
+        "url": "/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42/",
+        "teaser": null
       }]
