@@ -100,4 +100,10 @@ var store = [{
         "tags": ["Programming","Two Pointers Algorithm","투포인터 알고리즘","연속부분수열"],
         "url": "/algorithm/%EC%97%B0%EC%86%8D%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B42/",
         "teaser": null
+      },{
+        "title": "최대매출(Sliding Window)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 N 일간의 매출 기록이 주어지고 K 일간의 연속된 매출 중 최대 매출을 구하라 2. 코드 function solution(k, arr) { let answer = sum = 0 for(let i=0; i&lt;k; i++) { sum += arr[i] } answer...","categories": ["Algorithm"],
+        "tags": ["Programming","Sliding Window"],
+        "url": "/algorithm/%EC%B5%9C%EB%8C%80%EB%A7%A4%EC%B6%9C/",
+        "teaser": null
       }]
