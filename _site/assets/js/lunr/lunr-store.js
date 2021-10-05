@@ -109,7 +109,13 @@ var store = [{
       },{
         "title": "모든 아나그램 찾기(Hash, Sliding Window, 투포인트)",
         "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 두개의 문자열 a,b 가 주어지고 a 에서 b 와 아나그램이 부합하는 경우의 수를 구하여라 2. 코드 function solution(a,b) { let th = new Map() // 기준 Map (b) let sh = new Map() // 비교...","categories": ["Algorithm"],
-        "tags": ["Programming","Sliding Window"],
+        "tags": ["Programming","Sliding Window","해쉬(Hash)","Two Pointers Algorithm"],
         "url": "/algorithm/%EB%AA%A8%EB%93%A0-%EC%95%84%EB%82%98%EA%B7%B8%EB%9E%A8-%EC%B0%BE%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "괄호문자제거(스택)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 괄호와문자로 이루어진 문자열을 입력받고 괄호 사이에 들어가있는 단어를 모두 제거하라 2. 코드 function solution(s) { let stack = [] for(let x of s) { if(x === \")\") { while(stack.pop()!==\"(\"); } else { stack.push(x); } }...","categories": ["Algorithm"],
+        "tags": ["Programming","Stack"],
+        "url": "/algorithm/%EA%B4%84%ED%98%B8%EB%AC%B8%EC%9E%90%EC%A0%9C%EA%B1%B0(%EC%8A%A4%ED%83%9D)/",
         "teaser": null
       }]
