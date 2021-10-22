@@ -124,4 +124,10 @@ var store = [{
         "tags": ["Programming","Stack"],
         "url": "/algorithm/%ED%9B%84%EC%9C%84%EC%8B%9D-%EC%97%B0%EC%82%B0(post-fix)/",
         "teaser": null
+      },{
+        "title": "쇠막대기(Stack)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 괄호의 조합(ex. ()(())()()) 을 입력받으며, ’(‘ 문자는 쇠막대기가 추가된다고 가정하고 ’()’ 의 경우 해당 시점의 막대기를 자른다고 생각한다. 입력받은 조합에서 몇개의 막대기가 나오는지 구한다. 2. 코드 function solution(a) { let stack = [] let answer...","categories": ["Algorithm"],
+        "tags": ["Programming","Stack"],
+        "url": "/algorithm/%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0(Stack)/",
+        "teaser": null
       }]
