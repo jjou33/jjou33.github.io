@@ -121,7 +121,7 @@ var store = [{
       },{
         "title": "후위식 연산(post fix)",
         "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 후위식 연산값을 입력받고 결과값을 리턴하여라 2. 코드 function solution(s) { let result = lv = rv = 0 let operator = ['+','-','*','/'] let stack = [] for(let x of s) { if(!isNaN(x)) { stack.push(Number(x)) }...","categories": ["Algorithm"],
-        "tags": ["Programming","Stack"],
+        "tags": ["Programming","Stack","Post Fix"],
         "url": "/algorithm/%ED%9B%84%EC%9C%84%EC%8B%9D-%EC%97%B0%EC%82%B0(post-fix)/",
         "teaser": null
       },{
