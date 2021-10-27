@@ -130,4 +130,10 @@ var store = [{
         "tags": ["Programming","Stack"],
         "url": "/algorithm/%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0(Stack)/",
         "teaser": null
+      },{
+        "title": "Webpack 시작하기",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack Start!! 앞선 작업물에서 WebPack 프로젝트를 만들고 NPM 을 통해 환경을 구축하였다. 이제 실제 Webpack을 시작해보도록 한다. 1.1. index.js import _ from 'lodash'; function component() { var element = document.createElement('div'); /* lodash is required for the next line to...","categories": ["webpack"],
+        "tags": ["Webpack","NPM(Node Package Manager)"],
+        "url": "/webpack/%EC%9B%B9%ED%8C%A9-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
