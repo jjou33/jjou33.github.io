@@ -136,4 +136,10 @@ var store = [{
         "tags": ["Webpack","NPM(Node Package Manager)"],
         "url": "/webpack/%EC%9B%B9%ED%8C%A9-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "Script 설정 관리 (webpack.config.js)",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. webpack.config.js { \"name\": \"webpack-start\", \"version\": \"1.0.0\", \"description\": \"\", \"main\": \"index.js\", \"scripts\": { \"test\": \"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\", \"build\": \"webpack --mode=none\" }, \"keywords\": [], \"author\": \"\", \"license\": \"ISC\", \"devDependencies\": { \"webpack\": \"^5.44.0\", \"webpack-cli\": \"^4.7.2\" }, \"dependencies\":...","categories": ["webpack"],
+        "tags": ["Webpack","config","lodash"],
+        "url": "/webpack/Script-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC-(webpack.config.js)/",
+        "teaser": null
       }]
