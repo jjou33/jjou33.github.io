@@ -142,4 +142,10 @@ var store = [{
         "tags": ["Webpack","config","lodash"],
         "url": "/webpack/Script-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC-(webpack.config.js)/",
         "teaser": null
+      },{
+        "title": "Script 설정 관리 (webpack.config.js)",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. webpack.config.js { \"name\": \"webpack-start\", \"version\": \"1.0.0\", \"description\": \"\", \"main\": \"index.js\", \"scripts\": { \"test\": \"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\", \"build\": \"webpack --mode=none\" }, \"keywords\": [], \"author\": \"\", \"license\": \"ISC\", \"devDependencies\": { \"webpack\": \"^5.44.0\", \"webpack-cli\": \"^4.7.2\" }, \"dependencies\":...","categories": ["webpack"],
+        "tags": ["Webpack","config","lodash"],
+        "url": "/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84-%ED%9B%84-%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/",
+        "teaser": null
       }]
