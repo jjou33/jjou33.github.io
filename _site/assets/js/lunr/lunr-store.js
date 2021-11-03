@@ -143,9 +143,15 @@ var store = [{
         "url": "/webpack/Script-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC-(webpack.config.js)/",
         "teaser": null
       },{
-        "title": "Script 설정 관리 (webpack.config.js)",
-        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. webpack.config.js { \"name\": \"webpack-start\", \"version\": \"1.0.0\", \"description\": \"\", \"main\": \"index.js\", \"scripts\": { \"test\": \"echo \\\"Error: no test specified\\\" &amp;&amp; exit 1\", \"build\": \"webpack --mode=none\" }, \"keywords\": [], \"author\": \"\", \"license\": \"ISC\", \"devDependencies\": { \"webpack\": \"^5.44.0\", \"webpack-cli\": \"^4.7.2\" }, \"dependencies\":...","categories": ["webpack"],
-        "tags": ["Webpack","config","lodash"],
-        "url": "/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84-%ED%9B%84-%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/",
+        "title": "Webpack 변환 전/후 성능비교",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 변환 전 소스 및 성능 1-1. index.html &lt;!-- index.html --&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Webpack Demo&lt;/title&gt; &lt;script src=\"https://unpkg.com/lodash@4.16.6\"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;script src=\"src/index.js\"&gt;&lt;/script&gt; &lt;!-- &lt;script src=\"dist/main.js\"&gt;&lt;/script&gt; --&gt; &lt;/body&gt; &lt;/html&gt; 1-2. index.js function component() { var element = document.createElement('div'); /* lodash is required...","categories": ["webpack"],
+        "tags": ["Webpack","성능비교"],
+        "url": "/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/",
+        "teaser": null
+      },{
+        "title": "Webpack First Principle 영상 리뷰",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack First Principle 현재 공부하고 있는 강의에서 webpack 에 대한 유투브 분석 강의를 보았다. 유투브 링크 이 영상의 초기에는 특정 Application 을 만들어 놓고 집에서 쾌적한 인터넷 환경에서 할 경우와 어딘가 굉장히 느린 환경에서 웹 페이지 속도를 크롬 개발자...","categories": ["webpack"],
+        "tags": ["Webpack","Webpack from firstprinciples","youtude"],
+        "url": "/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/",
         "teaser": null
       }]
