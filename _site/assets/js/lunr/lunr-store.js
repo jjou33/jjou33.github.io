@@ -154,4 +154,10 @@ var store = [{
         "tags": ["Webpack","Webpack from firstprinciples","youtude"],
         "url": "/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/",
         "teaser": null
+      },{
+        "title": "Webpack 에 대한 정의와 배경, 사용이유",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 모듈(Module)이란? 모듈이란 프로그래밍 관점에서 특정 기능을 갖는 작은 코드 단위를 의미한다. // math.js // 함수 function sum(a, b) { return a + b; } // 함수 function substract(a, b) { return a - b; } // 상수 const pi...","categories": ["webpack"],
+        "tags": ["Webpack","Webpack Definition"],
+        "url": "/webpack/webpack-definition/",
+        "teaser": null
       }]
