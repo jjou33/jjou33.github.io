@@ -155,6 +155,12 @@ var store = [{
         "url": "/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/",
         "teaser": null
       },{
+        "title": "MAC 에서 사용중인 Port 죽이기",
+        "excerpt":":raising_hand: 개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다. MAC 사용중인 포트의 PID 찾기 sudo lsof -i:포트번호 사용중인 포트 종료하기 // PID 조회 sudo lsof -i:4000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME ruby 4020 root 11u IPv4 0x7c07039bcf2cf1b7 0t0 TCP localhost:terabase (LISTEN) **강제 종료 커맨드** sudo kill...","categories": ["mac"],
+        "tags": ["MAC OS","Port Kill"],
+        "url": "/mac/Port-Kill/",
+        "teaser": null
+      },{
         "title": "Webpack 에 대한 정의와 배경, 사용이유",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 모듈(Module)이란? 모듈이란 프로그래밍 관점에서 특정 기능을 갖는 작은 코드 단위를 의미한다. // math.js // 함수 function sum(a, b) { return a + b; } // 함수 function substract(a, b) { return a - b; } // 상수 const pi...","categories": ["webpack"],
         "tags": ["Webpack","Webpack Definition"],
