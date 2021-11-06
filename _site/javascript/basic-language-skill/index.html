@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
 <meta property="og:title" content="JavaScript 문법 중 기억할 것">
-<meta property="og:url" content="http://localhost:4000/mac/basic-language-skill/">
+<meta property="og:url" content="http://localhost:4000/javascript/basic-language-skill/">
 
 
   <meta property="og:description" content=":computer: JavaScript 문법과 관련된 설정을 기록하는 포스트 입니다.">
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/mac/basic-language-skill/">
+<link rel="canonical" href="http://localhost:4000/javascript/basic-language-skill/">
 
 
 
@@ -279,11 +279,17 @@
                 
                     
                 
+                    
+                
             </ul>
             <ul>
                 
                     
                 
+                    
+                
+                    
+                        <li><a href="/categories/JavaScript" class=""> Javascript Language (1)</a></li>
                     
                 
                     
@@ -302,8 +308,12 @@
             
                 
             
+                
+            
         </ul>
         <ul>
+            
+                
             
                 
             
@@ -322,8 +332,12 @@
             
                 
             
+                
+            
         </ul>
         <ul>
+            
+                
             
                 
             
@@ -344,11 +358,15 @@
                 
             
                 
-                    <li><a href="/categories/mac" class="">MAC OS 설정 및 오류(2)</a></li>
+            
+                
+                    <li><a href="/categories/mac" class="">MAC OS 설정 및 오류(1)</a></li>
                 
             
         </ul>
         <ul>
+            
+                
             
                 
             
@@ -402,9 +420,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">MAC OS</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">Port Kill</a>
+      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
     
     </span>
   </p>
@@ -426,7 +442,7 @@
     
     
     
-    <a href="/categories/#mac" class="page__taxonomy-item-category" rel="tag">mac</a>
+    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
     
 
   </span>
@@ -452,11 +468,9 @@
 </ul>
 </li>
 <li>
-<a href="#2-symbol">2. Symbol</a><ul>
-<li><a href="#1-1-%EC%98%88%EC%A0%9C-1">1-1. 예제</a></li>
-<li><a href="#1-1-%EA%B2%B0%EA%B3%BC-1">1-1. 결과</a></li>
-</ul>
+<a href="#2-symbol">2. Symbol</a><ul><li><a href="#2-1-%EC%98%88%EC%A0%9C">2-1. 예제</a></li></ul>
 </li>
+<li><a href="#3-%EB%8F%99%EB%93%B1-%EC%97%B0%EC%82%B0%EC%9E%90-vs-%EC%9D%BC%EC%B9%98-%EC%97%B0%EC%82%B0%EC%9E%90">3. ==(동등 연산자) VS ===(일치 연산자)</a></li>
 </ul>
 
             </nav>
@@ -493,7 +507,7 @@
 
 <p>ES6에서 처음 추가된 타입으로 unique 한 값을 만들기 때문에 필요 시 사용한다.</p>
 
-<h5 id="1-1-예제-1">1-1. 예제</h5>
+<h5 id="2-1-예제">2-1. 예제</h5>
 <hr>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value1</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">value2</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">);</span>
@@ -504,11 +518,15 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value1</span> <span class="o">==</span> <span class="nx">value2</span><span class="p">);</span>  <span class="c1">// false </span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value1</span> <span class="o">===</span> <span class="nx">value2</span><span class="p">);</span> <span class="c1">// false</span>
 </code></pre></div></div>
-<h5 id="1-1-결과-1">1-1. 결과</h5>
-<hr>
-<p><img src="https://user-images.githubusercontent.com/56063287/140332620-9b3809f8-c95c-4343-b086-6a0471771258.png" alt="image"></p>
 
-<p><em>** undefined 의 경우는 타입과 값이 모두 ‘undefined’ 로 나오지만 null 의 경우 타입이 Object 로 출력되는 것을 기억하자 **</em></p>
+<h4 id="3-동등-연산자-vs-일치-연산자">3. ==(동등 연산자) VS ===(일치 연산자)</h4>
+<hr>
+
+<ul>
+  <li>동등 연산자 : 양쪽의 값이 같은지 확인</li>
+  <li>일치 연산자 : 값 및 데이터 타입 둘다 같은지를 확인한다.</li>
+</ul>
+
 
         
       </section>
@@ -517,11 +535,11 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=JavaScript+%EB%AC%B8%EB%B2%95+%EC%A4%91+%EA%B8%B0%EC%96%B5%ED%95%A0+%EA%B2%83%20http%3A%2F%2Flocalhost%3A4000%2Fmac%2Fbasic-language-skill%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=JavaScript+%EB%AC%B8%EB%B2%95+%EC%A4%91+%EA%B8%B0%EC%96%B5%ED%95%A0+%EA%B2%83%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fbasic-language-skill%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmac%2Fbasic-language-skill%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fbasic-language-skill%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fmac%2Fbasic-language-skill%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fbasic-language-skill%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
