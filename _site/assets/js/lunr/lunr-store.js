@@ -155,6 +155,12 @@ var store = [{
         "url": "/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/",
         "teaser": null
       },{
+        "title": "JavaScript 문법 중 기억할 것",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. NULL VS undefined NULL : 값이 없음을 나타낸다. undefined : 값이 할당되지 않았음을 나타낸다. 1-1. 예제 let value1; let value2 = null; console.log(typeof value1, value1); console.log(typeof value2, value2); 1-1. 결과 ** undefined 의 경우는 타입과 값이 모두 ‘undefined’ 로 나오지만 null 의...","categories": ["mac"],
+        "tags": ["MAC OS","Port Kill"],
+        "url": "/mac/basic-language-skill/",
+        "teaser": null
+      },{
         "title": "MAC 에서 사용중인 Port 죽이기",
         "excerpt":":raising_hand: 개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다. MAC 사용중인 포트의 PID 찾기 sudo lsof -i:포트번호 사용중인 포트 종료하기 // PID 조회 sudo lsof -i:4000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME ruby 4020 root 11u IPv4 0x7c07039bcf2cf1b7 0t0 TCP localhost:terabase (LISTEN) **강제 종료 커맨드** sudo kill...","categories": ["mac"],
         "tags": ["MAC OS","Port Kill"],
