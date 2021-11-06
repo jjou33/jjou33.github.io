@@ -172,4 +172,10 @@ var store = [{
         "tags": ["Webpack","Webpack Definition"],
         "url": "/webpack/webpack-definition/",
         "teaser": null
+      },{
+        "title": "ES6 Arrow Function",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. ES6 화살표 함수 (Arrow Function, ‘=&gt;’) 선언 함수 선언을 보다 간단하게 하기 위해 고안되었다. 화살표 함수는 익명 함수이다. 따라서 호출하기 위해 변수에 대입하는 경우가 많다. let function = (함수인자) =&gt; { expression } let function = (함수인자) =&gt; { statements } let...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Arrow Function"],
+        "url": "/javascript/Arrow-Function/",
+        "teaser": null
       }]
