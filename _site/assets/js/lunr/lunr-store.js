@@ -178,4 +178,10 @@ var store = [{
         "tags": ["JavaScript","Arrow Function"],
         "url": "/javascript/Arrow-Function/",
         "teaser": null
+      },{
+        "title": "JavaScript 객체 / Prototype",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 객체 javscript 객체는 Property 와 Method(함수) 로 이루어져있고,Property 는 보통 Key, Value 로 이루어져 있다. 1-1. 객체 생성 방법 객체 리터럴 방식 new Object() 생성 방식 생성자 함수로 생성 ES6 기반 객체생성 2. Property 와 Method Property 는 Key, Value 로 이루어져...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Arrow Function","prototype","property","Object"],
+        "url": "/javascript/javascript-Object/",
+        "teaser": null
       }]
