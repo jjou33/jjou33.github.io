@@ -185,15 +185,15 @@ var store = [{
         "url": "/javascript/javascript-Object/",
         "teaser": null
       },{
-        "title": "ES6 Array 배열",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 배열 선언 및 사용 1-1. 객체처럼 생성 const arrObject = new Array(); arrObject[0] = 1; arrObject[1] = \"hi\"; 1-2. 다양한 배열 사용법 cconst arr1 = [1, 2, \"String\", null]; // 배열 안에 객체 저장 const arr2 = [ { value1: 1, value2:...","categories": ["JavaScript"],
-        "tags": ["JavaScript","ES6","Array"],
-        "url": "/javascript/ES6-Array/",
-        "teaser": null
-      },{
         "title": "ES6 Class 객체",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 클레스(Class) Class명 {} 로 함수와 같이 정의 가능 Class 내부에 Constructor() 를 통해 프로퍼티 및 값을 정의한다. Method 는 Class 안에 정의하면 된다. class myClass { constructor() { this.v1 = 1; this.v2 = \"string\"; } getMydate() { return \"hello\"; } } const...","categories": ["JavaScript"],
         "tags": ["JavaScript","ES6","Class"],
         "url": "/javascript/ES6-Class/",
+        "teaser": null
+      },{
+        "title": "ES6 Array 배열",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 배열 선언 및 사용 1-1. 객체처럼 생성 const arrObject = new Array(); arrObject[0] = 1; arrObject[1] = \"hi\"; 1-2. 다양한 배열 사용법 cconst arr1 = [1, 2, \"String\", null]; // 배열 안에 객체 저장 const arr2 = [ { value1: 1, value2:...","categories": ["JavaScript"],
+        "tags": ["JavaScript","ES6","Array"],
+        "url": "/javascript/ES6-Array/",
         "teaser": null
       }]

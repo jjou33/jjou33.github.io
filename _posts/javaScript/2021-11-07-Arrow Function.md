@@ -41,8 +41,9 @@ let myFunction = name => {
   console.log("1");
   return "hello world" + name
 }
-// 별도 로직이 없을 경우 바로 리턴값 출력
+// 별도 로직이 없을 경우(한라인으로 끝나는 경우 포함) 바로 리턴값 출력
 let myFunction = () => "hello World"
+let myFunction = number => number + 2
 ```
 
 
