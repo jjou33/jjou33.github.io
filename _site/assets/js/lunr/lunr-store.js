@@ -196,4 +196,10 @@ var store = [{
         "tags": ["JavaScript","ES6","Array"],
         "url": "/javascript/ES6-Array/",
         "teaser": null
+      },{
+        "title": "ES6에서 추가된 문법",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 삼항 연산자 조건문을 좀 더 간결하게 사용할 수 있다. const data = 3; if(data === 3) { console.log(\"S\"); } else { console.log(\"F\"); } 위 조건문을 삼항연산자를 통해 작성하면 아래와 같다 data === 3 ? console.log(\"S\") : console.log(\"F\"); 2. 함수 Default 값 설정...","categories": ["JavaScript"],
+        "tags": ["JavaScript","ES6","Array"],
+        "url": "/javascript/ES6/",
+        "teaser": null
       }]
