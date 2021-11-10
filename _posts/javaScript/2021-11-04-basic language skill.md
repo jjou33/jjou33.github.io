@@ -1,6 +1,6 @@
 ---
 title:  "JavaScript 문법 중 기억할 것"
-excerpt: " :computer: JavaScript 문법과 관련된 설정을 기록하는 포스트 입니다."
+excerpt: " :computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
   - JavaScript
@@ -58,4 +58,12 @@ console.log(value1 === value2); // false
 
 * 동등 연산자 : 양쪽의 값이 같은지 확인
 * 일치 연산자 : 값 및 데이터 타입 둘다 같은지를 확인한다.
+
+
+
+
+
+
+
+
 

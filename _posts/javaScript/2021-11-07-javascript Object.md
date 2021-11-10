@@ -1,6 +1,6 @@
 ---
 title:  "JavaScript 객체 / Prototype"
-excerpt: " :computer: JavaScript 문법과 관련된 설정을 기록하는 포스트 입니다."
+excerpt: " :computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
   - JavaScript
