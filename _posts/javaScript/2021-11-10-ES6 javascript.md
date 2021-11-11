@@ -1,6 +1,6 @@
 ---
 title:  "ES6에서 추가된 문법"
-excerpt: " :computer: JavaScript 문법과 관련된 설정을 기록하는 포스트 입니다."
+excerpt: " :computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
   - JavaScript
@@ -105,6 +105,30 @@ let {name, age: myAge=15, hobby='play'} = obj;
 console.log(name, myAge, hobby); // hyunwoo 15 play
 ```
 
+##### 3-1. 변수값 교환하기
+***
+
+```js
+let a = 1;
+let b = 2;
+
+[a,b] = [b,a];
+console.log(a,b); // 2, 1
+```
+
+##### 3-2. 함수 리턴 시 여러 데이터 넘기기
+***
+
+```js
+function getData() {
+  return [10,20]
+}
+
+let [a,b,c] = getData();
+console.log(a,b,c);
+
+```
+
 #### 4. 배열
 ***
 
@@ -131,4 +155,67 @@ const [v1, ...v2] = data;
 console.log(v1, v2); 1, [2,3]
 
 const
+```
+
+#### 5. 문자열 분리 및 개별 변수 대입
+***
+
+* split 을 구조분해 기법을 통해 간편하게 변수에 대입하는 법
+
+```js
+let data = "my name, is hyun, woo cho";
+
+console.log(data.split(","));
+let [name, first, last] = data.split(",");
+
+console.log(name, ifrst, last); // my name  is hyun  woo cho 
+
+```
+
+#### 6. Rest 파라메터
+***
+
+* Rest 파라메터를 통해 인자값을 배열로 할당 및 사용 가능하다.
+* 원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.
+```js
+
+function getRestData(...rest) {
+  let [v1,v2,v3,v4,v5] = rest;
+  console.log(rest); // [1,2,3,4,5]
+  console.log(v1,v2,v3,v4,v5); // 1,2,3,4,5
+}
+
+// a,b 는 개별적으로 넣고 나머지는 rest 파라미터 사용
+function getRestData2(a,b,...rest) {
+  console.log(a,b, rest);
+}
+getRestData(1,2,3,4,5); 
+getRestData2(1,2,3,4,5); // 1 2 [3, 4, 5]
+
+
+```
+
+
+#### 7. Spread 파라미터
+***
+
+* 정의 방법은 Rest 와 같이 ...을 붙여 사용
+* iterable한(반복가능한 ex.문자, 배열) 변수 앞에 붙여서 해당 변수의 데이터를 개별 아이템으로 분리
+
+```js
+// 일반적인 기능
+let arr = [1,2,3];
+
+console.log(...arr);
+
+// 배열에 개별 파라미터로 삽입
+function temp(a, b, c) {
+  console.log(a); // 1
+  console.log(b); // 2
+  console.log(c); // 3
+}
+
+let data = [1, 2, 3];
+temp(...data);
+
 ```
