@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>NPM(Node Package Manager) - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+<!-- begin _includes/seo.html --><title>Javascript Hoisting(호이스팅)에 관하여 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="NPM(Node Package Manager)">
-<meta property="og:url" content="http://localhost:4000/webpack/NPM(Node-Package-Manager)/">
+<meta property="og:title" content="Javascript Hoisting(호이스팅)에 관하여">
+<meta property="og:url" content="http://localhost:4000/javascript/Hoisting/">
 
 
-  <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-09-20T00:00:00+09:00">
+  <meta property="og:description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-10T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/webpack/NPM(Node-Package-Manager)/">
+
+<link rel="canonical" href="http://localhost:4000/javascript/Hoisting/">
 
 
 
@@ -384,15 +384,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="NPM(Node Package Manager)">
-    <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-    <meta itemprop="datePublished" content="2021-09-20T00:00:00+09:00">
+    <meta itemprop="headline" content="Javascript Hoisting(호이스팅)에 관하여">
+    <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2021-11-10T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            NPM(Node Package Manager)
+            Javascript Hoisting(호이스팅)에 관하여
 
           </h1>
           
@@ -420,9 +420,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">NPM(Node Package Manager)</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
+      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
     
     </span>
   </p>
@@ -444,7 +444,7 @@
     
     
     
-    <a href="/categories/#webpack" class="page__taxonomy-item-category" rel="tag">webpack</a>
+    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
     
 
   </span>
@@ -453,7 +453,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-20T00:00:00+09:00">September 20, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-10T00:00:00+09:00">November 10, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -463,16 +463,17 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-npm-%EC%9D%B4%EB%9E%80">1. NPM 이란?</a></li>
-<li><a href="#2-nodejs">2. Node.js</a></li>
+<li><a href="#1-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%9E%80">1. 호이스팅이란?</a></li>
 <li>
-<a href="#3-npm-%EC%9D%84-%EC%99%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C">3. NPM 을 왜 사용할까?</a><ul>
-<li><a href="#3-1-%EC%9D%98%EC%A1%B4%EC%84%B1-%EA%B4%80%EB%A6%AC">3-1. 의존성 관리</a></li>
-<li><a href="#3-2-%EC%82%AC%EC%9A%A9%EC%9D%98-%ED%8E%B8%EB%A6%AC%EC%84%B1">3-2. 사용의 편리성</a></li>
+<a href="#2-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 문제점은 무엇일까?</a><ul>
+<li><a href="#2-1-var">2-1. var</a></li>
+<li><a href="#2-2-var-vs-let-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%80">2-2. var VS let 차이점은?</a></li>
+<li><a href="#2-3-%EB%AC%B8%EC%A0%9C%EC%98%88%EC%8B%9C">2-3. 문제예시</a></li>
+<li><a href="#2-4-%ED%95%A8%EC%88%98%EC%9D%98-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-%EB%8F%99%EC%9D%BC%ED%95%98%EB%8B%A4">2-4. 함수의 경우에도 동일하다.</a></li>
 </ul>
 </li>
-<li><a href="#4-dependency--devdependencies-%EC%B0%A8%EC%9D%B4">4. dependency / devDependencies 차이</a></li>
-<li><a href="#5-npm-%EA%B4%80%EB%A0%A8-command">5. NPM 관련 Command</a></li>
+<li><a href="#3-%EC%9D%B4%EC%9C%A0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">3. 이유는 무엇일까?</a></li>
+<li><a href="#4-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EC%95%88%EC%9D%80">4. 해결 방안은?</a></li>
 </ul>
 
             </nav>
@@ -480,166 +481,153 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-npm-이란">1. NPM 이란?</h4>
-<hr>
-
-<p><strong>NPM(Node Package Manager)</strong>는 전 세계 자바스크립트 개발자들이 올려놓은 <strong>공개된 라이브러리 저장소</strong>에 올라와 있는
-<strong>자바스크립트 라이브러리</strong>를 명령어로 <strong>설치 및 관리</strong>할 수 있는 패키지 매니저 이다.</p>
-
-<h4 id="2-nodejs">2. Node.js</h4>
-<hr>
-
-<p><strong>Node.js</strong> 가 나오기 전까지 <strong>자바스크립트는 브라우저에서만 동작을 제어하는 용도</strong>로 한정적으로 사용되었지만, 
-<strong>Node.js</strong> 가 나온 이후 <strong>브라우저 밖에서도 자바스크립트를 실행</strong>할 수 있게 되었다.</p>
-
-<h4 id="3-npm-을-왜-사용할까">3. NPM 을 왜 사용할까?</h4>
-<hr>
-
-<p>모든 <strong>프레임워크</strong> 나 <strong>개발도구</strong> 등은 어떠한 <strong>편리함</strong>과 <strong>개발을 함에 있어서 도움을 주는 이유</strong>로 사용하게 된다.</p>
-
-<p>NPM 을 사용하는 이유는 너무나도 많지만 먼저 <strong>라이브러리 관리 측면</strong>에서 기록한다.</p>
-
-<p>프론트 개발을 하다보면 <strong>싱글 컴포넌트 파일의 특성상 많은 소스가 페이지 내에 함축</strong>되어 있다.
-하지만 우리가 특정 태그에서 특정 라이브러리가 필요하여 해당하는 Line 에서 script 태그를 통해 라이브러리를 가져오는 경우가 있을 수도 있다.</p>
-
-<p>예를들어 우리는 <strong>date-picker 라이브러리</strong>를 사용하고 싶다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/134016283-83368f2a-e4ef-4c5c-a23e-e6415349ca82.png" alt="image"></p>
-
-<p>이때 실제로 우리가 사용하는 DOM 에 위치해서 script 태그를 통해 그때그때 사용하고 싶은 라이브러리를 적용할 수 있을 것이다.</p>
-
-<p>하지만 이때의 <strong>문제점</strong>은 소스가 짧거나 사용하는 라이브러리가 적으면 문제가 없을 수 있겠지만 우리가 <strong>실무에 사용하는 소스는 대체적으로 짧지 않고 다양한 라이브러리를 사용하여 개발을 진행하는 경우도 있다.</strong></p>
-
-<p>우리는 <strong>라이브러리 간의 의존성</strong>을 염두해두어야 하기 때문에 각 <strong>라이브러리 간의 의존성을 관리</strong>해야 한다.</p>
-
-<p>따라서, 이러한 이유는 우리가 다음과 같은 측면에서 NPM 을 사용할 수 있을 것이다.</p>
-
-<h5 id="3-1-의존성-관리">3-1. 의존성 관리</h5>
-<hr>
-
-<p>NPM 을 통해 개발을 진행하게 되면 <strong>추가적인 라이브러리를 사용</strong>할 때 우리가 어떤 <strong>라이브러리 , 버전</strong>을 사용하고 있는지 <strong>package.json</strong> 에서 확인할 수 있다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>jquery-ui
-npm i jquery-ui
-</code></pre></div></div>
-<p><img src="https://user-images.githubusercontent.com/56063287/134018064-145b6021-6fc2-46ce-a568-3ad26273cc04.png" alt="image"></p>
-
-<p>jquery-ui 라이브러리를 설치 후 우리는 package.json 에서 위 사진과 같이 <strong>관련 정보를 쉽게 볼 수 있다.</strong></p>
-
-<h5 id="3-2-사용의-편리성">3-2. 사용의 편리성</h5>
-<hr>
-
-<p>우리는 특정 라이브러리를 사용하고 싶을때 필요한 부분에서 <strong>CDN 스크립트를 이용해 라이브러리를 가져오는 경우</strong>가 있을 수 있다.</p>
-
-<p>이럴경우 우리는 번거롭지만 인터넷을 들어가 cdn 을 검색하고 사이트를 들어가 버전에 맞는 cdn 을 찾아서 가져와야한다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/134018381-8e36af44-2eaa-40f7-9ee0-75086e8679ac.png" alt="image"></p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/134018411-9732e6c7-61aa-4aac-b54d-2a6c02b00e0a.png" alt="image"></p>
-
-<p>위와 같은 작업을 위한 개발자들의 수고로움을 덜어주는 것이 NPM 이라고 생각하면 될 것이다.</p>
-
-<p>우리는 단 한줄의 Command 로 <strong>위 작업과 동일한 결과를 얻을 수 있다.</strong>
-즉, Command 한줄로 <strong>최신버전의 라이브러리</strong>를 가져와 사용할 수 있다.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install jquery
-</code></pre></div></div>
-
-<p>또한, NPM 을 통해서 설치 시 <strong>현재 프로젝트 내 node_modules 아래 패키지가 설치되어 직접 가져다 사용할 수 있다는 장점</strong>이 있다.</p>
-
-<h4 id="4-dependency--devdependencies-차이">4. dependency / devDependencies 차이</h4>
-<hr>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install [라이브러리] --save-dev
-or
-npm i [라이브러리] -D
-</code></pre></div></div>
-
-<p>설치 명령어는 위에서 설명한 <code class="language-plaintext highlighter-rouge">npm install [라이브러리]</code> 가 있고 추가로 위에 적힌 <code class="language-plaintext highlighter-rouge">--save-dev</code> <strong>옵션</strong>이 있다.</p>
-
-<p>기존 <code class="language-plaintext highlighter-rouge">npm install [라이브러리]</code> 또한 <code class="language-plaintext highlighter-rouge">--save-prod</code> 가 생략되어 있는것이기 때문에 이점도 알아두면 좋다.</p>
-
-<p><strong>그럼 왜 나누어서 하게되는가? 그리고 차이는 무엇이 있을까?</strong>
-이유는 각 <strong>라이브러리의 역할</strong>에 따라 나누게 된다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* dependecies 는 배포용 라이브러리 즉, Application 로직과 직접적으로 관련되 있는 유틸성 라이브러리
-react, angular 등
-
-* devDependencies는 개발용 라이브러리 즉, 
-webPack, js-compression, sass 등 개발간 보조로 도움을 주는 라이브러리 등
-</code></pre></div></div>
-
-<p>즉, <strong>개인적으로 화면조작이나 실제 개발 빌드에 연관</strong>이 없는 라이브러리는 <code class="language-plaintext highlighter-rouge">-D</code> 옵션으로 설치하는 것이 좋다.</p>
-
-<p><strong>빌드를 하고 최종 서버에 배포할때는 devDependecies 에 설치된 라이브러리는 배포되지 않는다.</strong></p>
-
-<p>설치를 하게되면 package.json 은 아래와 같이 나누어서 작성이 되게 된다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/134019365-25e6286a-d106-4607-8510-704c37000bbb.png" alt="image"></p>
-
-<h4 id="5-npm-관련-command">5. NPM 관련 Command</h4>
+<h4 id="1-호이스팅이란">1. 호이스팅이란?</h4>
 <hr>
 
 <ul>
-  <li>Node 버전 확인</li>
+  <li>호이스팅이란 <strong><em>끌어 올리다</em></strong> 의 뜻으로 이해하면 된다.</li>
+  <li>우리가 알고 있는 여러 언어들은 통상 일반적으로 <strong>함수 또는 변수</strong>를 <strong>선언</strong>한 후에 <strong>아래 라인</strong>에서 선언한 것들을 <strong>사용 가능</strong> 하지만 <strong>Javascript</strong> 의 경우에는 <strong>함수 또는 변수</strong>를 <strong>선언하기 전</strong>에 <strong>사용해도 에러가 나지 않는 현상</strong>을 말한다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node -v
-</code></pre></div></div>
+<h4 id="2-문제점은-무엇일까">2. 문제점은 무엇일까?</h4>
+<hr>
 
 <ul>
-  <li>NPM 버전 확인</li>
+  <li>개발자들이 생각하는 논리적인 흐름과는 조금 다른 순서로 구동되는 경우가 생기기 때문에 이를 통한 뜻하지 않은 이슈가 발생할 수 있다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm -v
-</code></pre></div></div>
+<h5 id="2-1-var">2-1. var</h5>
+<hr>
 
 <ul>
-  <li>NPM 초기화</li>
+  <li>var 키워드는 레거시 시스템에서 많이 쓰였으나, var 키워드를 사용하므로써 발생하는 호이스팅 이슈와 여러가지 부족한점이 있어 현재는 많이 쓰이지 않고 let, const 로 대체 되었다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init (-y)
-</code></pre></div></div>
+<h5 id="2-2-var-vs-let-차이점은">2-2. var VS let 차이점은?</h5>
+<hr>
 
 <ul>
-  <li>NPM 설치</li>
+  <li>var 의 경우 여러번 동일한 변수를 선언해도 에러가 발생하지 않는다. 즉, 동일한 변수를 동일 코드 안에서 여러번 선언해도 문제가 되지 않는다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
--- 특정 라이브러리 설치
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
 
-npm install [라이브러리명]
 </code></pre></div></div>
 <ul>
-  <li>NPM 삭제</li>
+  <li>var 는 const 와 달리 값을 여러번 변경이 가능하다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm uninstall [라이브러리명]
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 4</span>
+
 </code></pre></div></div>
 
-<ul>
-  <li>전역(Global) 설치</li>
-</ul>
+<h5 id="2-3-문제예시">2-3. 문제예시</h5>
+<hr>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install [라이브러리명] --global
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="c1">// 결과</span>
+<span class="kc">undefined</span>
+<span class="mi">10</span>
 </code></pre></div></div>
 
-<p>설치간 Permission 문제로 설치가 되지 않을때는 <code class="language-plaintext highlighter-rouge">sudo npm install [라이브러리] --globel</code> 로 설치를 진행한다.</p>
+<p>위 코드에서 <strong>a 는 4번째 줄에서 선언</strong>되었기 때문에 <strong>첫번쨰 console</strong> 에서 a 가 선언되지 않았다는 <strong>오류</strong>가 나야될 것 이다. <strong>하지만</strong> <strong>첫번째줄에서 에러</strong>가 나지않고 <strong>undefined</strong> 가 출력된다.</p>
 
-<p><strong>global 옵션</strong>을 붙여서 설치할 경우 <strong>프로젝트 내 node_modules 에 따로 패키지 폴더가 생성되지 않는다.</strong></p>
+<p>통상 우리가 생각하는 코드는 아래와 같이 될 것이다.</p>
 
-<p>대신 시스템 내 <strong>특정 루트에 node_modules 가 생성</strong>되서 설치가된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/134019852-90a3d7d8-4ceb-4c12-955c-822245030c96.png" alt="image"></p>
-
-<p>이처럼 global로 설치하는 이유는</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 시스템상에서 명령어를 제공할 수 있도록하기 위함
-2. CLI 를 사용할 수 있도록 하는 라이브러리들은 우리가 실제 운영배포에 필요한 내용이 아니기 때문에
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 </code></pre></div></div>
-<p>이렇게 정리하면 될 것이며, 본인이 참고하고 강의를 듣는 <a href="https://joshua1988.github.io/webpack-guide/build/npm-module-install.html#npm-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%B9%98-%EA%B2%BD%EB%A1%9C">강사의 사이트</a>에서 더 자세하게 확인 할 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/141645301-b21809c1-f02d-46f7-9185-827c02b844bb.png" alt="image"></p>
+
+<p>위 결과와 같이 <strong>var 가 아닌 let</strong> 으로 사용할 경우 당연하게 <strong>a가 선언</strong>되기 전 console 에서 부를때는 <strong>오류가 발생</strong>한다.</p>
+
+<h5 id="2-4-함수의-경우에도-동일하다">2-4. 함수의 경우에도 동일하다.</h5>
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myfunction</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Test</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위와 같이 함수가 선언되기 전에 사용하였음에도 불구하고 정상적으로 Test 가 출력된다.</p>
+
+<h4 id="3-이유는-무엇일까">3. 이유는 무엇일까?</h4>
+<hr>
+
+<ol>
+  <li>
+    <p>javascript 는 함수 및 변수 선언을 실행하기 전 가장 위로 옮겨서 실행한다고 생각하면 될 것같다.</p>
+  </li>
+  <li>
+    <p>javascript 가 실행되게 되면 코드 내 <strong>var 로 선언된 변수</strong>와 <strong>함수</strong>를 찾고 <strong>맨위로 이동</strong>시켜 가장먼저 실행시키고 나머지 코드가 실행되기 때문에 먼저 console 을 불렀음에도 선언은 되어 있고 단지 할당이 되지 않아 <strong>undefined</strong> 가 출력된다고 보면 될 것이다.</p>
+  </li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="c1">// 위 코드는 아래와 같이 실행된다.</span>
+
+<span class="kd">var</span> <span class="nx">a</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="4-해결-방안은">4. 해결 방안은?</h4>
+<hr>
+
+<ol>
+  <li>
+<strong>var</strong>를 사용하기 보단 <strong>let , const</strong> 를 사용하여야 한다.</li>
+  <li>함수 선언을 표현식으로 사용한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 함수 표현식으로 사용</span>
+
+<span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">myFunction</span><span class="p">();</span>
+
+</code></pre></div></div>
 
 
         
@@ -649,23 +637,22 @@ npm install [라이브러리명]
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=NPM%28Node+Package+Manager%29%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FNPM%28Node-Package-Manager%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Javascript+Hoisting%28%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%29%EC%97%90+%EA%B4%80%ED%95%98%EC%97%AC%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FHoisting%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FNPM%28Node-Package-Manager%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FHoisting%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FNPM%28Node-Package-Manager%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FHoisting%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EC%9C%A0%ED%9A%A8%ED%95%9C-%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A3%B8/" class="pagination--pager" title="유효한 팰린드룸
+      <a href="/javascript/ES6-javascript/" class="pagination--pager" title="ES6에서 추가된 문법
 ">Previous</a>
     
     
-      <a href="/algorithm/%EA%B0%80%EC%9E%A5-%EC%A7%A7%EC%9D%80-%EA%B1%B0%EB%A6%AC-%EA%B5%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="가장 짧은 거리 구하기
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -679,57 +666,6 @@ npm install [라이브러리명]
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/Hoisting/" rel="permalink">Javascript Hoisting(호이스팅)에 관하여
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.10
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -872,6 +808,72 @@ npm install [라이브러리명]
         
         
         <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/javascript-Object/" rel="permalink">JavaScript 객체 / Prototype
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.07
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Arrow Function</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Object</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">property</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">prototype</a>
         
     </span>
 </span>

@@ -199,7 +199,13 @@ var store = [{
       },{
         "title": "ES6에서 추가된 문법",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 삼항 연산자 조건문을 좀 더 간결하게 사용할 수 있다. const data = 3; if(data === 3) { console.log(\"S\"); } else { console.log(\"F\"); } 위 조건문을 삼항연산자를 통해 작성하면 아래와 같다 data === 3 ? console.log(\"S\") : console.log(\"F\"); 2. 함수 Default 값 설정...","categories": ["JavaScript"],
-        "tags": ["JavaScript","ES6","Array"],
+        "tags": ["JavaScript","ES6 추가 문법"],
         "url": "/javascript/ES6-javascript/",
+        "teaser": null
+      },{
+        "title": "Javascript Hoisting(호이스팅)에 관하여",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 호이스팅이란? 호이스팅이란 끌어 올리다 의 뜻으로 이해하면 된다. 우리가 알고 있는 여러 언어들은 통상 일반적으로 함수 또는 변수를 선언한 후에 아래 라인에서 선언한 것들을 사용 가능 하지만 Javascript 의 경우에는 함수 또는 변수를 선언하기 전에 사용해도 에러가 나지 않는 현상을 말한다. 2....","categories": ["JavaScript"],
+        "tags": ["JavaScript","Hoisting(호이스팅)"],
+        "url": "/javascript/Hoisting/",
         "teaser": null
       }]

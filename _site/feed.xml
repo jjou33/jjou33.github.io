@@ -1,4 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-11T22:16:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">ES6에서 추가된 문법</title><link href="http://localhost:4000/javascript/ES6-javascript/" rel="alternate" type="text/html" title="ES6에서 추가된 문법" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>http://localhost:4000/javascript/ES6%20javascript</id><content type="html" xml:base="http://localhost:4000/javascript/ES6-javascript/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-13T22:33:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Javascript Hoisting(호이스팅)에 관하여</title><link href="http://localhost:4000/javascript/Hoisting/" rel="alternate" type="text/html" title="Javascript Hoisting(호이스팅)에 관하여" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>http://localhost:4000/javascript/Hoisting</id><content type="html" xml:base="http://localhost:4000/javascript/Hoisting/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-호이스팅이란&quot;&gt;1. 호이스팅이란?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;호이스팅이란 &lt;strong&gt;&lt;em&gt;끌어 올리다&lt;/em&gt;&lt;/strong&gt; 의 뜻으로 이해하면 된다.&lt;/li&gt;
+  &lt;li&gt;우리가 알고 있는 여러 언어들은 통상 일반적으로 &lt;strong&gt;함수 또는 변수&lt;/strong&gt;를 &lt;strong&gt;선언&lt;/strong&gt;한 후에 &lt;strong&gt;아래 라인&lt;/strong&gt;에서 선언한 것들을 &lt;strong&gt;사용 가능&lt;/strong&gt; 하지만 &lt;strong&gt;Javascript&lt;/strong&gt; 의 경우에는 &lt;strong&gt;함수 또는 변수&lt;/strong&gt;를 &lt;strong&gt;선언하기 전&lt;/strong&gt;에 &lt;strong&gt;사용해도 에러가 나지 않는 현상&lt;/strong&gt;을 말한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-문제점은-무엇일까&quot;&gt;2. 문제점은 무엇일까?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;개발자들이 생각하는 논리적인 흐름과는 조금 다른 순서로 구동되는 경우가 생기기 때문에 이를 통한 뜻하지 않은 이슈가 발생할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;2-1-var&quot;&gt;2-1. var&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;var 키워드는 레거시 시스템에서 많이 쓰였으나, var 키워드를 사용하므로써 발생하는 호이스팅 이슈와 여러가지 부족한점이 있어 현재는 많이 쓰이지 않고 let, const 로 대체 되었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;2-2-var-vs-let-차이점은&quot;&gt;2-2. var VS let 차이점은?&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;var 의 경우 여러번 동일한 변수를 선언해도 에러가 발생하지 않는다. 즉, 동일한 변수를 동일 코드 안에서 여러번 선언해도 문제가 되지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;var 는 const 와 달리 값을 여러번 변경이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 4&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;2-3-문제예시&quot;&gt;2-3. 문제예시&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 결과&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드에서 &lt;strong&gt;a 는 4번째 줄에서 선언&lt;/strong&gt;되었기 때문에 &lt;strong&gt;첫번쨰 console&lt;/strong&gt; 에서 a 가 선언되지 않았다는 &lt;strong&gt;오류&lt;/strong&gt;가 나야될 것 이다. &lt;strong&gt;하지만&lt;/strong&gt; &lt;strong&gt;첫번째줄에서 에러&lt;/strong&gt;가 나지않고 &lt;strong&gt;undefined&lt;/strong&gt; 가 출력된다.&lt;/p&gt;
+
+&lt;p&gt;통상 우리가 생각하는 코드는 아래와 같이 될 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/141645301-b21809c1-f02d-46f7-9185-827c02b844bb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 결과와 같이 &lt;strong&gt;var 가 아닌 let&lt;/strong&gt; 으로 사용할 경우 당연하게 &lt;strong&gt;a가 선언&lt;/strong&gt;되기 전 console 에서 부를때는 &lt;strong&gt;오류가 발생&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-4-함수의-경우에도-동일하다&quot;&gt;2-4. 함수의 경우에도 동일하다.&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;myfunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 함수가 선언되기 전에 사용하였음에도 불구하고 정상적으로 Test 가 출력된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-이유는-무엇일까&quot;&gt;3. 이유는 무엇일까?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;javascript 는 함수 및 변수 선언을 실행하기 전 가장 위로 옮겨서 실행한다고 생각하면 될 것같다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;javascript 가 실행되게 되면 코드 내 &lt;strong&gt;var 로 선언된 변수&lt;/strong&gt;와 &lt;strong&gt;함수&lt;/strong&gt;를 찾고 &lt;strong&gt;맨위로 이동&lt;/strong&gt;시켜 가장먼저 실행시키고 나머지 코드가 실행되기 때문에 먼저 console 을 불렀음에도 선언은 되어 있고 단지 할당이 되지 않아 &lt;strong&gt;undefined&lt;/strong&gt; 가 출력된다고 보면 될 것이다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 위 코드는 아래와 같이 실행된다.&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;4-해결-방안은&quot;&gt;4. 해결 방안은?&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;var&lt;/strong&gt;를 사용하기 보단 &lt;strong&gt;let , const&lt;/strong&gt; 를 사용하여야 한다.&lt;/li&gt;
+  &lt;li&gt;함수 선언을 표현식으로 사용한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;TEST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 함수 표현식으로 사용&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;TEST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;TEST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Hoisting(호이스팅)" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">ES6에서 추가된 문법</title><link href="http://localhost:4000/javascript/ES6-javascript/" rel="alternate" type="text/html" title="ES6에서 추가된 문법" /><published>2021-11-10T00:00:00+09:00</published><updated>2021-11-10T00:00:00+09:00</updated><id>http://localhost:4000/javascript/ES6%20javascript</id><content type="html" xml:base="http://localhost:4000/javascript/ES6-javascript/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -28,28 +175,30 @@
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;인자값이 없을 경우 undefined 출력
-```js
-function printName(name) {
-console.log(name);
-}&lt;/li&gt;
+  &lt;li&gt;인자값이 없을 경우 undefined 출력&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;printName(); // undefined&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-* Default 값 설정
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-```js
-function printName(name=&quot;hyunwoo&quot;) {
-  console.log(name);
-}
+&lt;span class=&quot;nx&quot;&gt;printName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-function printName2(age, name=&quot;hyunwoo&quot;) {
-  console.log(age, name);
-}
+&lt;ul&gt;
+  &lt;li&gt;Default 값 설정&lt;/li&gt;
+&lt;/ul&gt;
 
-printName2(3); // 3, hyunwoo
-printName2(&quot;suKyung&quot;); // suKyung , hyunwoo
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hyunwoo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printName2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hyunwoo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;printName2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3, hyunwoo&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;printName2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;suKyung&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// suKyung , hyunwoo&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;위와 같이 기본값으로 설정한 값이 나와 이슈발생에 대한 방어가 가능하다.&lt;/p&gt;
 
@@ -162,48 +311,70 @@ printName2(&quot;suKyung&quot;); // suKyung , hyunwoo
 
 &lt;ul&gt;
   &lt;li&gt;Rest 파라메터를 통해 인자값을 배열로 할당 및 사용 가능하다.&lt;/li&gt;
-  &lt;li&gt;원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.
-```js&lt;/li&gt;
+  &lt;li&gt;원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;function getRestData(…rest) {
-  let [v1,v2,v3,v4,v5] = rest;
-  console.log(rest); // [1,2,3,4,5]
-  console.log(v1,v2,v3,v4,v5); // 1,2,3,4,5
-}&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getRestData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1,2,3,4,5]&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1,2,3,4,5&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;// a,b 는 개별적으로 넣고 나머지는 rest 파라미터 사용
-function getRestData2(a,b,…rest) {
-  console.log(a,b, rest);
-}
-getRestData(1,2,3,4,5); 
-getRestData2(1,2,3,4,5); // 1 2 [3, 4, 5]&lt;/p&gt;
+&lt;span class=&quot;c1&quot;&gt;// a,b 는 개별적으로 넣고 나머지는 rest 파라미터 사용&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getRestData2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;getRestData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;getRestData2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1 2 [3, 4, 5]&lt;/span&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 
-#### 7. Spread 파라미터
-***
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-* 정의 방법은 Rest 와 같이 ...을 붙여 사용
-* iterable한(반복가능한 ex.문자, 배열) 변수 앞에 붙여서 해당 변수의 데이터를 개별 아이템으로 분리
+&lt;h4 id=&quot;7-spread-파라미터&quot;&gt;7. Spread 파라미터&lt;/h4&gt;
+&lt;hr /&gt;
 
-```js
-// 일반적인 기능
-let arr = [1,2,3];
+&lt;ul&gt;
+  &lt;li&gt;정의 방법은 Rest 와 같이 …을 붙여 사용&lt;/li&gt;
+  &lt;li&gt;iterable한(반복가능한 ex.문자, 배열) 변수 앞에 붙여서 해당 변수의 데이터를 개별 아이템으로 분리&lt;/li&gt;
+&lt;/ul&gt;
 
-console.log(...arr);
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 일반적인 기능&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-// 배열에 개별 파라미터로 삽입
-function temp(a, b, c) {
-  console.log(a); // 1
-  console.log(b); // 2
-  console.log(c); // 3
-}
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-let data = [1, 2, 3];
-temp(...data);
+&lt;span class=&quot;c1&quot;&gt;// 배열에 개별 파라미터로 삽입&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="ES6" /><category term="Array" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">ES6 Array 배열</title><link href="http://localhost:4000/javascript/ES6-Array/" rel="alternate" type="text/html" title="ES6 Array 배열" /><published>2021-11-09T00:00:00+09:00</published><updated>2021-11-09T00:00:00+09:00</updated><id>http://localhost:4000/javascript/ES6%20Array</id><content type="html" xml:base="http://localhost:4000/javascript/ES6-Array/">&lt;hr /&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 새로운 배열 구성&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// [1,2,3,4,5,6]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;8-concat&quot;&gt;8. concat&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 배열 합치기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="ES6 추가 문법" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">ES6 Array 배열</title><link href="http://localhost:4000/javascript/ES6-Array/" rel="alternate" type="text/html" title="ES6 Array 배열" /><published>2021-11-09T00:00:00+09:00</published><updated>2021-11-09T00:00:00+09:00</updated><id>http://localhost:4000/javascript/ES6%20Array</id><content type="html" xml:base="http://localhost:4000/javascript/ES6-Array/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -718,79 +889,7 @@ temp(...data);
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Arrow Function" /><category term="prototype" /><category term="property" /><category term="Object" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">MAC 에서 사용중인 Port 죽이기</title><link href="http://localhost:4000/mac/Port-Kill/" rel="alternate" type="text/html" title="MAC 에서 사용중인 Port 죽이기" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/mac/Port%20Kill</id><content type="html" xml:base="http://localhost:4000/mac/Port-Kill/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;mac-사용중인-포트의-pid-찾기&quot;&gt;MAC 사용중인 포트의 PID 찾기&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-command&quot;&gt;sudo lsof -i:포트번호
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&quot;사용중인-포트-종료하기&quot;&gt;사용중인 포트 종료하기&lt;/h5&gt;
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// PID 조회
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;lsof &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;:4000
-
-COMMAND  PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;LISTEN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;강제 종료 커맨드&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; 4020
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PID]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="mac" /><category term="MAC OS" /><category term="Port Kill" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">JavaScript 문법 중 기억할 것</title><link href="http://localhost:4000/javascript/basic-language-skill/" rel="alternate" type="text/html" title="JavaScript 문법 중 기억할 것" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/javascript/basic%20language%20skill</id><content type="html" xml:base="http://localhost:4000/javascript/basic-language-skill/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-null-vs-undefined&quot;&gt;1. NULL VS undefined&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;NULL : 값이 없음을 나타낸다.&lt;/li&gt;
-  &lt;li&gt;undefined : 값이 할당되지 않았음을 나타낸다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;1-1-예제&quot;&gt;1-1. 예제&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h5 id=&quot;1-1-결과&quot;&gt;1-1. 결과&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/140332620-9b3809f8-c95c-4343-b086-6a0471771258.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;** undefined 의 경우는 타입과 값이 모두 ‘undefined’ 로 나오지만 null 의 경우 타입이 Object 로 출력되는 것을 기억하자 **&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-symbol&quot;&gt;2. Symbol&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;ES6에서 처음 추가된 타입으로 unique 한 값을 만들기 때문에 필요 시 사용한다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-1-예제&quot;&gt;2-1. 예제&lt;/h5&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// false &lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;3-동등-연산자-vs-일치-연산자&quot;&gt;3. ==(동등 연산자) VS ===(일치 연산자)&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동등 연산자 : 양쪽의 값이 같은지 확인&lt;/li&gt;
-  &lt;li&gt;일치 연산자 : 값 및 데이터 타입 둘다 같은지를 확인한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 에 대한 정의와 배경, 사용이유</title><link href="http://localhost:4000/webpack/webpack-definition/" rel="alternate" type="text/html" title="Webpack 에 대한 정의와 배경, 사용이유" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20definition</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-definition/">&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="Arrow Function" /><category term="prototype" /><category term="property" /><category term="Object" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 에 대한 정의와 배경, 사용이유</title><link href="http://localhost:4000/webpack/webpack-definition/" rel="alternate" type="text/html" title="Webpack 에 대한 정의와 배경, 사용이유" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20definition</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-definition/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -906,7 +1005,79 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
 
 &lt;p&gt;이러한 점에서 Lazy Loading 이 등장하기도 하였고 웹팩이 가지고 있는 기본적인 철학 또한 미리 자원을 로딩하여 페이지 렌더링의 속도를 느리게 하는것이 아닌 실제로 브라우저에서 노출이 필요할때 그때 그때 요청하자는 철학을 가지고 있다고 한다.&lt;/p&gt;
 
-&lt;p&gt;이러한 모든 면을 보았을때 웹팩은 우리가 이시대의 프론트 개발자로써 반드시 숙지하고 효과적으로 사용할 줄 알아야 할 것이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Webpack Definition" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">Webpack First Principle 영상 리뷰</title><link href="http://localhost:4000/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/" rel="alternate" type="text/html" title="Webpack First Principle 영상 리뷰" /><published>2021-11-01T00:00:00+09:00</published><updated>2021-11-01T00:00:00+09:00</updated><id>http://localhost:4000/webpack/Webpack%20First%20Principle%20%EC%98%81%EC%83%81%20%EB%A6%AC%EB%B7%B0</id><content type="html" xml:base="http://localhost:4000/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/">&lt;hr /&gt;
+&lt;p&gt;이러한 모든 면을 보았을때 웹팩은 우리가 이시대의 프론트 개발자로써 반드시 숙지하고 효과적으로 사용할 줄 알아야 할 것이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Webpack Definition" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">MAC 에서 사용중인 Port 죽이기</title><link href="http://localhost:4000/mac/Port-Kill/" rel="alternate" type="text/html" title="MAC 에서 사용중인 Port 죽이기" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/mac/Port%20Kill</id><content type="html" xml:base="http://localhost:4000/mac/Port-Kill/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;mac-사용중인-포트의-pid-찾기&quot;&gt;MAC 사용중인 포트의 PID 찾기&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-command&quot;&gt;sudo lsof -i:포트번호
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&quot;사용중인-포트-종료하기&quot;&gt;사용중인 포트 종료하기&lt;/h5&gt;
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// PID 조회
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;lsof &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;:4000
+
+COMMAND  PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabase &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;LISTEN&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;강제 종료 커맨드&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; 4020
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PID]&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="mac" /><category term="MAC OS" /><category term="Port Kill" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">JavaScript 문법 중 기억할 것</title><link href="http://localhost:4000/javascript/basic-language-skill/" rel="alternate" type="text/html" title="JavaScript 문법 중 기억할 것" /><published>2021-11-04T00:00:00+09:00</published><updated>2021-11-04T00:00:00+09:00</updated><id>http://localhost:4000/javascript/basic%20language%20skill</id><content type="html" xml:base="http://localhost:4000/javascript/basic-language-skill/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-null-vs-undefined&quot;&gt;1. NULL VS undefined&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;NULL : 값이 없음을 나타낸다.&lt;/li&gt;
+  &lt;li&gt;undefined : 값이 할당되지 않았음을 나타낸다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;1-1-예제&quot;&gt;1-1. 예제&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;1-1-결과&quot;&gt;1-1. 결과&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/140332620-9b3809f8-c95c-4343-b086-6a0471771258.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;** undefined 의 경우는 타입과 값이 모두 ‘undefined’ 로 나오지만 null 의 경우 타입이 Object 로 출력되는 것을 기억하자 **&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-symbol&quot;&gt;2. Symbol&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;ES6에서 처음 추가된 타입으로 unique 한 값을 만들기 때문에 필요 시 사용한다.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-1-예제&quot;&gt;2-1. 예제&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// false &lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3-동등-연산자-vs-일치-연산자&quot;&gt;3. ==(동등 연산자) VS ===(일치 연산자)&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동등 연산자 : 양쪽의 값이 같은지 확인&lt;/li&gt;
+  &lt;li&gt;일치 연산자 : 값 및 데이터 타입 둘다 같은지를 확인한다.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack First Principle 영상 리뷰</title><link href="http://localhost:4000/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/" rel="alternate" type="text/html" title="Webpack First Principle 영상 리뷰" /><published>2021-11-01T00:00:00+09:00</published><updated>2021-11-01T00:00:00+09:00</updated><id>http://localhost:4000/webpack/Webpack%20First%20Principle%20%EC%98%81%EC%83%81%20%EB%A6%AC%EB%B7%B0</id><content type="html" xml:base="http://localhost:4000/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -972,122 +1143,4 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
   &lt;li&gt;
     &lt;p&gt;웹팩은 개발자를 위한 도구이며, 웹 서비스에 필요한 여러 요소(CSS, HTML, Font, Javscript..)들의 사용성을 한층 높힐 수 있다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Webpack from firstprinciples" /><category term="youtude" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">Webpack 변환 전/후 성능비교</title><link href="http://localhost:4000/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/" rel="alternate" type="text/html" title="Webpack 변환 전/후 성능비교" /><published>2021-10-31T00:00:00+09:00</published><updated>2021-10-31T00:00:00+09:00</updated><id>http://localhost:4000/webpack/Webpack%20%EB%B3%80%ED%99%98%20%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90</id><content type="html" xml:base="http://localhost:4000/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-변환-전-소스-및-성능&quot;&gt;1. 변환 전 소스 및 성능&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;h5 id=&quot;1-1-indexhtml&quot;&gt;1-1. index.html&lt;/h5&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- index.html --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Webpack Demo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://unpkg.com/lodash@4.16.6&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;src/index.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;script src=&quot;dist/main.js&quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;1-2-indexjs&quot;&gt;1-2. index.js&lt;/h5&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;cm&quot;&gt;/* lodash is required for the next line to work */&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;webpack&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;1-3-변환-전-성능&quot;&gt;1-3. 변환 전 성능&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/139588099-79321dc1-36e4-4aac-adf0-fadec0137b9e.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-webpack-변환-후&quot;&gt;2. Webpack 변환 후&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;2-1-indexhtml&quot;&gt;2-1. index.html&lt;/h5&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- index.html --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Webpack Demo&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;script src=&quot;https://unpkg.com/lodash@4.16.6&quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;script src=&quot;src/index.js&quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dist/main.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;2-2-indexjs&quot;&gt;2-2. index.js&lt;/h5&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;lodash&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;cm&quot;&gt;/* lodash is required for the next line to work */&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;webpack&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;2-3-webpackconfigjs&quot;&gt;2-3. webpack.config.js&lt;/h5&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./src/index.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;main.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;2-4-변환-후-성능&quot;&gt;2-4. 변환 후 성능&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/139588329-9c6380eb-49f2-4d0e-a32c-c9e7ebbe551d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-build-결과distmainjs&quot;&gt;3. build 결과(dist/main.js)&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;웹팩 결과 파일 디렉터리 패스&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/139588367-bf29fee6-13e3-4c34-a96b-fbf8b9b7a1f0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-정리&quot;&gt;4. 정리&lt;/h4&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;변환 전의 경우에는 html 에서 sciprt 내 cdn 으로 불러왔기 때문에 lodash.js, index.js 를 호출하게 된다.&lt;/p&gt;
-
-&lt;p&gt;하지만 변환 후에는 main.js 에서 하나로 합쳐서 호출하기 때문에 호출하는 빈도가 줄어 페이지를 로딩할 때 속도 측면에서 큰 차이를 불러올 것이다.&lt;/p&gt;
-
-&lt;p&gt;위 테스트의 경우에는 간단한 테스트지만 코드가 복잡해지고 시스템 규모가 커질수록 속도나 효율성 측면에서 큰 차이를 불러올 것이므로 이에 대한 효과를 기록한다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;main.js 호출 내 index.js&lt;/strong&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/139588411-e1a54d98-a89f-49ac-a372-416f2a0b0fb3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;main.js 호출 내 lodash 관련&lt;/strong&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/139588441-bfd89e6e-7e5c-4ff4-969d-b1dcb5366f2b.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 에서 볼 수 있듯이 우리가 호출한 index.js, lodash 등을 main.js 에서 하나로 합쳐서 호출한다는 개념이 Webpack 의 기본이라고 생각하면 될 것 이다.&lt;/p&gt;
-
-&lt;p&gt;이러한 점으로 인해서 우리는 Webpack 을 왜 사용하는가? 라는 물음에 조금이나마 이해하고 앞으로 발전해나갈 수 있는 토대가 될 것이기에 기록에 남긴다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="성능비교" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Webpack from firstprinciples" /><category term="youtude" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry></feed>

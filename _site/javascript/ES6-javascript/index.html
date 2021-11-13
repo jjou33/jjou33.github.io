@@ -262,7 +262,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            <img class="emoji" title=":books:" alt=":books:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" height="20" width="20"> <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅  <span style="font-family:'Coming Soon';">34 <span style="font-family:'Cafe24Oneprettynight';">개 
+            <img class="emoji" title=":books:" alt=":books:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" height="20" width="20"> <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅  <span style="font-family:'Coming Soon';">35 <span style="font-family:'Cafe24Oneprettynight';">개 
       </span></span></span>
 </li>
       <li>
@@ -289,7 +289,7 @@
                     
                 
                     
-                        <li><a href="/categories/JavaScript" class=""> Javascript Language (6)</a></li>
+                        <li><a href="/categories/JavaScript" class=""> Javascript Language (7)</a></li>
                     
                 
                     
@@ -420,9 +420,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Array</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">ES6</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">ES6 추가 문법</a><span class="sep"> </span>
     
       <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
     
@@ -476,6 +474,8 @@
 <li><a href="#4-%EB%B0%B0%EC%97%B4">4. 배열</a></li>
 <li><a href="#5-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%B6%84%EB%A6%AC-%EB%B0%8F-%EA%B0%9C%EB%B3%84-%EB%B3%80%EC%88%98-%EB%8C%80%EC%9E%85">5. 문자열 분리 및 개별 변수 대입</a></li>
 <li><a href="#6-rest-%ED%8C%8C%EB%9D%BC%EB%A9%94%ED%84%B0">6. Rest 파라메터</a></li>
+<li><a href="#7-spread-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0">7. Spread 파라미터</a></li>
+<li><a href="#8-concat">8. concat</a></li>
 </ul>
 
             </nav>
@@ -511,28 +511,30 @@
 <hr>
 
 <ul>
-  <li>인자값이 없을 경우 undefined 출력
-```js
-function printName(name) {
-console.log(name);
-}</li>
+  <li>인자값이 없을 경우 undefined 출력</li>
 </ul>
 
-<p>printName(); // undefined</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-* Default 값 설정
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
 
-```js
-function printName(name="hyunwoo") {
-  console.log(name);
-}
+<span class="nx">printName</span><span class="p">();</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
 
-function printName2(age, name="hyunwoo") {
-  console.log(age, name);
-}
+<ul>
+  <li>Default 값 설정</li>
+</ul>
 
-printName2(3); // 3, hyunwoo
-printName2("suKyung"); // suKyung , hyunwoo
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printName</span><span class="p">(</span><span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">hyunwoo</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printName2</span><span class="p">(</span><span class="nx">age</span><span class="p">,</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">hyunwoo</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">printName2</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// 3, hyunwoo</span>
+<span class="nx">printName2</span><span class="p">(</span><span class="dl">"</span><span class="s2">suKyung</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// suKyung , hyunwoo</span>
 </code></pre></div></div>
 <p>위와 같이 기본값으로 설정한 값이 나와 이슈발생에 대한 방어가 가능하다.</p>
 
@@ -645,47 +647,69 @@ printName2("suKyung"); // suKyung , hyunwoo
 
 <ul>
   <li>Rest 파라메터를 통해 인자값을 배열로 할당 및 사용 가능하다.</li>
-  <li>원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.
-```js</li>
+  <li>원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.</li>
 </ul>
 
-<p>function getRestData(…rest) {
-  let [v1,v2,v3,v4,v5] = rest;
-  console.log(rest); // [1,2,3,4,5]
-  console.log(v1,v2,v3,v4,v5); // 1,2,3,4,5
-}</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">getRestData</span><span class="p">(...</span><span class="nx">rest</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">,</span><span class="nx">v3</span><span class="p">,</span><span class="nx">v4</span><span class="p">,</span><span class="nx">v5</span><span class="p">]</span> <span class="o">=</span> <span class="nx">rest</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rest</span><span class="p">);</span> <span class="c1">// [1,2,3,4,5]</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">,</span><span class="nx">v3</span><span class="p">,</span><span class="nx">v4</span><span class="p">,</span><span class="nx">v5</span><span class="p">);</span> <span class="c1">// 1,2,3,4,5</span>
+<span class="p">}</span>
 
-<p>// a,b 는 개별적으로 넣고 나머지는 rest 파라미터 사용
-function getRestData2(a,b,…rest) {
-  console.log(a,b, rest);
-}
-getRestData(1,2,3,4,5); 
-getRestData2(1,2,3,4,5); // 1 2 [3, 4, 5]</p>
+<span class="c1">// a,b 는 개별적으로 넣고 나머지는 rest 파라미터 사용</span>
+<span class="kd">function</span> <span class="nx">getRestData2</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,...</span><span class="nx">rest</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span> <span class="nx">rest</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">getRestData</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> 
+<span class="nx">getRestData2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// 1 2 [3, 4, 5]</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-#### 7. Spread 파라미터
-***
+</code></pre></div></div>
 
-* 정의 방법은 Rest 와 같이 ...을 붙여 사용
-* iterable한(반복가능한 ex.문자, 배열) 변수 앞에 붙여서 해당 변수의 데이터를 개별 아이템으로 분리
+<h4 id="7-spread-파라미터">7. Spread 파라미터</h4>
+<hr>
 
-```js
-// 일반적인 기능
-let arr = [1,2,3];
+<ul>
+  <li>정의 방법은 Rest 와 같이 …을 붙여 사용</li>
+  <li>iterable한(반복가능한 ex.문자, 배열) 변수 앞에 붙여서 해당 변수의 데이터를 개별 아이템으로 분리</li>
+</ul>
 
-console.log(...arr);
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 일반적인 기능</span>
+<span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
 
-// 배열에 개별 파라미터로 삽입
-function temp(a, b, c) {
-  console.log(a); // 1
-  console.log(b); // 2
-  console.log(c); // 3
-}
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(...</span><span class="nx">arr</span><span class="p">);</span>
 
-let data = [1, 2, 3];
-temp(...data);
+<span class="c1">// 배열에 개별 파라미터로 삽입</span>
+<span class="kd">function</span> <span class="nx">temp</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 2</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span> <span class="c1">// 3</span>
+<span class="p">}</span>
 
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">temp</span><span class="p">(...</span><span class="nx">data</span><span class="p">);</span>
+
+<span class="c1">// 새로운 배열 구성</span>
+
+<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">data1</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">data</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data1</span><span class="p">);</span> <span class="c1">// [1,2,3,4,5,6]</span>
+
+</code></pre></div></div>
+
+<h4 id="8-concat">8. concat</h4>
+<hr>
+
+<ul>
+  <li>두 배열 합치기</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">myArr</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myArr</span><span class="p">);</span>
 </code></pre></div></div>
 
         
@@ -710,7 +734,8 @@ temp(...data);
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/javascript/Hoisting/" class="pagination--pager" title="Javascript Hoisting(호이스팅)에 관하여
+">Next</a>
     
   </nav>
 
@@ -724,6 +749,57 @@ temp(...data);
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/Hoisting/" rel="permalink">Javascript Hoisting(호이스팅)에 관하여
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.10
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
         
           
 
@@ -881,57 +957,6 @@ temp(...data);
         
         
         <a class="page__taxonomy-item-tag" rel="tag">prototype</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/Arrow-Function/" rel="permalink">ES6 Arrow Function
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.07
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Arrow Function</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
         
     </span>
 </span>

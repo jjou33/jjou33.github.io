@@ -6,8 +6,7 @@ categories:
   - JavaScript
 tags:
   - JavaScript
-  - ES6
-  - Array
+  - ES6 추가 문법
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
@@ -43,6 +42,8 @@ data === 3 ? console.log("S") : console.log("F");
 ***
 
 * 인자값이 없을 경우 undefined 출력
+
+
 ```js
 function printName(name) {
   console.log(name);
@@ -177,6 +178,8 @@ console.log(name, ifrst, last); // my name  is hyun  woo cho
 
 * Rest 파라메터를 통해 인자값을 배열로 할당 및 사용 가능하다.
 * 원하는 만큼만 Rest 파라미터에 넣어 적용할 수 있다.
+
+
 ```js
 
 function getRestData(...rest) {
@@ -218,4 +221,23 @@ function temp(a, b, c) {
 let data = [1, 2, 3];
 temp(...data);
 
+// 새로운 배열 구성
+
+let data = [1, 2, 3];
+let data1 = [...data, 5, 6];
+console.log(data1); // [1,2,3,4,5,6]
+
+```
+
+#### 8. concat
+***
+
+* 두 배열 합치기
+
+```js
+let arr1 = [1,2];
+let arr2 = [4,5];
+
+let myArr = arr1.concat(arr2);
+console.log(myArr);
 ```
