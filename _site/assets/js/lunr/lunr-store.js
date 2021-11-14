@@ -208,4 +208,16 @@ var store = [{
         "tags": ["JavaScript","Hoisting(호이스팅)"],
         "url": "/javascript/Hoisting/",
         "teaser": null
+      },{
+        "title": "Javascript Hoisting(호이스팅)에 관하여",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 호이스팅이란? 호이스팅이란 끌어 올리다 의 뜻으로 이해하면 된다. 우리가 알고 있는 여러 언어들은 통상 일반적으로 함수 또는 변수를 선언한 후에 아래 라인에서 선언한 것들을 사용 가능 하지만 Javascript 의 경우에는 함수 또는 변수를 선언하기 전에 사용해도 에러가 나지 않는 현상을 말한다. 2....","categories": ["JavaScript"],
+        "tags": ["JavaScript","Hoisting(호이스팅)"],
+        "url": "/javascript/Scope/",
+        "teaser": null
+      },{
+        "title": "동기 / 비동기 처리에 대한 이해",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 동기 / 비동기란? Syncronous(동기) : 요청을 보낸 후, 해당 요청을 기다렸다가 응답을 받은 다음 동작을 실행하는것 즉, 순차적으로 코드가 진행된다. Asyncronous(비동기) : 요청을 보낸 후, 응답을 기다리지 않고 다음 코드를 실행한다. Javascript 는 다른 언어와 마찬가지로 동기적 처리가 기본이지만, 일부 기능은 비동기로...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Syncronous","Asyncronous"],
+        "url": "/javascript/Syncronous/",
+        "teaser": null
       }]

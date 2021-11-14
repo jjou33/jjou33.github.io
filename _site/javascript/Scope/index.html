@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>후위식 연산(post fix) - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>Javascript Hoisting(호이스팅)에 관하여 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="후위식 연산(post fix)">
-<meta property="og:url" content="http://localhost:4000/algorithm/%ED%9B%84%EC%9C%84%EC%8B%9D-%EC%97%B0%EC%82%B0(post-fix)/">
+<meta property="og:title" content="Javascript Hoisting(호이스팅)에 관하여">
+<meta property="og:url" content="http://localhost:4000/javascript/Scope/">
 
 
-  <meta property="og:description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-10-20T00:00:00+09:00">
+  <meta property="og:description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-12T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%ED%9B%84%EC%9C%84%EC%8B%9D-%EC%97%B0%EC%82%B0(post-fix)/">
+
+<link rel="canonical" href="http://localhost:4000/javascript/Scope/">
 
 
 
@@ -384,15 +384,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="후위식 연산(post fix)">
-    <meta itemprop="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-10-20T00:00:00+09:00">
+    <meta itemprop="headline" content="Javascript Hoisting(호이스팅)에 관하여">
+    <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2021-11-12T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            후위식 연산(post fix)
+            Javascript Hoisting(호이스팅)에 관하여
 
           </h1>
           
@@ -420,11 +420,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Post Fix</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">Stack</a>
+      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
     
     </span>
   </p>
@@ -446,7 +444,7 @@
     
     
     
-    <a href="/categories/#algorithm" class="page__taxonomy-item-category" rel="tag">Algorithm</a>
+    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
     
 
   </span>
@@ -455,7 +453,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-10-20T00:00:00+09:00">October 20, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-12T00:00:00+09:00">November 12, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -465,9 +463,17 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EA%B1%B4">1. 문제 요건</a></li>
-<li><a href="#2-%EC%BD%94%EB%93%9C">2. 코드</a></li>
-<li><a href="#3-%EA%B2%B0%EA%B3%BC%EC%A0%95%EB%A6%AC">3. 결과정리</a></li>
+<li><a href="#1-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%9E%80">1. 호이스팅이란?</a></li>
+<li>
+<a href="#2-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 문제점은 무엇일까?</a><ul>
+<li><a href="#2-1-var">2-1. var</a></li>
+<li><a href="#2-2-var-vs-let-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%80">2-2. var VS let 차이점은?</a></li>
+<li><a href="#2-3-%EB%AC%B8%EC%A0%9C%EC%98%88%EC%8B%9C">2-3. 문제예시</a></li>
+<li><a href="#2-4-%ED%95%A8%EC%88%98%EC%9D%98-%EA%B2%BD%EC%9A%B0%EC%97%90%EB%8F%84-%EB%8F%99%EC%9D%BC%ED%95%98%EB%8B%A4">2-4. 함수의 경우에도 동일하다.</a></li>
+</ul>
+</li>
+<li><a href="#3-%EC%9D%B4%EC%9C%A0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">3. 이유는 무엇일까?</a></li>
+<li><a href="#4-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EC%95%88%EC%9D%80">4. 해결 방안은?</a></li>
 </ul>
 
             </nav>
@@ -475,49 +481,153 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-문제-요건">1. 문제 요건</h4>
-<hr>
-<p><strong>후위식 연산값</strong>을 입력받고 결과값을 리턴하여라</p>
-
-<h4 id="2-코드">2. 코드</h4>
+<h4 id="1-호이스팅이란">1. 호이스팅이란?</h4>
 <hr>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">lv</span> <span class="o">=</span> <span class="nx">rv</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="kd">let</span> <span class="nx">operator</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">+</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">-</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">]</span>
-    <span class="kd">let</span> <span class="nx">stack</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">rv</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
-            <span class="nx">lv</span> <span class="o">=</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
-            <span class="nx">stack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">fix</span><span class="p">(</span><span class="nx">rv</span><span class="p">,</span> <span class="nx">lv</span><span class="p">,</span> <span class="nx">x</span><span class="p">))</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">stack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
-<span class="p">}</span>
-<span class="kd">function</span> <span class="nx">fix</span><span class="p">(</span><span class="nx">rv</span><span class="p">,</span><span class="nx">lv</span><span class="p">,</span><span class="nx">op</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">op</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">+</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">lv</span> <span class="o">+</span> <span class="nx">rv</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">op</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">-</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">lv</span> <span class="o">-</span> <span class="nx">rv</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">op</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">lv</span> <span class="o">*</span> <span class="nx">rv</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">lv</span> <span class="o">/</span> <span class="nx">rv</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">352+*9-</span><span class="dl">'</span>
+<ul>
+  <li>호이스팅이란 <strong><em>끌어 올리다</em></strong> 의 뜻으로 이해하면 된다.</li>
+  <li>우리가 알고 있는 여러 언어들은 통상 일반적으로 <strong>함수 또는 변수</strong>를 <strong>선언</strong>한 후에 <strong>아래 라인</strong>에서 선언한 것들을 <strong>사용 가능</strong> 하지만 <strong>Javascript</strong> 의 경우에는 <strong>함수 또는 변수</strong>를 <strong>선언하기 전</strong>에 <strong>사용해도 에러가 나지 않는 현상</strong>을 말한다.</li>
+</ul>
+
+<h4 id="2-문제점은-무엇일까">2. 문제점은 무엇일까?</h4>
+<hr>
+
+<ul>
+  <li>개발자들이 생각하는 논리적인 흐름과는 조금 다른 순서로 구동되는 경우가 생기기 때문에 이를 통한 뜻하지 않은 이슈가 발생할 수 있다.</li>
+</ul>
+
+<h5 id="2-1-var">2-1. var</h5>
+<hr>
+
+<ul>
+  <li>var 키워드는 레거시 시스템에서 많이 쓰였으나, var 키워드를 사용하므로써 발생하는 호이스팅 이슈와 여러가지 부족한점이 있어 현재는 많이 쓰이지 않고 let, const 로 대체 되었다.</li>
+</ul>
+
+<h5 id="2-2-var-vs-let-차이점은">2-2. var VS let 차이점은?</h5>
+<hr>
+
+<ul>
+  <li>var 의 경우 여러번 동일한 변수를 선언해도 에러가 발생하지 않는다. 즉, 동일한 변수를 동일 코드 안에서 여러번 선언해도 문제가 되지 않는다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 2</span>
+
+</code></pre></div></div>
+<ul>
+  <li>var 는 const 와 달리 값을 여러번 변경이 가능하다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 4</span>
+
 </code></pre></div></div>
 
-<h4 id="3-결과정리">3. 결과정리</h4>
+<h5 id="2-3-문제예시">2-3. 문제예시</h5>
 <hr>
 
-<p><strong>스택</strong>문제를 연습할때 가장 <strong>기본적인 문제</strong>로 <strong>숫자는 스택에 쌓고</strong> <strong>연산자</strong>가 나오면 <strong>앞선 두개의 스택값을 pop</strong> 하여 연산하는 방식</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="c1">// 결과</span>
+<span class="kc">undefined</span>
+<span class="mi">10</span>
+</code></pre></div></div>
+
+<p>위 코드에서 <strong>a 는 4번째 줄에서 선언</strong>되었기 때문에 <strong>첫번쨰 console</strong> 에서 a 가 선언되지 않았다는 <strong>오류</strong>가 나야될 것 이다. <strong>하지만</strong> <strong>첫번째줄에서 에러</strong>가 나지않고 <strong>undefined</strong> 가 출력된다.</p>
+
+<p>통상 우리가 생각하는 코드는 아래와 같이 될 것이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/141645301-b21809c1-f02d-46f7-9185-827c02b844bb.png" alt="image"></p>
+
+<p>위 결과와 같이 <strong>var 가 아닌 let</strong> 으로 사용할 경우 당연하게 <strong>a가 선언</strong>되기 전 console 에서 부를때는 <strong>오류가 발생</strong>한다.</p>
+
+<h5 id="2-4-함수의-경우에도-동일하다">2-4. 함수의 경우에도 동일하다.</h5>
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myfunction</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Test</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>위와 같이 함수가 선언되기 전에 사용하였음에도 불구하고 정상적으로 Test 가 출력된다.</p>
+
+<h4 id="3-이유는-무엇일까">3. 이유는 무엇일까?</h4>
+<hr>
+
+<ol>
+  <li>
+    <p>javascript 는 함수 및 변수 선언을 실행하기 전 가장 위로 옮겨서 실행한다고 생각하면 될 것같다.</p>
+  </li>
+  <li>
+    <p>javascript 가 실행되게 되면 코드 내 <strong>var 로 선언된 변수</strong>와 <strong>함수</strong>를 찾고 <strong>맨위로 이동</strong>시켜 가장먼저 실행시키고 나머지 코드가 실행되기 때문에 먼저 console 을 불렀음에도 선언은 되어 있고 단지 할당이 되지 않아 <strong>undefined</strong> 가 출력된다고 보면 될 것이다.</p>
+  </li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="c1">// 위 코드는 아래와 같이 실행된다.</span>
+
+<span class="kd">var</span> <span class="nx">a</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="4-해결-방안은">4. 해결 방안은?</h4>
+<hr>
+
+<ol>
+  <li>
+<strong>var</strong>를 사용하기 보단 <strong>let , const</strong> 를 사용하여야 한다.</li>
+  <li>함수 선언을 표현식으로 사용한다.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 함수 표현식으로 사용</span>
+
+<span class="kd">let</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">myFunction</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">TEST</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">myFunction</span><span class="p">();</span>
+
+</code></pre></div></div>
 
 
         
@@ -527,22 +637,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%9B%84%EC%9C%84%EC%8B%9D+%EC%97%B0%EC%82%B0%28post+fix%29%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25ED%259B%2584%25EC%259C%2584%25EC%258B%259D-%25EC%2597%25B0%25EC%2582%25B0%28post-fix%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Javascript+Hoisting%28%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%29%EC%97%90+%EA%B4%80%ED%95%98%EC%97%AC%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FScope%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25ED%259B%2584%25EC%259C%2584%25EC%258B%259D-%25EC%2597%25B0%25EC%2582%25B0%28post-fix%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FScope%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25ED%259B%2584%25EC%259C%2584%25EC%258B%259D-%25EC%2597%25B0%25EC%2582%25B0%28post-fix%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FScope%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EA%B4%84%ED%98%B8%EB%AC%B8%EC%9E%90%EC%A0%9C%EA%B1%B0(%EC%8A%A4%ED%83%9D)/" class="pagination--pager" title="괄호문자제거(스택)
+      <a href="/javascript/Hoisting/" class="pagination--pager" title="Javascript Hoisting(호이스팅)에 관하여
 ">Previous</a>
     
     
-      <a href="/algorithm/%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0(Stack)/" class="pagination--pager" title="쇠막대기(Stack)
+      <a href="/javascript/Syncronous/" class="pagination--pager" title="동기 / 비동기 처리에 대한 이해
 ">Next</a>
     
   </nav>
@@ -592,57 +702,6 @@
         
         
         <a class="page__taxonomy-item-tag" rel="tag">Syncronous</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/Scope/" rel="permalink">Javascript Hoisting(호이스팅)에 관하여
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.12
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
         
     </span>
 </span>
@@ -740,6 +799,62 @@
         
         
         <a class="page__taxonomy-item-tag" rel="tag">ES6 추가 문법</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/ES6-Array/" rel="permalink">ES6 Array 배열
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.09
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Array</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">ES6</a><span class="sep">
         </span>
         
         
