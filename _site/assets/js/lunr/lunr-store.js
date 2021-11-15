@@ -220,4 +220,10 @@ var store = [{
         "tags": ["JavaScript","Syncronous","Asyncronous"],
         "url": "/javascript/Syncronous/",
         "teaser": null
+      },{
+        "title": "Promise",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. Promise 란? 비동기 처리를 위한 콜백함수의 단점을 보완하기 위해 제안됨 Promise 객체 생성 Promise 객체에서는 executor 라는 함수가 자동으로 실행되고, executor 라는 함수는 resolve 와 reject 라는 두 개의 함수를 인자로 받아서 비동기 처리 함수를 실행 executor 를 통해 비동기 처리 함수를...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Syncronous","Asyncronous"],
+        "url": "/javascript/Promise/",
+        "teaser": null
       }]

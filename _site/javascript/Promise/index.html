@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Webpack 변환 전/후 성능비교 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+<!-- begin _includes/seo.html --><title>Promise - Hippo Dev Blog</title>
+<meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Webpack 변환 전/후 성능비교">
-<meta property="og:url" content="http://localhost:4000/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="http://localhost:4000/javascript/Promise/">
 
 
-  <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-10-31T00:00:00+09:00">
+  <meta property="og:description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-14T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/webpack/Webpack-%EB%B3%80%ED%99%98-%EC%A0%84%ED%9B%84%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90/">
+
+<link rel="canonical" href="http://localhost:4000/javascript/Promise/">
 
 
 
@@ -384,15 +384,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Webpack 변환 전/후 성능비교">
-    <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-    <meta itemprop="datePublished" content="2021-10-31T00:00:00+09:00">
+    <meta itemprop="headline" content="Promise">
+    <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2021-11-14T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Webpack 변환 전/후 성능비교
+            Promise
 
           </h1>
           
@@ -420,9 +420,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Asyncronous</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">성능비교</a>
+      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">Syncronous</a>
     
     </span>
   </p>
@@ -444,7 +446,7 @@
     
     
     
-    <a href="/categories/#webpack" class="page__taxonomy-item-category" rel="tag">webpack</a>
+    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
     
 
   </span>
@@ -453,7 +455,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-10-31T00:00:00+09:00">October 31, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-14T00:00:00+09:00">November 14, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -463,23 +465,9 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li>
-<a href="#1-%EB%B3%80%ED%99%98-%EC%A0%84-%EC%86%8C%EC%8A%A4-%EB%B0%8F-%EC%84%B1%EB%8A%A5">1. 변환 전 소스 및 성능</a><ul>
-<li><a href="#1-1-indexhtml">1-1. index.html</a></li>
-<li><a href="#1-2-indexjs">1-2. index.js</a></li>
-<li><a href="#1-3-%EB%B3%80%ED%99%98-%EC%A0%84-%EC%84%B1%EB%8A%A5">1-3. 변환 전 성능</a></li>
-</ul>
-</li>
-<li>
-<a href="#2-webpack-%EB%B3%80%ED%99%98-%ED%9B%84">2. Webpack 변환 후</a><ul>
-<li><a href="#2-1-indexhtml">2-1. index.html</a></li>
-<li><a href="#2-2-indexjs">2-2. index.js</a></li>
-<li><a href="#2-3-webpackconfigjs">2-3. webpack.config.js</a></li>
-<li><a href="#2-4-%EB%B3%80%ED%99%98-%ED%9B%84-%EC%84%B1%EB%8A%A5">2-4. 변환 후 성능</a></li>
-</ul>
-</li>
-<li><a href="#3-build-%EA%B2%B0%EA%B3%BCdistmainjs">3. build 결과(dist/main.js)</a></li>
-<li><a href="#4-%EC%A0%95%EB%A6%AC">4. 정리</a></li>
+<li><a href="#1-promise-%EB%9E%80">1. Promise 란?</a></li>
+<li><a href="#1-2-then-%EC%9D%84-%EC%9D%B4%EC%96%B4%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">1-2. then 을 이어서 사용하기</a></li>
+<li><a href="#2-promise-status">2. Promise Status</a></li>
 </ul>
 
             </nav>
@@ -487,123 +475,109 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-변환-전-소스-및-성능">1. 변환 전 소스 및 성능</h4>
-<hr>
-<h5 id="1-1-indexhtml">1-1. index.html</h5>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- index.html --&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;title&gt;</span>Webpack Demo<span class="nt">&lt;/title&gt;</span>
-        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/lodash@4.16.6"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"src/index.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-        <span class="c">&lt;!-- &lt;script src="dist/main.js"&gt;&lt;/script&gt; --&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-
-</code></pre></div></div>
-
-<h5 id="1-2-indexjs">1-2. index.js</h5>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">component</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
-
-  <span class="cm">/* lodash is required for the next line to work */</span>
-  <span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">join</span><span class="p">([</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
-
-  <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">component</span><span class="p">());</span>
-</code></pre></div></div>
-
-<h5 id="1-3-변환-전-성능">1-3. 변환 전 성능</h5>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/139588099-79321dc1-36e4-4aac-adf0-fadec0137b9e.png" alt="image"></p>
-
-<h4 id="2-webpack-변환-후">2. Webpack 변환 후</h4>
+<h4 id="1-promise-란">1. Promise 란?</h4>
 <hr>
 
-<h5 id="2-1-indexhtml">2-1. index.html</h5>
+<ul>
+  <li>비동기 처리를 위한 콜백함수의 단점을 보완하기 위해 제안됨</li>
+</ul>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- index.html --&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;title&gt;</span>Webpack Demo<span class="nt">&lt;/title&gt;</span>
-        <span class="c">&lt;!-- &lt;script src="https://unpkg.com/lodash@4.16.6"&gt;&lt;/script&gt; --&gt;</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="c">&lt;!-- &lt;script src="src/index.js"&gt;&lt;/script&gt; --&gt;</span>
-        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dist/main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+<ol>
+  <li>Promise 객체 생성</li>
+  <li>
+<strong>Promise 객체</strong>에서는 <strong>executor 라는 함수가 자동으로 실행</strong>되고, <strong>executor</strong> 라는 함수는 <strong>resolve 와 reject</strong> 라는 두 개의 함수를 <strong>인자</strong>로 받아서 <strong>비동기 처리 함수</strong>를 실행</li>
+  <li>
+<strong>executor</strong> 를 통해 비동기 처리 함수를 실행 완료 후, 해당 작업이 <strong>성공</strong>이면 <strong>resolve</strong>, <strong>실패</strong>면 <strong>reject</strong> 함수를 호출</li>
+</ol>
 
-<h5 id="2-2-indexjs">2-2. index.js</h5>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 비동기 작업 수행</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* 비동기 작업 성공 */</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="cm">/* 비동기 작업 실패 */</span>
+      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="p">});</span>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">import</span> <span class="nx">_</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">lodash</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">component</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// excutor 함수가 Promise 객체 안에 있는 로직을 동기적으로 수행하고 난 뒤</span>
+<span class="c1">// resolve , reject 를 실행한다.</span>
 
-  <span class="cm">/* lodash is required for the next line to work */</span>
-  <span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">join</span><span class="p">([</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">],</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// 위에서 인자로 받는 resolve 와 reject 함수는 아래와 같이 정의한다.</span>
 
-  <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">component</span><span class="p">());</span>
-
-</code></pre></div></div>
-
-<h5 id="2-3-webpackconfigjs">2-3. webpack.config.js</h5>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./src/index.js</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">main.js</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">promiseObj</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
   <span class="p">}</span>
-<span class="p">};</span>
+<span class="p">);</span>
+
+</code></pre></div></div>
+<h4 id="1-2-then-을-이어서-사용하기">1-2. then 을 이어서 사용하기</h4>
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 비동기 작업 수행</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* 비동기 작업 성공 */</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="cm">/* 비동기 작업 실패 */</span>
+      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// excutor 함수가 Promise 객체 안에 있는 로직을 동기적으로 수행하고 난 뒤</span>
+<span class="c1">// resolve , reject 를 실행한다.</span>
+
+<span class="c1">// 위에서 인자로 받는 resolve 와 reject 함수는 아래와 같이 정의한다.</span>
+
+<span class="nx">promiseObj</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">next Level</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">next Err</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">);</span>
+
+
 </code></pre></div></div>
 
-<h5 id="2-4-변환-후-성능">2-4. 변환 후 성능</h5>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/139588329-9c6380eb-49f2-4d0e-a32c-c9e7ebbe551d.png" alt="image"></p>
-
-<h4 id="3-build-결과distmainjs">3. build 결과(dist/main.js)</h4>
-<hr>
-<p><strong>웹팩 결과 파일 디렉터리 패스</strong></p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/139588367-bf29fee6-13e3-4c34-a96b-fbf8b9b7a1f0.png" alt="image"></p>
-
-<h4 id="4-정리">4. 정리</h4>
+<h4 id="2-promise-status">2. Promise Status</h4>
 <hr>
 
-<p>변환 전의 경우에는 html 에서 sciprt 내 cdn 으로 불러왔기 때문에 lodash.js, index.js 를 호출하게 된다.</p>
-
-<p>하지만 변환 후에는 main.js 에서 하나로 합쳐서 호출하기 때문에 호출하는 빈도가 줄어 페이지를 로딩할 때 속도 측면에서 큰 차이를 불러올 것이다.</p>
-
-<p>위 테스트의 경우에는 간단한 테스트지만 코드가 복잡해지고 시스템 규모가 커질수록 속도나 효율성 측면에서 큰 차이를 불러올 것이므로 이에 대한 효과를 기록한다</p>
-
-<p><strong>main.js 호출 내 index.js</strong>
-<img src="https://user-images.githubusercontent.com/56063287/139588411-e1a54d98-a89f-49ac-a372-416f2a0b0fb3.png" alt="image"></p>
-
-<p><strong>main.js 호출 내 lodash 관련</strong>
-<img src="https://user-images.githubusercontent.com/56063287/139588441-bfd89e6e-7e5c-4ff4-969d-b1dcb5366f2b.png" alt="image"></p>
-
-<p>위 에서 볼 수 있듯이 우리가 호출한 index.js, lodash 등을 main.js 에서 하나로 합쳐서 호출한다는 개념이 Webpack 의 기본이라고 생각하면 될 것 이다.</p>
-
-<p>이러한 점으로 인해서 우리는 Webpack 을 왜 사용하는가? 라는 물음에 조금이나마 이해하고 앞으로 발전해나갈 수 있는 토대가 될 것이기에 기록에 남긴다.</p>
+<ul>
+  <li>
+<strong>대기상태(Pending)</strong> : 비동기 처리가 실행되지 않은 초기 상태</li>
+  <li>
+<strong>이행상태(Fulfilled)</strong> : 비동기 처리가 성공적으로 완료된 상태</li>
+  <li>
+<strong>실패상태(Rejected)</strong> : 비동기 처리가 실패한 상태</li>
+</ul>
 
         
       </section>
@@ -612,23 +586,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Webpack+%EB%B3%80%ED%99%98+%EC%A0%84%2F%ED%9B%84+%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EB%25B3%2580%25ED%2599%2598-%25EC%25A0%2584%25ED%259B%2584%25EC%2584%25B1%25EB%258A%25A5%25EB%25B9%2584%25EA%25B5%2590%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Promise%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FPromise%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EB%25B3%2580%25ED%2599%2598-%25EC%25A0%2584%25ED%259B%2584%25EC%2584%25B1%25EB%258A%25A5%25EB%25B9%2584%25EA%25B5%2590%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FPromise%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EB%25B3%2580%25ED%2599%2598-%25EC%25A0%2584%25ED%259B%2584%25EC%2584%25B1%25EB%258A%25A5%25EB%25B9%2584%25EA%25B5%2590%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FPromise%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/webpack/Script-%EC%84%A4%EC%A0%95-%EA%B4%80%EB%A6%AC-(webpack.config.js)/" class="pagination--pager" title="Script 설정 관리 (webpack.config.js)
+      <a href="/javascript/Syncronous/" class="pagination--pager" title="동기 / 비동기 처리에 대한 이해
 ">Previous</a>
     
     
-      <a href="/webpack/Webpack-First-Principle-%EC%98%81%EC%83%81-%EB%A6%AC%EB%B7%B0/" class="pagination--pager" title="Webpack First Principle 영상 리뷰
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -642,62 +615,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/Promise/" rel="permalink">Promise
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.14
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Asyncronous</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Syncronous</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -830,6 +747,57 @@
         
         
         <a class="page__taxonomy-item-tag" rel="tag">Hoisting(호이스팅)</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/ES6-javascript/" rel="permalink">ES6에서 추가된 문법
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.10
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">ES6 추가 문법</a><span class="sep">
         </span>
         
         
