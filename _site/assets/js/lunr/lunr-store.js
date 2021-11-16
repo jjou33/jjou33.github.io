@@ -209,9 +209,9 @@ var store = [{
         "url": "/javascript/Hoisting/",
         "teaser": null
       },{
-        "title": "Javascript Hoisting(호이스팅)에 관하여",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 호이스팅이란? 호이스팅이란 끌어 올리다 의 뜻으로 이해하면 된다. 우리가 알고 있는 여러 언어들은 통상 일반적으로 함수 또는 변수를 선언한 후에 아래 라인에서 선언한 것들을 사용 가능 하지만 Javascript 의 경우에는 함수 또는 변수를 선언하기 전에 사용해도 에러가 나지 않는 현상을 말한다. 2....","categories": ["JavaScript"],
-        "tags": ["JavaScript","Hoisting(호이스팅)"],
+        "title": "Scope 에 대하여",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. Scope 란? javascript 변수 또는 함수 선언 시 해당 변수가 유효한 범위를 의미한다. 3가지 전역(Global) , 함수(Function), Block(블록) Scope 가 있으며 선언에 따라 유효범위가 다르기 때문에 이해가 필요함 { } , 함수안에서 사용되지 않아 전역으로 범위가 설정된다. let a = 3 //...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Scope"],
         "url": "/javascript/Scope/",
         "teaser": null
       },{
@@ -223,7 +223,7 @@ var store = [{
       },{
         "title": "Promise",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. Promise 란? 비동기 처리를 위한 콜백함수의 단점을 보완하기 위해 제안됨 Promise 객체 생성 Promise 객체에서는 executor 라는 함수가 자동으로 실행되고, executor 라는 함수는 resolve 와 reject 라는 두 개의 함수를 인자로 받아서 비동기 처리 함수를 실행 executor 를 통해 비동기 처리 함수를...","categories": ["JavaScript"],
-        "tags": ["JavaScript","Syncronous","Asyncronous"],
+        "tags": ["JavaScript","Promise"],
         "url": "/javascript/Promise/",
         "teaser": null
       }]
