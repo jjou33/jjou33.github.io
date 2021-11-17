@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Promise - Hippo Dev Blog</title>
+<!-- begin _includes/seo.html --><title>웹 브라우저 동작 과정 - Hippo Dev Blog</title>
 <meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Promise">
+<meta property="og:title" content="웹 브라우저 동작 과정">
 <meta property="og:url" content="http://localhost:4000/javascript/DOM/">
 
 
@@ -384,7 +384,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Promise">
+    <meta itemprop="headline" content="웹 브라우저 동작 과정">
     <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
     <meta itemprop="datePublished" content="2021-11-15T00:00:00+09:00">
     
@@ -392,7 +392,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Promise
+            웹 브라우저 동작 과정
 
           </h1>
           
@@ -420,9 +420,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
+      <a class="page__taxonomy-item-tag" rel="tag">BOM</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">DOM</a><span class="sep"> </span>
+    
       <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Promise</a>
+      <a class="page__taxonomy-item-tag" rel="tag">Render</a>
     
     </span>
   </p>
@@ -463,12 +467,13 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-promise-%EB%9E%80">1. Promise 란?</a></li>
-<li><a href="#1-2-then-%EC%9D%84-%EC%9D%B4%EC%96%B4%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">1-2. then 을 이어서 사용하기</a></li>
-<li><a href="#2-promise-status">2. Promise Status</a></li>
-<li><a href="#3-catch">3. catch</a></li>
-<li><a href="#4-chaining--return">4. chaining / return</a></li>
-<li><a href="#5-promiseall">5. Promise.all</a></li>
+<li><a href="#1-domdocument-object-model">1. DOM(Document Object Model)</a></li>
+<li>
+<a href="#2-%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">2. 웹 브라우저 동작 과정</a><ul>
+<li><a href="#2-1-dom--cssom--render-%ED%8A%B8%EB%A6%AC-%EC%83%9D%EC%84%B1-%EA%B3%BC%EC%A0%95">2-1. DOM / CSSOM / Render 트리 생성 과정</a></li>
+<li><a href="#2-2-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B0%84-javascript">2-2. 브라우저 동작 간 javascript</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -479,221 +484,56 @@
 <p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-promise-란">1. Promise 란?</h4>
+<h4 id="1-domdocument-object-model">1. DOM(Document Object Model)</h4>
 <hr>
 
 <ul>
-  <li>비동기 처리를 위한 콜백함수의 단점을 보완하기 위해 제안됨</li>
+  <li>Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다.</li>
 </ul>
 
+<p><img src="https://user-images.githubusercontent.com/56063287/142225234-2ed1d786-0e46-459c-9e30-c6f3e6b34b07.png" alt="image"></p>
+
+<p>위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로 이해하면 된다.</p>
+
+<h4 id="2-웹-브라우저-동작-과정">2. 웹 브라우저 동작 과정</h4>
+
+<h5 id="2-1-dom--cssom--render-트리-생성-과정">2-1. DOM / CSSOM / Render 트리 생성 과정</h5>
+<hr>
 <ol>
-  <li>Promise 객체 생성</li>
-  <li>
-<strong>Promise 객체</strong>에서는 <strong>executor 라는 함수가 자동으로 실행</strong>되고, <strong>executor</strong> 라는 함수는 <strong>resolve 와 reject</strong> 라는 두 개의 함수를 <strong>인자</strong>로 받아서 <strong>비동기 처리 함수</strong>를 실행</li>
-  <li>
-<strong>executor</strong> 를 통해 비동기 처리 함수를 실행 완료 후, 해당 작업이 <strong>성공</strong>이면 <strong>resolve</strong>, <strong>실패</strong>면 <strong>reject</strong> 함수를 호출</li>
+  <li>사용자가 웹 브라우저에서 특정 URL로 진입하게 되면 서버에 HTML 파일을 요청한다.</li>
+  <li>받은 HTML 파일을 파싱(parsing) 하여 객체로 구성한 DOM tree 를 생성한다.
+    <ul>
+      <li>이 과정에서 각 태그들간의 관계 및 정보를 분석하게 된다.</li>
+    </ul>
+  </li>
+  <li>CSS 정보를 파싱(parsing) 하여 CSSOM tree 를 생성한다.
+    <ul>
+      <li>이 과정에서 각 태그별 CSS 정보를 저장한다.</li>
+    </ul>
+  </li>
+  <li>앞서 만든 DOM 과 CSSOM 를 통해서 Render tree 를 생성한다.
+    <ul>
+      <li>이 과정에서 모든 HTML(DOM) 각 태그에 CSS 정보를 적용하게 된다.</li>
+    </ul>
+  </li>
+  <li>웹브라우저가 Render tree 를 기반으로 사용자에게 페이지를 그려준다.</li>
 </ol>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 비동기 작업 수행</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">)</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 성공 */</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 실패 */</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
-<span class="p">});</span>
-
-
-<span class="c1">// excutor 함수가 Promise 객체 안에 있는 로직을 동기적으로 수행하고 난 뒤</span>
-<span class="c1">// resolve , reject 를 실행한다.</span>
-
-<span class="c1">// 위에서 인자로 받는 resolve 와 reject 함수는 아래와 같이 정의한다.</span>
-
-<span class="nx">promiseObj</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-  <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
-  <span class="p">},</span>
-  <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">);</span>
-
-</code></pre></div></div>
-<h4 id="1-2-then-을-이어서-사용하기">1-2. then 을 이어서 사용하기</h4>
+<h5 id="2-2-브라우저-동작-간-javascript">2-2. 브라우저 동작 간 javascript</h5>
 <hr>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 비동기 작업 수행</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">)</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 성공 */</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hi</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 실패 */</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">});</span>
+ 
+<p>안에 <script> </script> 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.</p>
 
-<span class="c1">// excutor 함수가 Promise 객체 안에 있는 로직을 동기적으로 수행하고 난 뒤</span>
-<span class="c1">// resolve , reject 를 실행한다.</span>
-
-<span class="c1">// 위에서 인자로 받는 resolve 와 reject 함수는 아래와 같이 정의한다.</span>
-
-<span class="nx">promiseObj</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">next Level</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">next Err</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">);</span>
-
-
-</code></pre></div></div>
-
-<h4 id="2-promise-status">2. Promise Status</h4>
-<hr>
+<p>이러한 이유로 아래와 같은 현상이 발생하게 된다.</p>
 
 <ul>
-  <li>
-<strong>대기상태(Pending)</strong> : 비동기 처리가 실행되지 않은 초기 상태</li>
-  <li>
-<strong>이행상태(Fulfilled)</strong> : 비동기 처리가 성공적으로 완료된 상태</li>
-  <li>
-<strong>실패상태(Rejected)</strong> : 비동기 처리가 실패한 상태</li>
+  <li>화면 로딩이 느려짐</li>
+  <li>DOM tree 구성 전 javascript 를 실행하게 되므로 DOM 을 조작하는 과정에서 에러 혹은 정상적으로 실행이 되지 않을 수 있다.</li>
 </ul>
 
-<h4 id="3-catch">3. catch</h4>
-<hr>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 비동기 작업 수행</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">15</span><span class="p">)</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 성공 */</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 실패 */</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">promiseObj</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="c1">// 성공 시 then 구문 동작</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="c1">// 실패 시 해당 구문 동작</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">fail</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">)</span>
-  <span class="c1">// reject 함수가 정의되지 않았을때 동작한다.</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
-  <span class="p">});</span>
-
-</code></pre></div></div>
-
-<h4 id="4-chaining--return">4. chaining / return</h4>
-<hr>
-
-<ul>
-  <li>chaining 된 then 구문에서 return 값을 통해 인자를 다음 chain 으로 넘길 수 있다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="c1">// 비동기 작업 수행</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">)</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 성공 */</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="cm">/* 비동기 작업 실패 */</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">promiseObj</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">success</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
-      <span class="c1">// 인자 넘긴다.</span>
-      <span class="k">return</span> <span class="nx">num</span><span class="p">;</span>
-    <span class="p">},</span>
-    <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">fail</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">)</span>
-  <span class="c1">// return 을 통해 num값 13을 리턴받아 인자로 사용가능</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">returnValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">returnValue : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">returnValue</span><span class="p">);</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">error</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">error</span><span class="p">);</span>
-  <span class="p">});</span>
-
-</code></pre></div></div>
-
-<h4 id="5-promiseall">5. Promise.all</h4>
-<hr>
-
-<ul>
-  <li>작성한 모든 Promise 가 동작한 다음 내부 구문이 실행된다.</li>
-</ul>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">promiseObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">promiseObj2</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">13</span>
-    <span class="k">if</span><span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">resolve</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">reject</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">promiseObj</span><span class="p">,</span> <span class="nx">promiseObj2</span><span class="p">])</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">})</span>
-
-<span class="c1">// 결과는 [13, 13]</span>
-<span class="c1">// response 에 배열안의 Promise 결과들이 들어가서 리턴된다.</span>
-</code></pre></div></div>
+<p>따라서 <script></script> 즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.</p>
 
         
       </section>
@@ -702,7 +542,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Promise%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FDOM%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%9B%B9+%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80+%EB%8F%99%EC%9E%91+%EA%B3%BC%EC%A0%95%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FDOM%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2FDOM%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 

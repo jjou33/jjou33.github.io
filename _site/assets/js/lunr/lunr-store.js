@@ -227,9 +227,9 @@ var store = [{
         "url": "/javascript/Promise/",
         "teaser": null
       },{
-        "title": "Promise",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. Promise 란? 비동기 처리를 위한 콜백함수의 단점을 보완하기 위해 제안됨 Promise 객체 생성 Promise 객체에서는 executor 라는 함수가 자동으로 실행되고, executor 라는 함수는 resolve 와 reject 라는 두 개의 함수를 인자로 받아서 비동기 처리 함수를 실행 executor 를 통해 비동기 처리 함수를...","categories": ["JavaScript"],
-        "tags": ["JavaScript","Promise"],
+        "title": "웹 브라우저 동작 과정",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. DOM(Document Object Model) Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로 이해하면 된다. 2. 웹 브라우저 동작 과정...","categories": ["JavaScript"],
+        "tags": ["JavaScript","DOM","BOM","Render"],
         "url": "/javascript/DOM/",
         "teaser": null
       }]
