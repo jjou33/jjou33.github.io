@@ -228,8 +228,8 @@ var store = [{
         "teaser": null
       },{
         "title": "웹 브라우저 동작 과정",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. DOM(Document Object Model) Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로 이해하면 된다. 2. 웹 브라우저 동작 과정...","categories": ["JavaScript"],
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["JavaScript"],
         "tags": ["JavaScript","DOM","BOM","Render"],
-        "url": "/javascript/DOM/",
+        "url": "/javascript/Web-Browser-Process/",
         "teaser": null
       }]

@@ -1,58 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-18T00:25:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">웹 브라우저 동작 과정</title><link href="http://localhost:4000/javascript/DOM/" rel="alternate" type="text/html" title="웹 브라우저 동작 과정" /><published>2021-11-15T00:00:00+09:00</published><updated>2021-11-15T00:00:00+09:00</updated><id>http://localhost:4000/javascript/DOM</id><content type="html" xml:base="http://localhost:4000/javascript/DOM/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-18T22:49:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">웹 브라우저 동작 과정</title><link href="http://localhost:4000/javascript/Web-Browser-Process/" rel="alternate" type="text/html" title="웹 브라우저 동작 과정" /><published>2021-11-15T00:00:00+09:00</published><updated>2021-11-15T00:00:00+09:00</updated><id>http://localhost:4000/javascript/Web%20Browser%20Process</id><content type="html" xml:base="http://localhost:4000/javascript/Web-Browser-Process/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;1-domdocument-object-model&quot;&gt;1. DOM(Document Object Model)&lt;/h4&gt;
+&lt;h4 id=&quot;1-domdocument-object-model--window&quot;&gt;1. DOM(Document Object Model) &amp;amp; Window&lt;/h4&gt;
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Document&lt;/em&gt;&lt;/strong&gt; : 우리가 알고 있는 &lt;strong&gt;HTML 의 전체 코드&lt;/strong&gt;로 이해하면 되고 &lt;strong&gt;각 태그들을 객체&lt;/strong&gt;로 이해하면 된다. DOM tree 의 &lt;strong&gt;최상위 객체&lt;/strong&gt;이다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/142225234-2ed1d786-0e46-459c-9e30-c6f3e6b34b07.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로 이해하면 된다.&lt;/p&gt;
+&lt;p&gt;위 이미지에서 보이 듯이 우리는 &lt;strong&gt;Document 라는 모든 HTML 코드를 가지고 있는 요소&lt;/strong&gt;아래 각 태그들을 객체로 이해하면 된다.&lt;/p&gt;
 
-&lt;h4 id=&quot;2-웹-브라우저-동작-과정&quot;&gt;2. 웹 브라우저 동작 과정&lt;/h4&gt;
+&lt;p&gt;또한, document 객체를 통해, HTML/CSS 등을 수정할 수 있다 이부분은 javascript 의 기본이기 때문에 나중에 공부하면서 다시 기록해야겠다.&lt;/p&gt;
 
-&lt;h5 id=&quot;2-1-dom--cssom--render-트리-생성-과정&quot;&gt;2-1. DOM / CSSOM / Render 트리 생성 과정&lt;/h5&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;window&lt;/em&gt;&lt;/strong&gt; : 사용자 웹 브라우저 객체&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/142424714-bc5bb2bc-465f-4e46-b8e4-95720ec2d871.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;window 아래 여러가지 객체들이 존재한다. document 또한 그중 하나이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-window-와-bombrowser-object-model&quot;&gt;2. window 와 BOM(Browser Object Model)&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document 가 여러가지 HTML 코드를 조작 할 수 있는 객체라면,&lt;/li&gt;
+  &lt;li&gt;BOM 은 여러가지 브라우저 환경을 제어할 수 있는 window 란 객체를 만드는데 쓰인다고 이해하면 되겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;예를들어&lt;/strong&gt;, 우리가 주로 사용하는 &lt;strong&gt;alert 또한 window. 이 생략된 기능&lt;/strong&gt;으로 생각하면 되며 &lt;strong&gt;BOM 의 주요 객체&lt;/strong&gt;에는 &lt;strong&gt;&lt;em&gt;navigator, location&lt;/em&gt;&lt;/strong&gt; 객체가 있다.
+&lt;strong&gt;&lt;em&gt;navigator&lt;/em&gt;&lt;/strong&gt; 객체는 해당 사용자의 &lt;strong&gt;브라우저와 운영체제 정보를 제공&lt;/strong&gt;하며, &lt;strong&gt;&lt;em&gt;location은&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;url 관련되어 제어&lt;/strong&gt;가 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// alert(&quot;hello&quot;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// window.alert(&quot;hihi&quot;)&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 현재 내가 사용하고 있는 브라우저 환경&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36 &lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 내가 사용하고 있는 플랫폼 환경&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// MacIntel &lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;3-웹-브라우저-동작-과정&quot;&gt;3. 웹 브라우저 동작 과정&lt;/h4&gt;
+
+&lt;h5 id=&quot;3-1-dom--cssom--render-트리-생성-과정&quot;&gt;3-1. DOM / CSSOM / Render 트리 생성 과정&lt;/h5&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-  &lt;li&gt;사용자가 웹 브라우저에서 특정 URL로 진입하게 되면 서버에 HTML 파일을 요청한다.&lt;/li&gt;
-  &lt;li&gt;받은 HTML 파일을 파싱(parsing) 하여 객체로 구성한 DOM tree 를 생성한다.
+  &lt;li&gt;사용자가 &lt;strong&gt;웹 브라우저에서 특정 URL&lt;/strong&gt;로 진입하게 되면 서버에 &lt;strong&gt;HTML 파일을 요청&lt;/strong&gt;한다.&lt;/li&gt;
+  &lt;li&gt;받은 &lt;strong&gt;HTML 파일&lt;/strong&gt;을 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 객체로 구성한 &lt;strong&gt;DOM tree&lt;/strong&gt; 를 생성한다.
     &lt;ul&gt;
-      &lt;li&gt;이 과정에서 각 태그들간의 관계 및 정보를 분석하게 된다.&lt;/li&gt;
+      &lt;li&gt;이 과정에서 &lt;strong&gt;각 태그들간의 관계 및 정보를 분석&lt;/strong&gt;하게 된다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;CSS 정보를 파싱(parsing) 하여 CSSOM tree 를 생성한다.
+  &lt;li&gt;&lt;strong&gt;CSS 정보&lt;/strong&gt;를 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 &lt;strong&gt;CSSOM tree&lt;/strong&gt; 를 생성한다.
     &lt;ul&gt;
-      &lt;li&gt;이 과정에서 각 태그별 CSS 정보를 저장한다.&lt;/li&gt;
+      &lt;li&gt;이 과정에서 각 태그별 &lt;strong&gt;CSS 정보를 저장&lt;/strong&gt;한다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;앞서 만든 DOM 과 CSSOM 를 통해서 Render tree 를 생성한다.
+  &lt;li&gt;앞서 만든 &lt;strong&gt;DOM 과 CSSOM&lt;/strong&gt; 를 통해서 &lt;strong&gt;Render tree&lt;/strong&gt; 를 생성한다.
     &lt;ul&gt;
-      &lt;li&gt;이 과정에서 모든 HTML(DOM) 각 태그에 CSS 정보를 적용하게 된다.&lt;/li&gt;
+      &lt;li&gt;이 과정에서 모든 &lt;strong&gt;HTML(DOM) 각 태그에 CSS 정보&lt;/strong&gt;를 적용하게 된다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;웹브라우저가 Render tree 를 기반으로 사용자에게 페이지를 그려준다.&lt;/li&gt;
+  &lt;li&gt;웹브라우저가 &lt;strong&gt;Render tree&lt;/strong&gt; 를 기반으로 &lt;strong&gt;사용자에게 페이지를 그려준다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5 id=&quot;2-2-브라우저-동작-간-javascript&quot;&gt;2-2. 브라우저 동작 간 javascript&lt;/h5&gt;
+&lt;h5 id=&quot;3-2-브라우저-동작-간-javascript&quot;&gt;3-2. 브라우저 동작 간 javascript&lt;/h5&gt;
 &lt;hr /&gt;
 
-&lt;head&gt; &lt;/head&gt;
-&lt;p&gt;안에 &lt;script&gt; &lt;/script&gt; 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt; &amp;lt;/head&amp;gt;&lt;/code&gt; 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt; 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
 이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.&lt;/p&gt;
 
 &lt;p&gt;이러한 이유로 아래와 같은 현상이 발생하게 된다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;화면 로딩이 느려짐&lt;/li&gt;
-  &lt;li&gt;DOM tree 구성 전 javascript 를 실행하게 되므로 DOM 을 조작하는 과정에서 에러 혹은 정상적으로 실행이 되지 않을 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;화면 로딩이 느려짐&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOM tree 구성 전 javascript 를 실행&lt;/strong&gt;하게 되므로 DOM 을 조작하는 과정에서 &lt;strong&gt;에러 혹은 정상적으로 실행이 되지 않을 수 있다.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;따라서 &lt;script&gt;&lt;/script&gt; 즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="DOM" /><category term="BOM" /><category term="Render" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Promise</title><link href="http://localhost:4000/javascript/Promise/" rel="alternate" type="text/html" title="Promise" /><published>2021-11-14T00:00:00+09:00</published><updated>2021-11-14T00:00:00+09:00</updated><id>http://localhost:4000/javascript/Promise</id><content type="html" xml:base="http://localhost:4000/javascript/Promise/">&lt;hr /&gt;
+&lt;p&gt;따라서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="DOM" /><category term="BOM" /><category term="Render" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Promise</title><link href="http://localhost:4000/javascript/Promise/" rel="alternate" type="text/html" title="Promise" /><published>2021-11-14T00:00:00+09:00</published><updated>2021-11-14T00:00:00+09:00</updated><id>http://localhost:4000/javascript/Promise</id><content type="html" xml:base="http://localhost:4000/javascript/Promise/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
