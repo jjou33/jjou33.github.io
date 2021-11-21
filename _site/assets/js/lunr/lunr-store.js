@@ -232,4 +232,10 @@ var store = [{
         "tags": ["JavaScript","DOM","BOM","Render"],
         "url": "/javascript/Web-Browser-Process/",
         "teaser": null
+      },{
+        "title": "Prettier 적용 안될때 해결",
+        "excerpt":":raising_hand: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다. 1. Prettier 설치 Prettier 는 VS Code 에서 사용자의 코드를 정리해주는 확장 프로그램이 있다. 왼쪽 바에서 마켓 플레이스 진입 후 Prettier 설치한다. 2. 적용 후 설정 필요 2-1. Format on Save 확인 cmd + , 로 설정 진입 후 format on save...","categories": ["vscode"],
+        "tags": ["VS Code","Prettier"],
+        "url": "/vscode/Prettier/",
+        "teaser": null
       }]
