@@ -238,4 +238,16 @@ var store = [{
         "tags": ["VS Code","Prettier"],
         "url": "/vscode/Prettier/",
         "teaser": null
+      },{
+        "title": "웹 브라우저 동작 과정",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["JavaScript"],
+        "tags": ["JavaScript","DOM","BOM","Render"],
+        "url": "/javascript/",
+        "teaser": null
+      },{
+        "title": "Modules",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. import &amp; export 기본 문법 export : 특정 파일에서 쓸 변수, 함수 등을 내보내는 문법 익스포트한 대상은 다른 파일에서 import 를 통해 사용 가능 export 변수, 함수 import : export 된 변수 혹은 함수를 사용할 경우 import { export...","categories": ["webpack"],
+        "tags": ["Webpack","Modules"],
+        "url": "/webpack/Modules/",
+        "teaser": null
       }]
