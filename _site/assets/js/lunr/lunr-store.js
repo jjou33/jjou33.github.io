@@ -244,4 +244,10 @@ var store = [{
         "tags": ["Webpack","Modules"],
         "url": "/webpack/Modules/",
         "teaser": null
+      },{
+        "title": "Webpack 의 주요 속성 소개",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 실습코드 module.exports = { mode: \"production\", entry: \"./js/app.js\", output: { path: path.resolve(__dirname, \"build\"), filename: \"main.bundle.js\", }, module: { rules: [ { test: /\\.m?js$/, exclude: /(node_modules|bower_components)/, use: { loader: \"babel-loader\", options: { presets: [\"@babel/preset-env\"], }, }, }, ], }, stats:...","categories": ["webpack"],
+        "tags": ["Webpack","속성"],
+        "url": "/webpack/Webpack-%EC%86%8D%EC%84%B1/",
+        "teaser": null
       }]

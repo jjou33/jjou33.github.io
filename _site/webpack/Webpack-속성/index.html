@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Prettier 적용 안될때 해결 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>Webpack 의 주요 속성 소개 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Prettier 적용 안될때 해결">
-<meta property="og:url" content="http://localhost:4000/vscode/Prettier/">
+<meta property="og:title" content="Webpack 의 주요 속성 소개">
+<meta property="og:url" content="http://localhost:4000/webpack/Webpack-%EC%86%8D%EC%84%B1/">
 
 
-  <meta property="og:description" content=":computer: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-11-21T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-29T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/vscode/Prettier/">
+
+<link rel="canonical" href="http://localhost:4000/webpack/Webpack-%EC%86%8D%EC%84%B1/">
 
 
 
@@ -415,15 +415,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Prettier 적용 안될때 해결">
-    <meta itemprop="description" content=":computer: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-11-21T00:00:00+09:00">
+    <meta itemprop="headline" content="Webpack 의 주요 속성 소개">
+    <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+    <meta itemprop="datePublished" content="2021-11-29T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Prettier 적용 안될때 해결
+            Webpack 의 주요 속성 소개
 
           </h1>
           
@@ -451,9 +451,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Prettier</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">VS Code</a>
+      <a class="page__taxonomy-item-tag" rel="tag">속성</a>
     
     </span>
   </p>
@@ -475,7 +475,7 @@
     
     
     
-    <a href="/categories/#vscode" class="page__taxonomy-item-category" rel="tag">vscode</a>
+    <a href="/categories/#webpack" class="page__taxonomy-item-category" rel="tag">webpack</a>
     
 
   </span>
@@ -484,7 +484,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-21T00:00:00+09:00">November 21, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-29T00:00:00+09:00">November 29, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -494,13 +494,14 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-prettier-%EC%84%A4%EC%B9%98">1. Prettier 설치</a></li>
 <li>
-<a href="#2-%EC%A0%81%EC%9A%A9-%ED%9B%84-%EC%84%A4%EC%A0%95-%ED%95%84%EC%9A%94">2. 적용 후 설정 필요</a><ul>
-<li><a href="#2-1-format-on-save-%ED%99%95%EC%9D%B8">2-1. Format on Save 확인</a></li>
-<li><a href="#2-1-default-formatter-%ED%99%95%EC%9D%B8">2-1. Default Formatter 확인</a></li>
+<a href="#1-%EC%8B%A4%EC%8A%B5%EC%BD%94%EB%93%9C">1. 실습코드</a><ul>
+<li><a href="#1-1-entywebpackconfigjs">1-1. Enty(webpack.config.js)</a></li>
+<li><a href="#1-2-appjs">1-2. app.js</a></li>
 </ul>
 </li>
+<li><a href="#2-output">2. Output</a></li>
+<li><a href="#3-loader">3. loader</a></li>
 </ul>
 
             </nav>
@@ -508,38 +509,96 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-prettier-설치">1. Prettier 설치</h4>
-
-<hr>
-
-<p>Prettier 는 VS Code 에서 사용자의 코드를 정리해주는 확장 프로그램이 있다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/142764670-5361288a-4e55-4a26-bd75-a9b4c96d9505.png" alt="image"></p>
-
-<p>왼쪽 바에서 마켓 플레이스 진입 후 Prettier 설치한다.</p>
-
-<h4 id="2-적용-후-설정-필요">2. 적용 후 설정 필요</h4>
+<h4 id="1-실습코드">1. 실습코드</h4>
 
 <hr>
 
-<h5 id="2-1-format-on-save-확인">2-1. Format on Save 확인</h5>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./js/app.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">main.bundle.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">m</span><span class="se">?</span><span class="sr">js$/</span><span class="p">,</span>
+        <span class="na">exclude</span><span class="p">:</span> <span class="sr">/</span><span class="se">(</span><span class="sr">node_modules|bower_components</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">babel-loader</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">@babel/preset-env</span><span class="dl">"</span><span class="p">],</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="na">stats</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">colors</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">devtool</span><span class="p">:</span> <span class="dl">"</span><span class="s2">source-map</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h5 id="1-1-entywebpackconfigjs">1-1. Enty(webpack.config.js)</h5>
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">cmd + ,</code> 로 설정 진입 후 <code class="language-plaintext highlighter-rouge">format on save</code> 검색 후 아래 빈칸 체크 확인</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./js/app.js</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/142764785-789449ca-835d-4232-95e8-a11bdb3d4f92.png" alt="image"></p>
-
-<h5 id="2-1-default-formatter-확인">2-1. Default Formatter 확인</h5>
+<h5 id="1-2-appjs">1-2. app.js</h5>
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">editor.defaultFormatter</code> 검색 후 <code class="language-plaintext highlighter-rouge">esbenp.prettier-vscode</code> 로 설정 변경</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">sum</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./math</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">10 + 20 = </span><span class="dl">"</span><span class="p">,</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+</code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/142764829-36f3c3af-133a-4f40-bc49-218a2819c52c.png" alt="image"></p>
+<p>빌드를 할 대상 파일을 작성한다.</p>
+
+<p>즉, entry 속성은 웹팩에서 우리가 빌드를 할 대상의 파일 경로를 작성하며 이는 웹팩 변환의 가장 먼저 동작하는 진입점이기도 하다.</p>
+
+<p>위 코드에서는 해당경로의 app.js 에 작성된 것들을 빌드한다는 이야기로 해석하면 될 것이다.</p>
+
+<p><strong><em>참고사이트</em></strong></p>
+
+<p><a href="https://joshua1988.github.io/webpack-guide/concepts/entry.html">https://joshua1988.github.io/webpack-guide/concepts/entry.html</a></p>
+
+<h4 id="2-output">2. Output</h4>
+
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">output</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nl">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">build</span><span class="dl">'</span><span class="p">),</span>
+			<span class="nx">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">main.bundle.js</span><span class="dl">'</span>
+	<span class="p">},</span>
+</code></pre></div></div>
+
+<p>빌드를 하고 난 즉, 웹팩으로 변환을 진행한 최종 결과물을 정의하는 곳이다.</p>
+
+<p>빌드 후에는 path 에서 정의한 위치에 build 폴더가 생성되고 그 밑에 main.bundle.js 결과물이 들어간 파일이 생성된다.</p>
+
+<p><strong><em>참고사이트</em></strong></p>
+
+<p><a href="https://joshua1988.github.io/webpack-guide/concepts/output.html">https://joshua1988.github.io/webpack-guide/concepts/entry.html</a></p>
+
+<h4 id="3-loader">3. loader</h4>
+
+<hr>
+
+<p>entry 에서 output 으로 변환을 할때 영향을 미치는 부분</p>
+
+<p>즉, 웹팩이 웹 애플리케이션을 해석할 때 사용하는 다양한 자원들 (HTML, CSS, Images, 폰드 등) 들의 변환을 도와주는 속성이다.</p>
+
+<p><strong><em>참고사이트</em></strong></p>
+
+<p><a href="https://joshua1988.github.io/webpack-guide/concepts/loader.html">https://joshua1988.github.io/webpack-guide/concepts/entry.html</a></p>
 
         
       </section>
@@ -548,23 +607,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Prettier+%EC%A0%81%EC%9A%A9+%EC%95%88%EB%90%A0%EB%95%8C+%ED%95%B4%EA%B2%B0%20http%3A%2F%2Flocalhost%3A4000%2Fvscode%2FPrettier%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Webpack+%EC%9D%98+%EC%A3%BC%EC%9A%94+%EC%86%8D%EC%84%B1+%EC%86%8C%EA%B0%9C%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%2586%258D%25EC%2584%25B1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fvscode%2FPrettier%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%2586%258D%25EC%2584%25B1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fvscode%2FPrettier%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2FWebpack-%25EC%2586%258D%25EC%2584%25B1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/javascript/Web-Browser-Process/" class="pagination--pager" title="웹 브라우저 동작 과정
+      <a href="/webpack/Modules/" class="pagination--pager" title="Modules
 ">Previous</a>
     
     
-      <a href="/webpack/Modules/" class="pagination--pager" title="Modules
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -578,57 +636,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/webpack/Webpack-%EC%86%8D%EC%84%B1/" rel="permalink">Webpack 의 주요 속성 소개
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.29
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">속성</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -675,6 +682,57 @@
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/vscode/Prettier/" rel="permalink">Prettier 적용 안될때 해결
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.11.21
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Prettier</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">VS Code</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>
