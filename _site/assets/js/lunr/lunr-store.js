@@ -250,4 +250,10 @@ var store = [{
         "tags": ["Webpack","속성"],
         "url": "/webpack/Webpack-%EC%86%8D%EC%84%B1/",
         "teaser": null
+      },{
+        "title": "Plugin 사용",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 플로그인 설정 우리는 다양한 플러그인들을 다양한 방법으로 개발에 사용하고 있다. 대부분의 플러그인들은 우리가 하는 개발을 조금 더 편하게하고 기본기능은 보존한채 추가적인 방향으로 바꿔서 편리하게 사용할 수 있게 하고 있다 이처럼 플러그인을 사용하는 방법도 알아두면 좋을것 같다. 이전에 modules 에서...","categories": ["webpack"],
+        "tags": ["Webpack","Plugin"],
+        "url": "/webpack/plugin/",
+        "teaser": null
       }]
