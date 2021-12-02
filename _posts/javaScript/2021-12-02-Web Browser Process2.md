@@ -1,0 +1,56 @@
+---
+title: "웹 브라우저 동작 과정 2차"
+excerpt: " :computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다."
+
+categories:
+  - JavaScript
+tags:
+  - JavaScript
+  - Browser Element
+  - Rendering Process
+toc: true
+toc_sticky: true
+toc_label: "POST LIST"
+---
+
+<hr>
+:raising_hand:  ```JavaScript 문법 내용을 기록하기 위한 포스트입니다.```
+<hr>
+
+#### 1. Browser 요소(Elements)
+
+---
+
+![image](https://user-images.githubusercontent.com/56063287/144439265-c4362193-2fa7-4a2f-8533-76746b85e31e.png)
+
+- **_사용자 인터페이스_** : 우리가 브라우저에서 볼수 있는 **주소표시줄, 버튼** 등 사용자가 컨트롤 할 수 있는 부분
+- **_브라우저 엔진_** : **사용자 인터페이스**와 **렌더링 엔진** 사이 동작을 제어
+- **_렌더링 엔진_**
+  - 사용자가 요청한 **URI** 를 **브라우저 엔진** 으로부터 받아 **서버에 요청**한다.
+  - 서버로 URI 요청하여 **응답받은 데이터**(**HTML**, **CSS** , **JavaScript**) 를 받아서 **파싱 후 렌더링**한다.(Chrome webkit)
+- **_통신_** : **렌더링 엔진**으로부터 **HTTP 요청** 등을 받아서 **네트워크 처리** 후 응답을 전달
+- **_자바스크립트 해석기_** : JavaScript 를 파싱한다(chrome V8)
+- **_자료 저장소_** : **쿠키** 등의 자료를 **컴퓨터 하드디스크**에 **저장**한다.
+  (**HTML5** 부터 **Web Database** 에 저장가능)
+- **_UI 백엔드_** : render tree 를 Browser 에 그리는 역할을 담당
+
+#### 2. Browser Rendering Process
+
+---
+
+1. **브라우저 주소 표시줄**에 URI 입력 후 **브라우저 엔진에 전달**
+2. **브라우저 엔진**은 **자료 저장소**에서 **URI** 에 해당하는 **자료**를 찾고, 해당 자료를 **쿠키**로 **저장 후 렌더링 엔진으로 전달**
+3. **렌더링 엔진**은 브라우저 엔진으로부터 받은 자료(**HTML**, **CSS**, **image** 등)를 **분석**한다. **동시에** **URI 데이터**를 **통신**, **자바스크립트 해석기**, **UI 백엔드**로 전파한다.
+4. **렌더링 엔진**은 통신 레이어에 URI 에 대한 **추가 데이터**가 있다면 요청하고 응답을 기다린다.
+5. 응답받은 데이터에서 **HTML** ,**CSS** 는 **렌더링 엔진이 파싱**한다.
+6. 응답받은 데이터에서 **JavaScript**는 **Javascript 해석기가 파싱**한다.
+7. **JavaScript 해석기**는 파싱한 **결과**를 **렌더링 엔진**에 전달하여 3번과 5번에서 파싱한 **HTML** 의 결과인 **DOM tree** 를 조작한다.
+8. 조작이 완료된 **DOM node(DOM Tree 구성요소)**는 **render object(render tree 구성요소)** 로 변한다.
+9. **UI 백엔드**는 **render Object** 를 **브라우저 렌더링 화면에 띄어준다.**
+
+#### 2. Rendering Engine Working Process
+
+---
+
+렌더링 엔진은 URI 를 통해 요청을 받아서 해당하는 데이터를 렌더링하는 역할을 담당
+chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용

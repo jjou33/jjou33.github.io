@@ -256,4 +256,10 @@ var store = [{
         "tags": ["Webpack","Plugin"],
         "url": "/webpack/plugin/",
         "teaser": null
+      },{
+        "title": "웹 브라우저 동작 과정 2차",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. Browser 요소(Elements) 사용자 인터페이스 : 우리가 브라우저에서 볼수 있는 주소표시줄, 버튼 등 사용자가 컨트롤 할 수 있는 부분 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이 동작을 제어 렌더링 엔진 사용자가 요청한 URI 를 브라우저 엔진 으로부터 받아 서버에 요청한다. 서버로 URI...","categories": ["JavaScript"],
+        "tags": ["JavaScript","Browser Element","Rendering Process"],
+        "url": "/javascript/Web-Browser-Process2/",
+        "teaser": null
       }]
