@@ -54,3 +54,15 @@ toc_label: "POST LIST"
 
 렌더링 엔진은 URI 를 통해 요청을 받아서 해당하는 데이터를 렌더링하는 역할을 담당
 chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용
+
+##### 2-1. Rendering 동작 과정
+
+![image](https://user-images.githubusercontent.com/56063287/144630479-09e01c18-48e7-4366-a2fe-85f5fedb3d69.png)
+
+1. DOM tree 구축을 위한 HTML parsing, CSS, Javascript parsing : HTML 문서를 파싱한 후, content tree 내부에서 tag(a, div)를 DOM node 로 변환한다. 그 다음 CSS 파일과 함꼐 모든 스타일 요소를 파싱한다. 스타일 요소와 HTML 표시 규칙, Javascript 의 파싱 결과물은 render tree 를 생성한다
+
+2. render tree 구축 : HTML 과 CSS 를 파싱해서 만들어진 render tree 는 색상 또는 면적 등 시각적 속성을 갖는 사각형을 포함한다. 정해진 순서대로 렌더링한다
+
+3. render tree 배치 : render tree 가 생성이 끝나면, 배치가 시작된다. 각 node 가 정확한 위치에 표시되기 위해 이동한다
+
+4. render tree 그리기 : 각 node 배치를 완료하면 UI 벡엔드에서 각 node를 가로지르며 paint 작업을 한다
