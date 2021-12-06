@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>모든 아나그램 찾기(Hash, Sliding Window, 투포인트) - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>웹 브라우저 동작 과정 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="모든 아나그램 찾기(Hash, Sliding Window, 투포인트)">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EB%AA%A8%EB%93%A0-%EC%95%84%EB%82%98%EA%B7%B8%EB%9E%A8-%EC%B0%BE%EA%B8%B0/">
+<meta property="og:title" content="웹 브라우저 동작 과정">
+<meta property="og:url" content="http://localhost:4000/front/Web-Browser-Process/">
 
 
-  <meta property="og:description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-10-02T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-11-15T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EB%AA%A8%EB%93%A0-%EC%95%84%EB%82%98%EA%B7%B8%EB%9E%A8-%EC%B0%BE%EA%B8%B0/">
+
+<link rel="canonical" href="http://localhost:4000/front/Web-Browser-Process/">
 
 
 
@@ -435,15 +435,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="모든 아나그램 찾기(Hash, Sliding Window, 투포인트)">
-    <meta itemprop="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-10-02T00:00:00+09:00">
+    <meta itemprop="headline" content="웹 브라우저 동작 과정">
+    <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2021-11-15T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            모든 아나그램 찾기(Hash, Sliding Window, 투포인트)
+            웹 브라우저 동작 과정
 
           </h1>
           
@@ -471,13 +471,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">BOM</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Sliding Window</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">DOM</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Two Pointers Algorithm</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">해쉬(Hash)</a>
+      <a class="page__taxonomy-item-tag" rel="tag">Render</a>
     
     </span>
   </p>
@@ -499,7 +499,7 @@
     
     
     
-    <a href="/categories/#algorithm" class="page__taxonomy-item-category" rel="tag">Algorithm</a>
+    <a href="/categories/#front" class="page__taxonomy-item-category" rel="tag">front</a>
     
 
   </span>
@@ -508,7 +508,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-10-02T00:00:00+09:00">October 2, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-15T00:00:00+09:00">November 15, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -518,9 +518,21 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EA%B1%B4">1. 문제 요건</a></li>
-<li><a href="#2-%EC%BD%94%EB%93%9C">2. 코드</a></li>
-<li><a href="#3-%EA%B2%B0%EA%B3%BC%EC%A0%95%EB%A6%AC">3. 결과정리</a></li>
+<li><a href="#1-domdocument-object-model--window">1. DOM(Document Object Model) &amp; Window</a></li>
+<li><a href="#2-window-%EC%99%80-bombrowser-object-model">2. window 와 BOM(Browser Object Model)</a></li>
+<li>
+<a href="#3-%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">3. 웹 브라우저 동작 과정</a><ul>
+<li><a href="#3-1-dom--cssom--render-%ED%8A%B8%EB%A6%AC-%EC%83%9D%EC%84%B1-%EA%B3%BC%EC%A0%95">3-1. DOM / CSSOM / Render 트리 생성 과정</a></li>
+<li><a href="#3-2-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B0%84-javascript">3-2. 브라우저 동작 간 javascript</a></li>
+</ul>
+</li>
+<li>
+<a href="#3-%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95-1">3. 웹 브라우저 동작 과정</a><ul>
+<li><a href="#3-1-dom--cssom--render-%ED%8A%B8%EB%A6%AC-%EC%83%9D%EC%84%B1-%EA%B3%BC%EC%A0%95-1">3-1. DOM / CSSOM / Render 트리 생성 과정</a></li>
+<li><a href="#3-2-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B0%84-javascript-1">3-2. 브라우저 동작 간 javascript</a></li>
+</ul>
+</li>
+<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
             </nav>
@@ -528,97 +540,166 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</code></p>
 <hr>
 
-<h4 id="1-문제-요건">1. 문제 요건</h4>
-<hr>
-<p><strong>두개의 문자열 a,b</strong> 가 주어지고 <strong>a 에서 b</strong> 와 <strong>아나그램</strong>이 부합하는 경우의 수를 구하여라</p>
+<h4 id="1-domdocument-object-model--window">1. DOM(Document Object Model) &amp; Window</h4>
 
-<h4 id="2-코드">2. 코드</h4>
 <hr>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">th</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">()</span> <span class="c1">// 기준 Map (b)</span>
-    <span class="kd">let</span> <span class="nx">sh</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">()</span> <span class="c1">// 비교 Map (a)</span>
-    <span class="kd">let</span> <span class="nx">lt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="c1">// sh 와 th 가 동일한지 판별하는 함수</span>
-    <span class="kd">function</span> <span class="nx">compareMaps</span><span class="p">(</span><span class="nx">map1</span><span class="p">,</span> <span class="nx">map2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// map 간의 Size 가 다르면 false</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">map1</span><span class="p">.</span><span class="nx">size</span> <span class="o">!==</span> <span class="nx">map2</span><span class="p">.</span><span class="nx">size</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">map2</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">||</span> <span class="nx">map2</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">val</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">// 기준되는 th 맵 셋팅</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">th</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nx">th</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">th</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">th</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">// 비교하며 추가삭제 할 sh 맵 셋팅</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">sh</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span> <span class="p">{</span>
-            <span class="nx">sh</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">sh</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">sh</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">b</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">// 실제 비교하는 로직</span>
-    <span class="c1">// 3번째 index 부터 시작(rt = 2)</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">rt</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">rt</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">rt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// sh 완성</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">sh</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">rt</span><span class="p">]))</span> <span class="p">{</span>
-            <span class="nx">sh</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">rt</span><span class="p">],</span> <span class="nx">sh</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">rt</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">sh</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">rt</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="c1">// 기준 Map 과 비교</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">compareMaps</span><span class="p">(</span><span class="nx">sh</span><span class="p">,</span> <span class="nx">th</span><span class="p">))</span> <span class="p">{</span>
-            <span class="c1">// 동일하면 cnt 증가</span>
-            <span class="nx">cnt</span><span class="o">++</span>
-        <span class="p">}</span>
-        <span class="c1">// lt 빼고 0이면 삭제</span>
-        <span class="nx">sh</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">lt</span><span class="p">],</span> <span class="nx">sh</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">lt</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">sh</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">lt</span><span class="p">])</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">sh</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">lt</span><span class="p">])</span>
-        <span class="p">}</span>
-        <span class="c1">// lt 증가</span>
-        <span class="nx">lt</span><span class="o">++</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">cnt</span>
-<span class="p">}</span>
+<ul>
+  <li>
+<strong><em>Document</em></strong> : 우리가 알고 있는 <strong>HTML 의 전체 코드</strong>로 이해하면 되고 <strong>각 태그들을 객체</strong>로 이해하면 된다. DOM tree 의 <strong>최상위 객체</strong>이다.</li>
+</ul>
 
-<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">bacaAacba</span><span class="dl">'</span>
-<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">abc</span><span class="dl">'</span>
+<p><img src="https://user-images.githubusercontent.com/56063287/142225234-2ed1d786-0e46-459c-9e30-c6f3e6b34b07.png" alt="image"></p>
+
+<p>위 이미지에서 보이 듯이 우리는 <strong>Document 라는 모든 HTML 코드를 가지고 있는 요소</strong>아래 각 태그들을 객체로 이해하면 된다.</p>
+
+<p>또한, document 객체를 통해, HTML/CSS 등을 수정할 수 있다 이부분은 javascript 의 기본이기 때문에 나중에 공부하면서 다시 기록해야겠다.</p>
+
+<hr>
+
+<ul>
+  <li>
+<strong><em>window</em></strong> : 사용자 웹 브라우저 객체</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/142424714-bc5bb2bc-465f-4e46-b8e4-95720ec2d871.png" alt="image"></p>
+
+<p>window 아래 여러가지 객체들이 존재한다. document 또한 그중 하나이다.</p>
+
+<h4 id="2-window-와-bombrowser-object-model">2. window 와 BOM(Browser Object Model)</h4>
+
+<hr>
+
+<ul>
+  <li>document 가 여러가지 HTML 코드를 조작 할 수 있는 객체라면,</li>
+  <li>BOM 은 여러가지 브라우저 환경을 제어할 수 있는 window 란 객체를 만드는데 쓰인다고 이해하면 되겠다.</li>
+</ul>
+
+<p><strong>예를들어</strong>, 우리가 주로 사용하는 <strong>alert 또한 window. 이 생략된 기능</strong>으로 생각하면 되며 <strong>BOM 의 주요 객체</strong>에는 <strong><em>navigator, location</em></strong> 객체가 있다.
+<strong><em>navigator</em></strong> 객체는 해당 사용자의 <strong>브라우저와 운영체제 정보를 제공</strong>하며, <strong><em>location은</em></strong> <strong>url 관련되어 제어</strong>가 가능하다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// alert("hello")</span>
+<span class="c1">// window.alert("hihi")</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">);</span>
+<span class="c1">// 현재 내가 사용하고 있는 브라우저 환경</span>
+<span class="c1">// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">platform</span><span class="p">);</span>
+<span class="c1">// 내가 사용하고 있는 플랫폼 환경</span>
+<span class="c1">// MacIntel</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h4 id="3-결과정리">3. 결과정리</h4>
+<h4 id="3-웹-브라우저-동작-과정">3. 웹 브라우저 동작 과정</h4>
+
+<h5 id="3-1-dom--cssom--render-트리-생성-과정">3-1. DOM / CSSOM / Render 트리 생성 과정</h5>
+
 <hr>
 
-<p>이문제는 지금까지 공부했던 <strong>hash, Sliding Window, 투포인트 알고리즘</strong>을 모두 사용한다.</p>
-
-<p><strong>중요한 포인트</strong>는 다음과 같다.</p>
-
 <ol>
-  <li>
-    <p>기준 및 비교할 Hash Map 정리</p>
+  <li>사용자가 <strong>웹 브라우저에서 특정 URL</strong>로 진입하게 되면 서버에 <strong>HTML 파일을 요청</strong>한다.</li>
+  <li>받은 <strong>HTML 파일</strong>을 <strong>파싱(parsing)</strong> 하여 객체로 구성한 <strong>DOM tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 <strong>각 태그들간의 관계 및 정보를 분석</strong>하게 된다.</li>
+    </ul>
   </li>
   <li>
-    <p>rt, lt 기준점 정의</p>
+<strong>CSS 정보</strong>를 <strong>파싱(parsing)</strong> 하여 <strong>CSSOM tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 각 태그별 <strong>CSS 정보를 저장</strong>한다.</li>
+    </ul>
   </li>
-  <li>
-    <p>비교방법(Sliding Window)</p>
+  <li>앞서 만든 <strong>DOM 과 CSSOM</strong> 를 통해서 <strong>Render tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 모든 <strong>HTML(DOM) 각 태그에 CSS 정보</strong>를 적용하게 된다.</li>
+    </ul>
   </li>
+  <li>웹브라우저가 <strong>Render tree</strong> 를 기반으로 <strong>사용자에게 페이지를 그려준다.</strong>
+</li>
 </ol>
 
-<p>이렇게 풀지 않으면 <strong>반복적인 For 문을 통해 시간복잡도</strong>가 크게 증가하나 이 방법으로 해결하게 되면 많이 줄일 수 있는 장점이 있다.</p>
+<h5 id="3-2-브라우저-동작-간-javascript">3-2. 브라우저 동작 간 javascript</h5>
 
-<p>문제에 대한 설명은 코드에 작성하였고 이와 비슷한 문제를 많이 풀어보며 익숙해저야 할 것이다.</p>
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;head&gt; &lt;/head&gt;</code> 안에 <code class="language-plaintext highlighter-rouge">&lt;script&gt; &lt;/script&gt;</code> 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.</p>
+
+<p>이러한 이유로 아래와 같은 현상이 발생하게 된다.</p>
+
+<ul>
+  <li><strong>화면 로딩이 느려짐</strong></li>
+  <li>
+<strong>DOM tree 구성 전 javascript 를 실행</strong>하게 되므로 DOM 을 조작하는 과정에서 <strong>에러 혹은 정상적으로 실행이 되지 않을 수 있다.</strong>
+</li>
+</ul>
+
+<p>따라서 <code class="language-plaintext highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code>즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.</p>
+
+<h4 id="3-웹-브라우저-동작-과정-1">3. 웹 브라우저 동작 과정</h4>
+
+<h5 id="3-1-dom--cssom--render-트리-생성-과정-1">3-1. DOM / CSSOM / Render 트리 생성 과정</h5>
+
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/144748119-24624b76-cdb3-4173-9207-45b196882deb.png" alt="image"></p>
+
+<ol>
+  <li>사용자가 <strong>웹 브라우저에서 특정 URL</strong>로 진입하게 되면 서버에 <strong>HTML 파일을 요청</strong>한다.</li>
+  <li>받은 <strong>HTML 파일</strong>을 <strong>파싱(parsing)</strong> 하여 객체로 구성한 <strong>DOM tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 <strong>각 태그들간의 관계 및 정보를 분석</strong>하게 된다.</li>
+    </ul>
+  </li>
+  <li>
+<strong>CSS 정보</strong>를 <strong>파싱(parsing)</strong> 하여 <strong>CSSOM tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 각 태그별 <strong>CSS 정보를 저장</strong>한다.</li>
+    </ul>
+  </li>
+  <li>앞서 만든 <strong>DOM 과 CSSOM</strong> 를 통해서 <strong>Render tree</strong> 를 생성한다.
+    <ul>
+      <li>이 과정에서 모든 <strong>HTML(DOM) 각 태그에 CSS 정보</strong>를 적용하게 된다.</li>
+    </ul>
+  </li>
+  <li>웹브라우저가 <strong>Render tree</strong> 를 기반으로 <strong>사용자에게 페이지를 그려준다.</strong>
+</li>
+</ol>
+
+<h5 id="3-2-브라우저-동작-간-javascript-1">3-2. 브라우저 동작 간 javascript</h5>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;head&gt; &lt;/head&gt;</code> 안에 <code class="language-plaintext highlighter-rouge">&lt;script&gt; &lt;/script&gt;</code> 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.</p>
+
+<p>이러한 이유로 아래와 같은 현상이 발생하게 된다.</p>
+
+<ul>
+  <li><strong>화면 로딩이 느려짐</strong></li>
+  <li>
+<strong>DOM tree 구성 전 javascript 를 실행</strong>하게 되므로 DOM 을 조작하는 과정에서 <strong>에러 혹은 정상적으로 실행이 되지 않을 수 있다.</strong>
+</li>
+</ul>
+
+<p>따라서 <code class="language-plaintext highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code>즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.</p>
+
+<h4 id="참고-사이트">참고 사이트</h4>
+
+<hr>
+
+<p><a href="https://d2.naver.com/helloworld/59361">https://d2.naver.com/helloworld/59361</a></p>
+
+<p><a href="https://blog.leehov.in/25?category=945934">https://blog.leehov.in/25?category=945934</a></p>
+
+<p><a href="https://davidhwang.netlify.app/Developments/browser-rendering-process/">https://davidhwang.netlify.app/Developments/browser-rendering-process/</a></p>
+
+<p><a href="https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95</a></p>
 
         
       </section>
@@ -627,22 +708,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EB%AA%A8%EB%93%A0+%EC%95%84%EB%82%98%EA%B7%B8%EB%9E%A8+%EC%B0%BE%EA%B8%B0%28Hash%2C+Sliding+Window%2C+%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%8A%B8%29%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25AA%25A8%25EB%2593%25A0-%25EC%2595%2584%25EB%2582%2598%25EA%25B7%25B8%25EB%259E%25A8-%25EC%25B0%25BE%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%9B%B9+%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80+%EB%8F%99%EC%9E%91+%EA%B3%BC%EC%A0%95%20http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25AA%25A8%25EB%2593%25A0-%25EC%2595%2584%25EB%2582%2598%25EA%25B7%25B8%25EB%259E%25A8-%25EC%25B0%25BE%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%25AA%25A8%25EB%2593%25A0-%25EC%2595%2584%25EB%2582%2598%25EA%25B7%25B8%25EB%259E%25A8-%25EC%25B0%25BE%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EC%B5%9C%EB%8C%80%EB%A7%A4%EC%B6%9C/" class="pagination--pager" title="최대매출(Sliding Window)
+      <a href="/javascript/Promise/" class="pagination--pager" title="Promise
 ">Previous</a>
     
     
-      <a href="/algorithm/%EA%B4%84%ED%98%B8%EB%AC%B8%EC%9E%90%EC%A0%9C%EA%B1%B0(%EC%8A%A4%ED%83%9D)/" class="pagination--pager" title="괄호문자제거(스택)
+      <a href="/vscode/Prettier/" class="pagination--pager" title="Prettier 적용 안될때 해결
 ">Next</a>
     
   </nav>
