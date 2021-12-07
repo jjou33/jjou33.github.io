@@ -57,7 +57,7 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "front" %}
-                    <li><a href="/categories/front" class="">Front End Develope Tips ({{category[1].size}})</a></li>
+                    <li><a href="/categories/front" class="">FrontEnd Study Note({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

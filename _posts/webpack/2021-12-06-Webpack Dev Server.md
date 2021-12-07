@@ -1,0 +1,68 @@
+---
+title: "Webpack Dev 서버"
+excerpt: " :computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다."
+
+categories:
+  - webpack
+tags:
+  - Webpack
+  - Dev Server
+toc: true
+toc_sticky: true
+toc_label: "POST LIST"
+---
+
+<hr>
+:raising_hand:  ```개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.```
+<hr>
+
+#### 1. 실습내용
+
+---
+
+웹팩을 구축하고 실제 html 파일에서 bundle.js 내용을 그려주면 아래와 같이 적용이 되는 실습을 하였다.
+
+**_실습 결과 페이지_**
+
+![image](https://user-images.githubusercontent.com/56063287/144866185-53e70e6b-4b04-46db-b634-a124d3ff3309.png)
+
+이때 우리는 글자 색을 바꾸기 위해 base.css 에 p 태그 색을 지정하였고 index.js 에서 import 하여 build 하였다.
+
+최종적으로 bundle.js 에 결과파일이 생성되었고 index.html 에서는 결과파일을 토대로 페이지를 오픈하게 된다.
+
+이때 우리가 파란색을 다른 색으로 변경하려면 base.css 만 바꾸고 저장하면 될까?
+
+확인을 위해 css 파일을 아래와 같이 변경하고 페이지를 새로고침 해보자
+
+```css
+/* p {
+  color : blue;
+} */
+p {
+  color: lightblue;
+}
+```
+
+이후 페이지 새로고침을 하였을때 결과는 동일하였다.
+
+이유는 우리가 처음 build 를 했을때 최종 결과물인 bundle.js 에는 우리가 소스만 변경했다고 해서 결과파일이 바뀌지 않기 때문이다.
+
+따라서 build 를 한번 더 해주면 다시 적용이 되는것을 볼 수 있다.
+
+`npm run build`
+
+**_ReBuild 후 변경 페이지_**
+
+![image](https://user-images.githubusercontent.com/56063287/144866479-97dbd38d-9303-44a7-a88f-d2a6508bdfaa.png)
+
+#### 2. Webpack DEV 서버란?
+
+---
+
+**_실제 빌드 전 개발 서버로 실제 파일 시스템에 build 가 완료된 파일을 만들지 않고 인메모리 상에만 올려놓아 개발하는 기능_**
+
+##### 참조사이트
+
+---
+
+[https://webpack.js.org/plugins/html-webpack-plugin/](https://webpack.js.org/plugins/html-webpack-plugin/)

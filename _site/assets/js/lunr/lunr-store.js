@@ -262,4 +262,10 @@ var store = [{
         "tags": ["F/E","Browser Element","Rendering Process"],
         "url": "/front/Web-Browser-Process2/",
         "teaser": null
+      },{
+        "title": "Webpack Dev 서버",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 실습내용 웹팩을 구축하고 실제 html 파일에서 bundle.js 내용을 그려주면 아래와 같이 적용이 되는 실습을 하였다. 실습 결과 페이지 이때 우리는 글자 색을 바꾸기 위해 base.css 에 p 태그 색을 지정하였고 index.js 에서 import 하여 build 하였다. 최종적으로 bundle.js 에...","categories": ["webpack"],
+        "tags": ["Webpack","Dev Server"],
+        "url": "/webpack/Webpack-Dev-Server/",
+        "teaser": null
       }]
