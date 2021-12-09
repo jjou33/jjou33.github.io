@@ -263,9 +263,21 @@ var store = [{
         "url": "/front/Web-Browser-Process2/",
         "teaser": null
       },{
-        "title": "Webpack Dev 서버",
+        "title": "Webpack Bundling",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 실습내용 웹팩을 구축하고 실제 html 파일에서 bundle.js 내용을 그려주면 아래와 같이 적용이 되는 실습을 하였다. 실습 결과 페이지 이때 우리는 글자 색을 바꾸기 위해 base.css 에 p 태그 색을 지정하였고 index.js 에서 import 하여 build 하였다. 최종적으로 bundle.js 에...","categories": ["webpack"],
-        "tags": ["Webpack","Dev Server"],
-        "url": "/webpack/Webpack-Dev-Server/",
+        "tags": ["Webpack","Bundling 실습"],
+        "url": "/webpack/bundle/",
+        "teaser": null
+      },{
+        "title": "Webpack Dev Server",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack DEV 서버란? 실제 빌드 전 개발 서버로 실제 파일 시스템에 build 가 완료된 파일을 만들지 않고 인메모리 상에만 올려놓아 개발하는 기능 2. 실습내용 2-1. 프로젝트 내 신규 폴더 새야성 후 npm 설정 시작 npm init -y package.json 생성...","categories": ["webpack"],
+        "tags": ["Webpack","Bundling 실습"],
+        "url": "/webpack/webpack-dev-server/",
+        "teaser": null
+      },{
+        "title": "html webpack plugin(플러그인 사용법)",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack DEV 서버란? 앞서 플러그인 사용법을 봤지만 이번에 새로 사용하는 겸 기록해둔다. var path = require(\"path\"); var HtmlWebpackPlugin = require(\"html-webpack-plugin\"); module.exports = { mode: \"none\", entry: \"./index.js\", output: { filename: \"bundle.js\", path: path.resolve(__dirname, \"dist\"), }, devServer: { port: 9000,...","categories": ["webpack"],
+        "tags": ["Webpack","html Webpack Plugin"],
+        "url": "/webpack/html-webpack-plugin/",
         "teaser": null
       }]

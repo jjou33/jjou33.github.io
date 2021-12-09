@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Webpack Dev Server - Hippo Dev Blog</title>
+<!-- begin _includes/seo.html --><title>html webpack plugin(플러그인 사용법) - Hippo Dev Blog</title>
 <meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Webpack Dev Server">
-<meta property="og:url" content="http://localhost:4000/webpack/webpack-dev-server/">
+<meta property="og:title" content="html webpack plugin(플러그인 사용법)">
+<meta property="og:url" content="http://localhost:4000/webpack/html-webpack-plugin/">
 
 
   <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2021-12-07T00:00:00+09:00">
+  <meta property="article:published_time" content="2021-12-09T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/webpack/webpack-dev-server/">
+<link rel="canonical" href="http://localhost:4000/webpack/html-webpack-plugin/">
 
 
 
@@ -435,15 +435,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Webpack Dev Server">
+    <meta itemprop="headline" content="html webpack plugin(플러그인 사용법)">
     <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-    <meta itemprop="datePublished" content="2021-12-07T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2021-12-09T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Webpack Dev Server
+            html webpack plugin(플러그인 사용법)
 
           </h1>
           
@@ -471,7 +471,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Bundling 실습</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">html Webpack Plugin</a><span class="sep"> </span>
     
       <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
     
@@ -504,7 +504,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-07T00:00:00+09:00">December 7, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-09T00:00:00+09:00">December 9, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -515,19 +515,8 @@
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
 <li><a href="#1-webpack-dev-%EC%84%9C%EB%B2%84%EB%9E%80">1. Webpack DEV 서버란?</a></li>
-<li>
-<a href="#2-%EC%8B%A4%EC%8A%B5%EB%82%B4%EC%9A%A9">2. 실습내용</a><ul>
-<li><a href="#2-1-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%82%B4-%EC%8B%A0%EA%B7%9C-%ED%8F%B4%EB%8D%94-%EC%83%88%EC%95%BC%EC%84%B1-%ED%9B%84-npm-%EC%84%A4%EC%A0%95-%EC%8B%9C%EC%9E%91">2-1. 프로젝트 내 신규 폴더 새야성 후 npm 설정 시작</a></li>
-<li><a href="#2-2-%ED%95%84%EC%9A%94%ED%95%9C-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%84%A4%EC%B9%98-dev-%EB%A1%9C-%EC%84%A4%EC%B9%98%ED%95%9C%EB%8B%A4">2-2. 필요한 라이브러리 설치 (DEV) 로 설치한다.</a></li>
-<li><a href="#2-3-packagejson-%EC%86%8C%EC%8A%A4%EC%9D%98-script-%EC%95%88%EC%97%90-webpack-serve-%EC%B6%94%EA%B0%80">2-3. package.json 소스의 script 안에 “webpack serve” 추가</a></li>
-<li><a href="#2-4-indexhtml-%EC%86%8C%EC%8A%A4-%ED%9B%84-%EA%B8%B0%EB%B3%B8-%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%83%9D%EC%84%B1">2-4. index.html 소스 후 기본 템플릿 생성</a></li>
-<li><a href="#2-5-indexjs-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1-%ED%9B%84-html-%EC%97%90-%EB%A7%8C%EB%93%A0-div-%ED%83%9C%EA%B7%B8%EC%97%90-test-%EC%B6%94%EA%B0%80-%EC%86%8C%EC%8A%A4-%EC%B6%94%EA%B0%80">2-5. index.js 파일 생성 후 html 에 만든 div 태그에 test 추가 소스 추가</a></li>
-<li><a href="#2-6-webpackconfigjs-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1-%ED%9B%84-%EC%95%84%EB%9E%98%EC%99%80-%EA%B0%99%EC%9D%B4-%EC%83%9D%EC%84%B1">2-6. webpack.config.js 파일 생성 후 아래와 같이 생성</a></li>
-<li><a href="#2-7-npm-run-dev-%EC%BB%A4%EB%A9%98%EB%93%9C-%EC%8B%A4%ED%96%89">2-7. npm run dev 커멘드 실행</a></li>
-<li><a href="#2-8-9000-%EB%B2%88-%ED%8F%AC%ED%8A%B8%EB%A1%9C-%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B4-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A1%9C%EB%93%9C">2-8. 9000 번 포트로 들어가면 페이지 로드</a></li>
-</ul>
-</li>
-<li><a href="#3-%EA%B2%B0%EA%B3%BC%EC%A0%95%EB%A6%AC">3. 결과정리</a></li>
+<li><a href="#2-%EC%B0%B8%EA%B3%A0%EC%82%AC%ED%95%AD">2. 참고사항</a></li>
+<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
             </nav>
@@ -542,77 +531,7 @@
 
 <hr>
 
-<p><strong><em>실제 빌드 전 개발 서버로 실제 파일 시스템에 build 가 완료된 파일을 만들지 않고 인메모리 상에만 올려놓아 개발하는 기능</em></strong></p>
-
-<h4 id="2-실습내용">2. 실습내용</h4>
-
-<h5 id="2-1-프로젝트-내-신규-폴더-새야성-후-npm-설정-시작">2-1. 프로젝트 내 신규 폴더 새야성 후 npm 설정 시작</h5>
-
-<hr>
-
-<p><code class="language-plaintext highlighter-rouge">npm init -y</code></p>
-
-<p><strong><em>package.json 생성 확인필요</em></strong></p>
-
-<h5 id="2-2-필요한-라이브러리-설치-dev-로-설치한다">2-2. 필요한 라이브러리 설치 (DEV) 로 설치한다.</h5>
-
-<hr>
-
-<p><code class="language-plaintext highlighter-rouge">npm i webpack webpack-cli webpack-dev-server html-webpack-plugin -D</code></p>
-
-<h5 id="2-3-packagejson-소스의-script-안에-webpack-serve-추가">2-3. package.json 소스의 script 안에 “webpack serve” 추가</h5>
-
-<hr>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">devserverprc</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1.0.0</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">main</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.js</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">dev</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">webpack serve</span><span class="dl">"</span>
-  <span class="p">},</span>
-  <span class="dl">"</span><span class="s2">keywords</span><span class="dl">"</span><span class="p">:</span> <span class="p">[],</span>
-  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ISC</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">devDependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">html-webpack-plugin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^5.3.2</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^5.46.0</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">webpack-cli</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^4.7.2</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">webpack-dev-server</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">^3.11.2</span><span class="dl">"</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h5 id="2-4-indexhtml-소스-후-기본-템플릿-생성">2-4. index.html 소스 후 기본 템플릿 생성</h5>
-
-<hr>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;div&gt;</span>웹팩 개발서버 테스트<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<h5 id="2-5-indexjs-파일-생성-후-html-에-만든-div-태그에-test-추가-소스-추가">2-5. index.js 파일 생성 후 html 에 만든 div 태그에 test 추가 소스 추가</h5>
-
-<hr>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.container</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">테스트 성공</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<h5 id="2-6-webpackconfigjs-파일-생성-후-아래와-같이-생성">2-6. webpack.config.js 파일 생성 후 아래와 같이 생성</h5>
-
-<hr>
+<p><strong>앞서 플러그인 사용법을 봤지만 이번에 새로 사용하는 겸 기록해둔다.</strong></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">html-webpack-plugin</span><span class="dl">"</span><span class="p">);</span>
@@ -636,71 +555,108 @@
 <span class="p">};</span>
 </code></pre></div></div>
 
-<h5 id="2-7-npm-run-dev-커멘드-실행">2-7. npm run dev 커멘드 실행</h5>
+<p>HtmlWebpackPlugin 의 경우 정의된 html 파일에 빌드 결과물을 추가해준다.</p>
 
-<hr>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">run</span> <span class="nx">dev</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Webpack Dev Server<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- 빌드 결과물이 정상적으로 로딩되면 아래 div 태그의 텍스트가 변경됨 --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>TBD..<span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- HTML Webpack Plugin에 의해 웹팩 빌드 내용이 아래에 추가됨 --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<h5 id="2-8-9000-번-포트로-들어가면-페이지-로드">2-8. 9000 번 포트로 들어가면 페이지 로드</h5>
+<p>따라서 기존과는 다르게 index.html 에 script 로 결과물을 불러오는 태그가 없는 것을 알 수 있다.</p>
+
+<p>또한, link 태그를 통해 css 결과물을 아래와 같은 테그로 가져와서 페이지에 그려줬어야 했지만 이또한 plugin 이 알아서 해준다.</p>
+
+<p>이러한 플러그인을 잘 사용하면 웹 빌드 환경을 구성하는데 좋을 것 같다.</p>
+
+<h4 id="2-참고사항">2. 참고사항</h4>
 
 <hr>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/145405289-e62918cd-e4df-4b6e-bea6-35ee2f167148.png" alt="image"></p>
+<p>참고사항으로 web-cli 를 통하여 프로젝트를 생성하였을대 webpack.config.js 이다.</p>
 
-<p><strong><em>localhost:9000 진입 시 페이지 로드 성공</em></strong></p>
+<p>아래 소스 중 자세한건 공식홈페이지에서 찾아서 공부하자</p>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/145405391-6382825b-3958-42e9-97fa-b9c97fb3c6c0.png" alt="image"></p>
-
-<h4 id="3-결과정리">3. 결과정리</h4>
-
-<hr>
-
-<p>이제 우리가 index.js 에 정의해논 텍스트를 바꾸고 저장만 하게되면 바로바로 컴파일이 진행되며 페이지가 새로 로드되게 된다.</p>
-
-<p>하지만 여기서 기존 빌드 방식으로 진행할때와 다른점이 있었다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
-
-<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">html-webpack-plugin</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./index.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// mode 를 production 으로 배포하게 되면 최적화를 웹팩 내에서 진행해준다.</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/main.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bundle.js</span><span class="dl">"</span><span class="p">,</span>
-    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">publicPath</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/dist/</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">build.js</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="c1">// css loader 를 변환하기 위해</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">vue-style-loader</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// vue 확장 파일에 대해 loader 를 돌림</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">vue$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">vue-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">loaders</span><span class="p">:</span> <span class="p">{},</span>
+          <span class="c1">// other vue-loader options go here</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// javascript 의 최신 문법들을 모든 브라우저가 호환할 수 있게 변환해준다.</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">babel-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="c1">// 이 부분은 배제한다.</span>
+        <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="c1">// 이미지 확장 파일 loader</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">png|jpg|gif|svg</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">file-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].[ext]?[hash]</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="c1">// 파일간의 연관관계를 해석할때 사용</span>
+  <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// 별칭</span>
+    <span class="na">alias</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">vue</span><span class="na">$</span><span class="p">:</span> <span class="dl">"</span><span class="s2">vue/dist/vue.esm.js</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="c1">// extensions 에 넣어둔 것들에 대해서 import {} from '.***.js, vue, json'</span>
+    <span class="c1">// 이렇게 확장자 까지 안쳐도 해석해주겠다.</span>
+    <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.js</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.vue</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.json</span><span class="dl">"</span><span class="p">],</span>
   <span class="p">},</span>
   <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">port</span><span class="p">:</span> <span class="mi">9000</span><span class="p">,</span>
+    <span class="na">historyApiFallback</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">noInfo</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">overlay</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="p">},</span>
-  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
-    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span>
-      <span class="c1">// index.html 템플릿을 기반으로 빌드 결과물을 추가해줌</span>
-      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.html</span><span class="dl">"</span><span class="p">,</span>
-    <span class="p">}),</span>
-  <span class="p">],</span>
+  <span class="na">performance</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">hints</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">devtool</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#eval-source-map</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>분명 output 속성에 최종 결과물 위치와 파일명까지 작성하였지만 실제로 기존처럼 프로젝트 내 결과물 파일이 생성되지 않았다.</p>
+<h4 id="참고-사이트">참고 사이트</h4>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/145405511-cb0f9e44-ef0b-41f5-a024-eb43d47a3bd3.png" alt="image"></p>
+<hr>
 
-<p>하지만 웹 페이지 개발자도구로 들어가보면 request 요청도 하고 실제 bundle.js 파일 소스를 확인할 수 있다.</p>
-
-<p><strong><em>개발자 도구 확인</em></strong>
-<img src="https://user-images.githubusercontent.com/56063287/145405563-97b8da09-3f57-4b35-a5b5-a855562b4b2f.png" alt="image"></p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/145405640-6f9ba454-948b-45e2-af2b-c5f49adf33bb.png" alt="image"></p>
-
-<p>이유는 웹팩 dev 서버의 경우 in memory 기반으로 웹팩의 빌드 결과물을 올려 변환하여 메모리 상에만 존재하고 파일 시스템 상에서 보이지 않는다.</p>
-
-<p>따라서 개발 중엔 웹팩 dev 서버를 이용해서 먼저 결과물을 확인 후 완료되었을때 build 하여 파일을 생성하는 방법이 있다.</p>
-
-<p>이러한 전 과정들이 현재 운영을 맞고 있는 시스템에 적용되면 좋을 것 같아 기록을 남겨두어 차후 개선해보면 좋을 것 같다.</p>
+<p><a href="https://webpack.js.org/plugins/html-webpack-plugin/">https://webpack.js.org/plugins/html-webpack-plugin/</a></p>
 
         
       </section>
@@ -709,23 +665,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Webpack+Dev+Server%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-dev-server%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=html+webpack+plugin%28%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8+%EC%82%AC%EC%9A%A9%EB%B2%95%29%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fhtml-webpack-plugin%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-dev-server%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fhtml-webpack-plugin%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-dev-server%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fhtml-webpack-plugin%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/webpack/bundle/" class="pagination--pager" title="Webpack Bundling
+      <a href="/webpack/webpack-dev-server/" class="pagination--pager" title="Webpack Dev Server
 ">Previous</a>
     
     
-      <a href="/webpack/html-webpack-plugin/" class="pagination--pager" title="html webpack plugin(플러그인 사용법)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -749,12 +704,12 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/webpack/html-webpack-plugin/" rel="permalink">html webpack plugin(플러그인 사용법)
+        <a href="/webpack/webpack-dev-server/" rel="permalink">Webpack Dev Server
 </a>
       
     </h2>
     <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.09
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.07
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 
@@ -763,7 +718,7 @@
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">html Webpack Plugin</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">Bundling 실습</a><span class="sep">
         </span>
         
         

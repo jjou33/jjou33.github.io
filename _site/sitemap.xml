@@ -177,8 +177,16 @@
 <lastmod>2021-12-02T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/webpack/Webpack-Dev-Server/</loc>
-<lastmod>2021-12-06T00:00:00+09:00</lastmod>
+<loc>http://localhost:4000/webpack/bundle/</loc>
+<lastmod>2021-12-04T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/webpack/webpack-dev-server/</loc>
+<lastmod>2021-12-07T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/webpack/html-webpack-plugin/</loc>
+<lastmod>2021-12-09T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/front</loc>
@@ -233,5 +241,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page9/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page10/</loc>
 </url>
 </urlset>
