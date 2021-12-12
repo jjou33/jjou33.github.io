@@ -263,6 +263,12 @@ var store = [{
         "url": "/front/Web-Browser-Process2/",
         "teaser": null
       },{
+        "title": "html 기본 개념 및 공부정리",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. HTML 5 기본 템플릿 분석 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 1-1.DOCTYPE DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다. 1-2. HTML...","categories": ["front"],
+        "tags": ["F/E","HTML Basic"],
+        "url": "/front/html-basic/",
+        "teaser": null
+      },{
         "title": "Webpack Bundling",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 실습내용 웹팩을 구축하고 실제 html 파일에서 bundle.js 내용을 그려주면 아래와 같이 적용이 되는 실습을 하였다. 실습 결과 페이지 이때 우리는 글자 색을 바꾸기 위해 base.css 에 p 태그 색을 지정하였고 index.js 에서 import 하여 build 하였다. 최종적으로 bundle.js 에...","categories": ["webpack"],
         "tags": ["Webpack","Bundling 실습"],
