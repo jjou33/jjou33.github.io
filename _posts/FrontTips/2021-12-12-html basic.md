@@ -37,23 +37,23 @@ toc_label: "POST LIST"
 
 ---
 
-DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다.
+**DOCTYPE** 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다.
 
 ##### 1-2. HTML
 
 ---
 
-HTML 문서에서 html 태그를 통해 html 시작과 끝을 알려준다.
+**HTML** 문서에서 html 태그를 통해 html **시작과 끝**을 알려준다.
 
-속성 lang 은 언어를 의미하며 en, ko 등 변경 가능하다.
+속성 **lang** 은 언어를 의미하며 **en, ko** 등 변경 가능하다.
 
 ##### 1-3. META
 
 ---
 
-meta Tag 의 경우 문서에 대한 정보를 알려주기 위해 사용한다.
+**meta Tag** 의 경우 문서에 대한 정보를 알려주기 위해 사용한다.
 
-주요 속성값으로 keywords, charset, name, author, description 등 여러가지가 있다.
+주요 속성값으로 **keywords, charset, name, author, description** 등 여러가지가 있다.
 
 브라우저에서 검색을 할때 이 meta tag 를 보고 노출시켜 주기도 한다.
 

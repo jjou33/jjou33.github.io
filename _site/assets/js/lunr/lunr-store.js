@@ -263,12 +263,6 @@ var store = [{
         "url": "/front/Web-Browser-Process2/",
         "teaser": null
       },{
-        "title": "html 기본 개념 및 공부정리",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. HTML 5 기본 템플릿 분석 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 1-1.DOCTYPE DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다. 1-2. HTML...","categories": ["front"],
-        "tags": ["F/E","HTML Basic"],
-        "url": "/front/html-basic/",
-        "teaser": null
-      },{
         "title": "Webpack Bundling",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. 실습내용 웹팩을 구축하고 실제 html 파일에서 bundle.js 내용을 그려주면 아래와 같이 적용이 되는 실습을 하였다. 실습 결과 페이지 이때 우리는 글자 색을 바꾸기 위해 base.css 에 p 태그 색을 지정하였고 index.js 에서 import 하여 build 하였다. 최종적으로 bundle.js 에...","categories": ["webpack"],
         "tags": ["Webpack","Bundling 실습"],
@@ -285,5 +279,17 @@ var store = [{
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Webpack DEV 서버란? 앞서 플러그인 사용법을 봤지만 이번에 새로 사용하는 겸 기록해둔다. var path = require(\"path\"); var HtmlWebpackPlugin = require(\"html-webpack-plugin\"); module.exports = { mode: \"none\", entry: \"./index.js\", output: { filename: \"bundle.js\", path: path.resolve(__dirname, \"dist\"), }, devServer: { port: 9000,...","categories": ["webpack"],
         "tags": ["Webpack","html Webpack Plugin"],
         "url": "/webpack/html-webpack-plugin/",
+        "teaser": null
+      },{
+        "title": "html 기본 개념 및 공부정리",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. HTML 5 기본 템플릿 분석 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 1-1.DOCTYPE DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다. 1-2. HTML...","categories": ["front"],
+        "tags": ["F/E","HTML Basic"],
+        "url": "/front/html-basic/",
+        "teaser": null
+      },{
+        "title": "CSS 관련 링크",
+        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    1. 관련링크     Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.   이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.   http://www.w3bai.com/ko/tags/att_input_pattern.html   2. CSS Color 관련 링크        https://www.w3schools.com/colors/colors_names.asp   https://material.io/design/color/the-color-system.html#tools-for-picking-colors   https://color.adobe.com/ko/explore   위 세가지 사이트에서 색상을 찾기 유용하다.  ","categories": ["front"],
+        "tags": ["F/E","CSS Reference"],
+        "url": "/front/css-reference/",
         "teaser": null
       }]
