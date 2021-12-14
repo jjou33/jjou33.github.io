@@ -13,10 +13,10 @@
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">
-         :closed_book: Algorithm(JavaScript)</span>
+         :closed_book: JavaScript</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
+                    {% if category[0] == "Algorithm1" %}
                         <li><a href="/categories/Algorithm" class=""> Algorithm ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -82,8 +82,8 @@
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "gitblog" %}
-                    <li><a href="/categories/gitblog" class="">Git 블로그 만들기 ({{category[1].size}})</a></li>
+                {% if category[0] == "git" %}
+                    <li><a href="/categories/git" class="">Git 관련 설정 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

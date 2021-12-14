@@ -292,4 +292,10 @@ var store = [{
         "tags": ["F/E","CSS Reference"],
         "url": "/front/css-reference/",
         "teaser": null
+      },{
+        "title": "Git Password -> Token 변경 이슈",
+        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. 오류사항 어느날 여느때와 같이 알고리즘을 풀고 깃에 올리려는 순간?? 에러가 발생한다. remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: unable to access 'https://github.com/*****/*******.git/':...","categories": ["git"],
+        "tags": ["Git","Git Token","Git Password"],
+        "url": "/git/gitissue/",
+        "teaser": null
       }]

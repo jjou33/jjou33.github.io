@@ -9,32 +9,28 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>MAC 에서 사용중인 Port 죽이기 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>Git 관련 설정 - Hippo Dev Blog</title>
+<meta name="description" content="공부한 것을 기록하고 공유하는 방">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
   
-  <meta property="article:author" content=":raising_hand:HELLO WORLD">
-  
 
 
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="MAC 에서 사용중인 Port 죽이기">
-<meta property="og:url" content="http://localhost:4000/mac/Port-Kill/">
+<meta property="og:title" content="Git 관련 설정">
+<meta property="og:url" content="http://localhost:4000/categories/git">
 
 
-  <meta property="og:description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
-
-
-
+  <meta property="og:description" content="공부한 것을 기록하고 공유하는 방">
 
 
 
 
-  <meta property="article:published_time" content="2021-11-04T00:00:00+09:00">
+
+
 
 
 
@@ -45,7 +41,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/mac/Port-Kill/">
+<link rel="canonical" href="http://localhost:4000/categories/git">
 
 
 
@@ -96,7 +92,7 @@
 
   </head>
 
-  <body class="layout--single">
+  <body class="layout--archive">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -452,162 +448,15 @@
 
 
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="MAC 에서 사용중인 Port 죽이기">
-    <meta itemprop="description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-11-04T00:00:00+09:00">
+  <div class="archive">
     
-    <div class="page__inner-wrap">
       
-        <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            MAC 에서 사용중인 Port 죽이기
-
-          </h1>
-          
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-        </header>
+          <h1 id="page-title" class="page__title">Git 관련 설정</h1>
       
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
-    
-      <a class="page__taxonomy-item-tag" rel="tag">MAC OS</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">Port Kill</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-
-
-
-
-
-<p class="page__taxonomy">
-  <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
-  <span itemprop="keywords">
     
     
-    
-    <a href="/categories/#mac" class="page__taxonomy-item-category" rel="tag">mac</a>
-    
-
-  </span>
-</p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time></p>
-
-      </footer>
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title">
-<i class="fas fa-file-alt"></i> POST LIST</h4></header>
-              <ul class="toc__menu"><li>
-<a href="#mac-%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%ED%8F%AC%ED%8A%B8%EC%9D%98-pid-%EC%B0%BE%EA%B8%B0">MAC 사용중인 포트의 PID 찾기</a><ul><li><a href="#%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%ED%8F%AC%ED%8A%B8-%EC%A2%85%EB%A3%8C%ED%95%98%EA%B8%B0">사용중인 포트 종료하기</a></li></ul>
-</li></ul>
-
-            </nav>
-          </aside>
-        
-        <hr>
-
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다.</code></p>
-<hr>
-
-<h4 id="mac-사용중인-포트의-pid-찾기">MAC 사용중인 포트의 PID 찾기</h4>
-<hr>
-
-<pre><code class="language-command">sudo lsof -i:포트번호
-</code></pre>
-
-<h5 id="사용중인-포트-종료하기">사용중인 포트 종료하기</h5>
-<hr>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// PID 조회
-<span class="nb">sudo </span>lsof <span class="nt">-i</span>:4000
-
-COMMAND  PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabase <span class="o">(</span>LISTEN<span class="o">)</span>
-
-<span class="k">**</span>강제 종료 커맨드<span class="k">**</span>
-<span class="nb">sudo kill</span> <span class="nt">-9</span> 4020
-<span class="o">(</span><span class="nb">sudo kill</span> <span class="nt">-9</span> <span class="o">[</span>PID]<span class="o">)</span>
-</code></pre></div></div>
-
-
-        
-      </section>
-      <section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=MAC+%EC%97%90%EC%84%9C+%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8+Port+%EC%A3%BD%EC%9D%B4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/javascript/basic-language-skill/" class="pagination--pager" title="JavaScript 문법 중 기억할 것
-">Previous</a>
-    
-    
-      <a href="/webpack/webpack-definition/" class="pagination--pager" title="Webpack 에 대한 정의와 배경, 사용이유
-">Next</a>
-    
-  </nav>
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">You may also enjoy</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
@@ -657,164 +506,7 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
 </div>
 
 
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/front/css-reference/" rel="permalink">CSS 관련 링크
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.13
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">CSS Reference</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/front/html-basic/" rel="permalink">html 기본 개념 및 공부정리
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.12
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">HTML Basic</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/webpack/html-webpack-plugin/" rel="permalink">html webpack plugin(플러그인 사용법)
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.09
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">html Webpack Plugin</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
-        
-      </div>
-    </div>
-  
-  
+  </div>
 </div>
     </div>
 
