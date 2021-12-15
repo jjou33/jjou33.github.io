@@ -234,9 +234,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Prettier 적용 안될때 해결",
-        "excerpt":":raising_hand: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다. 1. Prettier 설치 Prettier 는 VS Code 에서 사용자의 코드를 정리해주는 확장 프로그램이 있다. 왼쪽 바에서 마켓 플레이스 진입 후 Prettier 설치한다. 2. 적용 후 설정 필요 2-1. Format on Save 확인 cmd + , 로 설정 진입 후 format on save...","categories": ["vscode"],
+        "excerpt":":raising_hand: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다. 1. Prettier 설치 Prettier 는 VS Code 에서 사용자의 코드를 정리해주는 확장 프로그램이 있다. 왼쪽 바에서 마켓 플레이스 진입 후 Prettier 설치한다. 2. 적용 후 설정 필요 2-1. Format on Save 확인 cmd + , 로 설정 진입 후 format on save...","categories": ["devEnv"],
         "tags": ["VS Code","Prettier"],
-        "url": "/vscode/Prettier/",
+        "url": "/devenv/Prettier/",
         "teaser": null
       },{
         "title": "Modules",
@@ -294,8 +294,14 @@ var store = [{
         "teaser": null
       },{
         "title": "Git Password -> Token 변경 이슈",
-        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. 오류사항 어느날 여느때와 같이 알고리즘을 풀고 깃에 올리려는 순간?? 에러가 발생한다. remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: unable to access 'https://github.com/*****/*******.git/':...","categories": ["git"],
+        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. 오류사항 어느날 여느때와 같이 알고리즘을 풀고 깃에 올리려는 순간?? 에러가 발생한다. remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: unable to access 'https://github.com/*****/*******.git/':...","categories": ["devEnv"],
         "tags": ["Git","Git Token","Git Password"],
-        "url": "/git/gitissue/",
+        "url": "/devenv/gitissue/",
+        "teaser": null
+      },{
+        "title": "개발간 Vanilla Javscript 유용팁1",
+        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center...","categories": ["devTips"],
+        "tags": ["Vanilla Javscript","closest","dataset"],
+        "url": "/devtips/devTips/",
         "teaser": null
       }]

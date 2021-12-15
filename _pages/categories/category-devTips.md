@@ -1,10 +1,10 @@
 ---
-title: "Git 관련 설정"
+title: "Programmings"
 layout: archive
-permalink: categories/git
+permalink: categories/devTips
 author_profile: true
 sidebar_main: true
 ---
 
-{% assign posts = site.categories.git %}
+{% assign posts = site.categories.devTips %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

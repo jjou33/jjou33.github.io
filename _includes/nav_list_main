@@ -28,6 +28,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "devTips" %}
+                        <li><a href="/categories/devTips" class=""> JavaScript Develope Tips({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">
         :green_book: Web - Front End </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
@@ -75,15 +82,15 @@
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "vscode" %}
-                    <li><a href="/categories/vscode" class="">VS CODE 설정 ({{category[1].size}})</a></li>
+                {% if category[0] == "devEnv" %}
+                    <li><a href="/categories/vscode" class="">개발 환경 설정 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "git" %}
-                    <li><a href="/categories/git" class="">Git 관련 설정 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/git" class="">Github 관련 설정 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
