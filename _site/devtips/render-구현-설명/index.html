@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>웹 브라우저 동작 과정 2차 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>Vanilla Javscript 구현팁(dataset) - Hippo Dev Blog</title>
+<meta name="description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="웹 브라우저 동작 과정 2차">
-<meta property="og:url" content="http://localhost:4000/front/Web-Browser-Process2/">
+<meta property="og:title" content="Vanilla Javscript 구현팁(dataset)">
+<meta property="og:url" content="http://localhost:4000/devtips/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/">
 
 
-  <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-12-02T00:00:00+09:00">
+  <meta property="og:description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-12-15T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/front/Web-Browser-Process2/">
+
+<link rel="canonical" href="http://localhost:4000/devtips/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/">
 
 
 
@@ -472,15 +472,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="웹 브라우저 동작 과정 2차">
-    <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-12-02T00:00:00+09:00">
+    <meta itemprop="headline" content="Vanilla Javscript 구현팁(dataset)">
+    <meta itemprop="description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
+    <meta itemprop="datePublished" content="2021-12-15T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            웹 브라우저 동작 과정 2차
+            Vanilla Javscript 구현팁(dataset)
 
           </h1>
           
@@ -508,11 +508,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Browser Element</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">dataset</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">Rendering Process</a>
+      <a class="page__taxonomy-item-tag" rel="tag">Vanilla Javscript</a>
     
     </span>
   </p>
@@ -534,7 +532,7 @@
     
     
     
-    <a href="/categories/#front" class="page__taxonomy-item-category" rel="tag">front</a>
+    <a href="/categories/#devtips" class="page__taxonomy-item-category" rel="tag">devTips</a>
     
 
   </span>
@@ -543,7 +541,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-02T00:00:00+09:00">December 2, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-15T00:00:00+09:00">December 15, 2021</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -553,12 +551,8 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-browser-%EC%9A%94%EC%86%8Celements">1. Browser 요소(Elements)</a></li>
-<li><a href="#2-browser-rendering-process">2. Browser Rendering Process</a></li>
-<li>
-<a href="#2-rendering-engine-working-process">2. Rendering Engine Working Process</a><ul><li><a href="#2-1-rendering-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">2-1. Rendering 동작 과정</a></li></ul>
-</li>
-<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
+<li><a href="#1-render-%ED%95%A8%EC%88%98-%EA%B5%AC%ED%98%84">1. render 함수 구현</a></li>
+<li><a href="#%EC%B0%B8%EC%A1%B0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참조 사이트</a></li>
 </ul>
 
             </nav>
@@ -566,100 +560,75 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.</code></p>
 <hr>
 
-<h4 id="1-browser-요소elements">1. Browser 요소(Elements)</h4>
-
-<hr>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/144439265-c4362193-2fa7-4a2f-8533-76746b85e31e.png" alt="image"></p>
-
-<ul>
-  <li>
-<strong><em>사용자 인터페이스</em></strong> : 우리가 브라우저에서 볼수 있는 <strong>주소표시줄, 버튼</strong> 등 사용자가 컨트롤 할 수 있는 부분</li>
-  <li>
-<strong><em>브라우저 엔진</em></strong> : <strong>사용자 인터페이스</strong>와 <strong>렌더링 엔진</strong> 사이 동작을 제어</li>
-  <li>
-<strong><em>렌더링 엔진</em></strong>
-    <ul>
-      <li>사용자가 요청한 <strong>URI</strong> 를 <strong>브라우저 엔진</strong> 으로부터 받아 <strong>서버에 요청</strong>한다.</li>
-      <li>서버로 URI 요청하여 <strong>응답받은 데이터</strong>(<strong>HTML</strong>, <strong>CSS</strong> , <strong>JavaScript</strong>) 를 받아서 <strong>파싱 후 렌더링</strong>한다.(Chrome webkit)</li>
-    </ul>
-  </li>
-  <li>
-<strong><em>통신</em></strong> : <strong>렌더링 엔진</strong>으로부터 <strong>HTTP 요청</strong> 등을 받아서 <strong>네트워크 처리</strong> 후 응답을 전달</li>
-  <li>
-<strong><em>자바스크립트 해석기</em></strong> : JavaScript 를 파싱한다(chrome V8)</li>
-  <li>
-<strong><em>자료 저장소</em></strong> : <strong>쿠키</strong> 등의 자료를 <strong>컴퓨터 하드디스크</strong>에 <strong>저장</strong>한다.
-(<strong>HTML5</strong> 부터 <strong>Web Database</strong> 에 저장가능)</li>
-  <li>
-<strong><em>UI 백엔드</em></strong> : render tree 를 Browser 에 그리는 역할을 담당</li>
-</ul>
-
-<h4 id="2-browser-rendering-process">2. Browser Rendering Process</h4>
+<h4 id="1-render-함수-구현">1. render 함수 구현</h4>
 
 <hr>
 
-<ol>
-  <li>
-<strong>브라우저 주소 표시줄</strong>에 URI 입력 후 <strong>브라우저 엔진에 전달</strong>
-</li>
-  <li>
-<strong>브라우저 엔진</strong>은 <strong>자료 저장소</strong>에서 <strong>URI</strong> 에 해당하는 <strong>자료</strong>를 찾고, 해당 자료를 <strong>쿠키</strong>로 <strong>저장 후 렌더링 엔진으로 전달</strong>
-</li>
-  <li>
-<strong>렌더링 엔진</strong>은 브라우저 엔진으로부터 받은 자료(<strong>HTML</strong>, <strong>CSS</strong>, <strong>image</strong> 등)를 <strong>분석</strong>한다. <strong>동시에</strong> <strong>URI 데이터</strong>를 <strong>통신</strong>, <strong>자바스크립트 해석기</strong>, <strong>UI 백엔드</strong>로 전파한다.</li>
-  <li>
-<strong>렌더링 엔진</strong>은 통신 레이어에 URI 에 대한 <strong>추가 데이터</strong>가 있다면 요청하고 응답을 기다린다.</li>
-  <li>응답받은 데이터에서 <strong>HTML</strong> ,<strong>CSS</strong> 는 <strong>렌더링 엔진이 파싱</strong>한다.</li>
-  <li>응답받은 데이터에서 <strong>JavaScript</strong>는 <strong>Javascript 해석기가 파싱</strong>한다.</li>
-  <li>
-<strong>JavaScript 해석기</strong>는 파싱한 <strong>결과</strong>를 <strong>렌더링 엔진</strong>에 전달하여 3번과 5번에서 파싱한 <strong>HTML</strong> 의 결과인 <strong>DOM tree</strong> 를 조작한다.</li>
-  <li>조작이 완료된 <strong>DOM node(DOM Tree 구성요소)</strong>는 <strong>render object(render tree 구성요소)</strong> 로 변한다.</li>
-  <li>
-<strong>UI 백엔드</strong>는 <strong>render Object</strong> 를 <strong>브라우저 렌더링 화면에 띄어준다.</strong>
-</li>
-</ol>
+<p>아래는 공부하고 있는 프로젝트에서 만든 render 함수이다.
+여기서 기록해노을 내용은 dataset 함수를 통한 태그 특정하는 기능이다.</p>
 
-<h4 id="2-rendering-engine-working-process">2. Rendering Engine Working Process</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">render</span> <span class="o">=</span> <span class="p">(</span><span class="nx">menu</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="nx">menu</span>
+      <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">`&lt;li data-menu-id="</span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2">" class="menu-list-item d-flex items-center py-2"&gt;
+                &lt;span class="w-100 pl-2 menu-name"&gt;</span><span class="p">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+                &lt;button
+                    type="button"
+                    class="bg-gray-50 text-gray-500 text-sm mr-1 menu-edit-button"
+                &gt;
+                    수정
+                &lt;/button&gt;
+                &lt;button
+                    type="button"
+                    class="bg-gray-50 text-gray-500 text-sm menu-remove-button"
+                &gt;
+                    삭제
+                &lt;/button&gt;
+                &lt;/li&gt;`</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+</code></pre></div></div>
 
-<hr>
+<p>위 함수에서 봐야할 내용은 바로 <code class="language-plaintext highlighter-rouge">data-menu-id="${index}"</code> 이다.</p>
 
-<p>렌더링 엔진은 URI 를 통해 요청을 받아서 해당하는 데이터를 렌더링하는 역할을 담당
-chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용</p>
+<p>위 render 함수를 보면 유추할 수 있겠지만 특정 메뉴를 추가한 객체를 인자로 넣게되면 map 함수를 통해 미리 정해진 템플릿에 필요한 정보만 변경해서 DOM 에 추가하고 노출시키는 함수이다.</p>
 
-<h5 id="2-1-rendering-동작-과정">2-1. Rendering 동작 과정</h5>
+<p>이때 앞서 공부한 closest 함수를 통해 가장 가까운 원하는 태그를 특정할 수 잇었고 해당 태그에 고유한 번호를 삽입하고 싶을 때 <code class="language-plaintext highlighter-rouge">data-{원하는 인자명}</code> 을 넣어주면 된다.</p>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/144630479-09e01c18-48e7-4366-a2fe-85f5fedb3d69.png" alt="image"></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">updateMenuName</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// classList 로 target(사용자가 클릭한 버튼 태그)에 Class들을 끌어오고</span>
+  <span class="c1">// contains 로 해당 list 안에 포함되어 있는지 확인한다.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">menu-edit-button</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// 사용자가 클릭한 태그에서 가장 가까운 li 태그로 올라가려면</span>
+    <span class="c1">// closest 함수를 사용하면 된다.</span>
+    <span class="kd">const</span> <span class="nx">menuId</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">menuId</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">dataset</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">$menuName</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">).</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.menu-name</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">changedMenuName</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span>
+      <span class="dl">"</span><span class="s2">수정할 메뉴명을 입력해 주세요</span><span class="dl">"</span><span class="p">,</span>
+      <span class="nx">$menuName</span><span class="p">.</span><span class="nx">innerText</span>
+    <span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">menu</span><span class="p">[</span><span class="nx">menuId</span><span class="p">].</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">changedMenuName</span><span class="p">;</span>
+    <span class="nx">store</span><span class="p">.</span><span class="nx">setLocalStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">menu</span><span class="p">);</span>
+    <span class="nx">$menuName</span><span class="p">.</span><span class="nx">innerText</span> <span class="o">=</span> <span class="nx">changedMenuName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
-<ol>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">DOM tree 구축</code>을 위한 HTML parsing, CSS, Javascript parsing : HTML 문서를 파싱한 후, content tree 내부에서 tag(a, div)를 DOM node 로 변환한다. 그 다음 CSS 파일과 함꼐 모든 스타일 요소를 파싱한다. 스타일 요소와 HTML 표시 규칙, Javascript 의 파싱 결과물은 render tree 를 생성한다</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">render tree 구축</code> : HTML 과 CSS 를 파싱해서 만들어진 render tree 는 색상 또는 면적 등 시각적 속성을 갖는 사각형을 포함한다. 정해진 순서대로 렌더링한다</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">render tree 배치</code> : render tree 가 생성이 끝나면, 배치가 시작된다. 각 node 가 정확한 위치에 표시되기 위해 이동한다</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">render tree 그리기</code> : 각 node 배치를 완료하면 UI 벡엔드에서 각 node를 가로지르며 paint 작업을 한다</p>
-  </li>
-</ol>
+<p>위 태그 명을 업데이트 하는 함수에서 확인해보면</p>
 
-<h4 id="참고-사이트">참고 사이트</h4>
+<p><img src="https://user-images.githubusercontent.com/56063287/146678328-dc79a4db-4fcf-4b92-bde7-a1723236229d.png" alt="image"></p>
 
-<hr>
+<p>위와 같이 메뉴 id 가 인덱스 값 1로 들어간 것을 확인할 수 있다.
+따라서 우리는 그 유니크한 태그의 id 값을 넣어줌으로써 DOM에 원하는 태그를 조작할때 유용하게 사용할 수 있다.</p>
 
-<p><a href="https://d2.naver.com/helloworld/59361">https://d2.naver.com/helloworld/59361</a></p>
+<h4 id="참조-사이트">참조 사이트</h4>
 
-<p><a href="https://blog.leehov.in/25?category=945934">https://blog.leehov.in/25?category=945934</a></p>
-
-<p><a href="https://davidhwang.netlify.app/Developments/browser-rendering-process/">https://davidhwang.netlify.app/Developments/browser-rendering-process/</a></p>
-
-<p><a href="https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95</a></p>
+<p><strong>문벅스 강좌</strong>
+<a href="https://blog.makerjun.com/blackcoffee/moonbucks-guidebook">https://blog.makerjun.com/blackcoffee/moonbucks-guidebook</a></p>
 
         
       </section>
@@ -668,23 +637,22 @@ chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용</p>
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EC%9B%B9+%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80+%EB%8F%99%EC%9E%91+%EA%B3%BC%EC%A0%95+2%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Vanilla+Javscript+%EA%B5%AC%ED%98%84%ED%8C%81%28dataset%29%20http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2Frender-%25EA%25B5%25AC%25ED%2598%2584-%25EC%2584%25A4%25EB%25AA%2585%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2Frender-%25EA%25B5%25AC%25ED%2598%2584-%25EC%2584%25A4%25EB%25AA%2585%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Ffront%2FWeb-Browser-Process2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2Frender-%25EA%25B5%25AC%25ED%2598%2584-%25EC%2584%25A4%25EB%25AA%2585%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/webpack/plugin/" class="pagination--pager" title="Plugin 사용
+      <a href="/devtips/closest-%ED%95%A8%EC%88%98/" class="pagination--pager" title="Vanilla Javscript 구현팁(Closest)
 ">Previous</a>
     
     
-      <a href="/webpack/bundle/" class="pagination--pager" title="Webpack Bundling
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -698,57 +666,6 @@ chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용</p>
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/devtips/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/" rel="permalink">Vanilla Javscript 구현팁(dataset)
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.15
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">dataset</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Vanilla Javscript</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -886,6 +803,57 @@ chrome 과 IOS 는 webkit 이라는 rendering engine 을 사용</p>
         
         
         <a class="page__taxonomy-item-tag" rel="tag">F/E</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/front/html-basic/" rel="permalink">html 기본 개념 및 공부정리
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.12
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">HTML Basic</a>
         
     </span>
 </span>
