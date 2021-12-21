@@ -305,15 +305,15 @@ var store = [{
         "url": "/devenv/gitissue/",
         "teaser": null
       },{
-        "title": "Vanilla Javscript 구현팁(Closest)",
-        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. Closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center...","categories": ["devTips"],
-        "tags": ["Vanilla Javscript","closest"],
-        "url": "/devtips/closest-%ED%95%A8%EC%88%98/",
-        "teaser": null
-      },{
         "title": "Vanilla Javscript 구현팁(dataset)",
         "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. render 함수 구현 아래는 공부하고 있는 프로젝트에서 만든 render 함수이다. 여기서 기록해노을 내용은 dataset 함수를 통한 태그 특정하는 기능이다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center py-2\"&gt;...","categories": ["devTips"],
         "tags": ["Vanilla Javscript","dataset"],
         "url": "/devtips/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/",
+        "teaser": null
+      },{
+        "title": "Vanilla Javscript 구현팁(Closest)",
+        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. Closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center...","categories": ["devTips"],
+        "tags": ["Vanilla Javscript","closest"],
+        "url": "/devtips/closest-%ED%95%A8%EC%88%98/",
         "teaser": null
       }]
