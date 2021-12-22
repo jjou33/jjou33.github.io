@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Hippo Dev Blog</title>
-<meta name="description" content="공부한 것을 기록하고 공유하는 방">
+<!-- begin _includes/seo.html --><title>Vanilla Javscript 구현 - 좋아요 갯수증감 버튼 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
   
+  <meta property="article:author" content=":raising_hand:HELLO WORLD">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Hippo Dev Blog">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Vanilla Javscript 구현 - 좋아요 갯수증감 버튼">
+<meta property="og:url" content="http://localhost:4000/devtips/likeCount-%EA%B5%AC%ED%98%84/">
 
 
-  <meta property="og:description" content="공부한 것을 기록하고 공유하는 방">
-
-
-
+  <meta property="og:description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-12-22T00:00:00+09:00">
 
 
 
@@ -41,11 +45,9 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/devtips/likeCount-%EA%B5%AC%ED%98%84/">
 
 
-
-  <link rel="next" href="http://localhost:4000/page2/">
 
 
 <script type="application/ld+json">
@@ -94,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -469,57 +471,19 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Vanilla Javscript 구현 - 좋아요 갯수증감 버튼">
+    <meta itemprop="description" content=":computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.">
+    <meta itemprop="datePublished" content="2021-12-22T00:00:00+09:00">
     
+    <div class="page__inner-wrap">
       
-          <h1 id="page-title" class="page__title"></h1>
-      
-    
-    <h3 class="archive__subtitle">
-<img class="emoji" title=":calendar:" alt=":calendar:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png" height="20" width="20">  최근 포스트</h3>
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            Vanilla Javscript 구현 - 좋아요 갯수증감 버튼
 
-
-
-
-
-
-
-<div class="entries-list">
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/devtips/likeCount-%EA%B5%AC%ED%98%84/" rel="permalink">Vanilla Javscript 구현 - 좋아요 갯수증감 버튼
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2021.12.22
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">dataset</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Vanilla Javscript</a>
-        
-    </span>
-</span>
-    </small>
-    
+          </h1>
+          
 
   <p class="page__meta">
     
@@ -530,18 +494,199 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.
-</p>
-  </article>
-</div>
+        </header>
+      
+      <footer class="page__meta">
+        
+        
+  
 
 
   
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a class="page__taxonomy-item-tag" rel="tag">dataset</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">Vanilla Javscript</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+
+
+
+
+
+<p class="page__taxonomy">
+  <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+  <span itemprop="keywords">
+    
+    
+    
+    <a href="/categories/#devtips" class="page__taxonomy-item-category" rel="tag">devTips</a>
     
 
+  </span>
+</p>
 
 
-<div class="list__item">
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-22T00:00:00+09:00">December 22, 2021</time></p>
+
+      </footer>
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> POST LIST</h4></header>
+              <ul class="toc__menu">
+<li><a href="#1-%EB%AC%B8%EC%A0%9C-%EB%82%B4%EC%9A%A9">1. 문제 내용</a></li>
+<li><a href="#indexhtml-%EC%86%8C%EC%8A%A4">index.html 소스</a></li>
+<li><a href="#indexjs-%EC%86%8C%EC%8A%A4">index.js 소스</a></li>
+<li><a href="#%EB%AC%B8%EC%A0%9C-%EC%82%AC%EC%9D%B4%ED%8A%B8">문제 사이트</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <hr>
+
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.</code></p>
+<hr>
+
+<h4 id="1-문제-내용">1. 문제 내용</h4>
+
+<hr>
+
+<p>코딜리티를 구경하던 중 간단한 구현과제 문제가 보여서 바닐라로 구현해보았다.</p>
+
+<p>문제는 간단하게 “LIKE | { 좋아요갯수 }” 버튼을 생성하고 누를때마다 좋아요 갯수를 증/감 하는 문제이다.
+특별한건 없지만 최대한 깔끔하게 짜도록 노력해보았고, 조금씩 다른사람 코드도 보면서 배우도록 해야겠다.</p>
+
+<p>문제의 조건보다는 실제 기능 동작과 구현위주로 짜보았다.</p>
+
+<h4 id="indexhtml-소스">index.html 소스</h4>
+
+<hr>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"like-button"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"likes-counter"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./src/index.js"</span> <span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="indexjs-소스">index.js 소스</h4>
+
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//index.js</span>
+
+<span class="kd">const</span> <span class="nx">$</span> <span class="o">=</span> <span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">isLike</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">updateLikeCount</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.like-button</span><span class="dl">"</span><span class="p">));</span>
+
+  <span class="kd">const</span> <span class="nx">changeCountValue</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isLike</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">++</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nx">updateLikeCount</span><span class="p">(</span><span class="nx">count</span><span class="o">++</span><span class="p">);</span>
+      <span class="nx">isLike</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">--</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nx">updateLikeCount</span><span class="p">(</span><span class="nx">count</span><span class="o">--</span><span class="p">);</span>
+      <span class="nx">isLike</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">updateLikeCount</span> <span class="o">=</span> <span class="p">(</span><span class="nx">count</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.likes-counter</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`LIKE | </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.like-button</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">changeCountValue</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">App</span><span class="p">();</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>실제 사이트에는 React 를 활용한 component 문제이지만, 최근 바닐라JS 공부를 하던차라 바닐라로 간단하게 구현해보았다.
+앞으로도 간단한거라도 조금 씩 구현해보면서 구현 능력을 좀 길러야겠다..</p>
+
+<h4 id="문제-사이트">문제 사이트</h4>
+
+<p><strong>코딜리티</strong> <a href="https://app.codility.com/programmers/trainings/8/react_like_button/">https://app.codility.com/programmers/trainings/8/react_like_button/</a></p>
+
+        
+      </section>
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Vanilla+Javscript+%EA%B5%AC%ED%98%84+-+%EC%A2%8B%EC%95%84%EC%9A%94+%EA%B0%AF%EC%88%98%EC%A6%9D%EA%B0%90+%EB%B2%84%ED%8A%BC%20http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2FlikeCount-%25EA%25B5%25AC%25ED%2598%2584%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2FlikeCount-%25EA%25B5%25AC%25ED%2598%2584%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fdevtips%2FlikeCount-%25EA%25B5%25AC%25ED%2598%2584%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/javascript/forEach,-map,-filter,-reduce/" class="pagination--pager" title="forEach, map, filter, reduce
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -602,12 +747,12 @@
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -653,12 +798,12 @@
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -704,12 +849,12 @@
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -760,65 +905,11 @@
 </div>
 
 
+        
+      </div>
+    </div>
   
-</div>
-
-
-<nav class="pagination">
   
-  <ul>
-    
-    
-    <li><a href="#" class="disabled"><span aria-hidden="true">Previous</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-        
-        
-        
-        <li><a href="/page2/">2</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page3/">3</a></li>
-      
-    
-
-    
-    
-      <li><a href="#" class="disabled">…</a></li>
-    
-
-    
-      <li><a href="/page11/">11</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">Next</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
 </div>
     </div>
 

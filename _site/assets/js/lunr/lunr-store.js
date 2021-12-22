@@ -227,12 +227,6 @@ var store = [{
         "url": "/javascript/Promise/",
         "teaser": null
       },{
-        "title": "forEach, map, filter, reduce",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. forEach, map, filter, reduce 네개의 메서드에 관해서 간략하게 기록한다. 4개의 메서드는 모두 함수값을 전달 받는 고차함수이다. 1. foreach forEach 문은 배열에 접근할 때 for 반복문 대신 접근할 수 있는 내장 메서드 이다. let a = [10, 11, 12, 13, 14, 15]; a.forEach( function...","categories": ["JavaScript"],
-        "tags": ["JavaScript","foreach","map","filter","reduce"],
-        "url": "/javascript/forEach,-map,-filter,-reduce/",
-        "teaser": null
-      },{
         "title": "웹 브라우저 동작 과정",
         "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["front"],
         "tags": ["F/E","DOM","BOM","Render"],
@@ -315,5 +309,17 @@ var store = [{
         "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. Closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center...","categories": ["devTips"],
         "tags": ["Vanilla Javscript","closest"],
         "url": "/devtips/closest-%ED%95%A8%EC%88%98/",
+        "teaser": null
+      },{
+        "title": "forEach, map, filter, reduce",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. forEach, map, filter, reduce 네개의 메서드에 관해서 간략하게 기록한다. 4개의 메서드는 모두 함수값을 전달 받는 고차함수이다. 1. foreach forEach 문은 배열에 접근할 때 for 반복문 대신 접근할 수 있는 내장 메서드 이다. let a = [10, 11, 12, 13, 14, 15]; a.forEach( function...","categories": ["JavaScript"],
+        "tags": ["JavaScript","foreach","map","filter","reduce"],
+        "url": "/javascript/forEach,-map,-filter,-reduce/",
+        "teaser": null
+      },{
+        "title": "Vanilla Javscript 구현 - 좋아요 갯수증감 버튼",
+        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. 문제 내용 코딜리티를 구경하던 중 간단한 구현과제 문제가 보여서 바닐라로 구현해보았다. 문제는 간단하게 “LIKE | { 좋아요갯수 }” 버튼을 생성하고 누를때마다 좋아요 갯수를 증/감 하는 문제이다. 특별한건 없지만 최대한 깔끔하게 짜도록 노력해보았고, 조금씩 다른사람 코드도 보면서 배우도록 해야겠다. 문제의 조건보다는...","categories": ["devTips"],
+        "tags": ["Vanilla Javscript","dataset"],
+        "url": "/devtips/likeCount-%EA%B5%AC%ED%98%84/",
         "teaser": null
       }]
