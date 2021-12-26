@@ -290,7 +290,7 @@ var store = [{
         "title": "CSS 관련 링크",
         "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    1. 관련링크     Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.   이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.   http://www.w3bai.com/ko/tags/att_input_pattern.html   2. CSS Color 관련 링크        https://www.w3schools.com/colors/colors_names.asp   https://material.io/design/color/the-color-system.html#tools-for-picking-colors   https://color.adobe.com/ko/explore   위 세가지 사이트에서 색상을 찾기 유용하다.  ","categories": ["front"],
         "tags": ["F/E","CSS Reference"],
-        "url": "/front/css-reference/",
+        "url": "/front/css-reference-copy/",
         "teaser": null
       },{
         "title": "Git Password -> Token 변경 이슈",
@@ -321,5 +321,11 @@ var store = [{
         "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. 문제 내용 코딜리티를 구경하던 중 간단한 구현과제 문제가 보여서 바닐라로 구현해보았다. 문제는 간단하게 “LIKE | { 좋아요갯수 }” 버튼을 생성하고 누를때마다 좋아요 갯수를 증/감 하는 문제이다. 특별한건 없지만 최대한 깔끔하게 짜도록 노력해보았고, 조금씩 다른사람 코드도 보면서 배우도록 해야겠다. 문제의 조건보다는...","categories": ["devTips"],
         "tags": ["Vanilla Javscript","dataset"],
         "url": "/devtips/likeCount-%EA%B5%AC%ED%98%84/",
+        "teaser": null
+      },{
+        "title": "공부할부분 체크리스트",
+        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    필요목록        이벤트 루프   실행 컨텍스트   setTimeout 비동기 처리   HOC   코드 스플리팅   SPA   이벤트 처리(SPA 와 바닐라의 차이)   중간(일단완료)        호이스팅   완료    ","categories": ["front"],
+        "tags": ["F/E","학습필요목록","TODO LIST"],
+        "url": "/front/todoStudyList/",
         "teaser": null
       }]

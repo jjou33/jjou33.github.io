@@ -193,7 +193,7 @@
 <lastmod>2021-12-12T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/front/css-reference/</loc>
+<loc>http://localhost:4000/front/css-reference-copy/</loc>
 <lastmod>2021-12-13T00:00:00+09:00</lastmod>
 </url>
 <url>
@@ -215,6 +215,10 @@
 <url>
 <loc>http://localhost:4000/devtips/likeCount-%EA%B5%AC%ED%98%84/</loc>
 <lastmod>2021-12-22T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/front/todoStudyList/</loc>
+<lastmod>2021-12-26T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/front</loc>
