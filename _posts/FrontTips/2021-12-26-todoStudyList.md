@@ -26,7 +26,7 @@ toc_label: "POST LIST"
 - setTimeout 비동기 처리
 - HOC
 - 코드 스플리팅
-- SPA
+
 - 이벤트 처리(SPA 와 바닐라의 차이)
 
 #### 중간(일단완료)
@@ -34,6 +34,7 @@ toc_label: "POST LIST"
 ---
 
 - 호이스팅
+- SPA
 
 #### 완료
 

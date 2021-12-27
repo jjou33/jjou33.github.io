@@ -324,8 +324,14 @@ var store = [{
         "teaser": null
       },{
         "title": "공부할부분 체크리스트",
-        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    필요목록        이벤트 루프   실행 컨텍스트   setTimeout 비동기 처리   HOC   코드 스플리팅   SPA   이벤트 처리(SPA 와 바닐라의 차이)   중간(일단완료)        호이스팅   완료    ","categories": ["front"],
+        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    필요목록        이벤트 루프   실행 컨텍스트   setTimeout 비동기 처리   HOC        코드 스플리팅       이벤트 처리(SPA 와 바닐라의 차이)   중간(일단완료)        호이스팅   SPA   완료    ","categories": ["front"],
         "tags": ["F/E","학습필요목록","TODO LIST"],
         "url": "/front/todoStudyList/",
+        "teaser": null
+      },{
+        "title": "SPA 개념 및 구현내용",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. SPA(Single Page Application) 이란 무엇일까? 현 회사에서는 VUE.js 로 모바일 프론트를 개발하고 운영하고 있다. 나름 SPA 시스템을 운영하고 있다고 생각하던 찰나, Vanilla JS 로 SPA 페이지를 구현하는 과제 문제를 풀게되었다. 풀어나가는 도중 스스로 SPA 에 대한 정확한 지식 없이 그냥저냥 운영하고 개발만...","categories": ["front"],
+        "tags": ["F/E","SPA"],
+        "url": "/front/SPA%EA%B0%9C%EB%85%90/",
         "teaser": null
       }]
