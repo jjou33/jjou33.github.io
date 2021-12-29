@@ -1,5 +1,5 @@
 ---
-title: "Vue Study Note"
+title: "개발 중 기록 내용 포스팅"
 layout: archive
 permalink: categories/devhistory
 author_profile: true

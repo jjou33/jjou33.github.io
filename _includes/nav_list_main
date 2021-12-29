@@ -86,7 +86,7 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "devEnv" %}
-                    <li><a href="/categories/vscode" class=""> :mag: 개발 환경 설정 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/devEnv" class=""> :mag: 개발 환경 설정 ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

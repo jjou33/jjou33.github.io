@@ -1,5 +1,5 @@
 ---
-title: "웹팩(Webpack) 정리"
+title: "개발 환경 기록 내용"
 layout: archive
 permalink: categories/devEnv
 author_profile: true
