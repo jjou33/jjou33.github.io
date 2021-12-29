@@ -1,9 +1,9 @@
 ---
 title: "Vanilla Javscript 구현 - 좋아요 갯수증감 버튼"
-excerpt: " :computer: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다."
+excerpt: " :computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
-  - devTips
+  - devhistory
 tags:
   - Vanilla Javscript
   - dataset
@@ -13,7 +13,7 @@ toc_label: "POST LIST"
 ---
 
 <hr>
-:raising_hand:  ```Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다.```
+:raising_hand:  ```프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.```
 <hr>
 
 #### 1. 문제 내용

@@ -282,33 +282,33 @@ var store = [{
         "teaser": null
       },{
         "title": "html 기본 개념 및 공부정리",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. HTML 5 기본 템플릿 분석 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 1-1.DOCTYPE DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다. 1-2. HTML...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. HTML 5 기본 템플릿 분석 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;/body&gt; &lt;/html&gt; 1-1.DOCTYPE DOCTYPE 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다. 1-2. HTML...","categories": ["htmlcss"],
         "tags": ["F/E","HTML Basic"],
-        "url": "/front/html-basic/",
+        "url": "/htmlcss/html-basic/",
         "teaser": null
       },{
         "title": "CSS 관련 링크",
-        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    1. 관련링크     Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.   이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.   http://www.w3bai.com/ko/tags/att_input_pattern.html   2. CSS Color 관련 링크        https://www.w3schools.com/colors/colors_names.asp   https://material.io/design/color/the-color-system.html#tools-for-picking-colors   https://color.adobe.com/ko/explore   위 세가지 사이트에서 색상을 찾기 유용하다.  ","categories": ["front"],
+        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    1. 관련링크     Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.   이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.   http://www.w3bai.com/ko/tags/att_input_pattern.html   2. CSS Color 관련 링크        https://www.w3schools.com/colors/colors_names.asp   https://material.io/design/color/the-color-system.html#tools-for-picking-colors   https://color.adobe.com/ko/explore   위 세가지 사이트에서 색상을 찾기 유용하다.  ","categories": ["htmlcss"],
         "tags": ["F/E","CSS Reference"],
-        "url": "/front/css-reference-copy/",
+        "url": "/htmlcss/css-reference-copy/",
         "teaser": null
       },{
         "title": "Git Password -> Token 변경 이슈",
-        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. 오류사항 어느날 여느때와 같이 알고리즘을 풀고 깃에 올리려는 순간?? 에러가 발생한다. remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: unable to access 'https://github.com/*****/*******.git/':...","categories": ["devEnv"],
+        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. 오류사항 어느날 여느때와 같이 알고리즘을 풀고 깃에 올리려는 순간?? 에러가 발생한다. remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead. remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information. fatal: unable to access 'https://github.com/*****/*******.git/':...","categories": ["git"],
         "tags": ["Git","Git Token","Git Password"],
-        "url": "/devenv/gitissue/",
+        "url": "/git/gitissue/",
         "teaser": null
       },{
         "title": "Vanilla Javscript 구현팁(dataset)",
-        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. render 함수 구현 아래는 공부하고 있는 프로젝트에서 만든 render 함수이다. 여기서 기록해노을 내용은 dataset 함수를 통한 태그 특정하는 기능이다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center py-2\"&gt;...","categories": ["devTips"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. render 함수 구현 아래는 공부하고 있는 프로젝트에서 만든 render 함수이다. 여기서 기록해노을 내용은 dataset 함수를 통한 태그 특정하는 기능이다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center py-2\"&gt; &lt;span class=\"w-100...","categories": ["devhistory"],
         "tags": ["Vanilla Javscript","dataset"],
-        "url": "/devtips/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/",
+        "url": "/devhistory/render-%EA%B5%AC%ED%98%84-%EC%84%A4%EB%AA%85/",
         "teaser": null
       },{
         "title": "Vanilla Javscript 구현팁(Closest)",
-        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. Closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center...","categories": ["devTips"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. Closest 전달받은 타겟 정보(클라이언트에서 받은 이벤트정보)가 발생 시 가장 가까운 특정 태그를 찾는방법 render 를 통해서 아래와 같이 태그가 추가된다. const render = (menu) =&gt; { const template = menu .map((item, index) =&gt; { return `&lt;li data-menu-id=\"${index}\" class=\"menu-list-item d-flex items-center py-2\"&gt; &lt;span...","categories": ["devhistory"],
         "tags": ["Vanilla Javscript","closest"],
-        "url": "/devtips/closest-%ED%95%A8%EC%88%98/",
+        "url": "/devhistory/closest-%ED%95%A8%EC%88%98/",
         "teaser": null
       },{
         "title": "forEach, map, filter, reduce",
@@ -318,9 +318,9 @@ var store = [{
         "teaser": null
       },{
         "title": "Vanilla Javscript 구현 - 좋아요 갯수증감 버튼",
-        "excerpt":":raising_hand: Javascript 구현 개발 중 기록이 필요한 요소들 모음집입니다. 1. 문제 내용 코딜리티를 구경하던 중 간단한 구현과제 문제가 보여서 바닐라로 구현해보았다. 문제는 간단하게 “LIKE | { 좋아요갯수 }” 버튼을 생성하고 누를때마다 좋아요 갯수를 증/감 하는 문제이다. 특별한건 없지만 최대한 깔끔하게 짜도록 노력해보았고, 조금씩 다른사람 코드도 보면서 배우도록 해야겠다. 문제의 조건보다는...","categories": ["devTips"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 문제 내용 코딜리티를 구경하던 중 간단한 구현과제 문제가 보여서 바닐라로 구현해보았다. 문제는 간단하게 “LIKE | { 좋아요갯수 }” 버튼을 생성하고 누를때마다 좋아요 갯수를 증/감 하는 문제이다. 특별한건 없지만 최대한 깔끔하게 짜도록 노력해보았고, 조금씩 다른사람 코드도 보면서 배우도록 해야겠다. 문제의 조건보다는 실제 기능...","categories": ["devhistory"],
         "tags": ["Vanilla Javscript","dataset"],
-        "url": "/devtips/likeCount-%EA%B5%AC%ED%98%84/",
+        "url": "/devhistory/likeCount-%EA%B5%AC%ED%98%84/",
         "teaser": null
       },{
         "title": "공부할부분 체크리스트",
