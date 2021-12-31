@@ -334,4 +334,10 @@ var store = [{
         "tags": ["F/E","SPA"],
         "url": "/front/SPA%EA%B0%9C%EB%85%90/",
         "teaser": null
+      },{
+        "title": "배열 내 특정값 삭제",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 주어진 배열 내 특정값을 찾아 제거한다. 2. 코드 function solution(arr) { let testArr = arr; // reduce 를 통한 arr 배열의 합 구하기 let sum = arr.reduce((a, b) =&gt; a + b, 0); // 이중...","categories": ["Algorithm"],
+        "tags": ["Programming","Array","reduce"],
+        "url": "/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/",
+        "teaser": null
       }]
