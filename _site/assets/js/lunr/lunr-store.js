@@ -341,9 +341,9 @@ var store = [{
         "url": "/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/",
         "teaser": null
       },{
-        "title": "웹 브라우저 동작 과정",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["front"],
-        "tags": ["F/E","DOM","BOM","Render"],
+        "title": "이벤트 루프에 관하여",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 우리가 사용하는 자바스크립트 엔진은 단일 호출 스텍을 사용한다. 즉, 웹 브라우저에서 요청한 작업들을 동시에 하나만 처리할 수 있다는 개념이다. 그러나 우리는 웹 브라우저에서 여러가지 작업들이 동시에 동작하는 것, 동시성을 보장하는 것을 볼 수 있다. 실제 자바 스크립트가 구동되는 환경(브라우저, Node.js 등)...","categories": ["front"],
+        "tags": ["F/E","Event Loop"],
         "url": "/front/eventloop/",
         "teaser": null
       }]
