@@ -1,4 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-31T23:46:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">배열 내 특정값 삭제</title><link href="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/" rel="alternate" type="text/html" title="배열 내 특정값 삭제" /><published>2021-12-31T00:00:00+09:00</published><updated>2021-12-31T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4%20%EB%82%B4%20%ED%8A%B9%EC%A0%95%20%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EA%B0%92%20%EC%A0%9C%EA%B1%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-01T23:31:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">웹 브라우저 동작 과정</title><link href="http://localhost:4000/front/eventloop/" rel="alternate" type="text/html" title="웹 브라우저 동작 과정" /><published>2022-01-01T00:00:00+09:00</published><updated>2022-01-01T00:00:00+09:00</updated><id>http://localhost:4000/front/eventloop</id><content type="html" xml:base="http://localhost:4000/front/eventloop/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-domdocument-object-model--window&quot;&gt;1. DOM(Document Object Model) &amp;amp; Window&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Document&lt;/em&gt;&lt;/strong&gt; : 우리가 알고 있는 &lt;strong&gt;HTML 의 전체 코드&lt;/strong&gt;로 이해하면 되고 &lt;strong&gt;각 태그들을 객체&lt;/strong&gt;로 이해하면 된다. DOM tree 의 &lt;strong&gt;최상위 객체&lt;/strong&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/142225234-2ed1d786-0e46-459c-9e30-c6f3e6b34b07.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 이미지에서 보이 듯이 우리는 &lt;strong&gt;Document 라는 모든 HTML 코드를 가지고 있는 요소&lt;/strong&gt;아래 각 태그들을 객체로 이해하면 된다.&lt;/p&gt;
+
+&lt;p&gt;또한, document 객체를 통해, HTML/CSS 등을 수정할 수 있다 이부분은 javascript 의 기본이기 때문에 나중에 공부하면서 다시 기록해야겠다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;window&lt;/em&gt;&lt;/strong&gt; : 사용자 웹 브라우저 객체&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/142424714-bc5bb2bc-465f-4e46-b8e4-95720ec2d871.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;window 아래 여러가지 객체들이 존재한다. document 또한 그중 하나이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-window-와-bombrowser-object-model&quot;&gt;2. window 와 BOM(Browser Object Model)&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document 가 여러가지 HTML 코드를 조작 할 수 있는 객체라면,&lt;/li&gt;
+  &lt;li&gt;BOM 은 여러가지 브라우저 환경을 제어할 수 있는 window 란 객체를 만드는데 쓰인다고 이해하면 되겠다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;예를들어&lt;/strong&gt;, 우리가 주로 사용하는 &lt;strong&gt;alert 또한 window. 이 생략된 기능&lt;/strong&gt;으로 생각하면 되며 &lt;strong&gt;BOM 의 주요 객체&lt;/strong&gt;에는 &lt;strong&gt;&lt;em&gt;navigator, location&lt;/em&gt;&lt;/strong&gt; 객체가 있다.
+&lt;strong&gt;&lt;em&gt;navigator&lt;/em&gt;&lt;/strong&gt; 객체는 해당 사용자의 &lt;strong&gt;브라우저와 운영체제 정보를 제공&lt;/strong&gt;하며, &lt;strong&gt;&lt;em&gt;location은&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;url 관련되어 제어&lt;/strong&gt;가 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// alert(&quot;hello&quot;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// window.alert(&quot;hihi&quot;)&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 현재 내가 사용하고 있는 브라우저 환경&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 내가 사용하고 있는 플랫폼 환경&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// MacIntel&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3-웹-브라우저-동작-과정&quot;&gt;3. 웹 브라우저 동작 과정&lt;/h4&gt;
+
+&lt;h5 id=&quot;3-1-dom--cssom--render-트리-생성-과정&quot;&gt;3-1. DOM / CSSOM / Render 트리 생성 과정&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자가 &lt;strong&gt;웹 브라우저에서 특정 URL&lt;/strong&gt;로 진입하게 되면 서버에 &lt;strong&gt;HTML 파일을 요청&lt;/strong&gt;한다.&lt;/li&gt;
+  &lt;li&gt;받은 &lt;strong&gt;HTML 파일&lt;/strong&gt;을 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 객체로 구성한 &lt;strong&gt;DOM tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 &lt;strong&gt;각 태그들간의 관계 및 정보를 분석&lt;/strong&gt;하게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CSS 정보&lt;/strong&gt;를 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 &lt;strong&gt;CSSOM tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 각 태그별 &lt;strong&gt;CSS 정보를 저장&lt;/strong&gt;한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;앞서 만든 &lt;strong&gt;DOM 과 CSSOM&lt;/strong&gt; 를 통해서 &lt;strong&gt;Render tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 모든 &lt;strong&gt;HTML(DOM) 각 태그에 CSS 정보&lt;/strong&gt;를 적용하게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;웹브라우저가 &lt;strong&gt;Render tree&lt;/strong&gt; 를 기반으로 &lt;strong&gt;사용자에게 페이지를 그려준다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;3-2-브라우저-동작-간-javascript&quot;&gt;3-2. 브라우저 동작 간 javascript&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt; &amp;lt;/head&amp;gt;&lt;/code&gt; 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt; 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.&lt;/p&gt;
+
+&lt;p&gt;이러한 이유로 아래와 같은 현상이 발생하게 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;화면 로딩이 느려짐&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOM tree 구성 전 javascript 를 실행&lt;/strong&gt;하게 되므로 DOM 을 조작하는 과정에서 &lt;strong&gt;에러 혹은 정상적으로 실행이 되지 않을 수 있다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-웹-브라우저-동작-과정-1&quot;&gt;3. 웹 브라우저 동작 과정&lt;/h4&gt;
+
+&lt;h5 id=&quot;3-1-dom--cssom--render-트리-생성-과정-1&quot;&gt;3-1. DOM / CSSOM / Render 트리 생성 과정&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/144748119-24624b76-cdb3-4173-9207-45b196882deb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자가 &lt;strong&gt;웹 브라우저에서 특정 URL&lt;/strong&gt;로 진입하게 되면 서버에 &lt;strong&gt;HTML 파일을 요청&lt;/strong&gt;한다.&lt;/li&gt;
+  &lt;li&gt;받은 &lt;strong&gt;HTML 파일&lt;/strong&gt;을 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 객체로 구성한 &lt;strong&gt;DOM tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 &lt;strong&gt;각 태그들간의 관계 및 정보를 분석&lt;/strong&gt;하게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CSS 정보&lt;/strong&gt;를 &lt;strong&gt;파싱(parsing)&lt;/strong&gt; 하여 &lt;strong&gt;CSSOM tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 각 태그별 &lt;strong&gt;CSS 정보를 저장&lt;/strong&gt;한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;앞서 만든 &lt;strong&gt;DOM 과 CSSOM&lt;/strong&gt; 를 통해서 &lt;strong&gt;Render tree&lt;/strong&gt; 를 생성한다.
+    &lt;ul&gt;
+      &lt;li&gt;이 과정에서 모든 &lt;strong&gt;HTML(DOM) 각 태그에 CSS 정보&lt;/strong&gt;를 적용하게 된다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;웹브라우저가 &lt;strong&gt;Render tree&lt;/strong&gt; 를 기반으로 &lt;strong&gt;사용자에게 페이지를 그려준다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;3-2-브라우저-동작-간-javascript-1&quot;&gt;3-2. 브라우저 동작 간 javascript&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt; &amp;lt;/head&amp;gt;&lt;/code&gt; 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt; 로 넣게되면 서버로부터 HTML 코드를 받아 DOM 트리 구성 전 script 부분에서 자바스크립트 엔진에 제어건을 넘기게 된다.
+이후 자바스크립트 엔진이 코드를 실행하고 다시 DOM 트리 구성을 진행하게 된다.&lt;/p&gt;
+
+&lt;p&gt;이러한 이유로 아래와 같은 현상이 발생하게 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;화면 로딩이 느려짐&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DOM tree 구성 전 javascript 를 실행&lt;/strong&gt;하게 되므로 DOM 을 조작하는 과정에서 &lt;strong&gt;에러 혹은 정상적으로 실행이 되지 않을 수 있다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;즉, javascript 코드는 body 태그 종료 전 실행하는것이 좋다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://d2.naver.com/helloworld/59361&quot;&gt;https://d2.naver.com/helloworld/59361&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.leehov.in/25?category=945934&quot;&gt;https://blog.leehov.in/25?category=945934&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://davidhwang.netlify.app/Developments/browser-rendering-process/&quot;&gt;https://davidhwang.netlify.app/Developments/browser-rendering-process/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95&quot;&gt;https://velog.io/@yejineee/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="DOM" /><category term="BOM" /><category term="Render" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">배열 내 특정값 삭제</title><link href="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/" rel="alternate" type="text/html" title="배열 내 특정값 삭제" /><published>2021-12-31T00:00:00+09:00</published><updated>2021-12-31T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4%20%EB%82%B4%20%ED%8A%B9%EC%A0%95%20%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EA%B0%92%20%EC%A0%9C%EA%B1%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -697,219 +848,4 @@ fatal: unable to access &lt;span class=&quot;s1&quot;&gt;&apos;https://github.co
   &lt;li&gt;&lt;a href=&quot;https://color.adobe.com/ko/explore&quot;&gt;https://color.adobe.com/ko/explore&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;위 세가지 사이트에서 색상을 찾기 유용하다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="htmlcss" /><category term="F/E" /><category term="CSS Reference" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">html 기본 개념 및 공부정리</title><link href="http://localhost:4000/htmlcss/html-basic/" rel="alternate" type="text/html" title="html 기본 개념 및 공부정리" /><published>2021-12-12T00:00:00+09:00</published><updated>2021-12-12T00:00:00+09:00</updated><id>http://localhost:4000/htmlcss/html%20basic</id><content type="html" xml:base="http://localhost:4000/htmlcss/html-basic/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-html-5-기본-템플릿-분석&quot;&gt;1. HTML 5 기본 템플릿 분석&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Document&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;1-1doctype&quot;&gt;1-1.DOCTYPE&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;DOCTYPE&lt;/strong&gt; 은 브라우저에게 해당 페이지가 HTML 로 작성된 문서임을 알려준다. 즉, 이 문서가 HTML 임을 브라우저에게 알려준다.&lt;/p&gt;
-
-&lt;h5 id=&quot;1-2-html&quot;&gt;1-2. HTML&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;HTML&lt;/strong&gt; 문서에서 html 태그를 통해 html &lt;strong&gt;시작과 끝&lt;/strong&gt;을 알려준다.&lt;/p&gt;
-
-&lt;p&gt;속성 &lt;strong&gt;lang&lt;/strong&gt; 은 언어를 의미하며 &lt;strong&gt;en, ko&lt;/strong&gt; 등 변경 가능하다.&lt;/p&gt;
-
-&lt;h5 id=&quot;1-3-meta&quot;&gt;1-3. META&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;meta Tag&lt;/strong&gt; 의 경우 문서에 대한 정보를 알려주기 위해 사용한다.&lt;/p&gt;
-
-&lt;p&gt;주요 속성값으로 &lt;strong&gt;keywords, charset, name, author, description&lt;/strong&gt; 등 여러가지가 있다.&lt;/p&gt;
-
-&lt;p&gt;브라우저에서 검색을 할때 이 meta tag 를 보고 노출시켜 주기도 한다.&lt;/p&gt;
-
-&lt;p&gt;description, keywords, author 는 렌더링 엔진에서 검색 시 도움을 주는 name&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;http-equiv&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;종종 IE 는 다른 브라우저에서 제공하는 렌더링 모드와는 다르게 적용이되어 IE 만 동작하지 않는 일이 발생한다.&lt;/p&gt;
-
-&lt;p&gt;이런 일을 방지 하기 위해 http-equiv 메타 Tag 사용하면 표준모드로 IE 에서도 동작하게 한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;viewport&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;사용자의 화면에 노출되는 크기, 초기설정을 정의&lt;/p&gt;
-
-&lt;h5 id=&quot;1-4-link&quot;&gt;1-4. link&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;css/styles.css&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;외부 css 혹은 img 파일들을 해당 페이지와 연결 즉, 가져와서 사용하기 위해 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;rel : 가져오려는 파일과 현재 파일과의 Relation 정의&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;href : 파일경로 지정&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;1-5-script&quot;&gt;1-5. script&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    		&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;외부 스크립트를 가져와서 사용할 수도 있고 실제로 script 태그 내 js 를 작성할 수도 있다.&lt;/p&gt;
-
-&lt;h5 id=&quot;1-6-body&quot;&gt;1-6. Body&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;h1 ~ h6 제목 태그&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;제목 태그는 1 -&amp;gt; 6 으로 갈수록 폰트 사이즈 차이가 존재한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/145716623-e76aa1b8-2f36-443a-91ee-da8c9c8ed3e5.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a : 하이퍼링크 태그&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.naver.com&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;_black&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;hippo test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기서 target 에 기능이 두가지가 있다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;_blank : 새로운 브라우저 창을 띄어 Open&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;_self : 현재 브라우저에 띄움&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;p : 문단 표시&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Img&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;검색엔진 찾기 설명&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이미지는 src 에 파일경로 를 작성하여 이미지를 넣는 태그이다.&lt;/p&gt;
-
-&lt;p&gt;검색엔진 SEO 에서 alt 를 권장하기 때문에 alt 로 해당 이미지 desc 를 잘 설명해주는게 좋다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;div : 영역을 지정하는 용도&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;table&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;테이블을 그릴때 작성되는 용도이다.&lt;/p&gt;
-
-&lt;p&gt;html 5 에서는 기존과 다르게 table 내 thead / tbody / tfoot 을 통해 구간을 정의해서 작성하게 된다.&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;thead&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;head1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;head2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;head3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/thead&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;tbody&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body1-1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body1-2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body1-3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body2-1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body2-2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;body2-3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tbody&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;tfoot&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;foot1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;foot2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tfoot&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이 외 기본적인 태그들이 많으나 작성은 하지 않는다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-semantic-web&quot;&gt;2. Semantic Web&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;시맨틱 웹(Semantic Web)은 “의미론적인 웹”이라는 뜻으로, 기계가 이해할 수 있는 형태로 제작된 웹을 의미합니다. (물론 사람도 이해할 수 있습니다.)&lt;/p&gt;
-
-&lt;p&gt;header : 헤더 부분&lt;/p&gt;
-
-&lt;p&gt;nav : 네비게이션 부분&lt;/p&gt;
-
-&lt;p&gt;aside : 옆 사이드 부분&lt;/p&gt;
-
-&lt;p&gt;section : 본문의 내용(article)을 포함하는 부분&lt;/p&gt;
-
-&lt;p&gt;article : 본문 주 내용 들어가는 부분&lt;/p&gt;
-
-&lt;p&gt;footer : 하단(footer) 부분&lt;/p&gt;
-
-&lt;p&gt;우리가 사이트를 만들고 사용자에게 노출 시키기 위해서는 검색엔진에서 잘 검색이 되어야한다.&lt;/p&gt;
-
-&lt;p&gt;html 5 즉, 모던 웹의 경우 위에서 말한 meta 태그는 물론 semantic web 의 영역 요소 또한 검색엔진이 찾는데 도움이 될 것이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.cordelia273.space/21&quot;&gt;https://blog.cordelia273.space/21&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.w3schools.com/tags/default.asp&quot;&gt;https://www.w3schools.com/tags/default.asp&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="htmlcss" /><category term="F/E" /><category term="HTML Basic" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;위 세가지 사이트에서 색상을 찾기 유용하다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="htmlcss" /><category term="F/E" /><category term="CSS Reference" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
