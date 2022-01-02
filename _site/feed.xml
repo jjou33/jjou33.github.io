@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-02T23:52:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">이벤트 루프에 관하여</title><link href="http://localhost:4000/front/eventloop/" rel="alternate" type="text/html" title="이벤트 루프에 관하여" /><published>2022-01-02T00:00:00+09:00</published><updated>2022-01-02T00:00:00+09:00</updated><id>http://localhost:4000/front/eventloop</id><content type="html" xml:base="http://localhost:4000/front/eventloop/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-03T00:14:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">이벤트 루프에 관하여</title><link href="http://localhost:4000/front/eventloop/" rel="alternate" type="text/html" title="이벤트 루프에 관하여" /><published>2022-01-02T00:00:00+09:00</published><updated>2022-01-02T00:00:00+09:00</updated><id>http://localhost:4000/front/eventloop</id><content type="html" xml:base="http://localhost:4000/front/eventloop/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -39,10 +39,81 @@
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Run-to-Completion : 하나의 함수가 실행되면 끝날 때까지는 어떤 작업도 끼어들지 못한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Run-to-Completion&lt;/strong&gt; : 하나의 함수가 실행되면 끝날 때까지는 어떤 작업도 끼어들지 못한다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;이러한 방식은 자바스크립트 엔진은 단일 호출 스택 즉, 하나의 호출 스택을 사용하며, 하나의 작업이 시작되어 스택에 쌓여 있으면 스택의 모든 작업들이 실행을 마치고 스택이 비워지기 전까지 어떠한 함수도 실행될 수 없다는 것을 의미한다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="Event Loop" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">배열 내 특정값 삭제</title><link href="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/" rel="alternate" type="text/html" title="배열 내 특정값 삭제" /><published>2021-12-31T00:00:00+09:00</published><updated>2021-12-31T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4%20%EB%82%B4%20%ED%8A%B9%EC%A0%95%20%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EA%B0%92%20%EC%A0%9C%EA%B1%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/">&lt;hr /&gt;
+&lt;p&gt;이러한 방식은 자바스크립트 엔진은 단일 호출 스택 즉, 하나의 호출 스택을 사용하며, 하나의 작업이 시작되어 스택에 쌓여 있으면 스택의 모든 작업들이 실행을 마치고 스택이 비워지기 전까지 어떠한 함수도 실행될 수 없다는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;참고하는 사이트에서 적절하게 이해할 수 있는 예제가 있어 가져와봤다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;foo!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;bar!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;baz!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실행 함수를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTimeout -&amp;gt; foo()&lt;/code&gt; 순이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;setTimeout 이 실행되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baz()&lt;/code&gt; 함수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.log()&lt;/code&gt; 함수가 먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 에 추가되며 브라우저에게 Timer Event 를 요청 후 스택에서 제거&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()&lt;/code&gt; 함수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 에 추가되고 이어서 내부 delay, bar 등의 함수가 동일한 방식으로 추가되었다 제거된다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 foo 내부에 함수들이 종료되고 foo 함수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 에서 빠지는 동시에 baz 함수가 스택에 추가되어 실행된다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;3-taskqueue-and-event-loop&quot;&gt;3. TaskQueue and Event Loop&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;그렇다면 setTimeout 이 실행되어 요청한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;baz()&lt;/code&gt; 함수는 어디에 저장되어 있다가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()&lt;/code&gt; 함수가 끝남과 동시에 실행될 수 있는것일까?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Task Queue&lt;/strong&gt; : Call Stack 에 들어가지 전에 setTimeout, 사용자 이벤트 콜백 등이 저장되는 큐&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;microtask queue&lt;/strong&gt; : Promise.then 콜백이 저장되는 큐&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여기서 우리는 이벤트 루프의 역할을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 에 실행중인 함수들이 종료되어 비워질때마다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Event Loop&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task Queue&lt;/code&gt; 에서 대기중인 콜백 함수를 꺼내와서 실행하는 역할을 해주는 것이다.&lt;/p&gt;
+
+&lt;p&gt;위 예제는 따라서 아래와 같이 단계가 추가되는 것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setTimeout&lt;/code&gt; 이 실행되고 스택에서 제거되면 10초 후 콜백함수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TaskQueue&lt;/code&gt; 에 대기하고 있다가 현재 실행중인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()&lt;/code&gt; 함수가 종료된 후 이벤트 루프에 의해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack()&lt;/code&gt; 에 추가되어 실행되는 것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-정리&quot;&gt;4. 정리&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자바스크립트는 Java 와 같은 동기 방식의 언어와는 다르게 비동기로 이루어 지기 떄문에 특히나 내부적인 개념들이 중요한 것 같다.&lt;/p&gt;
+
+&lt;p&gt;아직도 부족한점이 너무 많아서 공부해야 할 것이 많지만, 이런 기본적인 것들부터 차근차근히 공부해 나가야 할 것 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;새해에도 조금 더 열심히 살아보자 화이팅!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;참조-사이트&quot;&gt;참조 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://meetup.toast.com/posts/89&quot;&gt;https://meetup.toast.com/posts/89&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tecoble.techcourse.co.kr/post/2021-08-28-event-loop/&quot;&gt;https://tecoble.techcourse.co.kr/post/2021-08-28-event-loop/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="Event Loop" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">배열 내 특정값 삭제</title><link href="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/" rel="alternate" type="text/html" title="배열 내 특정값 삭제" /><published>2021-12-31T00:00:00+09:00</published><updated>2021-12-31T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4%20%EB%82%B4%20%ED%8A%B9%EC%A0%95%20%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EA%B0%92%20%EC%A0%9C%EA%B1%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%B0%B0%EC%97%B4-%EB%82%B4-%ED%8A%B9%EC%A0%95-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%A7%9E%EB%8A%94-%EA%B0%92-%EC%A0%9C%EA%B1%B0/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;

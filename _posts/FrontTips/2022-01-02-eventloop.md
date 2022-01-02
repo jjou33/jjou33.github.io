@@ -51,6 +51,70 @@ toc_label: "POST LIST"
 
 ---
 
-- Run-to-Completion : 하나의 함수가 실행되면 끝날 때까지는 어떤 작업도 끼어들지 못한다.
+- **Run-to-Completion** : 하나의 함수가 실행되면 끝날 때까지는 어떤 작업도 끼어들지 못한다.
 
 이러한 방식은 자바스크립트 엔진은 단일 호출 스택 즉, 하나의 호출 스택을 사용하며, 하나의 작업이 시작되어 스택에 쌓여 있으면 스택의 모든 작업들이 실행을 마치고 스택이 비워지기 전까지 어떠한 함수도 실행될 수 없다는 것을 의미한다.
+
+참고하는 사이트에서 적절하게 이해할 수 있는 예제가 있어 가져와봤다.
+
+```js
+function delay() {
+  for (var i = 0; i < 100000; i++);
+}
+function foo() {
+  delay();
+  bar();
+  console.log("foo!");
+}
+function bar() {
+  delay();
+  console.log("bar!");
+}
+function baz() {
+  console.log("baz!");
+}
+
+setTimeout(baz, 10);
+foo();
+```
+
+실행 함수를 보면 `setTimeout -> foo()` 순이다.
+
+1. setTimeout 이 실행되면 `baz()` 함수의 `console.log()` 함수가 먼저 `Call Stack` 에 추가되며 브라우저에게 Timer Event 를 요청 후 스택에서 제거
+2. `foo()` 함수가 `Call Stack` 에 추가되고 이어서 내부 delay, bar 등의 함수가 동일한 방식으로 추가되었다 제거된다.
+3. 마지막으로 foo 내부에 함수들이 종료되고 foo 함수가 `Call Stack` 에서 빠지는 동시에 baz 함수가 스택에 추가되어 실행된다.
+
+#### 3. TaskQueue and Event Loop
+
+---
+
+그렇다면 setTimeout 이 실행되어 요청한 `baz()` 함수는 어디에 저장되어 있다가 `foo()` 함수가 끝남과 동시에 실행될 수 있는것일까?
+
+- **Task Queue** : Call Stack 에 들어가지 전에 setTimeout, 사용자 이벤트 콜백 등이 저장되는 큐
+- **microtask queue** : Promise.then 콜백이 저장되는 큐
+
+여기서 우리는 이벤트 루프의 역할을 알 수 있다.
+
+`Call Stack` 에 실행중인 함수들이 종료되어 비워질때마다 `Event Loop`는 `Task Queue` 에서 대기중인 콜백 함수를 꺼내와서 실행하는 역할을 해주는 것이다.
+
+위 예제는 따라서 아래와 같이 단계가 추가되는 것이다.
+
+- `setTimeout` 이 실행되고 스택에서 제거되면 10초 후 콜백함수가 `TaskQueue` 에 대기하고 있다가 현재 실행중인 `foo()` 함수가 종료된 후 이벤트 루프에 의해 `Call Stack()` 에 추가되어 실행되는 것이다.
+
+#### 4. 정리
+
+---
+
+자바스크립트는 Java 와 같은 동기 방식의 언어와는 다르게 비동기로 이루어 지기 떄문에 특히나 내부적인 개념들이 중요한 것 같다.
+
+아직도 부족한점이 너무 많아서 공부해야 할 것이 많지만, 이런 기본적인 것들부터 차근차근히 공부해 나가야 할 것 같다.
+
+**새해에도 조금 더 열심히 살아보자 화이팅!**
+
+#### 참조 사이트
+
+---
+
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+- [https://meetup.toast.com/posts/89](https://meetup.toast.com/posts/89)
+- [https://tecoble.techcourse.co.kr/post/2021-08-28-event-loop/](https://tecoble.techcourse.co.kr/post/2021-08-28-event-loop/)
