@@ -346,4 +346,10 @@ var store = [{
         "tags": ["F/E","Event Loop"],
         "url": "/front/eventloop/",
         "teaser": null
+      },{
+        "title": "Javascript Engine(Heap, Call stack)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 개요 앞선 포스트에서 이벤트 루프 에 대하여 공부해봤다. 공부를 하다보니 Javascript Engine 에 대하여 궁금증 이 생겨 추가로 공부하여 기록한다. 1. JavaScript Engine 자바스크립트 엔진은 각 브라우저 별로 상이하다. SpiderMonkey : 파이어 폭스 V8 : Crome Webkit : 사파리 Chakra : 익스플로러, 엣지...","categories": ["front"],
+        "tags": ["F/E","Javascript Engine","Heap","Call stack"],
+        "url": "/front/Javascript-Engine/",
+        "teaser": null
       }]

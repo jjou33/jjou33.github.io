@@ -47,6 +47,8 @@ toc_label: "POST LIST"
 
 위 그림에서 볼 수 있듯이 우리가 사용하는 다양한 함수들은 Web API 영역에 따로 정의 되어 있고 이벤트루프, Task Queue 의 경우도 자바스크립트 엔진과 별도로 분리 되어 있다.
 
+- `Web API` : **DOM, Ajax, setTimeout** 과 같의 브라우저에서 제공하는 API 를 의미한다.
+
 #### 2. Call Stack 과 Run-to-Completion 방식
 
 ---

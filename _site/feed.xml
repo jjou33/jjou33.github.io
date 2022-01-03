@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-03T00:14:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">이벤트 루프에 관하여</title><link href="http://localhost:4000/front/eventloop/" rel="alternate" type="text/html" title="이벤트 루프에 관하여" /><published>2022-01-02T00:00:00+09:00</published><updated>2022-01-02T00:00:00+09:00</updated><id>http://localhost:4000/front/eventloop</id><content type="html" xml:base="http://localhost:4000/front/eventloop/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-03T22:36:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Javascript Engine(Heap, Call stack)</title><link href="http://localhost:4000/front/Javascript-Engine/" rel="alternate" type="text/html" title="Javascript Engine(Heap, Call stack)" /><published>2022-01-03T00:00:00+09:00</published><updated>2022-01-03T00:00:00+09:00</updated><id>http://localhost:4000/front/Javascript%20Engine</id><content type="html" xml:base="http://localhost:4000/front/Javascript-Engine/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;개요&quot;&gt;개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;앞선 포스트에서 &lt;strong&gt;이벤트 루프&lt;/strong&gt; 에 대하여 공부해봤다.&lt;/p&gt;
+
+&lt;p&gt;공부를 하다보니 Javascript Engine 에 대하여 궁금증 이 생겨 추가로 공부하여 기록한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-javascript-engine&quot;&gt;1. JavaScript Engine&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자바스크립트 엔진은 각 브라우저 별로 상이하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SpiderMonkey&lt;/code&gt; : 파이어 폭스&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V8&lt;/code&gt; : Crome&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Webkit&lt;/code&gt; : 사파리&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chakra&lt;/code&gt; : 익스플로러, 엣지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 중에서 Google Crome 에서 사용하는 V8 엔진이 대표적인 예이다.&lt;/p&gt;
+
+&lt;p&gt;V8 은 &lt;strong&gt;Crome&lt;/strong&gt; 과 &lt;strong&gt;Node.js&lt;/strong&gt; 에서 사용하며 &lt;strong&gt;메모리 힙(Heap)&lt;/strong&gt; 과 &lt;strong&gt;Call Stack&lt;/strong&gt; 으로 구성되어 있다.&lt;/p&gt;
+
+&lt;h5 id=&quot;javascript-engine-구성도&quot;&gt;JavaScript Engine 구성도&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147932418-b248d484-c703-4328-9832-628eae3017f1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Memory Heap&lt;/code&gt; : 메모리 할당이 일어나는 곳&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; : 실제 실행되고 있는 작업(호출 스택)이 쌓이는 곳&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;v8-메모리-구조&quot;&gt;V8 메모리 구조&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147935375-7a97ebcf-ef5e-46a9-ad95-670ab6924969.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림은 V8 엔진의 메모리 구조에 대한 표현이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Resident Set&lt;/code&gt; : 메모리 구조이며 실행중인 프로그램이 V8 프로세스에 할당된 일정량의 메모리로 표현되는 것을 의미한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt; : 실행 컨텍스트와 원시값, 객체의 포인터같은 &lt;strong&gt;정적 데이터&lt;/strong&gt;가 저장&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Heap&lt;/code&gt; : 객체와 같은 &lt;strong&gt;동적 데이터&lt;/strong&gt;를 저장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;메모리 관련해서 &lt;strong&gt;실제로 동작하는 과정&lt;/strong&gt;과 &lt;strong&gt;Garbage Collector 를 통한 객체 소거&lt;/strong&gt; 등 자세한 내용에 대해서는 별도의 포스트로 진행할 예정이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-호출-스택call-stack&quot;&gt;3. 호출 스택(Call Stack)&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;앞선 &lt;a href=&quot;https://jjou33.github.io/front/eventloop/&quot;&gt;이벤트 루프&lt;/a&gt; 포스트에서도 공부해보았지만, 자바스크립트는 기본적으로 단일 스레드 기반이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task Queue&lt;/code&gt; 를 활용하여 &lt;strong&gt;동시성(Concurrency)&lt;/strong&gt; 를 보장하게 만든다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Call Stack&lt;/strong&gt; 은 현재 진행중인 작업 즉, 실행되고 있는 웹이 어디에 있는지를 기록하는 &lt;strong&gt;자료구조&lt;/strong&gt; 이다.
+현재 실행되고 있는 함수가 끝나 리턴값을 돌려주면 &lt;strong&gt;Call Stack&lt;/strong&gt; 은 해당 함수를 제거하고 다음 Stack 을 실행하거나 모두 비었을 경우 &lt;strong&gt;Task Queue&lt;/strong&gt; 에서 대기하고 있는 콜백 함수를 실행시킨다.&lt;/p&gt;
+
+&lt;h5 id=&quot;call-stack-예시&quot;&gt;Call Stack 예시&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934114-53a15ae8-d16f-4fea-9e43-d4201a1264f0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림에서 볼 수 있듯이 호출되는 순서대로 작업들이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt; 에 쌓이게 되고 종료될 경우 FIFO 순서로 제거(POP) 된다.&lt;/p&gt;
+
+&lt;p&gt;하지만 Stack 에도 한계치가 있지 않을까? 라는 의문을 가질 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Stack 에도 한계치가 있으며 아래와 같이 이해하기 좋은 예가 있어 가져와 보았다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934523-c400c6d8-0330-4749-91f4-f301a6bc4d34.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934828-d35e23db-c54e-4595-81e2-56172541c18d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 함수를 호출하게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()&lt;/code&gt; 함수가 계속해서 쌓일 것이고 만약 호출 스택의 크기를 초과하게 되면 브라우저에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Maximum call stack size exceeded&lt;/code&gt; 에러를 발생시킨 후 종료시킬 것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참조-사이트&quot;&gt;참조 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf&quot;&gt;https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@imnotmoon/JavaScript-V8-Engine%EC%9D%B4-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95&quot;&gt;https://velog.io/@imnotmoon/JavaScript-V8-Engine%EC%9D%B4-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://speakerdeck.com/deepu105/v8-memory-usage-stack-and-heap&quot;&gt;https://speakerdeck.com/deepu105/v8-memory-usage-stack-and-heap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="Javascript Engine" /><category term="Heap" /><category term="Call stack" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">이벤트 루프에 관하여</title><link href="http://localhost:4000/front/eventloop/" rel="alternate" type="text/html" title="이벤트 루프에 관하여" /><published>2022-01-02T00:00:00+09:00</published><updated>2022-01-02T00:00:00+09:00</updated><id>http://localhost:4000/front/eventloop</id><content type="html" xml:base="http://localhost:4000/front/eventloop/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -33,6 +131,10 @@
 &lt;p&gt;이때 위에서 우리가 말했던 동시성 보장은 이 자바스크립트 엔진을 구동하는 환경 즉, Browser 나 Node.js 가 담당한다.&lt;/p&gt;
 
 &lt;p&gt;위 그림에서 볼 수 있듯이 우리가 사용하는 다양한 함수들은 Web API 영역에 따로 정의 되어 있고 이벤트루프, Task Queue 의 경우도 자바스크립트 엔진과 별도로 분리 되어 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Web API&lt;/code&gt; : &lt;strong&gt;DOM, Ajax, setTimeout&lt;/strong&gt; 과 같의 브라우저에서 제공하는 API 를 의미한다.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;2-call-stack-과-run-to-completion-방식&quot;&gt;2. Call Stack 과 Run-to-Completion 방식&lt;/h4&gt;
 
@@ -787,29 +889,4 @@ fatal: unable to access &lt;span class=&quot;s1&quot;&gt;&apos;https://github.co
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/146021257-68bcf739-f434-47c3-b68f-450bd08d4eb3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;이후 git 접근 시 정상접근 될 것이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="git" /><category term="Git" /><category term="Git Token" /><category term="Git Password" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">CSS 관련 링크</title><link href="http://localhost:4000/htmlcss/css-reference-copy/" rel="alternate" type="text/html" title="CSS 관련 링크" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/htmlcss/css%20reference%20copy</id><content type="html" xml:base="http://localhost:4000/htmlcss/css-reference-copy/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-관련링크&quot;&gt;1. 관련링크&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.&lt;/p&gt;
-
-&lt;p&gt;이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.w3bai.com/ko/tags/att_input_pattern.html&quot;&gt;http://www.w3bai.com/ko/tags/att_input_pattern.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-css-color-관련-링크&quot;&gt;2. CSS Color 관련 링크&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/colors/colors_names.asp&quot;&gt;https://www.w3schools.com/colors/colors_names.asp&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://material.io/design/color/the-color-system.html#tools-for-picking-colors&quot;&gt;https://material.io/design/color/the-color-system.html#tools-for-picking-colors&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://color.adobe.com/ko/explore&quot;&gt;https://color.adobe.com/ko/explore&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;위 세가지 사이트에서 색상을 찾기 유용하다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="htmlcss" /><category term="F/E" /><category term="CSS Reference" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;이후 git 접근 시 정상접근 될 것이다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="git" /><category term="Git" /><category term="Git Token" /><category term="Git Password" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry></feed>
