@@ -352,4 +352,10 @@ var store = [{
         "tags": ["F/E","Javascript Engine","Heap","Call stack"],
         "url": "/front/Javascript-Engine/",
         "teaser": null
+      },{
+        "title": "MAC Operation not permitted 에러",
+        "excerpt":"  :raising_hand:  개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다.    맥 오류 증상        위와 같이 터미널에서 명령어를 치면 권한관련 ‘Operation not permitted’ 에러 메시지가 나오게 된다.   해결방법     [설정]-[보안 및 개인 정보 보호]-[개인정보 보호]-전체 디스크 접근 권한]-[터미널]에 대한 보안을 해제 하면 된다.     ","categories": ["mac"],
+        "tags": ["MAC OS","권한오류"],
+        "url": "/mac/mac-error/",
+        "teaser": null
       }]
