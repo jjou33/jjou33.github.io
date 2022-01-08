@@ -7,10 +7,10 @@ categories:
 tags:
   - Webpack
   - npm
-  - node
-  - config
   - 유의적 버전
-  - 버전 범위(틸트(~), 캐럭(^))
+  - 버전 관리
+  - 틸트(~)
+  - 캐럿(^)
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
