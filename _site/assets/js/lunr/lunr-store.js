@@ -358,4 +358,10 @@ var store = [{
         "tags": ["MAC OS","권한오류"],
         "url": "/mac/mac-error/",
         "teaser": null
+      },{
+        "title": "Webpack 실습 (1) - 패키지 설치 및 버전관리",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. npm init() 프로젝트 폴더 이동 후 npm init 실행 npm init() init 후 config 설정 command 로 설정이 완료된 후 실제 프로젝트 폴더 내 package.json 파일 확인 { \"name\": \"webpackstudy\", \"version\": \"1.0.0\", \"description\": \"my webpack study\", \"main\": \"index.js\", \"scripts\":...","categories": ["webpack"],
+        "tags": ["Webpack","npm","node","config","유의적 버전","버전 범위(틸트(~), 캐럭(^))"],
+        "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day1/",
+        "teaser": null
       }]
