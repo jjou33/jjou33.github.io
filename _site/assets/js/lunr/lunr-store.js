@@ -364,4 +364,16 @@ var store = [{
         "tags": ["Webpack","npm","유의적 버전","버전 관리","틸트(~)","캐럿(^)"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day1/",
         "teaser": null
+      },{
+        "title": "Webpack 실습 (2) - 개념정리",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. import/Export 없는 이전의 함수 사용법 및 문제점 ES2015 부터 모듈을 지원했기 때문에 이전에는 script 를 html 에서 불러와 로딩하여 사용하였다. // math.js function sum(a, b) { return a + b; } // app.js console.log(sum(1, 2)); &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt;...","categories": ["webpack"],
+        "tags": ["Webpack","사용배경","IIFE"],
+        "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day2/",
+        "teaser": null
+      },{
+        "title": "Webpack 실습 (3) - 초기설치 및 설정",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. webpack / webpack-cli 설치 // webpack 4 버전 설치 npm install -D webpack@4 webpack-cli // package.json \"author\": \"\", \"license\": \"ISC\", \"bugs\": { \"url\": \"https://github.com/jjou33/webpackStudy/issues\" }, \"homepage\": \"https://github.com/jjou33/webpackStudy#readme\", \"dependencies\": { \"webpack\": \"^4.46.0\", \"webpack-cli\": \"^4.9.1\" } package.json 에 devDependencies 확인 2....","categories": ["webpack"],
+        "tags": ["Webpack","초기설정","npm 설치"],
+        "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day3/",
+        "teaser": null
       }]
