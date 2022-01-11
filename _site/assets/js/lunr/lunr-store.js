@@ -376,4 +376,10 @@ var store = [{
         "tags": ["Webpack","초기설정","npm 설치"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day3/",
         "teaser": null
+      },{
+        "title": "Webpack 실습 (4) - Loader & Module",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 1. Loader 웹팩은 자바스크립트, 스타일시트, 이미지, 폰트 등 모든 소스를 각각의 모듈로 바라보기 때문에 import 구문을 사용하여 외부 소스를 활용한다. 이는 웹팩의 로더(Loader)의 존재 때문인데 로더는 여러가지 언어들을 javascript 문법으로 변환해 주거나 image를 data URL 형식의 문자열로 변환하거나 CSS 파일을...","categories": ["webpack"],
+        "tags": ["Webpack","Loader","Module"],
+        "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day4/",
+        "teaser": null
       }]
