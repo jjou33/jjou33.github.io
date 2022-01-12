@@ -137,4 +137,4 @@ module.exports = function myWebpackLoader(content) {
 
 ---
 
-[https://jeonghwan-kim.github.io/series/2019/12/09/frontend-dev-env-npm.html#51-cdn%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%A9%EB%B2%95](https://jeonghwan-kim.github.io/series/2019/12/09/frontend-dev-env-npm.html#51-cdn%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B0%A9%EB%B2%95)
+[https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html](https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html)
