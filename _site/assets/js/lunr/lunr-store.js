@@ -385,7 +385,7 @@ var store = [{
       },{
         "title": "Webpack 실습 (5) - 주요 Loader 실습",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 실무에서 주로 사용하는 대표적인 로더들에 대한 실습을 진행해본다. 1. CSS Loader CSS-Loader : css 코드를 javascript 로 가져와서 사용 가능 // app.js import \"./app.css\"; 위 코드와 같이 import css 구문을 자바스크립트에서 실행해 주는 것이 CSS Loader 의 역할이다. npm install...","categories": ["webpack"],
-        "tags": ["Webpack","css-loader","style-loader"],
+        "tags": ["Webpack","css-loader","style-loader","file-loader"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/",
         "teaser": null
       }]

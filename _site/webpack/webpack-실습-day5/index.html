@@ -581,6 +581,8 @@
     
       <a class="page__taxonomy-item-tag" rel="tag">css-loader</a><span class="sep"> </span>
     
+      <a class="page__taxonomy-item-tag" rel="tag">file-loader</a><span class="sep"> </span>
+    
       <a class="page__taxonomy-item-tag" rel="tag">style-loader</a><span class="sep"> </span>
     
       <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
@@ -628,6 +630,9 @@
 <a href="#1-css-loader">1. CSS Loader</a><ul><li><a href="#%EC%84%A4%EC%B9%98-%EA%B0%84-%EB%B2%84%EC%A0%84-%ED%98%B8%ED%99%98%EC%98%A4%EB%A5%98">설치 간 버전 호환오류</a></li></ul>
 </li>
 <li><a href="#2-style-loader">2. style-loader</a></li>
+<li>
+<a href="#3-file-loader">3. file-loader</a><ul><li><a href="#webpackconfigjs-%EC%84%A4%EC%A0%95">webpack.config.js 설정</a></li></ul>
+</li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -778,6 +783,72 @@ npm ERR! See /Users/hyunwoo/.npm/eresolve-report.txt <span class="k">for </span>
 <p><img src="https://user-images.githubusercontent.com/56063287/149158363-b5e9dff8-ac86-4db0-a90a-52b8424116a0.png" alt="image"></p>
 
 <p>적용 되는것을 볼 수 있다.</p>
+
+<h4 id="3-file-loader">3. file-loader</h4>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">file-loader</code> 는 파일을 모듈 형태로 지원하여 <code class="language-plaintext highlighter-rouge">webpack</code> 의 <code class="language-plaintext highlighter-rouge">output</code> 에 파일을 옮겨주는 역할을 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149334882-d96a1397-7a0a-4d71-a02b-3b33ffc8442a.png" alt="image"></p>
+
+<p>이미지 파일을 하나 넣고 <code class="language-plaintext highlighter-rouge">app.css</code> 파일을 <code class="language-plaintext highlighter-rouge">background-image</code> 로 변경해준다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(bg.png)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">npm run build</code> 를 실행해보면 아래와 같은 오류가 나오는데 <code class="language-plaintext highlighter-rouge">file-loader</code> 가 없어서 해당 이미지파일을 웹팩에서 사용하지 못해서 그런다.</p>
+
+<p>설치 후 build 를 해보면 <code class="language-plaintext highlighter-rouge">output</code> 경로에 이미지 파일이 <code class="language-plaintext highlighter-rouge">hash</code>값으로 네이밍되어 생성된걸 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149335422-e648c42b-c960-4e7e-b169-02d0296f5502.png" alt="image"></p>
+
+<p>웹팩은 빌드를 할때마다 유니크한 해쉬 값을 생성한다.</p>
+
+<p>** 브라우저는 이미지, css 등을 캐쉬하여 사용하기 때문에 동일한 파일명을 가지고 다른 파일을 불러와버리면 문제가 생길 수 있기 때문에 이렇게 <code class="language-plaintext highlighter-rouge">유니크한 해쉬값</code>으로 네이밍을 한다고 한다.**</p>
+
+<p>이대로 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 에 이전과 같이 설정을 해준 뒤 build 하고 사이트를 켜보면 파일을 찾을 수 없다는 오류를 확인할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">5c6d3b633991b51295c68b34d8b94c8b.png:1 Failed to load resource: net::ERR_FILE_NOT_FOUND</code></p>
+
+<p>해당 파일 경로가 <code class="language-plaintext highlighter-rouge">dist</code> 안에 있지만 웹팩 설정을 해주지 않았기 때문에 <code class="language-plaintext highlighter-rouge">index.html</code> 파일 기준에서 찾을 수 없기 때문에 발생하는 것이다.</p>
+
+<h5 id="webpackconfigjs-설정">webpack.config.js 설정</h5>
+
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">png$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">file-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">publicPath</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./dist/</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].[ext]?[hash]</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">publicPath</code> : file-loader 가 파일을 모듈로 사용했을때 경로 앞에 붙여지는 문자열이다. 따라서 이 파일을 호출할때는 웹팩에서 해당 옵션의 값을 붙여서 호출한다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">name</code> : file-loader 가 output 에 파일을 복사할때 사용 / <code class="language-plaintext highlighter-rouge">원본파일명.확장자명?해쉬값</code>
+</li>
+</ol>
+
+<p>이제 페이지를 새로고침하면 정상적으로 이미지가 나오고 개발자 도구에서 위 네이밍으로 호출하는 부분을 확인할 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149337567-2d39b303-e35c-4e10-bfa2-7ab0275e98d1.png" alt="image"></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
