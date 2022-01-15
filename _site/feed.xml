@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-13T22:20:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Webpack 실습 (5) - 주요 Loader 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/" rel="alternate" type="text/html" title="Webpack 실습 (5) - 주요 Loader 실습" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day5</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-15T23:56:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Git ignore 생성 및 적용</title><link href="http://localhost:4000/git/git-ignore-add/" rel="alternate" type="text/html" title="Git ignore 생성 및 적용" /><published>2022-01-15T00:00:00+09:00</published><updated>2022-01-15T00:00:00+09:00</updated><id>http://localhost:4000/git/git%20ignore%20add</id><content type="html" xml:base="http://localhost:4000/git/git-ignore-add/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Git 과 관련된 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-git-ignore-파일-생성&quot;&gt;1. git ignore 파일 생성&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack&lt;/code&gt; 과 관련되어 설정 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; 에 올리려는 순간 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VS Code&lt;/code&gt; 소스제어에 이상한 표시가 뜬다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/149625813-ec36959e-fcbf-4ded-a98f-5c0e93b29c2f.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;흠…너무 많다 저걸 다 올릴 필요없이 설정 파일만 올려야겠다…라는 생각이 들어서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; 경로를 제외시키기로 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 설치하면 생성되는 관련 파일들인데 무진장 많다.&lt;/p&gt;
+
+&lt;p&gt;방법은 이러하다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.git&lt;/code&gt; 폴더가 있는 경로진입&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git ignore&lt;/code&gt; 파일 생성 - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vim .gitignore&lt;/code&gt; 진입 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 입력하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;INSERT&lt;/code&gt; 모드로 변경&lt;/li&gt;
+  &lt;li&gt;제외하고 싶은 폴더 경로 작성&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESC(INSERT모드 나가기&lt;/code&gt; 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wq(저장 후 종료)&lt;/code&gt; 를 통해 저장후 종료&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;바로 사라진다.&lt;/p&gt;
+
+&lt;p&gt;그다음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; 저장소에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add &amp;amp; commit &amp;amp; Push&lt;/code&gt; 하면 된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;이미-commit-이-진행된-프로젝트-도중에-생성할-경우&quot;&gt;이미 commit 이 진행된 프로젝트 도중에 생성할 경우&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;본인처럼 진행중이던 프로젝트의 경우 올리기 전에 아래 작업이 필요하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--cached&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git ignore add&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; 에 대해서 자세한 예시는 구글링통해 확인하자&lt;/p&gt;
+
+&lt;h4 id=&quot;gitignore-파일-예시&quot;&gt;.gitignore 파일 예시&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github 제공 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; 예시 링크&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/github/gitignore&quot;&gt;https://github.com/github/gitignore&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; 파일 생성 사이트 링크&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.gitignore.io/&quot;&gt;https://www.gitignore.io/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Directories&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;/bin/&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OS&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Files&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DS_Store&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Package&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Files&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jar&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;war&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ear&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Eclipse&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;project&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;classpath&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadpath&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/**
+tmp/**
+tmp/**/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tmp&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bak&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;properties&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rebel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xml&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gbsb.tistory.com/11&quot;&gt;https://gbsb.tistory.com/11&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="git" /><category term="Git" /><category term="Git ignore" /><summary type="html">:computer: Git과 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 실습 (5) - 주요 Loader 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/" rel="alternate" type="text/html" title="Webpack 실습 (5) - 주요 Loader 실습" /><published>2022-01-12T00:00:00+09:00</published><updated>2022-01-12T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day5</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1158,109 +1261,4 @@ npm install react
 
 &lt;p&gt;이때 주의해야 할 점은 위 코드에서 볼 수 있듯이 마지막에 조건에 맞는 인덱스를 지울 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 인덱스를 먼저 지우게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 인덱스가 사라짐으로 인해 순서가 앞으로 당겨지므로 뒷 숫자부터 삭제하도록 하는 부분이다.&lt;/p&gt;
 
-&lt;p&gt;물론 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 부터 진행 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j-1&lt;/code&gt; 로 변경해도 무방하다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Array" /><category term="reduce" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">SPA 개념 및 구현내용</title><link href="http://localhost:4000/front/SPA%EA%B0%9C%EB%85%90/" rel="alternate" type="text/html" title="SPA 개념 및 구현내용" /><published>2021-12-27T00:00:00+09:00</published><updated>2021-12-27T00:00:00+09:00</updated><id>http://localhost:4000/front/SPA%EA%B0%9C%EB%85%90</id><content type="html" xml:base="http://localhost:4000/front/SPA%EA%B0%9C%EB%85%90/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-spasingle-page-application-이란-무엇일까&quot;&gt;1. SPA(Single Page Application) 이란 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;현 회사에서는 VUE.js 로 모바일 프론트를 개발하고 운영하고 있다.
-나름 SPA 시스템을 운영하고 있다고 생각하던 찰나, Vanilla JS 로 SPA 페이지를 구현하는 과제 문제를 풀게되었다.&lt;/p&gt;
-
-&lt;p&gt;풀어나가는 도중 스스로 SPA 에 대한 정확한 지식 없이 그냥저냥 운영하고 개발만 하고 있다는 생각이 들게 되었다.&lt;/p&gt;
-
-&lt;p&gt;이참에 기본적인 개념과 구현 방식에 대해서 기록해야겠다는 생각이 들어 포스팅 하게되었다.&lt;/p&gt;
-
-&lt;h5 id=&quot;1-1-spa-란&quot;&gt;1-1. SPA 란?&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;SPA 는 Single Page Application 의 약자로 단일 페이지로 구성된 웹 어플리케이션을 말한다.&lt;/p&gt;
-
-&lt;p&gt;현재는 웹 개발에 트랜드로 자리매김 하였다.&lt;/p&gt;
-
-&lt;p&gt;SPA는 화면이동 시에 필요한 데이터를 서버사이드에서 HTML 으로 전달받지 않고 필요한 데이터만 서버로부터 JSON 타입으로 전달받아 동적으로 렌더링 한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-기존-어플리케이션과-spa-의-차이는-무엇일까&quot;&gt;2. 기존 어플리케이션과 SPA 의 차이는 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;기존의 어플리케이션은 화면이동 시에 화면 이동에 필요한 HTML을 서버사이드에 요청하고 응답받아 처음부터 다시 로딩하게 된다. 따라서 페이지를 요청하고 응답받아 렌더링 할 때마다 로딩하기 때문에 시간이 오래걸리고 새로고침에 되는 현상이 발생한다. 이는 사용자 경험의 질에 감소를 불러오기도 한다.&lt;/p&gt;
-
-&lt;p&gt;반면, SPA 에서는 화면 구성에 필요한 모든 HTML을 Client가 갖고 있고 서버사이드에는 필요한 데이터를 요청하고 JSON 으로 받기 때문에 기존의 어플리케이션에 비해 화면을 구성하는 속도가 빠르다.&lt;/p&gt;
-
-&lt;p&gt;따라서, SPA 로 구축된 웹 서비스에서는 한번 페이지 전체를 로드하고 이후에는 데이터만 바인딩하는 방식으로 진행된다.&lt;/p&gt;
-
-&lt;h5 id=&quot;기존-웹-서비스-vs-spa-로-구축된-웹-서비스&quot;&gt;기존 웹 서비스 VS SPA 로 구축된 웹 서비스&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147478058-4df90a35-e70a-4809-8304-4d7879853773.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 그림에서 보이는 것과 같이 최초 &lt;strong&gt;Initial Request&lt;/strong&gt; 후 HTML 을 받아오는 과정은 둘다 동일하지만 이후의 과정에서 페이지를 이동하는 경우 서버에 요청 및 응답이 다른것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;기존에는 위에서 말했듯이 서버가 HTML 파일을 만들어서 응답을 주면 브라우저가 HTML 을 반영해서 보여주기 전 새로고침이 일어났다. 이부분이 사용자 경험 즉, UX 의 질을 낮출 수 있다고 하는 한 부분이다.&lt;/p&gt;
-
-&lt;p&gt;반면, SPA 에서는 페이지 이동 시 서버에 AJAX 로 요청하고 서버는 JSON 타입으로 응답을 주는데 이는 페이지 이동 시 변경되는 부분만 JSON 형태로 받고, 이를 토대로 DOM 에 변경된 부분만을 렌더링 해주기 떄문이다.&lt;/p&gt;
-
-&lt;p&gt;이때, SPA 는 html 렌더링을 서버가 하는게 아닌 클라이언트가 받은 json 을 토대로 하기 때문에 &lt;strong&gt;CSR(Client Side Renderin)&lt;/strong&gt; 방식으로 렌더링 한다고 말한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;3-장점과-단점은-무엇이-있을까&quot;&gt;3. 장점과 단점은 무엇이 있을까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;장점&quot;&gt;장점&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;페이지의 필요한 부분만 업데이트하기 때문에 Traffic 이 적어지고 이로 인해 페이지 이동에 필요한 속도가 빨라진다. 또한, 화면에 필요한 부분의 데이터만 받아서 렌더링 하기 때문에 처리과정이 효율적이다.&lt;/li&gt;
-  &lt;li&gt;최초 접속시 필요한 모든 정적 리소스들을 다운받고 이미 방문한 페이지도 캐싱하여 실제 앱을 사용중에 더 빠른 사용자 경험을 제공한다.&lt;/li&gt;
-  &lt;li&gt;모듈화 또는 컴포넌트화를 통해 유지보수를 쉽게 만들고 개발 속도도 빠르게 한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5 id=&quot;단점&quot;&gt;단점&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;처음 화면 로딩할 때, 모든 정적 리소스들을 다운받고 미리 모든 화면을 준비하기 때문에 초기 로딩 시간이 오래 걸린다.&lt;/li&gt;
-  &lt;li&gt;SEO 최적화에 약하다. 초기 요청받은 웹페이지의 소스 코드 내부가 비어있기 때문에 SEO 검색엔진에서 검색이 잘 안될 수 있다.&lt;/li&gt;
-  &lt;li&gt;IE 8 이하는 지원하지 않는다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;4-spa-라우팅&quot;&gt;4. SPA 라우팅&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;SPA 에서는 어떻게 페이지 브라우징이 가능한 것일까?&lt;/p&gt;
-
-&lt;p&gt;여기서 우리는 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/API/History_API&quot;&gt;history api&lt;/a&gt; 를 공부해야 한다.&lt;/p&gt;
-
-&lt;p&gt;서버로 요청을 전달하지 않고 자바스크립트 영역에서 history api를 통해 현재 페이지 내에서 화면 이동이 일어난 것처럼 작동하게 한다.&lt;/p&gt;
-
-&lt;h5 id=&quot;주요-메서드-정리&quot;&gt;주요 메서드 정리&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;History.back()&lt;/code&gt; : 세션 기록의 바로 뒤 페이지로 이동하는 비동기 메서드이며 브라우저의 뒤로 가기를 누르는 것과 같은 효과를 낸다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;History.forward()&lt;/code&gt; : 세션 기록의 바로 앞 페이지로 이동하는 비동기 메서드이며 브라우저의 앞으로 가기를 누르는 것과 같은 효과를 낸다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;History.go()&lt;/code&gt; : 특정한 세션 기록으로 이동하게 해 주는 비동기 메서드. 1을 넣어 호출하면 바로 앞 페이지로, -1 을 넣어 호출하면 바로 뒤 페이지로 이동한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;History.pushState()&lt;/code&gt; : 주어진 데이터를 세션 기록 스택에 넣는다. 직렬화 가능한 모든 &lt;strong&gt;JavaScript&lt;/strong&gt; 객체를 저장하는 것이 가능한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;History.replaceState()&lt;/code&gt; : 최근 세션 기록 스택의 내용을 주어진 데이터로 교체한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.excellentwebworld.com/what-is-a-single-page-application/&quot;&gt;https://www.excellentwebworld.com/what-is-a-single-page-application/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.huskyhoochu.com/what-is-spa/&quot;&gt;https://www.huskyhoochu.com/what-is-spa/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/iotrustlab/%EC%9B%B9-spa-single-page-application-%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-ba9e26ad1cc5&quot;&gt;https://medium.com/iotrustlab/%EC%9B%B9-spa-single-page-application-%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-ba9e26ad1cc5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://velog.io/@josworks27/SPA-%EA%B0%9C%EB%85%90&quot;&gt;https://velog.io/@josworks27/SPA-%EA%B0%9C%EB%85%90&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="SPA" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;물론 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 부터 진행 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j-1&lt;/code&gt; 로 변경해도 무방하다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="Array" /><category term="reduce" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry></feed>

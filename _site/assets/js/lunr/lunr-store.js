@@ -388,4 +388,10 @@ var store = [{
         "tags": ["Webpack","css-loader","style-loader","file-loader"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/",
         "teaser": null
+      },{
+        "title": "Git ignore 생성 및 적용",
+        "excerpt":":raising_hand: Git 과 관련된 내용을 기록하기 위한 포스트입니다. 1. git ignore 파일 생성 webpack 과 관련되어 설정 후 git 에 올리려는 순간 VS Code 소스제어에 이상한 표시가 뜬다. 흠…너무 많다 저걸 다 올릴 필요없이 설정 파일만 올려야겠다…라는 생각이 들어서 node_modules 경로를 제외시키기로 한다. node_modules 는 npm 을 설치하면 생성되는 관련...","categories": ["git"],
+        "tags": ["Git","Git ignore"],
+        "url": "/git/git-ignore-add/",
+        "teaser": null
       }]
