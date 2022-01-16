@@ -633,6 +633,15 @@
 <li>
 <a href="#3-file-loader">3. file-loader</a><ul><li><a href="#webpackconfigjs-%EC%84%A4%EC%A0%95">webpack.config.js 설정</a></li></ul>
 </li>
+<li>
+<a href="#4-url-loader">4. url-loader</a><ul>
+<li><a href="#4-1-%EC%B2%98%EB%A6%AC%EA%B3%BC%EC%A0%95">4-1. 처리과정</a></li>
+<li><a href="#4-1-url-loader-%EC%A0%81%EC%9A%A9">4-1. url-loader 적용</a></li>
+<li><a href="#4-2-%ED%95%B5%EC%8B%AC">4-2. 핵심!!!</a></li>
+<li><a href="#4-3-%EA%B2%B0%EA%B3%BC-%ED%8E%98%EC%9D%B4%EC%A7%80">4-3. 결과 페이지</a></li>
+<li><a href="#4-4-mainjs-%EB%82%B4-%EC%9D%B8%EC%BD%94%EB%94%A9-%EB%AC%B8%EC%9E%90%EC%97%B4">4-4. main.js 내 인코딩 문자열</a></li>
+</ul>
+</li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -849,6 +858,143 @@ npm ERR! See /Users/hyunwoo/.npm/eresolve-report.txt <span class="k">for </span>
 <p>이제 페이지를 새로고침하면 정상적으로 이미지가 나오고 개발자 도구에서 위 네이밍으로 호출하는 부분을 확인할 수 있다.</p>
 
 <p><img src="https://user-images.githubusercontent.com/56063287/149337567-2d39b303-e35c-4e10-bfa2-7ab0275e98d1.png" alt="image"></p>
+
+<h4 id="4-url-loader">4. url-loader</h4>
+
+<hr>
+
+<p>웹 페이지 내 호출 시 마다 사용하는 <code class="language-plaintext highlighter-rouge">image</code> 갯수가 많다면 여러번의 네트워크 호출이 발생할것이다.</p>
+
+<p>만약 너무 많은 <code class="language-plaintext highlighter-rouge">image</code> 를 호출하게 된다면 <code class="language-plaintext highlighter-rouge">속도</code> 나 <code class="language-plaintext highlighter-rouge">성능</code>에도 영향을 줄 수 있다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span>
+  <span class="na">src=</span><span class="s">"data:image/png;base64,iVBORw0KGgoAAA
+ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU
+5ErkJggg=="</span>
+  <span class="na">alt=</span><span class="s">"Red dot"</span>
+<span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>이러한 경우 위 <code class="language-plaintext highlighter-rouge">html</code> 소스 처럼 <code class="language-plaintext highlighter-rouge">url-loader</code> 를 활용하여 작은 이미지들을 많이 사용할 경우 이러한 이미지들을 <code class="language-plaintext highlighter-rouge">Base64</code>로 인코딩하여 문자열 형태로 소스코드에 넣는 기능을 자동화해줄 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install url-loader</code> 를 통해 설치를 진행한다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//package.json</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+  </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/jjou33/webpackStudy#readme"</span><span class="err">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"css-loader"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.3.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"file-loader"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^6.2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"style-loader"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url-loader"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.1.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"webpack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.46.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"webpack-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.9.1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h5 id="4-1-처리과정">4-1. 처리과정</h5>
+
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149663731-316b0e59-0260-4c7c-901f-6da73a750a28.png" alt="image"></p>
+
+<p>사이즈가 작은 <code class="language-plaintext highlighter-rouge">nyancat.jpeg</code> 파일을 <code class="language-plaintext highlighter-rouge">src</code> 경로에 다운받는다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
+
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./app.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">nyancat</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./nyancat.jpeg</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// DOM 이 Loading 되어졌을때 Body 에 해당 이미지를 넣는다.</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`
+        &lt;img src="</span><span class="p">${</span><span class="nx">nyancat</span><span class="p">}</span><span class="s2">" /&gt;
+    `</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>DOM 이 Loading 되었을 때 이미지를 <code class="language-plaintext highlighter-rouge">Body</code> 태그 안에 넣는 코드를 작성하였다.</p>
+
+<p>그럼 이제 <code class="language-plaintext highlighter-rouge">Webpack.config.js</code> 에서 <code class="language-plaintext highlighter-rouge">url-loader</code> 를 사용하도록 설정을 변경한다.</p>
+
+<p>먼저 앞서 공부한 <code class="language-plaintext highlighter-rouge">file-loader</code> 를 통해 해당 이미지를 처리하는 것부터 실습해보자.
+적용 파일에 <code class="language-plaintext highlighter-rouge">png</code> 와 더불어 <code class="language-plaintext highlighter-rouge">jpg , jpeg</code> 파일도 적용할 수 있도록 정규식에 추가해준다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.json</span>
+<span class="nx">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">png|jpg|jpeg$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">file-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">publicPath</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./dist/</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].[ext]?[hash]</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+</code></pre></div></div>
+
+<p>그리고 <code class="language-plaintext highlighter-rouge">npm run build</code>를 해보면 <code class="language-plaintext highlighter-rouge">nyancat.jpeg</code> 파일이 <code class="language-plaintext highlighter-rouge">dist</code> 경로에 생성되는 것을 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149663964-d6a77b94-1b2a-4778-96f1-5a2a4268221d.png" alt="image"></p>
+
+<p>그리고 페이지에도 정상적으로 이미지가 노출된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149663981-120092d8-d4ad-4998-bff5-9d9147ca0954.png" alt="image"></p>
+
+<h5 id="4-1-url-loader-적용">4-1. url-loader 적용</h5>
+
+<p>–</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 설정 변경</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.json</span>
+<span class="nx">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">],</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">png|jpg|jpeg$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">url-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">publicPath</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./dist/</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].[ext]?[hash]</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">limit</span><span class="p">:</span> <span class="mi">20000</span><span class="p">,</span> <span class="c1">// url-loader 가 처리할때 해당 크기 미만은 url-loader 로 처리하고</span>
+                        <span class="c1">// 그 이상은 file-loader 를 통해 파일을 복사한다.</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+</code></pre></div></div>
+
+<p>파일의 크기는 <code class="language-plaintext highlighter-rouge">20KB</code> 미만이다.
+<img src="https://user-images.githubusercontent.com/56063287/149663764-bc708400-c26f-4b7c-a720-ed0c2d67f613.png" alt="image"></p>
+
+<h5 id="4-2-핵심">4-2. 핵심!!!</h5>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">limit</code> 으로 설정해준 값 미만의 크기를 가진 파일은 <code class="language-plaintext highlighter-rouge">url-loader</code> 가 <code class="language-plaintext highlighter-rouge">Base64</code> 로 인코딩하여 문자열로 이미지를 로딩하고 그 이상은 앞서 공부한 <code class="language-plaintext highlighter-rouge">file-loader</code> 를 통해서 이미지를 복사하여 <code class="language-plaintext highlighter-rouge">dist</code> 경로에 생성해서 로딩하는 방식이다.</p>
+
+<p>설정 변경을 마친 후 build 를 해보면 <code class="language-plaintext highlighter-rouge">nyancat.jpeg</code> 파일은 파일이 아닌 문자열로 변환되어 <code class="language-plaintext highlighter-rouge">main.js</code> 내에 포함되고 <code class="language-plaintext highlighter-rouge">bg.png</code> 의 경우 20kb 이상이기 때문에 파일이 복사되어 <code class="language-plaintext highlighter-rouge">dist</code> 폴더에 생성되는 것을 볼 수 있다.</p>
+
+<h5 id="4-3-결과-페이지">4-3. 결과 페이지</h5>
+
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149664194-d9137f8a-9bf9-4501-8790-bfb2e0532263.png" alt="image"></p>
+
+<h5 id="4-4-mainjs-내-인코딩-문자열">4-4. main.js 내 인코딩 문자열</h5>
+
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/149664323-7257bf9d-2d75-4e18-9955-df3ebb3f358f.png" alt="image">
+<img src="https://user-images.githubusercontent.com/56063287/149664384-20f83be2-59c4-4b69-bb16-20c4e9c398e4.png" alt="image"></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 

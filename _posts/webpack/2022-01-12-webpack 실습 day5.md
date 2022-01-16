@@ -228,6 +228,148 @@ body {
 
 ![image](https://user-images.githubusercontent.com/56063287/149337567-2d39b303-e35c-4e10-bfa2-7ab0275e98d1.png)
 
+#### 4. url-loader
+
+---
+
+웹 페이지 내 호출 시 마다 사용하는 `image` 갯수가 많다면 여러번의 네트워크 호출이 발생할것이다.
+
+만약 너무 많은 `image` 를 호출하게 된다면 `속도` 나 `성능`에도 영향을 줄 수 있다.
+
+```html
+<img
+  src="data:image/png;base64,iVBORw0KGgoAAA
+ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU
+5ErkJggg=="
+  alt="Red dot"
+/>
+```
+
+이러한 경우 위 `html` 소스 처럼 `url-loader` 를 활용하여 작은 이미지들을 많이 사용할 경우 이러한 이미지들을 `Base64`로 인코딩하여 문자열 형태로 소스코드에 넣는 기능을 자동화해줄 수 있다.
+
+`npm install url-loader` 를 통해 설치를 진행한다.
+
+```json
+//package.json
+  ...
+  "homepage": "https://github.com/jjou33/webpackStudy#readme",
+  "dependencies": {
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.1"
+  }
+```
+
+##### 4-1. 처리과정
+
+---
+
+![image](https://user-images.githubusercontent.com/56063287/149663731-316b0e59-0260-4c7c-901f-6da73a750a28.png)
+
+사이즈가 작은 `nyancat.jpeg` 파일을 `src` 경로에 다운받는다.
+
+```js
+// app.js
+
+import "./app.css";
+import nyancat from "./nyancat.jpeg";
+
+// DOM 이 Loading 되어졌을때 Body 에 해당 이미지를 넣는다.
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.innerHTML = `
+        <img src="${nyancat}" />
+    `;
+});
+```
+
+DOM 이 Loading 되었을 때 이미지를 `Body` 태그 안에 넣는 코드를 작성하였다.
+
+그럼 이제 `Webpack.config.js` 에서 `url-loader` 를 사용하도록 설정을 변경한다.
+
+먼저 앞서 공부한 `file-loader` 를 통해 해당 이미지를 처리하는 것부터 실습해보자.
+적용 파일에 `png` 와 더불어 `jpg , jpeg` 파일도 적용할 수 있도록 정규식에 추가해준다.
+
+```js
+// webpack.json
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.png|jpg|jpeg$/,
+        loader: "file-loader",
+        options: {
+          publicPath: "./dist/",
+          name: "[name].[ext]?[hash]",
+        },
+      },
+    ],
+```
+
+그리고 `npm run build`를 해보면 `nyancat.jpeg` 파일이 `dist` 경로에 생성되는 것을 볼 수 있다.
+
+![image](https://user-images.githubusercontent.com/56063287/149663964-d6a77b94-1b2a-4778-96f1-5a2a4268221d.png)
+
+그리고 페이지에도 정상적으로 이미지가 노출된다.
+
+![image](https://user-images.githubusercontent.com/56063287/149663981-120092d8-d4ad-4998-bff5-9d9147ca0954.png)
+
+##### 4-1. url-loader 적용
+
+--
+
+먼저 `webpack.config.js` 설정 변경
+
+```js
+// webpack.config.json
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.png|jpg|jpeg$/,
+        loader: "url-loader",
+        options: {
+          publicPath: "./dist/",
+          name: "[name].[ext]?[hash]",
+          limit: 20000, // url-loader 가 처리할때 해당 크기 미만은 url-loader 로 처리하고
+                        // 그 이상은 file-loader 를 통해 파일을 복사한다.
+        },
+      },
+```
+
+파일의 크기는 `20KB` 미만이다.
+![image](https://user-images.githubusercontent.com/56063287/149663764-bc708400-c26f-4b7c-a720-ed0c2d67f613.png)
+
+##### 4-2. 핵심!!!
+
+---
+
+`limit` 으로 설정해준 값 미만의 크기를 가진 파일은 `url-loader` 가 `Base64` 로 인코딩하여 문자열로 이미지를 로딩하고 그 이상은 앞서 공부한 `file-loader` 를 통해서 이미지를 복사하여 `dist` 경로에 생성해서 로딩하는 방식이다.
+
+설정 변경을 마친 후 build 를 해보면 `nyancat.jpeg` 파일은 파일이 아닌 문자열로 변환되어 `main.js` 내에 포함되고 `bg.png` 의 경우 20kb 이상이기 때문에 파일이 복사되어 `dist` 폴더에 생성되는 것을 볼 수 있다.
+
+##### 4-3. 결과 페이지
+
+---
+
+![image](https://user-images.githubusercontent.com/56063287/149664194-d9137f8a-9bf9-4501-8790-bfb2e0532263.png)
+
+##### 4-4. main.js 내 인코딩 문자열
+
+---
+
+![image](https://user-images.githubusercontent.com/56063287/149664323-7257bf9d-2d75-4e18-9955-df3ebb3f358f.png)
+![image](https://user-images.githubusercontent.com/56063287/149664384-20f83be2-59c4-4b69-bb16-20c4e9c398e4.png)
+
 #### 참고 사이트
 
 ---
