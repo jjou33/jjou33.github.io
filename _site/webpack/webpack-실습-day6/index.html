@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Webpack 실습 (4) - Loader &amp; Module - Hippo Dev Blog</title>
+<!-- begin _includes/seo.html --><title>Webpack 실습 (6) - Plugin 기본 개념정리 - Hippo Dev Blog</title>
 <meta name="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Webpack 실습 (4) - Loader &amp; Module">
-<meta property="og:url" content="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day4/">
+<meta property="og:title" content="Webpack 실습 (6) - Plugin 기본 개념정리">
+<meta property="og:url" content="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/">
 
 
   <meta property="og:description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-01-11T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-01-19T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day4/">
+<link rel="canonical" href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/">
 
 
 
@@ -543,15 +543,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Webpack 실습 (4) - Loader &amp; Module">
+    <meta itemprop="headline" content="Webpack 실습 (6) - Plugin 기본 개념정리">
     <meta itemprop="description" content=":computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
-    <meta itemprop="datePublished" content="2022-01-11T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-01-19T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Webpack 실습 (4) - Loader &amp; Module
+            Webpack 실습 (6) - Plugin 기본 개념정리
 
           </h1>
           
@@ -579,11 +579,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Loader</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Plugin</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Module</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
+      <a class="page__taxonomy-item-tag" rel="tag">기본개념</a>
     
     </span>
   </p>
@@ -614,7 +614,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-11T00:00:00+09:00">January 11, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-19T00:00:00+09:00">January 19, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -624,15 +624,14 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-loader">1. Loader</a></li>
+<li><a href="#1-plugin-%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%97%AD%ED%95%A0%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">1. Plugin 이란 무엇이며 역할은 무엇일까?</a></li>
 <li>
-<a href="#2-loader-%EC%8B%A4%EC%8A%B5">2. Loader 실습</a><ul>
-<li><a href="#2-1-webpack-%EC%9D%84-%ED%86%B5%ED%95%9C-loader-%EC%8B%A4%ED%96%89">2-1. Webpack 을 통한 Loader 실행</a></li>
-<li><a href="#webpack-build-%EA%B2%B0%EA%B3%BC">Webpack Build 결과</a></li>
-<li><a href="#2-2-loader-%EB%A5%BC-%ED%86%B5%ED%95%B4-%ED%8A%B9%EC%A0%95-%EC%9A%94%EC%86%8C-%EB%B3%80%EA%B2%BD">2-2. Loader 를 통해 특정 요소 변경</a></li>
-</ul>
+<a href="#2-plugin-%EA%B5%AC%ED%98%84-%EC%8B%A4%EC%8A%B5">2. Plugin 구현 실습</a><ul><li><a href="#%EA%B2%B0%EA%B3%BC">결과</a></li></ul>
 </li>
-<li><a href="#%EC%A0%95%EB%A6%AC">정리</a></li>
+<li>
+<a href="#2-bannerplugin-%EC%9D%98-compliation-%EC%9D%B8%EC%9E%90">2. BannerPlugin 의 Compliation 인자</a><ul><li><a href="#%EA%B2%B0%EA%B3%BC-1">결과</a></li></ul>
+</li>
+<li><a href="#3-%EC%B5%9C%EC%A2%85-%EC%A0%95%EB%A6%AC">3. 최종 정리</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -644,39 +643,48 @@
 <p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-loader">1. Loader</h4>
+<p>실무에서 주로 사용하는 대표적인 로더들에 대한 실습을 진행해본다.</p>
+
+<h4 id="1-plugin-이란-무엇이며-역할은-무엇일까">1. Plugin 이란 무엇이며 역할은 무엇일까?</h4>
 
 <hr>
 
-<p>웹팩은 자바스크립트, 스타일시트, 이미지, 폰트 등 모든 소스를 각각의 모듈로 바라보기 때문에 import 구문을 사용하여 외부 소스를 활용한다.</p>
+<p><code class="language-plaintext highlighter-rouge">loader</code> 를 통해서 파일단위로 다양한 처리를 하였다면 <code class="language-plaintext highlighter-rouge">plugin</code> 을 통해서는 <code class="language-plaintext highlighter-rouge">bundling</code> 된 결과물을 처리한다.
+예를 들면 <code class="language-plaintext highlighter-rouge">bundling</code> 된 <code class="language-plaintext highlighter-rouge">javascript</code> 를 난독화하거나 특정 텍스트를 <code class="language-plaintext highlighter-rouge">추출</code> 하는 용도이다.</p>
 
-<p>이는 웹팩의 <code class="language-plaintext highlighter-rouge">로더(Loader)</code>의 존재 때문인데 <code class="language-plaintext highlighter-rouge">로더</code>는 여러가지 언어들을 <code class="language-plaintext highlighter-rouge">javascript</code> 문법으로 변환해 주거나 <code class="language-plaintext highlighter-rouge">image</code>를 <code class="language-plaintext highlighter-rouge">data URL</code> 형식의 문자열로 변환하거나 <code class="language-plaintext highlighter-rouge">CSS</code> 파일을 자바스크립트에서 직접 로딩할 수 있도록 해준다.</p>
-
-<h4 id="2-loader-실습">2. Loader 실습</h4>
-
-<hr>
-
-<h5 id="2-1-webpack-을-통한-loader-실행">2-1. Webpack 을 통한 Loader 실행</h5>
+<h4 id="2-plugin-구현-실습">2. Plugin 구현 실습</h4>
 
 <hr>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/148957409-ef306aa5-b582-40ca-bc9d-41a3512a185c.png" alt="image"></p>
+<p>현재 <code class="language-plaintext highlighter-rouge">webpack</code> <a href="https://webpack.js.org/contribute/writing-a-plugin/">공식 문서</a>를 보면 <code class="language-plaintext highlighter-rouge">plugin</code> 에 대한 <code class="language-plaintext highlighter-rouge">custom</code> 예제들을 많이 찾을 수 있다.</p>
 
-<p>위에서 보는것과 같이 앞서 설정한 초기 웹팩 개발환경에서 <code class="language-plaintext highlighter-rouge">my-webpack-loader.js</code> 파일을 만든다.
-해당 파일은 우리가 실행하게 될 <code class="language-plaintext highlighter-rouge">loader</code> 의 <code class="language-plaintext highlighter-rouge">function</code> 을 정의하여 <code class="language-plaintext highlighter-rouge">module</code> 로 내보낼 것이다.</p>
+<p>공식 문서에 있는 예제를 하나 가져와서 프로젝트에 만들어 보았다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// my-webpack-loader.js</span>
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">myWebpackLoader</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">js 파일마다 loader 동작</span><span class="dl">"</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">content</span><span class="p">;</span>
-<span class="p">};</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//my-webpack-plugin.js</span>
+
+<span class="c1">// Custom 화 한 plugin</span>
+
+<span class="kd">class</span> <span class="nx">MyWebpackPlugin</span> <span class="p">{</span>
+  <span class="nx">apply</span><span class="p">(</span><span class="nx">compiler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// plugin 이 종료되면 2번째 인자로 준 Callback 함수가 실행된다.</span>
+    <span class="nx">compiler</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">done</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="dl">"</span><span class="s2">My Plugin</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">stats</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">MyPlugin: done</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">MyPlugin</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>이제 이 <code class="language-plaintext highlighter-rouge">loader</code> 를 사용하려면 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 설정 파일에 정의해주어야한다.</p>
+<p><code class="language-plaintext highlighter-rouge">my-webpack-plugin.js</code> 파일에 위와 같이 클레스를 정의한다.
+위 클레스는 <code class="language-plaintext highlighter-rouge">apply</code> 함수에서 제공하는 <code class="language-plaintext highlighter-rouge">complier</code> 를 통해 <code class="language-plaintext highlighter-rouge">webpack build</code> 가 끝나는 시점에 2번째 인자로 준 <code class="language-plaintext highlighter-rouge">callback</code> 함수가 실행되도록 할 계획으로 작성된 코드이다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<p><code class="language-plaintext highlighter-rouge">complier</code> 에 대해서는 정확히 이해가 되지 않아 좀 더 찾아봐서 추후에 따로 정리를 한번 해야될것 같다…ㅠ</p>
 
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
+<p>우선 <code class="language-plaintext highlighter-rouge">plugin</code> 을 대신할 <code class="language-plaintext highlighter-rouge">js</code> 파일을 만들었으므로, <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 에 위 <code class="language-plaintext highlighter-rouge">js</code> 를 <code class="language-plaintext highlighter-rouge">plugin</code> 처럼 실행하도록 설정을 바꿔보자</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">MyWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./my-webpack-plugin</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">,</span>
@@ -688,77 +696,100 @@
     <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].js</span><span class="dl">"</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
-        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">"</span><span class="s2">./my-webpack-loader.js</span><span class="dl">"</span><span class="p">)],</span>
-      <span class="p">},</span>
-    <span class="p">],</span>
-  <span class="p">},</span>
+  <span class="p">...</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">MyWebpackPlugin</span><span class="p">(),</span> <span class="c1">// Class 객체 생성</span>
+  <span class="p">],</span>
 <span class="p">};</span>
+
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">module</code> 객체를 추가하고 <code class="language-plaintext highlighter-rouge">rules</code> 배열안에 <code class="language-plaintext highlighter-rouge">test, use</code> 객체를 각각 정의해주었다.</p>
+<p><code class="language-plaintext highlighter-rouge">loader</code> 에 대한 설정을 <code class="language-plaintext highlighter-rouge">modules</code> 에 작성하였다면, <code class="language-plaintext highlighter-rouge">plugin</code> 은 <code class="language-plaintext highlighter-rouge">plugins</code> 에 작성하면 된다.
+<code class="language-plaintext highlighter-rouge">my-webpack-plugin.js</code> 에서 작성한 <code class="language-plaintext highlighter-rouge">class</code> 에 대한 객체를 <code class="language-plaintext highlighter-rouge">new</code> 를 통해 생성한다.</p>
 
-<ul>
-  <li>
-<strong>test</strong> : <code class="language-plaintext highlighter-rouge">Loader</code> 가 처리해야 할 파일들의 <code class="language-plaintext highlighter-rouge">패턴</code> 을 정의(정규표현식)</li>
-  <li>
-<strong>use</strong> : 사용할 <code class="language-plaintext highlighter-rouge">Loader</code> 를 명시</li>
-</ul>
+<p>그 후 <code class="language-plaintext highlighter-rouge">build</code> 를 하면 어떻게 될까?</p>
 
-<p><code class="language-plaintext highlighter-rouge">npm run build</code> 를 통해 <code class="language-plaintext highlighter-rouge">webpack</code> 을 실행하게 되면 <code class="language-plaintext highlighter-rouge">js</code> 파일이 <code class="language-plaintext highlighter-rouge">import</code> 될 때마다 명시한 <code class="language-plaintext highlighter-rouge">Loader</code> 가 동작하게 된다.</p>
-
-<h5 id="webpack-build-결과">Webpack Build 결과</h5>
+<h5 id="결과">결과</h5>
 
 <hr>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/148958784-5dc13110-e34c-4a5c-b6c6-7090f51a9533.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/56063287/150137582-2ed54efa-f0d9-4a0c-9741-6894ee140c92.png" alt="image"></p>
 
-<h5 id="2-2-loader-를-통해-특정-요소-변경">2-2. Loader 를 통해 특정 요소 변경</h5>
+<p><code class="language-plaintext highlighter-rouge">loader</code> 를 실습할때는 <code class="language-plaintext highlighter-rouge">module</code>에 설정한 동작이 파일하나 혹은 여러개에 대해 반복 되었지만, <code class="language-plaintext highlighter-rouge">plugin</code> 의 경우 한번만 동작하는 것을 볼 수 있다.</p>
 
-<hr>
+<p>이유는 <code class="language-plaintext highlighter-rouge">plugin</code> 은 <code class="language-plaintext highlighter-rouge">bundling</code> 된 결과물을 대상으로 즉, 우리가 자주 했던 <code class="language-plaintext highlighter-rouge">main.js</code> ? 라 생각하면 될것 같다.
+어쨋든 이런 결과물을 대상으로 동작한다고 한다.</p>
 
-<p>이번엔 <code class="language-plaintext highlighter-rouge">js</code> 파일 내 <code class="language-plaintext highlighter-rouge">console.log</code> 를 <code class="language-plaintext highlighter-rouge">alert</code> 로 변경해 본다.</p>
+<p>따라서, 우리가 실습에서 생성하는 결과물 파일은 <code class="language-plaintext highlighter-rouge">main.js</code> 하나이기 때문에 한번만 동작하는 것을 확인할 수 있었다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
-
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">math</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./math.js</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">math</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
-</code></pre></div></div>
-
-<p>현재는 <code class="language-plaintext highlighter-rouge">math.js</code> 에서 <code class="language-plaintext highlighter-rouge">sum</code> 함수를 통해 결과값을 <code class="language-plaintext highlighter-rouge">console</code> 에 찍고 있지만 <code class="language-plaintext highlighter-rouge">Loader</code> 를 통해 이를 <code class="language-plaintext highlighter-rouge">Alert</code> 로 변환하여 <code class="language-plaintext highlighter-rouge">Build</code> 후 페이지를 실행해본다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// my-webpack-loader.js</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">myWebpackLoader</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// console.log("js 파일마다 loader 동작");</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">content : </span><span class="dl">"</span><span class="p">,</span> <span class="nx">content</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">content</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">"</span><span class="s2">console.log(</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">alert(</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>변경 후 <code class="language-plaintext highlighter-rouge">npm run build</code> 확인
-<code class="language-plaintext highlighter-rouge">config</code> 내용은 동일하기 때문에 <code class="language-plaintext highlighter-rouge">js</code> 파일이 실행 될 때마다 <code class="language-plaintext highlighter-rouge">Loader</code> 가 실행되는 부분 확인
-<code class="language-plaintext highlighter-rouge">content</code> 값이 어떻게 나올 지 궁금해서 찍어보았다..</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/148959970-f03c47c5-f6c7-4fdc-9a19-b8131aaded33.png" alt="image"></p>
-
-<p>이후 우리는 앞선 포스팅에서 했듯이 <code class="language-plaintext highlighter-rouge">index.html</code> 에서 번들링 된 <code class="language-plaintext highlighter-rouge">dist/main.js</code> 를 로딩하여 페이지를 열면 <code class="language-plaintext highlighter-rouge">Alert</code> 을 확인할 수 있다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/56063287/148961345-7dd7cfa4-ef71-4e0b-8535-6052e5b7b1e5.png" alt="image"></p>
-
-<h4 id="정리">정리</h4>
+<h4 id="2-bannerplugin-의-compliation-인자">2. BannerPlugin 의 Compliation 인자</h4>
 
 <hr>
 
-<p>우선 <code class="language-plaintext highlighter-rouge">Webpack</code> 이란 도구는 우리가 개발을 함에 있어서 다양한 도움을 주는 번들러이다.</p>
+<p><a href="https://github.com/lcxfs1991/banner-webpack-plugin/blob/master/index.js">BannerPlugin 코드</a>(Webpack 의 내장 플러그인) 를 참고한 예제 코드를 가져와 보았다.</p>
 
-<p>이러한 Webpack 을 그냥 공부하기 보다는 실제 <code class="language-plaintext highlighter-rouge">Loader</code> 를 <code class="language-plaintext highlighter-rouge">Custom</code> 화 하여 만들어보고 이제 조금 이해가 된 것 같다.
-실제 업무에서 사용하고 있지만, 이제 조금은 알고 사용할 수 잇을 것 같아 회사가서 더 찾아봐야겟다..</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Custom 화 한 plugin</span>
 
-<p>오늘 끗!</p>
+<span class="kd">class</span> <span class="nx">MyWebpackPlugin</span> <span class="p">{</span>
+  <span class="nx">apply</span><span class="p">(</span><span class="nx">compiler</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// plugin 이 종료되면 2번째 인자로 준 Callback 함수가 실행된다.</span>
+    <span class="c1">// compiler.hooks.done.tap("My Plugin", (stats) =&gt; {</span>
+    <span class="c1">//   console.log("MyPlugin: done");</span>
+    <span class="c1">// });</span>
+
+    <span class="c1">// compiler.plugin() 함수로 후처리한다</span>
+    <span class="nx">compiler</span><span class="p">.</span><span class="nx">plugin</span><span class="p">(</span><span class="dl">"</span><span class="s2">emit</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">compilation</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// Compliation 을 통해서 Webpack 이 번들링 한 결과물에 대한 접근을 할 수 있다.</span>
+      <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="dl">"</span><span class="s2">main.js</span><span class="dl">"</span><span class="p">].</span><span class="nx">source</span><span class="p">();</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">source</span><span class="p">);</span>
+      <span class="nx">callback</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">MyWebpackPlugin</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 <code class="language-plaintext highlighter-rouge">source</code> 를 찍어보니 진짜 번들링된것 같은 로그를 볼 수 있었다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/150140462-0582856e-333b-4efa-9176-8220253ac3c7.png" alt="image"></p>
+
+<p>그렇다면 실습으로 이번엔 해당 소스를 재정의 하여 <code class="language-plaintext highlighter-rouge">bundling</code> 된 결과 상단에 지정한 문자열을 추가하도록 하는 소스로 실습하였다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">compiler</span><span class="p">.</span><span class="nx">plugin</span><span class="p">(</span><span class="dl">"</span><span class="s2">emit</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">compilation</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Compliation 을 통해서 Webpack 이 번들링 한 결과물에 대한 접근을 할 수 있다.</span>
+  <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="dl">"</span><span class="s2">main.js</span><span class="dl">"</span><span class="p">].</span><span class="nx">source</span><span class="p">();</span>
+  <span class="c1">// 번들링 된 main.js 파일 상단에 banner 문자열이 추가되도록 하는 소스</span>
+  <span class="nx">compilation</span><span class="p">.</span><span class="nx">assets</span><span class="p">[</span><span class="dl">"</span><span class="s2">main.js</span><span class="dl">"</span><span class="p">].</span><span class="nx">source</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">banner</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">/**</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2"> * 이것은 BannerPlugin이 처리한 결과입니다.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2"> * Build Date: 2022-01-19</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2"> */</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="se">\n</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">banner</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">source</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">callback</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h5 id="결과-1">결과</h5>
+
+<hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/150141571-77c5ffe0-ba5c-4702-813a-383bdde61168.png" alt="image"></p>
+
+<p>위처럼 결과물인 <code class="language-plaintext highlighter-rouge">main.js</code> 파일 최상단에 입력한 <code class="language-plaintext highlighter-rouge">banner</code> 내용이 들어가 있는 것을 볼 수 있다.</p>
+
+<h4 id="3-최종-정리">3. 최종 정리</h4>
+
+<hr>
+
+<p>결과적으로 <code class="language-plaintext highlighter-rouge">plugin</code> 이란 <code class="language-plaintext highlighter-rouge">webpack</code> 이 번들링을 통해 여러개의 파일을 합치게 된 결과물에 대한 <code class="language-plaintext highlighter-rouge">후처리</code> 를 한다고 이해하면 될 것 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/150142194-fb1dc330-bc34-4184-9c66-99bb9dedf1cb.png" alt="image"></p>
+
+<p>즉, 위 사진에서 빨간색으로 표시한 부분에서 최종적으로 번들링된 각각의 파일들에 대하여 원하는대로 처리를 한다고 이해하면 될 것 같다.</p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
@@ -773,23 +804,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Webpack+%EC%8B%A4%EC%8A%B5+%284%29+-+Loader+%26+Module%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Webpack+%EC%8B%A4%EC%8A%B5+%286%29+-+Plugin+%EA%B8%B0%EB%B3%B8+%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day6%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day6%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fwebpack%2Fwebpack-%25EC%258B%25A4%25EC%258A%25B5-day6%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day3/" class="pagination--pager" title="Webpack 실습 (3) - 초기설치 및 설정
+      <a href="/git/git-ignore-add/" class="pagination--pager" title="Git ignore 생성 및 적용
 ">Previous</a>
     
     
-      <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/" class="pagination--pager" title="Webpack 실습 (5) - 주요 Loader 실습
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -803,62 +833,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/" rel="permalink">Webpack 실습 (6) - Plugin 기본 개념정리
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.19
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Plugin</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">기본개념</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -945,6 +919,62 @@
         
         
         <a class="page__taxonomy-item-tag" rel="tag">style-loader</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day4/" rel="permalink">Webpack 실습 (4) - Loader &amp; Module
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.11
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Loader</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Module</a><span class="sep">
         </span>
         
         

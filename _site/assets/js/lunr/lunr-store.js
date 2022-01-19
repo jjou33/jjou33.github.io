@@ -394,4 +394,10 @@ var store = [{
         "tags": ["Git","Git ignore"],
         "url": "/git/git-ignore-add/",
         "teaser": null
+      },{
+        "title": "Webpack 실습 (6) - Plugin 기본 개념정리",
+        "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 실무에서 주로 사용하는 대표적인 로더들에 대한 실습을 진행해본다. 1. Plugin 이란 무엇이며 역할은 무엇일까? loader 를 통해서 파일단위로 다양한 처리를 하였다면 plugin 을 통해서는 bundling 된 결과물을 처리한다. 예를 들면 bundling 된 javascript 를 난독화하거나 특정 텍스트를 추출 하는 용도이다....","categories": ["webpack"],
+        "tags": ["Webpack","Plugin","기본개념"],
+        "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/",
+        "teaser": null
       }]
