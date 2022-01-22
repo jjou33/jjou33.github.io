@@ -400,4 +400,10 @@ var store = [{
         "tags": ["Webpack","Plugin","기본개념"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/",
         "teaser": null
+      },{
+        "title": "에라토스테네스의 체(소수구하기)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 코딩 테스트를 푸는 도중 소수를 구하는 문제를 접할 수 있었다. 고민을 하다가 에라토스테네스의 체라는 것을 알게 되어 포스팅을 통해 기록해두어야겠다. 1. 소수 먼저 소수에 대한 정의를 살펴볼 필요가 있다. 소수는 1과 자기 자신으로만 나누어지는 수 이다. 1은 소수가...","categories": ["Algorithm"],
+        "tags": ["Programming","에라토스테네스의 체","소수"],
+        "url": "/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/",
+        "teaser": null
       }]
