@@ -401,12 +401,6 @@ var store = [{
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/",
         "teaser": null
       },{
-        "title": "에라토스테네스의 체(소수구하기)",
-        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 소수 먼저 소수에 대한 정의를 살펴볼 필요가 있다. 소수는 1과 자기 자신으로만 나누어지는 수 이다. 1은 소수가 아니다. 모든 자연수는 소수들의 곱으로 표현된다. 위 개념을 통해 에라토스테네스의 체 알고리즘을 알아보도록 한다. 2. 에라토스테네스의 체란? 그럼 에라토스테네스의 체...","categories": [null,""],
-        "tags": ["Programming","에라토스테네스의 체","소수"],
-        "url": "/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/",
-        "teaser": null
-      },{
         "title": "Webpack 실습 (7) - 주요 Plugin 실습",
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 대표적으로 많이 사용하는 Plugin 에 대한 개념 설명 및 실습을 정리하는 포스팅이다. loader 와 같이 custom 으로 작성하는 일은 거의 없으며 웹펙에서 제공하는 플러그인을 알아본다. 1. BannerPlugin 위 플러그인은 결과물에 대해 원하는 정보를 함께 결과물에 노출 시킬 수 있다. 즉,...","categories": ["webpack"],
         "tags": ["Webpack","Plugin","주요 Plugin"],

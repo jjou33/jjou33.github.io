@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-26T22:50:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Webpack 실습 (7) - 주요 Plugin 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/" rel="alternate" type="text/html" title="Webpack 실습 (7) - 주요 Plugin 실습" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day7</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-26T23:40:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Webpack 실습 (7) - 주요 Plugin 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/" rel="alternate" type="text/html" title="Webpack 실습 (7) - 주요 Plugin 실습" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day7</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -124,104 +124,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Plugin" /><category term="주요 Plugin" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">에라토스테네스의 체(소수구하기)</title><link href="http://localhost:4000/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/" rel="alternate" type="text/html" title="에라토스테네스의 체(소수구하기)" /><published>2022-01-22T00:00:00+09:00</published><updated>2022-01-22T00:00:00+09:00</updated><id>http://localhost:4000/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4</id><content type="html" xml:base="http://localhost:4000/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-소수&quot;&gt;1. 소수&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수&lt;/code&gt;에 대한 정의를 살펴볼 필요가 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소수는 1과 자기 자신으로만 나누어지는 수 이다.&lt;/li&gt;
-  &lt;li&gt;1은 소수가 아니다.&lt;/li&gt;
-  &lt;li&gt;모든 자연수는 소수들의 곱으로 표현된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위 개념을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에라토스테네스의 체&lt;/code&gt; 알고리즘을 알아보도록 한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-에라토스테네스의-체란&quot;&gt;2. 에라토스테네스의 체란?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;그럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에라토스테네스의 체&lt;/code&gt; 가 무엇인지 알아보면 아래와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150643048-607924d7-0b97-4c2e-832c-28a850e46c62.gif&quot; alt=&quot;264D383952BCC9CC31&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;주어진 숫자의 n의 제곱근 즉, 루트(n)의 값보다 작은 수의 배수를 모조리 n 보다 작은 범위에서 제거하면 된다는 개념을 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;자세한 개념은 아래 위키에서 확인하면 되며, 그럼 코드를 통해 확인해본 결과를 통해 조금 더 이해할 수 있도록 정리해보자.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-코드&quot;&gt;2. 코드&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PrimeNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 주어진 n 개의 true 값으로 채워진 배열을 만들고 0,1 은 false 로 변경&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 소수가 아닌 것들을 false 로 변경&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;3-결과정리&quot;&gt;3. 결과정리&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;먼저&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 까지의 숫자를 의미하는 배열을 만들고 각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 값을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; 로 셋팅한다.
-그리고 0과 1은 소수가 아니므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 치환한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 소수가 아닌 것들을 false 로 변경&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true / false&lt;/code&gt; 의 의미는 각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 가 의미하는 숫자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수인지 아닌지&lt;/code&gt; 를 알려주는 것이다.&lt;/p&gt;
-
-&lt;p&gt;그럼 결과적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 ~ n&lt;/code&gt; 까지만큼의 배열이 만들어져있고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0,1&lt;/code&gt; 번째만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 값이 변경된 배열을 셋팅할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그후 반복문으로 들어가게 되는데 처음 시작은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt; 부터 시작하므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i=2&lt;/code&gt; 로 셋팅하고 제곱수가 주어진 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 의 값 보다 작거나 같은경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true/false&lt;/code&gt; 를 확인한다.&lt;/p&gt;
-
-&lt;p&gt;여기까지 통과가 되면 해당 숫자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 는 소수로 인정하며 이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 의 배수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제거(false 로 변경)&lt;/code&gt; 하는 작업을 진행한다.&lt;/p&gt;
-
-&lt;p&gt;즉, 2의 제곱 수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4&lt;/code&gt; 가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; 가 되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt;보다 작은 수 이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[4]&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 변경된 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j += i&lt;/code&gt; 을통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6,8,10&lt;/code&gt; 이 지워지게 된다.
-이렇게 되면 그다음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;이 되고 그다음은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4&lt;/code&gt;이지만 이미 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt; 의 배수로 지워졌기 때문에 소수가 아니라 판별하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5&lt;/code&gt; 로 넘어가게 된다.&lt;/p&gt;
-
-&lt;p&gt;이런식으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 보다 작은 각 배수들을 지워나가다 보면 결국 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; 로 남아 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 가 의미하는 숫자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Prime Number&lt;/code&gt; 즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수&lt;/code&gt;가 되는 것이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&quot;&gt;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&quot;&gt;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&quot;&gt;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="" /><category term="" /><category term="Programming" /><category term="에라토스테네스의 체" /><category term="소수" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 실습 (6) - Plugin 기본 개념정리</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/" rel="alternate" type="text/html" title="Webpack 실습 (6) - Plugin 기본 개념정리" /><published>2022-01-19T00:00:00+09:00</published><updated>2022-01-19T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day6</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Plugin" /><category term="주요 Plugin" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">Webpack 실습 (6) - Plugin 기본 개념정리</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/" rel="alternate" type="text/html" title="Webpack 실습 (6) - Plugin 기본 개념정리" /><published>2022-01-19T00:00:00+09:00</published><updated>2022-01-19T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day6</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1510,4 +1413,102 @@ npm install react
 
 &lt;p&gt;[설정]-[보안 및 개인 정보 보호]-[개인정보 보호]-전체 디스크 접근 권한]-[터미널]에 대한 보안을 해제 하면 된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/148237680-c3522202-fb97-466a-b890-1c65ed66a4c6.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="mac" /><category term="MAC OS" /><category term="권한오류" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/148237680-c3522202-fb97-466a-b890-1c65ed66a4c6.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="mac" /><category term="MAC OS" /><category term="권한오류" /><summary type="html">:computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Javascript Engine(Heap, Call stack)</title><link href="http://localhost:4000/front/Javascript-Engine/" rel="alternate" type="text/html" title="Javascript Engine(Heap, Call stack)" /><published>2022-01-03T00:00:00+09:00</published><updated>2022-01-03T00:00:00+09:00</updated><id>http://localhost:4000/front/Javascript%20Engine</id><content type="html" xml:base="http://localhost:4000/front/Javascript-Engine/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;개요&quot;&gt;개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;앞선 포스트에서 &lt;strong&gt;이벤트 루프&lt;/strong&gt; 에 대하여 공부해봤다.&lt;/p&gt;
+
+&lt;p&gt;공부를 하다보니 Javascript Engine 에 대하여 궁금증 이 생겨 추가로 공부하여 기록한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-javascript-engine&quot;&gt;1. JavaScript Engine&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자바스크립트 엔진은 각 브라우저 별로 상이하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SpiderMonkey&lt;/code&gt; : 파이어 폭스&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V8&lt;/code&gt; : Crome&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Webkit&lt;/code&gt; : 사파리&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chakra&lt;/code&gt; : 익스플로러, 엣지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 중에서 Google Crome 에서 사용하는 V8 엔진이 대표적인 예이다.&lt;/p&gt;
+
+&lt;p&gt;V8 은 &lt;strong&gt;Crome&lt;/strong&gt; 과 &lt;strong&gt;Node.js&lt;/strong&gt; 에서 사용하며 &lt;strong&gt;메모리 힙(Heap)&lt;/strong&gt; 과 &lt;strong&gt;Call Stack&lt;/strong&gt; 으로 구성되어 있다.&lt;/p&gt;
+
+&lt;h5 id=&quot;javascript-engine-구성도&quot;&gt;JavaScript Engine 구성도&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147932418-b248d484-c703-4328-9832-628eae3017f1.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Memory Heap&lt;/code&gt; : 메모리 할당이 일어나는 곳&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; : 실제 실행되고 있는 작업(호출 스택)이 쌓이는 곳&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;v8-메모리-구조&quot;&gt;V8 메모리 구조&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147935375-7a97ebcf-ef5e-46a9-ad95-670ab6924969.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림은 V8 엔진의 메모리 구조에 대한 표현이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Resident Set&lt;/code&gt; : 메모리 구조이며 실행중인 프로그램이 V8 프로세스에 할당된 일정량의 메모리로 표현되는 것을 의미한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt; : 실행 컨텍스트와 원시값, 객체의 포인터같은 &lt;strong&gt;정적 데이터&lt;/strong&gt;가 저장&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Heap&lt;/code&gt; : 객체와 같은 &lt;strong&gt;동적 데이터&lt;/strong&gt;를 저장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;메모리 관련해서 &lt;strong&gt;실제로 동작하는 과정&lt;/strong&gt;과 &lt;strong&gt;Garbage Collector 를 통한 객체 소거&lt;/strong&gt; 등 자세한 내용에 대해서는 별도의 포스트로 진행할 예정이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-호출-스택call-stack&quot;&gt;3. 호출 스택(Call Stack)&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;앞선 &lt;a href=&quot;https://jjou33.github.io/front/eventloop/&quot;&gt;이벤트 루프&lt;/a&gt; 포스트에서도 공부해보았지만, 자바스크립트는 기본적으로 단일 스레드 기반이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task Queue&lt;/code&gt; 를 활용하여 &lt;strong&gt;동시성(Concurrency)&lt;/strong&gt; 를 보장하게 만든다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Call Stack&lt;/strong&gt; 은 현재 진행중인 작업 즉, 실행되고 있는 웹이 어디에 있는지를 기록하는 &lt;strong&gt;자료구조&lt;/strong&gt; 이다.
+현재 실행되고 있는 함수가 끝나 리턴값을 돌려주면 &lt;strong&gt;Call Stack&lt;/strong&gt; 은 해당 함수를 제거하고 다음 Stack 을 실행하거나 모두 비었을 경우 &lt;strong&gt;Task Queue&lt;/strong&gt; 에서 대기하고 있는 콜백 함수를 실행시킨다.&lt;/p&gt;
+
+&lt;h5 id=&quot;call-stack-예시&quot;&gt;Call Stack 예시&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934114-53a15ae8-d16f-4fea-9e43-d4201a1264f0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 그림에서 볼 수 있듯이 호출되는 순서대로 작업들이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt; 에 쌓이게 되고 종료될 경우 FIFO 순서로 제거(POP) 된다.&lt;/p&gt;
+
+&lt;p&gt;하지만 Stack 에도 한계치가 있지 않을까? 라는 의문을 가질 수 있다.&lt;/p&gt;
+
+&lt;p&gt;Stack 에도 한계치가 있으며 아래와 같이 이해하기 좋은 예가 있어 가져와 보았다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934523-c400c6d8-0330-4749-91f4-f301a6bc4d34.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/147934828-d35e23db-c54e-4595-81e2-56172541c18d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 함수를 호출하게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;foo()&lt;/code&gt; 함수가 계속해서 쌓일 것이고 만약 호출 스택의 크기를 초과하게 되면 브라우저에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Maximum call stack size exceeded&lt;/code&gt; 에러를 발생시킨 후 종료시킬 것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참조-사이트&quot;&gt;참조 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf&quot;&gt;https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@imnotmoon/JavaScript-V8-Engine%EC%9D%B4-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95&quot;&gt;https://velog.io/@imnotmoon/JavaScript-V8-Engine%EC%9D%B4-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%A5%BC-%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://speakerdeck.com/deepu105/v8-memory-usage-stack-and-heap&quot;&gt;https://speakerdeck.com/deepu105/v8-memory-usage-stack-and-heap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="front" /><category term="F/E" /><category term="Javascript Engine" /><category term="Heap" /><category term="Call stack" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
