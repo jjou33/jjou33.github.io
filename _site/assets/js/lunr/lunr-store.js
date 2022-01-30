@@ -324,7 +324,7 @@ var store = [{
         "teaser": null
       },{
         "title": "공부할부분 체크리스트",
-        "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    필요목록        이벤트 루프   실행 컨텍스트   setTimeout 비동기 처리   HOC        코드 스플리팅       이벤트 처리(SPA 와 바닐라의 차이)   중간(일단완료)        호이스팅   SPA   완료    ","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 필요목록 이벤트 루프 setinterval 5초 이후 setTimeOut 줬을때 어떻게 되는지 Vue 라이프사이클 주로 API 는 어느 단계에서 호출하나? 프론트 도입한다면 어떻게 할껀지 대략적인 그림 쿠키와 세션의 차이 및 쿠키가 백엔드에 어떻게 전달되는지 렌더링트리를 우리가 왜 알아야되는지 HTTP 프로토콜 7. 실행 컨텍스트 setTimeout 비동기...","categories": ["front"],
         "tags": ["F/E","학습필요목록","TODO LIST"],
         "url": "/front/todoStudyList/",
         "teaser": null
@@ -405,5 +405,17 @@ var store = [{
         "excerpt":":raising_hand: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다. 대표적으로 많이 사용하는 Plugin 에 대한 개념 설명 및 실습을 정리하는 포스팅이다. loader 와 같이 custom 으로 작성하는 일은 거의 없으며 웹펙에서 제공하는 플러그인을 알아본다. 1. BannerPlugin 위 플러그인은 결과물에 대해 원하는 정보를 함께 결과물에 노출 시킬 수 있다. 즉,...","categories": ["webpack"],
         "tags": ["Webpack","Plugin","주요 Plugin"],
         "url": "/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/",
+        "teaser": null
+      },{
+        "title": "에라토스테네스의 체(소수구하기)",
+        "excerpt":"ㅃ :raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 소수 먼저 소수에 대한 정의를 살펴볼 필요가 있다. 소수는 1과 자기 자신으로만 나누어지는 수 이다. 1은 소수가 아니다. 모든 자연수는 소수들의 곱으로 표현된다. 위 개념을 통해 에라토스테네스의 체 알고리즘을 알아보도록 한다. 2. 에라토스테네스의 체란? 그럼 에라토스테네스의...","categories": ["Algorithm"],
+        "tags": ["Programming","에라토스테네스의 체","소수"],
+        "url": "/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/",
+        "teaser": null
+      },{
+        "title": "Cookie & Session 개념 및 정리",
+        "excerpt":"ㅃ :raising_hand: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 개요 실제 현업에서 Cookie 와 Session 의 사용은 매우 빈번한것 같다. 로그인, 팝업 등 다양한 서비스에 사용되는 기술인 만큼 기록을 해두는것이 좋을것 같다. 2. HTTP의 특징 및 쿠키와 세션을 사용하는 이유 쿠키를 발급받고 사용하는 과정 HTTP 프로토콜...","categories": ["cookiesession"],
+        "tags": ["Cookie(쿠키)","Session(세션)"],
+        "url": "/cookiesession/cookiesession/",
         "teaser": null
       }]
