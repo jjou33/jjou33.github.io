@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-01-30T23:19:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Cookie &amp;amp; Session 개념 및 정리</title><link href="http://localhost:4000/cookiesession/cookiesession/" rel="alternate" type="text/html" title="Cookie &amp;amp; Session 개념 및 정리" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/cookiesession/cookiesession</id><content type="html" xml:base="http://localhost:4000/cookiesession/cookiesession/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-03T23:44:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Cookie &amp;amp; Session 개념 및 정리</title><link href="http://localhost:4000/cookiesession/cookiesession/" rel="alternate" type="text/html" title="Cookie &amp;amp; Session 개념 및 정리" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/cookiesession/cookiesession</id><content type="html" xml:base="http://localhost:4000/cookiesession/cookiesession/">&lt;hr /&gt;
 &lt;p&gt;ㅃ
 :raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -66,12 +66,12 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;쿠키는 클라이언트(브라우저) 로컬에 저장되는 키와 값이 들어있는 작은 데이터 파일입니다.&lt;/li&gt;
-  &lt;li&gt;사용자 인증이 유효한 시간을 명시할 수 있으며, 유효 시간이 정해지면 브라우저가 종료되어도 인증이 유지된다는 특징이 있습니다.&lt;/li&gt;
-  &lt;li&gt;쿠키는 클라이언트의 상태 정보를 로컬에 저장했다가 참조합니다.&lt;/li&gt;
-  &lt;li&gt;클라이언트에 300개까지 쿠키저장 가능, 하나의 도메인당 20개의 값만 가질 수 있음, 하나의 쿠키값은 4KB까지 저장합니다.&lt;/li&gt;
-  &lt;li&gt;Response Header에 Set-Cookie 속성을 사용하면 클라이언트에 쿠키를 만들 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;쿠키는 사용자가 따로 요청하지 않아도 브라우저가 Request시에 Request Header를 넣어서 자동으로 서버에 전송합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클라이언트(브라우저)&lt;/code&gt; 로컬에 저장되는 키와 값이 들어있는 작은 데이터 파일입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사용자 인증&lt;/code&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유효한 시간을 명시&lt;/code&gt;할 수 있으며, 유효 시간이 정해지면 브라우저가 종료되어도 인증이 유지된다는 특징이 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;는 클라이언트의 상태 정보를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로컬에 저장&lt;/code&gt;했다가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;참조&lt;/code&gt;합니다.&lt;/li&gt;
+  &lt;li&gt;클라이언트에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;300개까지 쿠키저장 가능&lt;/code&gt;, 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도메인당 20개&lt;/code&gt;의 값만 가질 수 있음, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 쿠키값은 4KB&lt;/code&gt;까지 저장합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Response Header&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Set-Cookie&lt;/code&gt; 속성을 사용하면 클라이언트에 쿠키를 만들 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;쿠키는 사용자가 따로 요청하지 않아도 브라우저가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Request시에 Request Header를 넣어서 자동으로 서버에 전송&lt;/code&gt;합니다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;쿠키의-구성-요소&quot;&gt;쿠키의 구성 요소&lt;/h5&gt;
@@ -79,11 +79,11 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;이름 : 각각의 쿠키를 구별하는 데 사용되는 이름&lt;/li&gt;
-  &lt;li&gt;값 : 쿠키의 이름과 관련된 값&lt;/li&gt;
-  &lt;li&gt;유효시간 : 쿠키의 유지시간&lt;/li&gt;
-  &lt;li&gt;도메인 : 쿠키를 전송할 도메인&lt;/li&gt;
-  &lt;li&gt;경로 : 쿠키를 전송할 요청 경로&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이름&lt;/code&gt; : 각각의 쿠키를 구별하는 데 사용되는 이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값&lt;/code&gt; : 쿠키의 이름과 관련된 값&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유효시간&lt;/code&gt; : 쿠키의 유지시간&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;도메인&lt;/code&gt; : 쿠키를 전송할 도메인&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;경로&lt;/code&gt; : 쿠키를 전송할 요청 경로&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;쿠키의-동작-방식&quot;&gt;쿠키의 동작 방식&lt;/h5&gt;
@@ -141,8 +141,8 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;각 클라이언트에게 고유 ID를 부여&lt;/li&gt;
-  &lt;li&gt;세션 ID로 클라이언트를 구분해서 클라이언트의 요구에 맞는 서비스를 제공&lt;/li&gt;
+  &lt;li&gt;각 클라이언트에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고유 ID&lt;/code&gt;를 부여&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션 ID&lt;/code&gt;로 클라이언트를 구분해서 클라이언트의 요구에 맞는 서비스를 제공&lt;/li&gt;
   &lt;li&gt;보안 면에서 쿠키보다 우수&lt;/li&gt;
   &lt;li&gt;사용자가 많아질수록 서버 메모리를 많이 차지하게 됨&lt;/li&gt;
 &lt;/ul&gt;
@@ -158,30 +158,31 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 &lt;hr /&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;쿠키와 세션은 비슷한 역할을 하며, 동작원리도 비슷합니다. 그 이유는 세션도 결국 쿠키를 사용하기 때문입니다.&lt;/li&gt;
-  &lt;li&gt;가장 큰 차이점은 사용자의 정보가 저장되는 위치입니다. 때문에 쿠키는 서버의 자원을 전혀 사용하지 않으며, 세션은 서버의 자원을 사용합니다.&lt;/li&gt;
-  &lt;li&gt;보안 면에서 세션이 더 우수하며, 요청 속도는 쿠키가 세션보다 더 빠릅니다. 그 이유는 세션은 서버의 처리가 필요하기 때문입니다.&lt;/li&gt;
-  &lt;li&gt;보안, 쿠키는 클라이언트 로컬에 저장되기 때문에 변질되거나 request에서 스니핑 당할 우려가 있어서 보안에 취약하지만 세션은 쿠키를 이용해서 sessionid 만 저장하고 그것으로 구분해서 서버에서 처리하기 때문에 비교적 보안성이 좋습니다.&lt;/li&gt;
-  &lt;li&gt;라이프 사이클, 쿠키도 만료시간이 있지만 파일로 저장되기 때문에 브라우저를 종료해도 계속해서 정보가 남아 있을 수 있다. 또한 만료기간을 넉넉하게 잡아두면 쿠키삭제를 할 때 까지 유지될 수도 있습니다.&lt;/li&gt;
-  &lt;li&gt;반면에 세션도 만료시간을 정할 수 있지만 브라우저가 종료되면 만료시간에 상관없이 삭제됩니다. 예를 들어, 크롬에서 다른 탭을 사용해도 세션을 공유됩니다. 다른 브라우저를 사용하게 되면 다른 세션을 사용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;속도, 쿠키에 정보가 있기 때문에 서버에 요청시 속도가 빠르고 세션은 정보가 서버에 있기 때문에 처리가 요구되어 비교적 느린 속도를 가집니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;은 비슷한 역할을 하며, 동작원리도 비슷합니다. 그 이유는 세션도 결국 쿠키를 사용하기 때문입니다.&lt;/li&gt;
+  &lt;li&gt;가장 큰 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;차이점&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사용자의 정보가 저장되는 위치&lt;/code&gt;입니다. 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;는 서버의 자원을 전혀 사용하지 않으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;은 서버의 자원을 사용합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보안&lt;/code&gt; 면에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;이 더 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우수&lt;/code&gt;하며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;요청 속도&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;가 세션보다 더 빠릅니다. 그 이유는 세션은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서버의 처리가 필요하기 때문입니다.&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보안&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;는 클라이언트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;로컬에 저장&lt;/code&gt;되기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변질&lt;/code&gt;되거나 request에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스니핑&lt;/code&gt; 당할 우려가 있어서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보안에 취약&lt;/code&gt;하지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;를 이용해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sessionid 만 저장&lt;/code&gt;하고 그것으로 구분해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서버에서 처리&lt;/code&gt;하기 때문에 비교적 보안성이 좋습니다.&lt;/li&gt;
+  &lt;li&gt;라이프 사이클, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;도 만료시간이 있지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파일로 저장&lt;/code&gt;되기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;브라우저를 종료해도 계속해서 정보가 남아 있을 수 있다.&lt;/code&gt; 또한 만료기간을 넉넉하게 잡아두면 쿠키삭제를 할 때 까지 유지될 수도 있습니다.&lt;/li&gt;
+  &lt;li&gt;반면에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;도 만료시간을 정할 수 있지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;브라우저가 종료되면 만료시간에 상관없이 삭제됩니다.&lt;/code&gt; 예를 들어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;크롬&lt;/code&gt;에서 다른 탭을 사용해도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션을 공유&lt;/code&gt;됩니다. 다른 브라우저를 사용하게 되면 다른 세션을 사용할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;속도&lt;/code&gt;, 쿠키에 정보가 있기 때문에 서버에 요청시 속도가 빠르고 세션은 정보가 서버에 있기 때문에 처리가 요구되어 비교적 느린 속도를 가집니다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;6-세션을-사용하면-좋은데-왜-쿠키를-사용할까&quot;&gt;6. 세션을 사용하면 좋은데 왜 쿠키를 사용할까?&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;세션은 서버의 자원을 사용하기 때문에 무분별하게 만들다보면 서버의 메모리가 감당할 수 없어질 수가 있고 속도가 느려질 수 있기 때문에 쿠키가 유리한 경우가 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서버의 자원&lt;/code&gt;을 사용하기 때문에 무분별하게 만들다보면 서버의 메모리가 감당할 수 없어질 수가 있고 속도가 느려질 수 있기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;가 유리한 경우가 있습니다.&lt;/p&gt;
 
 &lt;h4 id=&quot;7-쿠키세션이-캐시와-다른-점&quot;&gt;7. 쿠키/세션이 캐시와 다른 점&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;캐시는 이미지나 css, js파일 등을 브라우저나 서버 앞 단에 저장해놓고 사용하는 것입니다.&lt;/li&gt;
-  &lt;li&gt;한번 캐시에 저장되면 브라우저를 참고하기 때문에 서버에서 변경이 되어도 사용자는 변경되지 않게 보일 수 있는데 이런 부분을 캐시를 지워주거나 서버에서 클라이언트로 응답을 보낼 때 header에 캐시 만료시간을 명시하는 방법등을 이용할 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;보통 쿠키와 세션의 차이를 물어볼 때 저장위치와 보안에 대해서는 잘 말하는데 사실 중요한 것은 라이프사이클을 얘기하는 것입니다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;캐시&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이미지&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;css, js파일&lt;/code&gt; 등을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;브라우저나 서버 앞 단&lt;/code&gt;에 저장해놓고 사용하는 것입니다.&lt;/li&gt;
+  &lt;li&gt;한번 캐시에 저장되면 브라우저를 참고하기 때문에 서버에서 변경이 되어도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사용자는 변경되지 않게 보일 수 있는데&lt;/code&gt; 이런 부분을 캐시를 지워주거나 서버에서 클라이언트로&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;응답&lt;/code&gt;을 보낼 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;header&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;캐시 만료시간&lt;/code&gt;을 명시하는 방법등을 이용할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;보통 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;쿠키&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세션&lt;/code&gt;의 차이를 물어볼 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;저장위치&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보안&lt;/code&gt;에 대해서는 잘 말하는데 사실 중요한 것은 라이프사이클을 얘기하는 것입니다.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h4 id=&quot;참고-및-출처-사이트&quot;&gt;참고 및 출처 사이트&lt;/h4&gt;
 
@@ -970,7 +971,7 @@ ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
 
 &lt;h5 id=&quot;4-1-url-loader-적용&quot;&gt;4-1. url-loader 적용&lt;/h5&gt;
 
-&lt;p&gt;–&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; 설정 변경&lt;/p&gt;
 

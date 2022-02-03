@@ -16,7 +16,7 @@ toc_label: "POST LIST"
 :raising_hand:  ```개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.```
 <hr>
 
-#### 1. Webpack DEV 서버란?
+#### 1. html-webpack-plugin 사용법 기록
 
 ---
 
