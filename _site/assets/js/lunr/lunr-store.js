@@ -418,4 +418,10 @@ var store = [{
         "tags": ["Cookie(쿠키)","Session(세션)"],
         "url": "/cookiesession/cookiesession/",
         "teaser": null
+      },{
+        "title": "VirtualDOM(가상돔)",
+        "excerpt":"ㅃ :raising_hand: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 개요 실무에서 Vue.js 라는 SPA 개념의 프레임워크를 사용하면서 가상돔에 대한 궁금증이 생겼다. 가상돔은 무엇이며 왜 사용해야할까? 간단하게만 정리해 보았다. 2. Virtual DOM 은 무엇일까? 앞선 포스팅에서 브라우저가 그려지는 과정에 대해서 공부한적이 있다. 간단하게 복기하자면 브라우저는 아래와 같은...","categories": ["virtualdom"],
+        "tags": ["VirtualDOM","SPA"],
+        "url": "/virtualdom/VirtualDOM/",
+        "teaser": null
       }]
