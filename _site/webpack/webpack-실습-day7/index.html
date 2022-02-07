@@ -812,6 +812,7 @@
 <li><a href="#nodejs-%EA%B3%B5%EC%8B%9D%EB%AC%B8%EC%84%9Cchildprocess">Nodejs 공식문서(ChildProcess)</a></li>
 </ul>
 </li>
+<li><a href="#2-defineplugin">2. DefinePlugin</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -937,6 +938,71 @@
 <ul>
   <li><a href="https://nodejs.org/api/child_process.html#child_processexecsynccommand-options">https://nodejs.org/api/child_process.html#child_processexecsynccommand-options</a></li>
 </ul>
+
+<h4 id="2-defineplugin">2. DefinePlugin</h4>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">DefinePlugin</code> 또한 <code class="language-plaintext highlighter-rouge">Webpack</code> 에서 지원하는 플러그인이다.</p>
+
+<p>우리가 실무에서 Application 을 운영할때는 <code class="language-plaintext highlighter-rouge">개발 / 운영</code> 환경을 나누게 된다.</p>
+
+<p>이때 개발과 운영일때 서로다른 API 서버 주소나, 특징적이고 의존적인 정보들을 소스에 저장하지 않고 <code class="language-plaintext highlighter-rouge">Webpack Plugin</code> 에 저장하여 변수로 값을 얻을 수 있는 기능을 제공한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Webpack.config.js</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">webpack</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">childProcess</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">child_process</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// 생략</span>
+  <span class="p">},</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// 생략</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// 생략</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// Webpack 에서 제공하는 BannerPlugin 생성자 호출</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">BannerPlugin</span><span class="p">({</span>
+      <span class="na">banner</span><span class="p">:</span> <span class="s2">`
+        Build Date: </span><span class="p">${</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleString</span><span class="p">()}</span><span class="s2">
+        Commit Version: </span><span class="p">${</span><span class="nx">childProcess</span><span class="p">.</span><span class="nx">execSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">git rev-parse --short HEAD</span><span class="dl">"</span><span class="p">)}</span><span class="s2">
+        Author: </span><span class="p">${</span><span class="nx">childProcess</span><span class="p">.</span><span class="nx">execSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">git config user.name</span><span class="dl">"</span><span class="p">)}</span><span class="s2">
+      `</span><span class="p">,</span>
+    <span class="p">}),</span>
+    <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">DefinePlugin</span><span class="p">({}),</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+
+<span class="c1">// app.js</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">BannerPlugin</code> 처럼 <code class="language-plaintext highlighter-rouge">plugins</code> 배열내에 선언해주고 실제로 <code class="language-plaintext highlighter-rouge">process.env.NODE_ENV</code> 를 출력하면 명시했던 <code class="language-plaintext highlighter-rouge">mode</code> 의 <code class="language-plaintext highlighter-rouge">development</code> 가 출력되는것을 볼 수 있다.</p>
+
+<p>만약에 직접 프로젝트를 구성하면서 정의한 환경변수나 의존정보들을 넣고 싶다면 직접 넣을 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">DefinePlugin</span><span class="p">({</span>
+  <span class="na">testValueNotString</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1+1</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 값</span>
+  <span class="na">testValueString</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="dl">"</span><span class="s2">1+1</span><span class="dl">"</span><span class="p">),</span> <span class="c1">// 문자열</span>
+  <span class="dl">"</span><span class="s2">api.domain</span><span class="dl">"</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://dev.api.domain.com</span><span class="dl">"</span><span class="p">),</span>
+<span class="p">}),</span>
+  <span class="c1">// app.js</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">domain</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testValueNotString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testValueString</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>결과는 아래와 같이 잘 나온다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/152820105-c58d94b1-b8c9-4d03-8872-3c0beb860954.png" alt="image"></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 

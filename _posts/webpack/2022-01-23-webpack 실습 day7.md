@@ -131,6 +131,73 @@ plugins: [
 
 - [https://nodejs.org/api/child_process.html#child_processexecsynccommand-options](https://nodejs.org/api/child_process.html#child_processexecsynccommand-options)
 
+#### 2. DefinePlugin
+
+---
+
+`DefinePlugin` 또한 `Webpack` 에서 지원하는 플러그인이다.
+
+우리가 실무에서 Application 을 운영할때는 `개발 / 운영` 환경을 나누게 된다.
+
+이때 개발과 운영일때 서로다른 API 서버 주소나, 특징적이고 의존적인 정보들을 소스에 저장하지 않고 `Webpack Plugin` 에 저장하여 변수로 값을 얻을 수 있는 기능을 제공한다.
+
+```js
+// Webpack.config.js
+const path = require("path");
+const webpack = require("webpack");
+const childProcess = require("child_process");
+
+module.exports = {
+  mode: "development",
+  entry: {
+    // 생략
+  },
+  output: {
+    // 생략
+  },
+  module: {
+    // 생략
+  },
+  plugins: [
+    // Webpack 에서 제공하는 BannerPlugin 생성자 호출
+    new webpack.BannerPlugin({
+      banner: `
+        Build Date: ${new Date().toLocaleString()}
+        Commit Version: ${childProcess.execSync("git rev-parse --short HEAD")}
+        Author: ${childProcess.execSync("git config user.name")}
+      `,
+    }),
+    new webpack.DefinePlugin({}),
+  ],
+};
+
+// app.js
+
+console.log(process.env.NODE_ENV);
+```
+
+`BannerPlugin` 처럼 `plugins` 배열내에 선언해주고 실제로 `process.env.NODE_ENV` 를 출력하면 명시했던 `mode` 의 `development` 가 출력되는것을 볼 수 있다.
+
+만약에 직접 프로젝트를 구성하면서 정의한 환경변수나 의존정보들을 넣고 싶다면 직접 넣을 수 있다.
+
+```js
+// webpack.config.js
+new webpack.DefinePlugin({
+  testValueNotString: "1+1", // 값
+  testValueString: JSON.stringify("1+1"), // 문자열
+  "api.domain": JSON.stringify("http://dev.api.domain.com"),
+}),
+  // app.js
+  console.log(process.env.NODE_ENV);
+console.log(api.domain);
+console.log(testValueNotString);
+console.log(testValueString);
+```
+
+결과는 아래와 같이 잘 나온다.
+
+![image](https://user-images.githubusercontent.com/56063287/152820105-c58d94b1-b8c9-4d03-8872-3c0beb860954.png)
+
 #### 참고 사이트
 
 ---
