@@ -57,13 +57,6 @@
         </ul>
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "front" %}
-                    <li><a href="/categories/front" class="">:pencil2: Front End Study ({{category[1].size}})</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for category in site.categories %}
                 {% if category[0] == "devhistory" %}
                     <li><a href="/categories/devhistory" class="">:pencil2: Develope History ({{category[1].size}})</a></li>
                 {% endif %}
@@ -73,20 +66,37 @@
         :notebook_with_decorative_cover: Web - 기술개념 </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
-            <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
-            <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "cookiesession" %}
-                    <li><a href="/categories/cookiesession" class=""> :bulb: Cookie & Session({{category[1].size}})</a></li>
+                    <li><a href="/categories/cookiesession" class=""> :bulb: Cookie & Session ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
-            <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
-            <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "virtualdom" %}
-                    <li><a href="/categories/virtualdom" class=""> :bulb: VirtualDOM(가상돔)({{category[1].size}})</a></li>
+                    <li><a href="/categories/virtualdom" class=""> :bulb: VirtualDOM(가상돔) ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "browserProcess" %}
+                    <li><a href="/categories/browserProcess" class=""> :bulb: 브라우저 동작원리 ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "eventLoop" %}
+                    <li><a href="/categories/eventLoop" class=""> :bulb: 이벤트루프(EventLoop) ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "spa" %}
+                    <li><a href="/categories/spa" class=""> :bulb: Single Page Application ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

@@ -228,9 +228,9 @@ var store = [{
         "teaser": null
       },{
         "title": "웹 브라우저 동작 과정",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. DOM(Document Object Model) &amp; Window Document : 우리가 알고 있는 HTML 의 전체 코드로 이해하면 되고 각 태그들을 객체로 이해하면 된다. DOM tree 의 최상위 객체이다. 위 이미지에서 보이 듯이 우리는 Document 라는 모든 HTML 코드를 가지고 있는 요소아래 각 태그들을 객체로...","categories": ["browserProcess"],
         "tags": ["F/E","DOM","BOM","Render"],
-        "url": "/front/Web-Browser-Process/",
+        "url": "/browserprocess/Web-Browser-Process/",
         "teaser": null
       },{
         "title": "Prettier 적용 안될때 해결",
@@ -258,9 +258,9 @@ var store = [{
         "teaser": null
       },{
         "title": "웹 브라우저 동작 과정 2차",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. Browser 요소(Elements) 사용자 인터페이스 : 우리가 브라우저에서 볼수 있는 주소표시줄, 버튼 등 사용자가 컨트롤 할 수 있는 부분 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이 동작을 제어 렌더링 엔진 사용자가 요청한 URI 를 브라우저 엔진 으로부터 받아 서버에 요청한다. 서버로 URI...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. Browser 요소(Elements) 사용자 인터페이스 : 우리가 브라우저에서 볼수 있는 주소표시줄, 버튼 등 사용자가 컨트롤 할 수 있는 부분 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이 동작을 제어 렌더링 엔진 사용자가 요청한 URI 를 브라우저 엔진 으로부터 받아 서버에 요청한다. 서버로 URI...","categories": ["browserProcess"],
         "tags": ["F/E","Browser Element","Rendering Process"],
-        "url": "/front/Web-Browser-Process2/",
+        "url": "/browserprocess/Web-Browser-Process2/",
         "teaser": null
       },{
         "title": "Webpack Bundling",
@@ -323,16 +323,10 @@ var store = [{
         "url": "/devhistory/likeCount-%EA%B5%AC%ED%98%84/",
         "teaser": null
       },{
-        "title": "공부할부분 체크리스트",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 필요목록 이벤트 루프 setinterval 5초 이후 setTimeOut 줬을때 어떻게 되는지 Vue 라이프사이클 주로 API 는 어느 단계에서 호출하나? 프론트 도입한다면 어떻게 할껀지 대략적인 그림 쿠키와 세션의 차이 및 쿠키가 백엔드에 어떻게 전달되는지 많은량의 쿠키가 한번에 백엔드로 전달되면 어떻게 되느닞? 렌더링트리를 우리가 왜 알아야되는지...","categories": ["front"],
-        "tags": ["F/E","학습필요목록","TODO LIST"],
-        "url": "/front/todoStudyList/",
-        "teaser": null
-      },{
         "title": "SPA 개념 및 구현내용",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. SPA(Single Page Application) 이란 무엇일까? 현 회사에서는 VUE.js 로 모바일 프론트를 개발하고 운영하고 있다. 나름 SPA 시스템을 운영하고 있다고 생각하던 찰나, Vanilla JS 로 SPA 페이지를 구현하는 과제 문제를 풀게되었다. 풀어나가는 도중 스스로 SPA 에 대한 정확한 지식 없이 그냥저냥 운영하고 개발만...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. SPA(Single Page Application) 이란 무엇일까? 현 회사에서는 VUE.js 로 모바일 프론트를 개발하고 운영하고 있다. 나름 SPA 시스템을 운영하고 있다고 생각하던 찰나, Vanilla JS 로 SPA 페이지를 구현하는 과제 문제를 풀게되었다. 풀어나가는 도중 스스로 SPA 에 대한 정확한 지식 없이 그냥저냥 운영하고 개발만...","categories": ["spa"],
         "tags": ["F/E","SPA"],
-        "url": "/front/SPA%EA%B0%9C%EB%85%90/",
+        "url": "/spa/SPA%EA%B0%9C%EB%85%90/",
         "teaser": null
       },{
         "title": "배열 내 특정값 삭제",
@@ -342,15 +336,15 @@ var store = [{
         "teaser": null
       },{
         "title": "이벤트 루프에 관하여",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 우리가 사용하는 자바스크립트 엔진은 단일 호출 스텍을 사용한다. 즉, 웹 브라우저에서 요청한 작업들을 동시에 하나만 처리할 수 있다는 개념이다. 그러나 우리는 웹 브라우저에서 여러가지 작업들이 동시에 동작하는 것, 동시성을 보장하는 것을 볼 수 있다. 실제 자바 스크립트가 구동되는 환경(브라우저, Node.js 등)...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 우리가 사용하는 자바스크립트 엔진은 단일 호출 스텍을 사용한다. 즉, 웹 브라우저에서 요청한 작업들을 동시에 하나만 처리할 수 있다는 개념이다. 그러나 우리는 웹 브라우저에서 여러가지 작업들이 동시에 동작하는 것, 동시성을 보장하는 것을 볼 수 있다. 실제 자바 스크립트가 구동되는 환경(브라우저, Node.js 등)...","categories": ["eventLoop"],
         "tags": ["F/E","Event Loop"],
-        "url": "/front/eventloop/",
+        "url": "/eventloop/eventloop/",
         "teaser": null
       },{
         "title": "Javascript Engine(Heap, Call stack)",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 개요 앞선 포스트에서 이벤트 루프 에 대하여 공부해봤다. 공부를 하다보니 Javascript Engine 에 대하여 궁금증 이 생겨 추가로 공부하여 기록한다. 1. JavaScript Engine 자바스크립트 엔진은 각 브라우저 별로 상이하다. SpiderMonkey : 파이어 폭스 V8 : Crome Webkit : 사파리 Chakra : 익스플로러, 엣지...","categories": ["front"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 개요 앞선 포스트에서 이벤트 루프 에 대하여 공부해봤다. 공부를 하다보니 Javascript Engine 에 대하여 궁금증 이 생겨 추가로 공부하여 기록한다. 1. JavaScript Engine 자바스크립트 엔진은 각 브라우저 별로 상이하다. SpiderMonkey : 파이어 폭스 V8 : Crome Webkit : 사파리 Chakra : 익스플로러, 엣지...","categories": ["eventLoop"],
         "tags": ["F/E","Javascript Engine","Heap","Call stack"],
-        "url": "/front/Javascript-Engine/",
+        "url": "/eventloop/Javascript-Engine/",
         "teaser": null
       },{
         "title": "MAC Operation not permitted 에러",

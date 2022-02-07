@@ -3,7 +3,7 @@ title: "웹 브라우저 동작 과정"
 excerpt: " :computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
-  - front
+  - browserProcess
 tags:
   - F/E
   - DOM
