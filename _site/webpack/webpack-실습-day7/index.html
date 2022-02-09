@@ -874,6 +874,9 @@
 </ul>
 </li>
 <li><a href="#2-defineplugin">2. DefinePlugin</a></li>
+<li><a href="#3-htmltemplateplugin">3. HtmlTemplatePlugin</a></li>
+<li><a href="#4-cleanwebpackplugin">4. CleanWebpackPlugin</a></li>
+<li><a href="#5-minicssextractplugin">5. MiniCssExtractPlugin</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -1064,6 +1067,152 @@
 <p>결과는 아래와 같이 잘 나온다.</p>
 
 <p><img src="https://user-images.githubusercontent.com/56063287/152820105-c58d94b1-b8c9-4d03-8872-3c0beb860954.png" alt="image"></p>
+
+<h4 id="3-htmltemplateplugin">3. HtmlTemplatePlugin</h4>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">webpack</code> 에서 지원하는 플러그인은 아니고 서드파티로 따로 설치해야한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">html</span><span class="o">-</span><span class="nx">webpack</span><span class="o">-</span><span class="nx">plugin</span>
+</code></pre></div></div>
+
+<p>설치 후 이 플러그인은 <code class="language-plaintext highlighter-rouge">index.html</code> 을 <code class="language-plaintext highlighter-rouge">src</code> 폴더 위에서 관리하지 않고 소스처럼 폴더 내에서 관리할 수 있게 만들어준다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">index.html</code> 파일을 원하는 위치에 넣어놓고 아래 설정을 해주자.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+
+<span class="p">...</span>
+
+<span class="k">new</span> <span class="nx">htmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">}),</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">src</code> 폴더 내에 <code class="language-plaintext highlighter-rouge">index.html</code> 을 <code class="language-plaintext highlighter-rouge">output</code> 경로에 <code class="language-plaintext highlighter-rouge">build</code> 하여 만들어낸다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/152985432-324159bd-557d-497e-88ac-68147e4bd094.png" alt="image"></p>
+
+<p>또한 이제 웹 경로가 <code class="language-plaintext highlighter-rouge">local/index.html</code> 에서 <code class="language-plaintext highlighter-rouge">local/dist/index.html</code> 로 바뀌어야 하고 혹시 loader 에서 <code class="language-plaintext highlighter-rouge">/dist/</code> 경로를 추가로 명시해준 부분이 있다면 삭제해주어야한다.</p>
+
+<p>단적인 예로 아래와 같은 예가 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<span class="k">new</span> <span class="nx">htmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">templateParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="c1">// env 변수에 development 일경우 개발용을 넣는다.</span>
+        <span class="na">env</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">개발용</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">}),</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=&lt;device-width&gt;, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">env</span> <span class="err">%</span><span class="nt">&gt;&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+```js NODE_ENV=development npm run build
+</code></pre></div></div>
+
+<p>로 빌드하면 env 에 개발용이붙는다.
+그리고 <code class="language-plaintext highlighter-rouge">주석을 제거</code>하는 기능도 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">htmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">templateParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">env</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">개발용</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">minify</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">collapseWhitespace</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 빈칸제거</span>
+        <span class="na">removeComments</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 주석제거</span>
+      <span class="p">}</span>
+    <span class="p">}),</span>
+</code></pre></div></div>
+
+<p>빌드 후 <code class="language-plaintext highlighter-rouge">dist</code> 폴더의 결과물에 다음과 같이 공백 및 주석이 제거되어있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/152998580-8779504a-e643-4eca-b6a2-c84d6b5dba3e.png" alt="image"></p>
+
+<p>만약 이 경우에도 운영환경일 경우에만 적용한다고 하면</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">htmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./src/index.html</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">templateParameters</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">env</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">개발용</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">minify</span><span class="p">:</span>
+        <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span>
+          <span class="p">?</span> <span class="p">{</span>
+              <span class="na">collapseWhitespace</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 빈칸제거</span>
+              <span class="na">removeComments</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 주석제거</span>
+            <span class="p">}</span>
+          <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">}),</span>
+</code></pre></div></div>
+
+<h4 id="4-cleanwebpackplugin">4. CleanWebpackPlugin</h4>
+
+<hr>
+
+<p>역할은 <code class="language-plaintext highlighter-rouge">output</code> 결과물을 삭제해주는 <code class="language-plaintext highlighter-rouge">plugin</code> 이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/152999408-ec20888d-9541-4e7b-8c2b-ac4e1bdad333.png" alt="image"></p>
+
+<p>위 사진에서 보이듯이 <code class="language-plaintext highlighter-rouge">test.js</code> 란 파일을 임시로 만들어놓고 <code class="language-plaintext highlighter-rouge">cleanWebpackPlugin</code> 을 적용해서 build 해보면 사라지는 것을 볼 수 있다.</p>
+
+<h4 id="5-minicssextractplugin">5. MiniCssExtractPlugin</h4>
+
+<hr>
+
+<p>프로젝트의 규모가 커지다보면 하나의 자바스크립트 결과물로 만드는것이 부담이 될 수 있다.</p>
+
+<p>이 플러그인은 번들 결과에서 <code class="language-plaintext highlighter-rouge">스타일시트</code> 코드만 뽑아서 별도의 <code class="language-plaintext highlighter-rouge">CSS 파일</code> 로 만들어 분리하게된다.</p>
+
+<p>결과적으로 자바스크립트파일과 CSS 파일 하나가 생성되게 된다.</p>
+
+<p>브라우저에서 큰 파일을 하나 다운받는것보다 작은것 2개를 동시에 다운받는것이 빠르기 때문이다.
+개발에서보다 운영에서 즉, <code class="language-plaintext highlighter-rouge">production</code> 환경에서는 분리하는 것이 좋다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
+          <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span>
+            <span class="p">?</span> <span class="nx">MiniCssExtractPlugin</span><span class="p">.</span><span class="nx">loader</span>
+            <span class="p">:</span> <span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+  <span class="nx">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">//...(생략)</span>
+
+    <span class="p">...(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span>
+      <span class="p">?</span> <span class="p">[</span>
+          <span class="k">new</span> <span class="nx">MiniCssExtractPlugin</span><span class="p">({</span>
+            <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].css</span><span class="dl">"</span><span class="p">,</span>
+          <span class="p">}),</span>
+        <span class="p">]</span>
+      <span class="p">:</span> <span class="p">[]),</span>
+  <span class="p">],</span>
+</code></pre></div></div>
+
+<p>위와 같이 운영환경일때만 실행하고 아닐땐 빈 배열을 리턴하는게 좋다.</p>
+
+<p>그리고 이 플러그인은 <code class="language-plaintext highlighter-rouge">loader</code> 부분에 <code class="language-plaintext highlighter-rouge">style-loader</code> 대신 자체적으로 제공하는 ` MiniCssExtractPlugin.loader` 를 사용하는것이 좋기 때문에 이 또한 분리해주는것이 좋다.</p>
+
+<p>결과물은 아래와 같이 <code class="language-plaintext highlighter-rouge">main.css</code> 파일이 같이 생겨난다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/153001497-0bb79a07-0977-42e6-b2e5-44d66f44a0be.png" alt="image"></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 

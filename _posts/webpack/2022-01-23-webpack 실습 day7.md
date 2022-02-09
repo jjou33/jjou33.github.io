@@ -198,6 +198,159 @@ console.log(testValueString);
 
 ![image](https://user-images.githubusercontent.com/56063287/152820105-c58d94b1-b8c9-4d03-8872-3c0beb860954.png)
 
+#### 3. HtmlTemplatePlugin
+
+---
+
+`webpack` 에서 지원하는 플러그인은 아니고 서드파티로 따로 설치해야한다.
+
+```js
+npm install html-webpack-plugin
+```
+
+설치 후 이 플러그인은 `index.html` 을 `src` 폴더 위에서 관리하지 않고 소스처럼 폴더 내에서 관리할 수 있게 만들어준다.
+
+`index.html` 파일을 원하는 위치에 넣어놓고 아래 설정을 해주자.
+
+```js
+// webpack.config.js
+
+...
+
+new htmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+```
+
+`src` 폴더 내에 `index.html` 을 `output` 경로에 `build` 하여 만들어낸다.
+
+![image](https://user-images.githubusercontent.com/56063287/152985432-324159bd-557d-497e-88ac-68147e4bd094.png)
+
+또한 이제 웹 경로가 `local/index.html` 에서 `local/dist/index.html` 로 바뀌어야 하고 혹시 loader 에서 `/dist/` 경로를 추가로 명시해준 부분이 있다면 삭제해주어야한다.
+
+단적인 예로 아래와 같은 예가 있다.
+
+```js
+// webpack.config.js
+new htmlWebpackPlugin({
+      template: "./src/index.html",
+      templateParameters: {
+        // env 변수에 development 일경우 개발용을 넣는다.
+        env: process.env.NODE_ENV === "development" ? "개발용" : "",
+      },
+    }),
+```
+
+````html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document<%= env %></title>
+  </head>
+  <body></body>
+</html>
+
+```js NODE_ENV=development npm run build
+````
+
+로 빌드하면 env 에 개발용이붙는다.
+그리고 `주석을 제거`하는 기능도 있다.
+
+```js
+new htmlWebpackPlugin({
+      template: "./src/index.html",
+      templateParameters: {
+        env: process.env.NODE_ENV === "development" ? "개발용" : "",
+      },
+      minify: {
+        collapseWhitespace: true, // 빈칸제거
+        removeComments: true, // 주석제거
+      }
+    }),
+```
+
+빌드 후 `dist` 폴더의 결과물에 다음과 같이 공백 및 주석이 제거되어있다.
+
+![image](https://user-images.githubusercontent.com/56063287/152998580-8779504a-e643-4eca-b6a2-c84d6b5dba3e.png)
+
+만약 이 경우에도 운영환경일 경우에만 적용한다고 하면
+
+```js
+new htmlWebpackPlugin({
+      template: "./src/index.html",
+      templateParameters: {
+        env: process.env.NODE_ENV === "development" ? "개발용" : "",
+      },
+      minify:
+        process.env.NODE_ENV === "production"
+          ? {
+              collapseWhitespace: true, // 빈칸제거
+              removeComments: true, // 주석제거
+            }
+          : false,
+    }),
+```
+
+#### 4. CleanWebpackPlugin
+
+---
+
+역할은 `output` 결과물을 삭제해주는 `plugin` 이다.
+
+![image](https://user-images.githubusercontent.com/56063287/152999408-ec20888d-9541-4e7b-8c2b-ac4e1bdad333.png)
+
+위 사진에서 보이듯이 `test.js` 란 파일을 임시로 만들어놓고 `cleanWebpackPlugin` 을 적용해서 build 해보면 사라지는 것을 볼 수 있다.
+
+#### 5. MiniCssExtractPlugin
+
+---
+
+프로젝트의 규모가 커지다보면 하나의 자바스크립트 결과물로 만드는것이 부담이 될 수 있다.
+
+이 플러그인은 번들 결과에서 `스타일시트` 코드만 뽑아서 별도의 `CSS 파일` 로 만들어 분리하게된다.
+
+결과적으로 자바스크립트파일과 CSS 파일 하나가 생성되게 된다.
+
+브라우저에서 큰 파일을 하나 다운받는것보다 작은것 2개를 동시에 다운받는것이 빠르기 때문이다.
+개발에서보다 운영에서 즉, `production` 환경에서는 분리하는 것이 좋다.
+
+```js
+module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          process.env.NODE_ENV === "production"
+            ? MiniCssExtractPlugin.loader
+            : "style-loader",
+          "css-loader",
+        ],
+      },
+    ],
+  },
+  plugins: [
+    //...(생략)
+
+    ...(process.env.NODE_ENV === "production"
+      ? [
+          new MiniCssExtractPlugin({
+            filename: "[name].css",
+          }),
+        ]
+      : []),
+  ],
+```
+
+위와 같이 운영환경일때만 실행하고 아닐땐 빈 배열을 리턴하는게 좋다.
+
+그리고 이 플러그인은 `loader` 부분에 `style-loader` 대신 자체적으로 제공하는 ` MiniCssExtractPlugin.loader` 를 사용하는것이 좋기 때문에 이 또한 분리해주는것이 좋다.
+
+결과물은 아래와 같이 `main.css` 파일이 같이 생겨난다.
+
+![image](https://user-images.githubusercontent.com/56063287/153001497-0bb79a07-0977-42e6-b2e5-44d66f44a0be.png)
+
 #### 참고 사이트
 
 ---
