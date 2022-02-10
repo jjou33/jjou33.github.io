@@ -424,4 +424,10 @@ var store = [{
         "tags": ["F/E","Vue","instance life Cycle"],
         "url": "/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/",
         "teaser": null
+      },{
+        "title": "클로저(Closure)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 클로저(Closure) 는 Javascript 에서 꾀나 기본적인 개념이다. Scope 와도 많이 관련되어 있고 코드를 짜는데 있어서 변수의 어휘적 범위(Lexical Scoping) 를 잘 고려해야 실수 없는 소스를 짤 수 있을것 같다. 완벽하지는 않지만 MDN 을 참고하여 클로저(Closure) 에 대해 알아보고 기록을 해봐야 겠다는...","categories": ["closure"],
+        "tags": ["F/E","클로저(closure)","Lexical Scoping"],
+        "url": "/closure/closure/",
+        "teaser": null
       }]
