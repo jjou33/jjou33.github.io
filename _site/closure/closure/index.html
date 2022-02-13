@@ -934,6 +934,7 @@
 <li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
 <li><a href="#2-%EC%96%B4%ED%9C%98%EC%A0%81-%EB%B2%94%EC%9C%84lexical-scoping-%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 어휘적 범위(Lexical Scoping) 이란 무엇일까?</a></li>
 <li><a href="#3-%ED%81%B4%EB%A1%9C%EC%A0%80closure-%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">3. 클로저(Closure) 는 무엇일까?</a></li>
+<li><a href="#%ED%81%B4%EB%A1%9C%EC%A0%80%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%97%B0%EC%8A%B5">클로저를 이용한 프라이빗 메소드 연습</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -1047,6 +1048,49 @@
 <p>그러나 결과로 보면 <code class="language-plaintext highlighter-rouge">y</code> 값을 100으로 재할당하여 계산값을 리턴하는것을 볼 수 있다.</p>
 
 <p>이부분에서 <strong>클로저가 리턴된 후에도 외부함수의 변수들에 접근 가능하다는 것을 보여주는 포인트</strong>로 이 글에서는 설명하고 있다.</p>
+
+<h4 id="클로저를-이용한-프라이빗-메소드-연습">클로저를 이용한 프라이빗 메소드 연습</h4>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">MDN</code> 에 나와있는 프라이핏 메소드를 클로저를 활용하여 구현하는 연습을 통해 조금 더 클로저를 이해하는데 도움이 된 것 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">makeCounter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">privateCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">changeBy</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">privateCounter</span> <span class="o">+=</span> <span class="nx">val</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">increment</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">changeBy</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">decrement</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">changeBy</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">value</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">privateCounter</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">counter1</span> <span class="o">=</span> <span class="nx">makeCounter</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">counter2</span> <span class="o">=</span> <span class="nx">makeCounter</span><span class="p">();</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 0 */</span>
+<span class="nx">counter1</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">counter1</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 2 */</span>
+<span class="nx">counter1</span><span class="p">.</span><span class="nx">decrement</span><span class="p">();</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 1 */</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">counter2</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 0 */</span>
+</code></pre></div></div>
+
+<p>위 예저에서 보면 counter 변수에 익명함수 안에서 <code class="language-plaintext highlighter-rouge">privateCounter, changeBy(메서드)</code> 두개의 공유되는 어휘적 환경(Lexical Evnironment) 가 형성되는 것을 볼 수 있다.</p>
+
+<p>그리고 리턴되는 객체에 <code class="language-plaintext highlighter-rouge">increment, decrement, value</code> 등을 정의하여 각각의 함수는 <code class="language-plaintext highlighter-rouge">privateCounter, changeBy(메서드)</code>에 접근할 수 있지만, 외부에서 직접적으로는 접근할 수 없다.</p>
+
+<p>또한, <code class="language-plaintext highlighter-rouge">makeCounter</code> 를 통해 여러개의 counter 를 만들어 각각의 고유한 클로저를 통해 노출되는 것을 볼 수 있다.</p>
+
+<p>자세한 사항은 <code class="language-plaintext highlighter-rouge">[MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping)</code> 을 통해 확인할 수 있다.</p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
