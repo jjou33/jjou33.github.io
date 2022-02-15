@@ -43,6 +43,13 @@
         </ul>
         <ul>
             {% for category in site.categories %}
+                {% if category[0] == "babel" %}
+                    <li><a href="/categories/babel" class="">:pencil2: Babel ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
                 {% if category[0] == "JavaScript" %}
                     <li><a href="/categories/JavaScript" class="">:pencil2: JavaScript Basic ({{category[1].size}})</a></li>
                 {% endif %}
