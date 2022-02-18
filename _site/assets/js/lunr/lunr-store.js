@@ -431,12 +431,6 @@ var store = [{
         "url": "/closure/closure/",
         "teaser": null
       },{
-        "title": "Babel 의 개념잡기",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. SPA(Single Page Application) 이란 무엇일까? 현 회사에서는 VUE.js 로 모바일 프론트를 개발하고 운영하고 있다. 나름 SPA 시스템을 운영하고 있다고 생각하던 찰나, Vanilla JS 로 SPA 페이지를 구현하는 과제 문제를 풀게되었다. 풀어나가는 도중 스스로 SPA 에 대한 정확한 지식 없이 그냥저냥 운영하고 개발만...","categories": [null,""],
-        "tags": ["F/E","바벨","Babel"],
-        "url": "/babel%EA%B0%9C%EB%85%90/",
-        "teaser": null
-      },{
         "title": "VSCode 유용한 플러그인 목록",
         "excerpt":":raising_hand: 개발환경 설정과 관련된 설정을 기록하는 포스트 입니다. VSCode 유용한 플러그인 목록 VSCode 설정할때 유용한 플러그인들 정리 색 테마 : Night Owl 파일 아이콘 테마 : Material Icon Theme 문법 검사 : ESLint, TSLint 실습 환경 보조 : Live Server 기타 : Prettier, Project Manager, Auto Close Tag, GitLens, Atom...","categories": ["devEnv"],
         "tags": ["VS Code","Plugin","유용한 플러그인 모음"],
