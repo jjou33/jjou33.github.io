@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>클로저(Closure) - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>바벨(Babel) 기초 개념 - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="클로저(Closure)">
-<meta property="og:url" content="http://localhost:4000/closure/closure/">
+<meta property="og:title" content="바벨(Babel) 기초 개념">
+<meta property="og:url" content="http://localhost:4000/babel/Babel/">
 
 
-  <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2022-02-10T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-02-19T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/closure/closure/">
+
+<link rel="canonical" href="http://localhost:4000/babel/Babel/">
 
 
 
@@ -919,15 +919,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="클로저(Closure)">
-    <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2022-02-10T00:00:00+09:00">
+    <meta itemprop="headline" content="바벨(Babel) 기초 개념">
+    <meta itemprop="description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+    <meta itemprop="datePublished" content="2022-02-19T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            클로저(Closure)
+            바벨(Babel) 기초 개념
 
           </h1>
           
@@ -955,11 +955,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
+      <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep"> </span>
+    
       <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Lexical Scoping</a><span class="sep"> </span>
-    
-      <a class="page__taxonomy-item-tag" rel="tag">클로저(closure)</a>
+      <a class="page__taxonomy-item-tag" rel="tag">바벨 기초개념</a>
     
     </span>
   </p>
@@ -981,7 +981,7 @@
     
     
     
-    <a href="/categories/#closure" class="page__taxonomy-item-category" rel="tag">closure</a>
+    <a href="/categories/#babel" class="page__taxonomy-item-category" rel="tag">babel</a>
     
 
   </span>
@@ -990,7 +990,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-10T00:00:00+09:00">February 10, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-19T00:00:00+09:00">February 19, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -1000,10 +1000,21 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
-<li><a href="#2-%EC%96%B4%ED%9C%98%EC%A0%81-%EB%B2%94%EC%9C%84lexical-scoping-%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 어휘적 범위(Lexical Scoping) 이란 무엇일까?</a></li>
-<li><a href="#3-%ED%81%B4%EB%A1%9C%EC%A0%80closure-%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">3. 클로저(Closure) 는 무엇일까?</a></li>
-<li><a href="#%ED%81%B4%EB%A1%9C%EC%A0%80%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%97%B0%EC%8A%B5">클로저를 이용한 프라이빗 메소드 연습</a></li>
+<li><a href="#1-%EB%B0%94%EB%B2%A8babel%EC%9D%80-%EC%99%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B2%83%EC%9D%BC%EA%B9%8C">1. 바벨(Babel)은 왜 사용하는 것일까?</a></li>
+<li><a href="#2-%EB%B0%94%EB%B2%A8-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EA%B8%B0%EB%B3%B8%EB%8F%99%EC%9E%91-%EC%8B%A4%EC%8A%B5">2. 바벨 설치 및 기본동작 실습</a></li>
+<li><a href="#3-%EB%B0%94%EB%B2%A8-%EB%8F%99%EC%9E%91-%EA%B3%BC%EC%A0%95">3. 바벨 동작 과정</a></li>
+<li><a href="#4-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8plugin">4. 플러그인(Plugin)</a></li>
+<li><a href="#4-1-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8">4-1. 커스텀 플러그인</a></li>
+<li>
+<a href="#5-%EB%B0%94%EB%B2%A8-%EC%A0%9C%EA%B3%B5-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0">5. 바벨 제공 플러그인 사용해보기</a><ul>
+<li><a href="#5-1-transform-block-scoping">5-1. transform-block-scoping</a></li>
+<li><a href="#5-2-transform-block-scoping">5-2. transform-block-scoping</a></li>
+<li><a href="#5-3-transform-strict-mode">5-3. transform-strict-mode</a></li>
+</ul>
+</li>
+<li>
+<a href="#5-%ED%94%84%EB%A6%AC%EC%85%8B">5. 프리셋</a><ul><li><a href="#5-1-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%94%84%EB%A6%AC%EC%85%8B">5-1. 커스텀 프리셋</a></li></ul>
+</li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -1012,160 +1023,298 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-개요">1. 개요</h4>
+<p>각기 다른 환경을 일원화 시켜주는 <strong>바벨</strong>에 대해 공부해본다.
+해당 포스팅은 김정환님의 강의를 보며 정리하였다.</p>
 
-<hr>
+<p><strong><em>하단 참조 사이트 참고</em></strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">클로저(Closure)</code> 는 <code class="language-plaintext highlighter-rouge">Javascript</code> 에서 꾀나 기본적인 개념이다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Scope</code> 와도 많이 관련되어 있고 코드를 짜는데 있어서 변수의 <code class="language-plaintext highlighter-rouge">어휘적 범위(Lexical Scoping)</code> 를 잘 고려해야 실수 없는 소스를 짤 수 있을것 같다.</p>
-
-<p>완벽하지는 않지만 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping">MDN</a> 을 참고하여 <code class="language-plaintext highlighter-rouge">클로저(Closure)</code> 에 대해 알아보고 기록을 해봐야 겠다는 생각이들어 포스팅을 남긴다.</p>
-
-<h4 id="2-어휘적-범위lexical-scoping-이란-무엇일까">2. 어휘적 범위(Lexical Scoping) 이란 무엇일까?</h4>
+<h4 id="1-바벨babel은-왜-사용하는-것일까">1. 바벨(Babel)은 왜 사용하는 것일까?</h4>
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">클로저(Closure)</code> 는 함수와 함수가 선언된 <code class="language-plaintext highlighter-rouge">어휘적 환경(Lexical environment)</code>의 조합이다.</p>
+<p>모던 웹 프론트엔드 환경이 거듭할수록 각 <strong>브라우저</strong>별로 같은 <code class="language-plaintext highlighter-rouge">javascript</code>라도 각기 다르게 지원하는 함수 혹은 메서드들이 생겨나기 시작하였다.</p>
 
-<p>이는 자바스크립트의 고유의 개념이 아닌 함수를 <code class="language-plaintext highlighter-rouge">일급 객체</code>로 취급하는 함수형 프로그래밍 언어에서 사용되는 중요한 특성이다.</p>
+<p>그래서 이러한 일관적이지 못한 상황을 해결하기 위해 <strong>바벨</strong>이 등장하였다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">클로저(Closure)</code> 를 알기 전에 먼저 <code class="language-plaintext highlighter-rouge">어휘적 범위(Lexical Scoping)</code> 에 대해서 먼저 알아본다.</p>
+<p><strong>ECMAScript2015+로 작성한 코드를 모든 브라우저에서 동작하도록 호환성을 지켜준다.</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">func1</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">testVal</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">function</span> <span class="nx">func2</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testVal</span><span class="p">);</span> <span class="c1">// hello</span>
-  <span class="p">}</span>
-  <span class="nx">func2</span><span class="p">();</span>
-<span class="p">}</span>
+<h4 id="2-바벨-설치-및-기본동작-실습">2. 바벨 설치 및 기본동작 실습</h4>
 
-<span class="nx">func1</span><span class="p">();</span>
+<hr>
+
+<p>설치는 2가지를 설치한다.</p>
+
+<ul>
+  <li>core</li>
+  <li>cli</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="p">@</span><span class="nd">babel</span><span class="sr">/core @babel/</span><span class="nx">cli</span>
 </code></pre></div></div>
 
-<p>위 소스에서 console 은 <code class="language-plaintext highlighter-rouge">hello</code> 를 출력한다.</p>
+<p>설치 후 바벨을 사용해본다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">func2</code> 는 부모 함수 <code class="language-plaintext highlighter-rouge">func1</code> 의 내부함수 이기 때문에 자신의 내무 변수가 없음에도 부모함수의 에서 선언된 변수인 <code class="language-plaintext highlighter-rouge">testVal</code> 에 접근할 수 있다는 것이다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
 
-<p>이 소스에서 우리가 이해해야 할 부분은 <code class="language-plaintext highlighter-rouge">어휘적 범위 지정(Lexical Scoping)</code> 과정에서 우리가 사용하는 변수가 어디까지 사용가능하며 어디에 선언되어 있는지를 고려한다는 것이다.</p>
+<span class="k">import</span> <span class="nx">MainController</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./controllers/MainController.js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./main.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">new</span> <span class="nx">MainController</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">);</span>
 
-<p><code class="language-plaintext highlighter-rouge">Lexical</code> 이란 의미도 이러한 것을 의미한다.</p>
+<span class="kd">const</span> <span class="nx">alert</span> <span class="o">=</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+</code></pre></div></div>
 
-<p>즉, 중첩된 함수는 외부 범위에서 선언된 변수를 자식 함수에서 접근할 수 있다는 것이다.</p>
+<p>위 <code class="language-plaintext highlighter-rouge">app.js</code> 파일을 babel 명령어로 실행해본다. 실행 커멘드는 아래와 같다.</p>
 
-<h4 id="3-클로저closure-는-무엇일까">3. 클로저(Closure) 는 무엇일까?</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npx</span> <span class="nx">babel</span> <span class="nx">app</span><span class="p">.</span><span class="nx">js</span>
+
+<span class="nx">혹은</span>
+
+<span class="nx">node_modules</span><span class="o">/</span><span class="p">.</span><span class="nx">bin</span> <span class="nx">폴더에</span> <span class="nx">추가된</span> <span class="nx">바벨</span> <span class="nx">명령어를</span> <span class="nx">사용</span> <span class="nx">가능</span>
+</code></pre></div></div>
+
+<p>결과는 아래와 같이 출려되는것을 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154802832-cf9cb83e-60d9-4092-8cb5-25f3ef71112e.png" alt="image"></p>
+
+<h4 id="3-바벨-동작-과정">3. 바벨 동작 과정</h4>
 
 <hr>
 
-<p>이제는 그럼 클로저는 무엇인지 MDN 의 예제를 참고하여 알아본다.</p>
+<p>바벨은 세 단계로 빌드를 진행</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">func1</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">testVal</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">function</span> <span class="nx">func2</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testVal</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">func2</span><span class="p">;</span>
-<span class="p">}</span>
+<ol>
+  <li>파싱(Parsing)</li>
+  <li>변환(Transforming)</li>
+  <li>출력(Printing)</li>
+</ol>
 
-<span class="kd">var</span> <span class="nx">returnFunc</span> <span class="o">=</span> <span class="nx">func1</span><span class="p">();</span>
+<p>먼저 <strong>파싱</strong>의 경우에는 작성된 코드를 <strong>구문트리</strong>로 변환하는 단계로 소스를 <code class="language-plaintext highlighter-rouge">Token</code> 별로 분해한다.
+즉, <code class="language-plaintext highlighter-rouge">const alert = msg =&gt; window.alert(msg);</code> 를 예로보면 <code class="language-plaintext highlighter-rouge">const, alert , = , msg ...</code> 와 같이 토큰별로 분해 후 <code class="language-plaintext highlighter-rouge">ES5</code> 로 변환한다. 그리고 출력하는 과정을 거친다.</p>
 
-<span class="nx">returnFunc</span><span class="p">();</span> <span class="c1">// hello 출력</span>
-</code></pre></div></div>
+<p>위 예의 경우에는 <strong>변환</strong>작업이 진행되지 않고 출력된것으로 보인다. <code class="language-plaintext highlighter-rouge">Input</code> 과 <code class="language-plaintext highlighter-rouge">Output</code> 이 같기 때문이다.</p>
 
-<p>위 소스는 동일하게 <code class="language-plaintext highlighter-rouge">hello</code> 를 출력하게 되는데 우리가 주의깊게 봐야할 부분이 있다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">returnFunc</code> 변수에 <code class="language-plaintext highlighter-rouge">func1</code> 함수의 리턴함수인 <code class="language-plaintext highlighter-rouge">func2</code> 가 저장되고 실행한 것이다.</p>
-
-<p>보통의 우리의 생각은 함수 내부의 지역변수들은 그 함수가 처리되는 동안에 존재한다고 생각하였고, <code class="language-plaintext highlighter-rouge">func1</code> 의 실행이 끝나면 <code class="language-plaintext highlighter-rouge">testVal</code> 변수에는 더이상 접근할 수 없다고 생각하였다.</p>
-
-<p>그러나 자바스크립트에서는 <code class="language-plaintext highlighter-rouge">func1</code> 에서 함수를 리턴하고 리턴하는 함수가 <code class="language-plaintext highlighter-rouge">클로저(Closure)</code> 를 형성하기 때문에 <code class="language-plaintext highlighter-rouge">returnFunc</code> 를 통해서 계속해서 <code class="language-plaintext highlighter-rouge">testVal</code> 변수에 접근할 수 있다.</p>
-
-<p>위 예시로 보면 <code class="language-plaintext highlighter-rouge">returnFunc</code> 는 <code class="language-plaintext highlighter-rouge">func1</code> 이 실행될때 리턴된 <code class="language-plaintext highlighter-rouge">func2</code> 함수의 인스턴스를 참소하고 있는 변수가 된다.</p>
-
-<p>이때 <code class="language-plaintext highlighter-rouge">func2</code> 는 <code class="language-plaintext highlighter-rouge">testVal</code> 이라는 변수의 <code class="language-plaintext highlighter-rouge">어휘적 환경(Lexical Environment)</code>에 대한 참조를 유지한다.</p>
-
-<p>따라서, 우리는 <code class="language-plaintext highlighter-rouge">returnFunc</code> 함수를 실행할 때 func2 에서 유지하고 있는 <code class="language-plaintext highlighter-rouge">testVal</code> 의 값을 사용할 수 있는 것이다.</p>
-
-<p>MDN 의 다른 예제도 이해하기 쉽게 설명하고 있다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">makeAdder</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">z</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">;</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="kd">var</span> <span class="nx">add5</span> <span class="o">=</span> <span class="nx">makeAdder</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">add10</span> <span class="o">=</span> <span class="nx">makeAdder</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="c1">//클로저에 x와 y의 환경이 저장됨</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add5</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 107 (x:5 + y:100 + z:2)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add10</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span> <span class="c1">// 112 (x:10 + y:100 + z:2)</span>
-<span class="c1">//함수 실행 시 클로저에 저장된 x, y값에 접근하여 값을 계산</span>
-</code></pre></div></div>
-
-<p>구조는 첫번째 예제와 비슷하지만 여기서 이해해야 하는 부분은 <code class="language-plaintext highlighter-rouge">add5, add10</code> 이란 두개의 클로저가 각기 다른 <code class="language-plaintext highlighter-rouge">어휘적 환경(Lexical Environment)</code> 를 가지고 있다는 점이다.</p>
-
-<p><code class="language-plaintext highlighter-rouge">add5</code> 의 클로저 내부의 <code class="language-plaintext highlighter-rouge">x</code> 는 5로 저장된 반면, <code class="language-plaintext highlighter-rouge">add10</code> 내부의 <code class="language-plaintext highlighter-rouge">x</code> 는 10인걸 알 수 있다.</p>
-
-<p>또한, 두개의 클로저는 <code class="language-plaintext highlighter-rouge">z</code> 인자로 갖는 함수를 리턴된 함수이며 함수 내부 스코프에는 y 가 선언되어 있지 않은것을 볼 수 있다.</p>
-
-<p>그러나 결과로 보면 <code class="language-plaintext highlighter-rouge">y</code> 값을 100으로 재할당하여 계산값을 리턴하는것을 볼 수 있다.</p>
-
-<p>이부분에서 <strong>클로저가 리턴된 후에도 외부함수의 변수들에 접근 가능하다는 것을 보여주는 포인트</strong>로 이 글에서는 설명하고 있다.</p>
-
-<h4 id="클로저를-이용한-프라이빗-메소드-연습">클로저를 이용한 프라이빗 메소드 연습</h4>
+<h4 id="4-플러그인plugin">4. 플러그인(Plugin)</h4>
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">MDN</code> 에 나와있는 프라이핏 메소드를 클로저를 활용하여 구현하는 연습을 통해 조금 더 클로저를 이해하는데 도움이 된 것 같다.</p>
+<p><strong>바벨(Babel)</strong>은 지정한 <strong>코드</strong>를 받아서 <strong>코드</strong>로 반환한다. 따라서 바벨은 <strong>파싱</strong>과 <strong>출력</strong>을 실질적으로 행한다고 생각하면 되며 실제 변환작업은 이 <strong>플러그인(Plugin)</strong>이 작업한다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">makeCounter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">privateCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">function</span> <span class="nx">changeBy</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">privateCounter</span> <span class="o">+=</span> <span class="nx">val</span><span class="p">;</span>
-  <span class="p">}</span>
+<h4 id="4-1-커스텀-플러그인">4-1. 커스텀 플러그인</h4>
+
+<hr>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 커스텀 플러그인</span>
+<span class="c1">// my-babel-plugin.js:</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">my</span><span class="o">-</span><span class="nx">babel</span><span class="o">-</span><span class="nx">plugin</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span>
-    <span class="na">increment</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">changeBy</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="na">decrement</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">changeBy</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="na">value</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">privateCounter</span><span class="p">;</span>
+    <span class="na">visitor</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nx">Identifier</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+
+        <span class="c1">// 바벨이 만든 AST 노드를 출력한다</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Identifier() name:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+
+        <span class="c1">// 변환작업: 코드 문자열을 역순으로 변환한다</span>
+        <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+      <span class="p">},</span>
     <span class="p">},</span>
   <span class="p">};</span>
 <span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">counter1</span> <span class="o">=</span> <span class="nx">makeCounter</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">counter2</span> <span class="o">=</span> <span class="nx">makeCounter</span><span class="p">();</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 0 */</span>
-<span class="nx">counter1</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
-<span class="nx">counter1</span><span class="p">.</span><span class="nx">increment</span><span class="p">();</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 2 */</span>
-<span class="nx">counter1</span><span class="p">.</span><span class="nx">decrement</span><span class="p">();</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">counter1</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 1 */</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">counter2</span><span class="p">.</span><span class="nx">value</span><span class="p">());</span> <span class="cm">/* 0 */</span>
 </code></pre></div></div>
 
-<p>위 예저에서 보면 counter 변수에 익명함수 안에서 <code class="language-plaintext highlighter-rouge">privateCounter, changeBy(메서드)</code> 두개의 공유되는 어휘적 환경(Lexical Evnironment) 가 형성되는 것을 볼 수 있다.</p>
+<p>먼저 <strong>커스텀 플러그인</strong>을 작성할때는 최종 리턴값을 <code class="language-plaintext highlighter-rouge">visitor</code> 객체를 반환해줘야 한다.</p>
 
-<p>그리고 리턴되는 객체에 <code class="language-plaintext highlighter-rouge">increment, decrement, value</code> 등을 정의하여 각각의 함수는 <code class="language-plaintext highlighter-rouge">privateCounter, changeBy(메서드)</code>에 접근할 수 있지만, 외부에서 직접적으로는 접근할 수 없다.</p>
+<p>해당 플러그인을 실행해본다 커멘드는 아래와 같다.</p>
 
-<p>또한, <code class="language-plaintext highlighter-rouge">makeCounter</code> 를 통해 여러개의 counter 를 만들어 각각의 고유한 클로저를 통해 노출되는 것을 볼 수 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">npx babel ./src/app.js --plugins './my-babel-plugin.js'</code></p>
 
-<p>자세한 사항은 <code class="language-plaintext highlighter-rouge">[MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping)</code> 을 통해 확인할 수 있다.</p>
+<p>우리는 <code class="language-plaintext highlighter-rouge">app.js</code> 파일을 <strong>커스텀 플러그인</strong>을 통해 변환 후 출력해 보겠다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
+
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./app.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">nyancat</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./nyancat.jpeg</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// DOM 이 Loading 되어졌을때 Body 에 해당 이미지를 넣는다.</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`
+        &lt;img src="</span><span class="p">${</span><span class="nx">nyancat</span><span class="p">}</span><span class="s2">" /&gt;
+    `</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">domain</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testValueNotString</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">testValueString</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>실제 출력되는 결과를 보면 아래와 같이 확인할 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154803572-411431b3-f1c7-4596-aecc-e702ca29b004.png" alt="image"></p>
+
+<p>상단은 <code class="language-plaintext highlighter-rouge">Identifier() ~</code> 로 파싱된 각각의 <code class="language-plaintext highlighter-rouge">Token</code> 들을 찍는다.</p>
+
+<p>그 후 우리가 작성한것과 같이 파싱된 것들을 역순으로 뒤집어서 이어 붙인다.</p>
+
+<p>아래 부분은 토근 단위로 뒤집어 진 것을 볼 수 있다.</p>
+
+<p>그렇다면 동일하게 <strong>ES6 -&gt; ES5</strong>로 변환하는 바벨 홈페이지에 나와있는 소스를 붙여서 실행해보자.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// app.js</span>
+
+<span class="kd">const</span> <span class="nx">alert</span> <span class="o">=</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+
+<span class="c1">// my-babel-plugin.js</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">myplugin</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">visitor</span><span class="p">:</span> <span class="p">{</span>
+      <span class="c1">// https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-block-scoping/src/index.js#L26</span>
+      <span class="nx">VariableDeclaration</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">VariableDeclaration() kind:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">kind</span><span class="p">);</span> <span class="c1">// const</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">const</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">path</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">kind</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">var</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>위 소스는 <code class="language-plaintext highlighter-rouge">const</code> 를 <code class="language-plaintext highlighter-rouge">var</code> 로 변환시키는 플러그인을 작성했다고 보면 된다.</p>
+
+<p>결과는 생각한되로 변경되는 것을 볼 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154803743-1e86aa28-f5ed-4607-8fc1-15efe1c41cc5.png" alt="image"></p>
+
+<h4 id="5-바벨-제공-플러그인-사용해보기">5. 바벨 제공 플러그인 사용해보기</h4>
+
+<hr>
+
+<h5 id="5-1-transform-block-scoping">5-1. transform-block-scoping</h5>
+
+<p><a href="https://babeljs.io/docs/en/babel-plugin-transform-block-scoping">transform-block-scoping</a> 은 babel 공식문서에서 확인할 수 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">const</code> 를 <code class="language-plaintext highlighter-rouge">var</code> 로 변환시켜주는 역할을 한다.</p>
+
+<ol>
+  <li>패키지 설치</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/plugin-transform-block-scoping</code></p>
+
+<ol>
+  <li>실행</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npx babel ./src/app.js --plugins @babel/plugin-transform-block-scoping</code></p>
+
+<h5 id="5-2-transform-block-scoping">5-2. transform-block-scoping</h5>
+
+<p><a href="%5B">transform-arrow-functions</a>](https://babeljs.io/docs/en/babel-plugin-transform-arrow-functions)</p>
+
+<p><code class="language-plaintext highlighter-rouge">=&gt;</code> 화살표 함수를 <code class="language-plaintext highlighter-rouge">ES5</code> 에서 인식할 수 있도록 변환시켜준다.</p>
+
+<ol>
+  <li>패키지 설치</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/plugin-transform-arrow-functions</code></p>
+
+<ol>
+  <li>실행</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npx babel ./src/app.js --plugins @babel/plugin-transform-block-scoping --plugins @babel/plugin-transform-arrow-functions </code></p>
+
+<p>결과는 화살표 함수가 아래와 같이 <code class="language-plaintext highlighter-rouge">function ()</code> 폼으로 변경된것을 볼 수 있다. 또한 <code class="language-plaintext highlighter-rouge">const</code> 도 <code class="language-plaintext highlighter-rouge">var</code> 로 변경되었다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154804207-eb36593b-4e79-4682-a325-d52e5289ad28.png" alt="image"></p>
+
+<h5 id="5-3-transform-strict-mode">5-3. transform-strict-mode</h5>
+
+<hr>
+
+<p><a href="https://babeljs.io/docs/en/babel-plugin-transform-strict-mode">transform-strict-mode</a> 플러그인은 <code class="language-plaintext highlighter-rouge">ES5</code> 부터 지원하는 엄격보드로 사용하기 위해 <code class="language-plaintext highlighter-rouge">use strict</code> 를 추가해 주는 플러그인이다.</p>
+
+<ol>
+  <li>패키지 설치</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npm install @babel/plugin-transform-strict-mode</code></p>
+
+<ol>
+  <li>실행</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">npx babel ./src/app.js --plugins @babel/plugin-transform-block-scoping --plugins @babel/plugin-transform-arrow-functions --plugins @babel/plugin-transform-strict-mode</code></p>
+
+<p>많은 <strong>플러그인</strong>을 사용할 수록 명령어가 길어지기 때문에 <strong>webpack</strong> 과 동일하게 <strong>babel</strong> 또한 <code class="language-plaintext highlighter-rouge">babel.config.js</code> 파일을 사용한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">babel.config.js</code> 파일을 생성 후 방금 실행했던 커멘드를 설정파일에 녹여보자.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">@babel/plugin-transform-block-scoping</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">@babel/plugin-transform-arrow-functions</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">@babel/plugin-transform-strict-mode</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>그리고 간단하게 실행하면 된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx babel ./src/app.js</code></p>
+
+<h4 id="5-프리셋">5. 프리셋</h4>
+
+<hr>
+
+<p>위에서 본것과 같이 각 기능별로 각각의 <strong>플러그인</strong>을 모두 설정하면 굉장히 많아질 것이다.</p>
+
+<p>그래서 목적에 맞게 여러가지 플러그인을 세트로 모아둔 것을 <strong>프리셋</strong>이라고 한다.</p>
+
+<h5 id="5-1-커스텀-프리셋">5-1. 커스텀 프리셋</h5>
+
+<hr>
+
+<p>먼저 <strong>커스텀 프리셋</strong>을 작성할 파일인 <code class="language-plaintext highlighter-rouge">my-babel-preset.js</code>을 생성한다.
+작성 후 <code class="language-plaintext highlighter-rouge">babel.config.js</code> 파일에는 해당 프리셋 파일의 경로를 추가한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// my-babel-preset.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">myBabelPreset</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">@babel/plugin-transform-block-scoping</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">@babel/plugin-transform-arrow-functions</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">@babel/plugin-transform-strict-mode</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">],</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// babel.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 프리셋 정보 작성</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">./my-babel-preset.js</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>그리고 동일하게 실행해 보면 잘 돌아가는것을 볼 수 있다.</p>
+
+<p><strong>위 내용은 실제 실무에서는 잘 사용하지 않지만 동작 원리를 알기 위해 좋은 예제 이기 때문에 기록해둔다.</strong></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
 <hr>
 
-<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures">https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures</a></p>
+<p><a href="https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8">https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8</a></p>
 
         
       </section>
@@ -1174,23 +1323,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%81%B4%EB%A1%9C%EC%A0%80%28Closure%29%20http%3A%2F%2Flocalhost%3A4000%2Fclosure%2Fclosure%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%B0%94%EB%B2%A8%28Babel%29+%EA%B8%B0%EC%B4%88+%EA%B0%9C%EB%85%90%20http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabel%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fclosure%2Fclosure%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabel%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fclosure%2Fclosure%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabel%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/" class="pagination--pager" title="Vue Life Cycle
+      <a href="/devenv/vscodePlugIn/" class="pagination--pager" title="VSCode 유용한 플러그인 목록
 ">Previous</a>
     
     
-      <a href="/devenv/vscodePlugIn/" class="pagination--pager" title="VSCode 유용한 플러그인 목록
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -1204,62 +1352,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/babel/Babel/" rel="permalink">바벨(Babel) 기초 개념
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.19
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">바벨 기초개념</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -1311,6 +1403,62 @@
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/closure/closure/" rel="permalink">클로저(Closure)
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.10
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Lexical Scoping</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">클로저(closure)</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>

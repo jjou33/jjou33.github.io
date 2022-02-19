@@ -436,4 +436,10 @@ var store = [{
         "tags": ["VS Code","Plugin","유용한 플러그인 모음"],
         "url": "/devenv/vscodePlugIn/",
         "teaser": null
+      },{
+        "title": "바벨(Babel) 기초 개념",
+        "excerpt":":raising_hand: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다. 각기 다른 환경을 일원화 시켜주는 바벨에 대해 공부해본다. 해당 포스팅은 김정환님의 강의를 보며 정리하였다. 하단 참조 사이트 참고 1. 바벨(Babel)은 왜 사용하는 것일까? 모던 웹 프론트엔드 환경이 거듭할수록 각 브라우저별로 같은 javascript라도 각기 다르게 지원하는 함수 혹은 메서드들이 생겨나기 시작하였다. 그래서...","categories": ["babel"],
+        "tags": ["F/E","Babel","바벨 기초개념"],
+        "url": "/babel/Babel/",
+        "teaser": null
       }]

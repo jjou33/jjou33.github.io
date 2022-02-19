@@ -44,7 +44,7 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "babel" %}
-                    <li><a href="/categories/babel" class="">:pencil2: Babel ({{category[1].size}})</a></li>
+                    <li><a href="/categories/babel" class="">:pencil2: 바벨(Babel) ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
