@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>MAC 에서 사용중인 Port 죽이기 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>Javascript html handling - Hippo Dev Blog</title>
+<meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="MAC 에서 사용중인 Port 죽이기">
-<meta property="og:url" content="http://localhost:4000/mac/Port-Kill/">
+<meta property="og:title" content="Javascript html handling">
+<meta property="og:url" content="http://localhost:4000/javascript/htmlhandling/">
 
 
-  <meta property="og:description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-11-04T00:00:00+09:00">
+  <meta property="og:description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-02-20T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/mac/Port-Kill/">
+
+<link rel="canonical" href="http://localhost:4000/javascript/htmlhandling/">
 
 
 
@@ -919,15 +919,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="MAC 에서 사용중인 Port 죽이기">
-    <meta itemprop="description" content=":computer: MAC OS 와 관련된 설정을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-11-04T00:00:00+09:00">
+    <meta itemprop="headline" content="Javascript html handling">
+    <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2022-02-20T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            MAC 에서 사용중인 Port 죽이기
+            Javascript html handling
 
           </h1>
           
@@ -955,9 +955,13 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">MAC OS</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">childNodes</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Port Kill</a>
+      <a class="page__taxonomy-item-tag" rel="tag">html</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">parsing</a>
     
     </span>
   </p>
@@ -979,7 +983,7 @@
     
     
     
-    <a href="/categories/#mac" class="page__taxonomy-item-category" rel="tag">mac</a>
+    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
     
 
   </span>
@@ -988,7 +992,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-11-04T00:00:00+09:00">November 4, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-20T00:00:00+09:00">February 20, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -997,38 +1001,103 @@
             <nav class="toc">
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
-              <ul class="toc__menu"><li>
-<a href="#mac-%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%ED%8F%AC%ED%8A%B8%EC%9D%98-pid-%EC%B0%BE%EA%B8%B0">MAC 사용중인 포트의 PID 찾기</a><ul><li><a href="#%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8-%ED%8F%AC%ED%8A%B8-%EC%A2%85%EB%A3%8C%ED%95%98%EA%B8%B0">사용중인 포트 종료하기</a></li></ul>
-</li></ul>
+              <ul class="toc__menu"><li><a href="#1-html-%ED%83%9C%EA%B7%B8-%EC%A0%95%EB%B3%B4-%EC%A0%91%EA%B7%BC">1. HTML 태그 정보 접근</a></li></ul>
 
             </nav>
           </aside>
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">개인적인 MAC OS 설정 내용을 기록하기 위한 포스트입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="mac-사용중인-포트의-pid-찾기">MAC 사용중인 포트의 PID 찾기</h4>
+<p><code class="language-plaintext highlighter-rouge">Javascript</code>로 <code class="language-plaintext highlighter-rouge">HTML</code> 데이터를 파싱하고 <strong>핸들링</strong>하는 방법 기록</p>
+
+<h4 id="1-html-태그-정보-접근">1. HTML 태그 정보 접근</h4>
+
 <hr>
 
-<pre><code class="language-command">sudo lsof -i:포트번호
-</code></pre>
+<p>예를 들어 아래와 같은 <code class="language-plaintext highlighter-rouge">HTML</code>의 <code class="language-plaintext highlighter-rouge">XML</code> 데이터가 있다고 하자.</p>
 
-<h5 id="사용중인-포트-종료하기">사용중인 포트 종료하기</h5>
-<hr>
+<p><code class="language-plaintext highlighter-rouge">Javascript</code> 를 통해서 이 값에 접근해본다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// PID 조회
-<span class="nb">sudo </span>lsof <span class="nt">-i</span>:4000
-
-COMMAND  PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabase <span class="o">(</span>LISTEN<span class="o">)</span>
-
-<span class="k">**</span>강제 종료 커맨드<span class="k">**</span>
-<span class="nb">sudo kill</span> <span class="nt">-9</span> 4020
-<span class="o">(</span><span class="nb">sudo kill</span> <span class="nt">-9</span> <span class="o">[</span>PID]<span class="o">)</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span>
+  <span class="na">data-category-name=</span><span class="s">"espresso"</span>
+  <span class="na">class=</span><span class="s">"cafe-category-name btn bg-white shadow mx-1"</span>
+<span class="nt">&gt;</span>
+  에스프레소
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span>
+  <span class="na">data-category-name=</span><span class="s">"frappuccino"</span>
+  <span class="na">class=</span><span class="s">"cafe-category-name btn bg-white shadow mx-1"</span>
+<span class="nt">&gt;</span>
+  프라푸치노
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span>
+  <span class="na">data-category-name=</span><span class="s">"blended"</span>
+  <span class="na">class=</span><span class="s">"cafe-category-name btn bg-white shadow mx-1"</span>
+<span class="nt">&gt;</span>
+  블렌디드
+<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
+<p>보통 <code class="language-plaintext highlighter-rouge">xml</code> 데이터를 <code class="language-plaintext highlighter-rouge">String</code> 으로 주고 태그의 내부 값을 조작하라는 문제가 많이 나온다.</p>
+
+<p>이런경우는 아래와 같이하면 어떨까 생각해 보았다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">xmlDate</span> <span class="o">=</span> <span class="s2">`
+&lt;button
+  data-category-name="espresso"
+  class="cafe-category-name btn bg-white shadow mx-1"
+&gt;
+  에스프레소
+&lt;/button&gt;
+&lt;button
+  data-category-name="frappuccino"
+  class="cafe-category-name btn bg-white shadow mx-1"
+&gt;
+  프라푸치노
+&lt;/button&gt;
+&lt;button
+  data-category-name="blended"
+  class="cafe-category-name btn bg-white shadow mx-1"
+&gt;
+  블렌디드
+&lt;/button&gt;
+`</span><span class="p">;</span>
+
+<span class="c1">// div 생성</span>
+<span class="kd">let</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">xmlData</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>여기까지 오면 <code class="language-plaintext highlighter-rouge">el</code> 변수에는 <code class="language-plaintext highlighter-rouge">div</code> HTML태그가 들어가 있고 <code class="language-plaintext highlighter-rouge">childNode</code> 인 <code class="language-plaintext highlighter-rouge">button</code> 들을 접근할 수 있게 된다.</p>
+
+<p>이때 우리는 <code class="language-plaintext highlighter-rouge">button</code> 태그만 가져오면 되기 때문에 <code class="language-plaintext highlighter-rouge">el.getElementsByTagName("button")</code> 을 통해서 <code class="language-plaintext highlighter-rouge">button</code> 태그만 가져올 것이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154837483-da53eb60-b63b-4237-9200-1975387608d1.png" alt="image"></p>
+
+<p>위 결과와 같이 우리는 3개의 <code class="language-plaintext highlighter-rouge">childNode</code> 를 확인 할 수 있다.</p>
+
+<p>이안에서 만약 <strong>에스프레소, 프라푸치노, 블렌디드</strong> 이 텍스트만 가져오고 싶을 경우 아래와 같이 접근하면 될것 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ...xmlData 생략</span>
+
+<span class="kd">let</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">xmlData</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tags</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">innerText</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/154837773-d0990c80-77d6-495e-bafa-9e4a0a99edba.png" alt="image"></p>
+
+<p>간단한 예를 들었으며, <code class="language-plaintext highlighter-rouge">console.dir</code> 를 통해서 각 객체가 가지고 있는 <code class="language-plaintext highlighter-rouge">properties</code> 들을 볼 수 있으니 참고한다.</p>
 
         
       </section>
@@ -1037,23 +1106,22 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=MAC+%EC%97%90%EC%84%9C+%EC%82%AC%EC%9A%A9%EC%A4%91%EC%9D%B8+Port+%EC%A3%BD%EC%9D%B4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Javascript+html+handling%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fmac%2FPort-Kill%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/javascript/basic-language-skill/" class="pagination--pager" title="JavaScript 문법 중 기억할 것
+      <a href="/babel/Babel/" class="pagination--pager" title="바벨(Babel) 기초 개념
 ">Previous</a>
     
     
-      <a href="/webpack/webpack-definition/" class="pagination--pager" title="Webpack 에 대한 정의와 배경, 사용이유
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -1067,67 +1135,6 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/htmlhandling/" rel="permalink">Javascript html handling
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.20
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">childNodes</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">html</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">parsing</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -1275,6 +1282,62 @@ ruby    4020 root   11u  IPv4 0x7c07039bcf2cf1b7      0t0  TCP localhost:terabas
         
         
         <a class="page__taxonomy-item-tag" rel="tag">클로저(closure)</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/" rel="permalink">Vue Life Cycle
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.08
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">instance life Cycle</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Vue</a>
         
     </span>
 </span>

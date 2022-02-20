@@ -442,4 +442,10 @@ var store = [{
         "tags": ["F/E","Babel","바벨 기초개념"],
         "url": "/babel/Babel/",
         "teaser": null
+      },{
+        "title": "Javascript html handling",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. Javascript로 HTML 데이터를 파싱하고 핸들링하는 방법 기록 1. HTML 태그 정보 접근 예를 들어 아래와 같은 HTML의 XML 데이터가 있다고 하자. Javascript 를 통해서 이 값에 접근해본다. &lt;button data-category-name=\"espresso\" class=\"cafe-category-name btn bg-white shadow mx-1\" &gt; 에스프레소 &lt;/button&gt; &lt;button data-category-name=\"frappuccino\" class=\"cafe-category-name btn bg-white shadow...","categories": ["JavaScript"],
+        "tags": ["JavaScript","html","parsing","childNodes"],
+        "url": "/javascript/htmlhandling/",
+        "teaser": null
       }]

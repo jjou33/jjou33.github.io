@@ -105,4 +105,6 @@ for (let i = 0; i < tags.length; i++) {
 }
 ```
 
+![image](https://user-images.githubusercontent.com/56063287/154837773-d0990c80-77d6-495e-bafa-9e4a0a99edba.png)
+
 간단한 예를 들었으며, `console.dir` 를 통해서 각 객체가 가지고 있는 `properties` 들을 볼 수 있으니 참고한다.
