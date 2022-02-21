@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>앞 수들 보다 큰 수만 구하기 - Hippo Dev Blog</title>
-<meta name="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>바벨(Babel) 기초 개념 - Preset - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO MY WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="앞 수들 보다 큰 수만 구하기">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EC%95%9E-%EC%88%98%EB%93%A4-%EB%B3%B4%EB%8B%A4-%ED%81%B0-%EC%88%98%EB%A7%8C-%EA%B5%AC%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="바벨(Babel) 기초 개념 - Preset">
+<meta property="og:url" content="http://localhost:4000/babel/BabelPreset/">
 
 
-  <meta property="og:description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-09-10T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-02-21T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EC%95%9E-%EC%88%98%EB%93%A4-%EB%B3%B4%EB%8B%A4-%ED%81%B0-%EC%88%98%EB%A7%8C-%EA%B5%AC%ED%95%98%EA%B8%B0/">
+
+<link rel="canonical" href="http://localhost:4000/babel/BabelPreset/">
 
 
 
@@ -919,15 +919,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="앞 수들 보다 큰 수만 구하기">
-    <meta itemprop="description" content=":computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2021-09-10T00:00:00+09:00">
+    <meta itemprop="headline" content="바벨(Babel) 기초 개념 - Preset">
+    <meta itemprop="description" content=":computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.">
+    <meta itemprop="datePublished" content="2022-02-21T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            앞 수들 보다 큰 수만 구하기
+            바벨(Babel) 기초 개념 - Preset
 
           </h1>
           
@@ -955,11 +955,17 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">test</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">babel-loader</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">test1</a>
+      <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">Preset</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">sass-loader</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">폴리필</a>
     
     </span>
   </p>
@@ -981,7 +987,7 @@
     
     
     
-    <a href="/categories/#algorithm" class="page__taxonomy-item-category" rel="tag">Algorithm</a>
+    <a href="/categories/#babel" class="page__taxonomy-item-category" rel="tag">babel</a>
     
 
   </span>
@@ -990,7 +996,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-09-10T00:00:00+09:00">September 10, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-21T00:00:00+09:00">February 21, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -1000,9 +1006,19 @@
               <header><h4 class="nav__title">
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
-<li><a href="#1-%EB%AC%B8%EC%A0%9C-%EC%9A%94%EA%B1%B4">1. 문제 요건</a></li>
-<li><a href="#2-%EC%BD%94%EB%93%9C">2. 코드</a></li>
-<li><a href="#3-%EA%B2%B0%EA%B3%BC%EC%A0%95%EB%A6%AC">3. 결과정리</a></li>
+<li>
+<a href="#1-%EC%8B%A4%EB%AC%B4%EC%97%90%EC%84%9C-%EC%9E%90%EC%A3%BC-%EC%93%B0%EC%9D%B4%EB%8A%94-preset">1. 실무에서 자주 쓰이는 preset</a><ul><li><a href="#1-1-preset-env">1-1. preset-env</a></li></ul>
+</li>
+<li><a href="#2-target-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80">2. Target 브라우저</a></li>
+<li>
+<a href="#3-%ED%8F%B4%EB%A6%AC%ED%95%84">3. 폴리필</a><ul><li><a href="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%EC%84%9C">참고문서</a></li></ul>
+</li>
+<li>
+<a href="#4-%EC%9B%B9%ED%8C%A9%EC%9C%BC%EB%A1%9C-%ED%86%B5%ED%95%A9">4. 웹팩으로 통합</a><ul><li><a href="#4-1-babel-loader">4-1. babel-loader</a></li></ul>
+</li>
+<li><a href="#%EC%A0%95%EB%A6%AC">정리</a></li>
+<li><a href="#5-sass-loader-%EC%9D%91%EC%9A%A9">5. sass-loader 응용</a></li>
+<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
             </nav>
@@ -1010,62 +1026,266 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.</code></p>
 <hr>
 
-<h4 id="1-문제-요건">1. 문제 요건</h4>
+<p>각기 다른 환경을 일원화 시켜주는 <strong>바벨</strong>에 대해 공부해본다.
+해당 포스팅은 김정환님의 강의를 보며 정리하였다.</p>
+
+<p><strong><em>하단 참조 사이트 참고</em></strong></p>
+
+<h4 id="1-실무에서-자주-쓰이는-preset">1. 실무에서 자주 쓰이는 preset</h4>
+
 <hr>
-<p>입력값으로 <strong>N X N 행</strong>의 배열이 주어지고 해당 배열은 사람의 키를 의미한다.</p>
 
-<p>맨앞에서 볼 때 보이는 사람일경우 즉, <strong>자신의 앞 모든사람보다 키가 큰 사람</strong>을 구하라</p>
+<p>앞서 공부했던것 같이 플러그인을 모아서 따로 <code class="language-plaintext highlighter-rouge">preset</code> 을 만들어서 하는것 보다 현재는 바벨에서 제공하는 프리셋을 사용한다고 한다.</p>
 
-<h4 id="2-코드">2. 코드</h4>
+<h5 id="1-1-preset-env">1-1. preset-env</h5>
+
 <hr>
-<ul>
-  <li>기본 솔루션<br>
-</li>
-</ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="kd">let</span> <span class="nx">high</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">high</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">high</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-            <span class="nx">count</span><span class="o">++</span> 
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">count</span>
-<span class="p">}</span>
+<p>현재 가장 많이 사용하고 있는 <code class="language-plaintext highlighter-rouge">preset-env</code> 에 대해서 알아본다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm i @babel/preset-env</code></p>
+
+<p>설치 후</p>
+
+<p><code class="language-plaintext highlighter-rouge">babel.config.js</code> 파일에 <code class="language-plaintext highlighter-rouge">preset-env</code> preset 을 설정해준다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">@babel/preset-env</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
-<ul>
-  <li>reduce 사용</li>
-</ul>
+<p>설정까지 완료되면 기존과 같이 <code class="language-plaintext highlighter-rouge">npx babel ./src/app.js</code> 를 실행하면 <code class="language-plaintext highlighter-rouge">ES5</code> 로 변환후 노출까지 확인이 된다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// reduce 로 한번 풀어보았다.</span>
-<span class="kd">function</span> <span class="nx">solution2</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]];</span>
-    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">high</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span> <span class="nx">high</span><span class="p">)</span>
-        <span class="k">if</span><span class="p">(</span><span class="nx">v</span> <span class="o">&gt;</span> <span class="nx">high</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">temp</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
-            <span class="nx">high</span> <span class="o">=</span> <span class="nx">v</span>
-            <span class="k">return</span> <span class="nx">high</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">high</span>
-        <span class="p">}</span>
-    <span class="p">},</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">return</span> <span class="nx">temp</span><span class="p">.</span><span class="nx">length</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h4 id="2-target-브라우저">2. Target 브라우저</h4>
 
-<h4 id="3-결과정리">3. 결과정리</h4>
 <hr>
 
-<p>간단하게 반복문을 통해 <strong>가장 큰값을 가져가고 그보다 큰 사람이 나오게 되면 카운트를 올리면 된다.</strong></p>
+<p>각 브라우저의 버전마다 지원하는 <code class="language-plaintext highlighter-rouge">js</code> 의 버전이 다르다.
+따라서 이를 설정하는 대로 맞춰서 변환해 주는 법을 알아본다.</p>
 
-<p>이곳저곳 javascript 내장함수를 활용해서 몸에 사용법을 좀 익힐겸 <strong>reduce</strong> 로도 풀어보았다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// babel.config.js</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="dl">"</span><span class="s2">@babel/preset-env</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">{</span>
+      <span class="na">targets</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">chrome</span><span class="p">:</span> <span class="dl">"</span><span class="s2">79</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 크롬 79 를 지원하는 코드로 변환</span>
+        <span class="c1">// ie: "11", // ie 11까지 지원하는 코드로 변환</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>먼저 크롬을 명시하고 babel 을 실행해보자.
+결과는 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">alert</span> <span class="o">=</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ES5</code> 로 변환되지 않은 이유는 크롬의 79버전이 <code class="language-plaintext highlighter-rouge">Arrow-function</code>을 지원하기 때문이다.
+그럼 <code class="language-plaintext highlighter-rouge">ie</code> 까지 추가해서 돌려본다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">alert</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>결과는 예상했던데로 나오는것을 볼 수 있다.</p>
+
+<h4 id="3-폴리필">3. 폴리필</h4>
+
+<hr>
+
+<p>만약 <code class="language-plaintext highlighter-rouge">ES5</code> 버전으로 변환이 불가능한 코드를 작성 후 <code class="language-plaintext highlighter-rouge">babel</code> 을 돌리면 어떻게 될까?</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code> 는 <code class="language-plaintext highlighter-rouge">ES5</code> 로 변환할 수 없기 때문에 결과는 오류를 던진다.
+이럴때 사용하는 것이 <code class="language-plaintext highlighter-rouge">폴리필</code> 이다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// babel.config.js:</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">@babel/preset-env</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">{</span>
+        <span class="na">useBuiltIns</span><span class="p">:</span> <span class="dl">"</span><span class="s2">usage</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 폴리필 사용 방식 지정</span>
+        <span class="na">corejs</span><span class="p">:</span> <span class="p">{</span>
+          <span class="c1">// 폴리필 버전 지정</span>
+          <span class="na">version</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useBuiltIns</code> 에 명시하는 방식대로 폴리필이 사용되어 진다.
+<code class="language-plaintext highlighter-rouge">usage</code>, <code class="language-plaintext highlighter-rouge">entry</code>, <code class="language-plaintext highlighter-rouge">false</code> 세가지 값을 사용하고 <code class="language-plaintext highlighter-rouge">usage</code>, <code class="language-plaintext highlighter-rouge">entry</code>의 경우 <code class="language-plaintext highlighter-rouge">core-js</code>를 모듈로 가져온다.</p>
+
+<p>결과는 아래와 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">core-js/modules/es6.object.to-string.js</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">core-js/modules/es6.promise.js</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="k">new</span> <span class="nb">Promise</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h5 id="참고문서">참고문서</h5>
+
+<ul>
+  <li><a href="https://babeljs.io/docs/en/babel-preset-env#usebuiltins">useBuiltIns</a></li>
+  <li><a href="https://babeljs.io/docs/en/babel-preset-env#corejs">corejs</a></li>
+</ul>
+
+<h4 id="4-웹팩으로-통합">4. 웹팩으로 통합</h4>
+
+<p>위 방식은 기본을 공부하는 과정이었고 실제로 웹팩과 통합하여 많이 쓴다고 한다.</p>
+
+<h5 id="4-1-babel-loader">4-1. babel-loader</h5>
+
+<hr>
+
+<p>실무에서 주로 사용하는 <code class="language-plaintext highlighter-rouge">babel-loader</code> 를 설치하고 사용해보자.</p>
+
+<p>먼저 설치를 진행하면</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i babel-loader
+</code></pre></div></div>
+
+<p>후 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 파일을 수정한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+
+<span class="nx">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="c1">// ... 생략</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">babel-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span> <span class="c1">// node_modules 를 babel-loader 가 처리하지 않도록 제외</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">npm run build</code> 를 실행하면 에러를 발생시킨다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR in ./src/app.js
+Module not found: Error: Can't resolve 'core-js/modules/es6.object.to-string.js' in '/Users/hyunwoo/Desktop/DEV/webpackStudy/src'
+ @ ./src/app.js 1:0-49
+
+ERROR in ./src/app.js
+Module not found: Error: Can't resolve 'core-js/modules/es6.promise.js' in '/Users/hyunwoo/Desktop/DEV/webpackStudy/src'
+ @ ./src/app.js 2:0-40
+</code></pre></div></div>
+
+<p>위에서 보았듯이 babel-loader 를 사용하면 <code class="language-plaintext highlighter-rouge">corejs</code> 를 사용하여 대체 불가능한 소스를 변환하는데 <code class="language-plaintext highlighter-rouge">babel</code> 이 변환한 코드를 <code class="language-plaintext highlighter-rouge">webpack</code> 이 읽다가 <code class="language-plaintext highlighter-rouge">corejs</code> 를 알지 못하기 때문에 오류를 뱉어낸다.</p>
+
+<p>그럼 <code class="language-plaintext highlighter-rouge">corejs</code> 패키지를 설치하자.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm i core-js@2</code></p>
+
+<p>다시 <code class="language-plaintext highlighter-rouge">build</code> 하면 에러가 사라진다.</p>
+
+<h4 id="정리">정리</h4>
+
+<hr>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">npm i babel-loader @babel/core</code> 설치</li>
+</ol>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">babel loader</code> 를 웹팩에서 실행할때 <code class="language-plaintext highlighter-rouge">babel</code> 을 실행해야 하기 때문에 <code class="language-plaintext highlighter-rouge">babel/core</code> 를 설치</li>
+</ul>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">webpack.config.js</code> 설정 및 <code class="language-plaintext highlighter-rouge">babel.config.js</code> 설정</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">presets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">@babel/preset-env</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">{</span>
+        <span class="na">targets</span><span class="p">:</span> <span class="p">{</span>
+          <span class="c1">// 브라우저 적용 버전</span>
+          <span class="na">chrome</span><span class="p">:</span> <span class="dl">"</span><span class="s2">79</span><span class="dl">"</span><span class="p">,</span>
+          <span class="na">ie</span><span class="p">:</span> <span class="dl">"</span><span class="s2">11</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">useBuiltIns</span><span class="p">:</span> <span class="dl">"</span><span class="s2">usage</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 폴리필 사용</span>
+        <span class="na">corejs</span><span class="p">:</span> <span class="p">{</span>
+          <span class="c1">//</span>
+          <span class="na">version</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useBuiltIns: "usage"</code> 설정을 통해 <code class="language-plaintext highlighter-rouge">ES5</code> 에서 변환하지 못하는 모듈을 <code class="language-plaintext highlighter-rouge">import</code> 해 온다.
+이때 <code class="language-plaintext highlighter-rouge">import</code> 된 <strong>라이브러리</strong>를 사용할때 <code class="language-plaintext highlighter-rouge">corejs</code> 가 사용된다.</p>
+
+<h4 id="5-sass-loader-응용">5. sass-loader 응용</h4>
+
+<hr>
+
+<p>위에서 해본 과정을 토대로 <code class="language-plaintext highlighter-rouge">sass</code> 파일을 <code class="language-plaintext highlighter-rouge">sass-loader</code> 를 통해 변환해보자.</p>
+
+<p>우선 <a href="https://github.com/webpack-contrib/sass-loader">sass-loader</a> 문서를 보고 진행해본다.</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">npm i sass-loader sass</code> 설치가 필요하다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">webpack.config.js</code> 에 <code class="language-plaintext highlighter-rouge">sass</code> 를 사용할 수 있게 수정해보자.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">scss|css</span><span class="se">)</span><span class="sr">$/i</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
+          <span class="c1">// Creates `style` nodes from JS strings</span>
+          <span class="dl">"</span><span class="s2">style-loader</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Translates CSS into CommonJS</span>
+          <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">,</span>
+          <span class="c1">// Compiles Sass to CSS</span>
+          <span class="dl">"</span><span class="s2">sass-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">],</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>이렇게 실무에서 <code class="language-plaintext highlighter-rouge">babel</code> 을 사용하는 기초적인 법을 공부해보았다.</p>
+
+<p>실제로 어떻게 쓰일지 간단한 프로젝트를 셋팅하면서 연습해봐야겟다.</p>
+
+<h4 id="참고-사이트">참고 사이트</h4>
+
+<hr>
+
+<p><a href="https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8">https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8</a></p>
 
         
       </section>
@@ -1074,23 +1294,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EC%95%9E+%EC%88%98%EB%93%A4+%EB%B3%B4%EB%8B%A4+%ED%81%B0+%EC%88%98%EB%A7%8C+%EA%B5%AC%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2595%259E-%25EC%2588%2598%25EB%2593%25A4-%25EB%25B3%25B4%25EB%258B%25A4-%25ED%2581%25B0-%25EC%2588%2598%25EB%25A7%258C-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%B0%94%EB%B2%A8%28Babel%29+%EA%B8%B0%EC%B4%88+%EA%B0%9C%EB%85%90+-+Preset%20http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabelPreset%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2595%259E-%25EC%2588%2598%25EB%2593%25A4-%25EB%25B3%25B4%25EB%258B%25A4-%25ED%2581%25B0-%25EC%2588%2598%25EB%25A7%258C-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabelPreset%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2595%259E-%25EC%2588%2598%25EB%2593%25A4-%25EB%25B3%25B4%25EB%258B%25A4-%25ED%2581%25B0-%25EC%2588%2598%25EB%25A7%258C-%25EA%25B5%25AC%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fbabel%2FBabelPreset%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EB%93%B1%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="등수 구하기
+      <a href="/javascript/htmlhandling/" class="pagination--pager" title="Javascript HTML 접근 및 조작
 ">Previous</a>
     
     
-      <a href="/algorithm/%EC%B5%9C%EC%86%8C%EA%B0%92-%EA%B5%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="최소값 구하기
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -1104,77 +1323,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/babel/BabelPreset/" rel="permalink">바벨(Babel) 기초 개념 - Preset
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.21
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">babel-loader</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Preset</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">sass-loader</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">폴리필</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -1343,6 +1491,62 @@
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/closure/closure/" rel="permalink">클로저(Closure)
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.10
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Lexical Scoping</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">클로저(closure)</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>

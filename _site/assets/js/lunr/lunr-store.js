@@ -443,9 +443,15 @@ var store = [{
         "url": "/babel/Babel/",
         "teaser": null
       },{
-        "title": "Javascript html handling",
+        "title": "Javascript HTML 접근 및 조작",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. Javascript로 HTML 데이터를 파싱하고 핸들링하는 방법 기록 1. HTML 태그 정보 접근 예를 들어 아래와 같은 HTML의 XML 데이터가 있다고 하자. Javascript 를 통해서 이 값에 접근해본다. &lt;button data-category-name=\"espresso\" class=\"cafe-category-name btn bg-white shadow mx-1\" &gt; 에스프레소 &lt;/button&gt; &lt;button data-category-name=\"frappuccino\" class=\"cafe-category-name btn bg-white shadow...","categories": ["JavaScript"],
         "tags": ["JavaScript","html","parsing","childNodes"],
         "url": "/javascript/htmlhandling/",
+        "teaser": null
+      },{
+        "title": "바벨(Babel) 기초 개념 - Preset",
+        "excerpt":":raising_hand: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다. 각기 다른 환경을 일원화 시켜주는 바벨에 대해 공부해본다. 해당 포스팅은 김정환님의 강의를 보며 정리하였다. 하단 참조 사이트 참고 1. 실무에서 자주 쓰이는 preset 앞서 공부했던것 같이 플러그인을 모아서 따로 preset 을 만들어서 하는것 보다 현재는 바벨에서 제공하는 프리셋을 사용한다고 한다. 1-1....","categories": ["babel"],
+        "tags": ["F/E","Babel","Preset","폴리필","babel-loader","sass-loader"],
+        "url": "/babel/BabelPreset/",
         "teaser": null
       }]

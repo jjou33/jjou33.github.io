@@ -301,6 +301,10 @@
 <lastmod>2022-02-20T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/babel/BabelPreset/</loc>
+<lastmod>2022-02-21T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/babel</loc>
 </url>
 <url>
@@ -398,5 +402,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page15/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page16/</loc>
 </url>
 </urlset>

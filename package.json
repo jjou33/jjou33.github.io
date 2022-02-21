@@ -33,6 +33,7 @@
     "build:js": "npm run uglify && npm run add-banner"
   },
   "dependencies": {
+    "core-js": "^2.6.12",
     "html-webpack-plugin": "^5.5.0"
   }
 }

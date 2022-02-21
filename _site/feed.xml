@@ -1,4 +1,260 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-20T19:09:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO WORLD</name></author><entry><title type="html">Javascript html handling</title><link href="http://localhost:4000/javascript/htmlhandling/" rel="alternate" type="text/html" title="Javascript html handling" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/htmlhandling</id><content type="html" xml:base="http://localhost:4000/javascript/htmlhandling/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-21T23:41:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">바벨(Babel) 기초 개념 - Preset</title><link href="http://localhost:4000/babel/BabelPreset/" rel="alternate" type="text/html" title="바벨(Babel) 기초 개념 - Preset" /><published>2022-02-21T00:00:00+09:00</published><updated>2022-02-21T00:00:00+09:00</updated><id>http://localhost:4000/babel/BabelPreset</id><content type="html" xml:base="http://localhost:4000/babel/BabelPreset/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;각기 다른 환경을 일원화 시켜주는 &lt;strong&gt;바벨&lt;/strong&gt;에 대해 공부해본다.
+해당 포스팅은 김정환님의 강의를 보며 정리하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;하단 참조 사이트 참고&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-실무에서-자주-쓰이는-preset&quot;&gt;1. 실무에서 자주 쓰이는 preset&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;앞서 공부했던것 같이 플러그인을 모아서 따로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preset&lt;/code&gt; 을 만들어서 하는것 보다 현재는 바벨에서 제공하는 프리셋을 사용한다고 한다.&lt;/p&gt;
+
+&lt;h5 id=&quot;1-1-preset-env&quot;&gt;1-1. preset-env&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;현재 가장 많이 사용하고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preset-env&lt;/code&gt; 에 대해서 알아본다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i @babel/preset-env&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;설치 후&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel.config.js&lt;/code&gt; 파일에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preset-env&lt;/code&gt; preset 을 설정해준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@babel/preset-env&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설정까지 완료되면 기존과 같이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx babel ./src/app.js&lt;/code&gt; 를 실행하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ES5&lt;/code&gt; 로 변환후 노출까지 확인이 된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-target-브라우저&quot;&gt;2. Target 브라우저&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;각 브라우저의 버전마다 지원하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;js&lt;/code&gt; 의 버전이 다르다.
+따라서 이를 설정하는 대로 맞춰서 변환해 주는 법을 알아본다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// babel.config.js&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@babel/preset-env&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;targets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;79&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 크롬 79 를 지원하는 코드로 변환&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ie: &quot;11&quot;, // ie 11까지 지원하는 코드로 변환&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼저 크롬을 명시하고 babel 을 실행해보자.
+결과는 아래와 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;use strict&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ES5&lt;/code&gt; 로 변환되지 않은 이유는 크롬의 79버전이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Arrow-function&lt;/code&gt;을 지원하기 때문이다.
+그럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ie&lt;/code&gt; 까지 추가해서 돌려본다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;use strict&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;결과는 예상했던데로 나오는것을 볼 수 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-폴리필&quot;&gt;3. 폴리필&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ES5&lt;/code&gt; 버전으로 변환이 불가능한 코드를 작성 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel&lt;/code&gt; 을 돌리면 어떻게 될까?&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Promise&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ES5&lt;/code&gt; 로 변환할 수 없기 때문에 결과는 오류를 던진다.
+이럴때 사용하는 것이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;폴리필&lt;/code&gt; 이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// babel.config.js:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@babel/preset-env&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;useBuiltIns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;usage&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 폴리필 사용 방식 지정&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;corejs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// 폴리필 버전 지정&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useBuiltIns&lt;/code&gt; 에 명시하는 방식대로 폴리필이 사용되어 진다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usage&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entry&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 세가지 값을 사용하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;usage&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entry&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;core-js&lt;/code&gt;를 모듈로 가져온다.&lt;/p&gt;
+
+&lt;p&gt;결과는 아래와 같다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;use strict&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;core-js/modules/es6.object.to-string.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;core-js/modules/es6.promise.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;참고문서&quot;&gt;참고문서&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/en/babel-preset-env#usebuiltins&quot;&gt;useBuiltIns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/en/babel-preset-env#corejs&quot;&gt;corejs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-웹팩으로-통합&quot;&gt;4. 웹팩으로 통합&lt;/h4&gt;
+
+&lt;p&gt;위 방식은 기본을 공부하는 과정이었고 실제로 웹팩과 통합하여 많이 쓴다고 한다.&lt;/p&gt;
+
+&lt;h5 id=&quot;4-1-babel-loader&quot;&gt;4-1. babel-loader&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;실무에서 주로 사용하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel-loader&lt;/code&gt; 를 설치하고 사용해보자.&lt;/p&gt;
+
+&lt;p&gt;먼저 설치를 진행하면&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm i babel-loader
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; 파일을 수정한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// webpack.config.js&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// ... 생략&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;js$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;babel-loader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/node_modules/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// node_modules 를 babel-loader 가 처리하지 않도록 제외&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm run build&lt;/code&gt; 를 실행하면 에러를 발생시킨다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR in ./src/app.js
+Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.object.to-string.js&apos; in &apos;/Users/hyunwoo/Desktop/DEV/webpackStudy/src&apos;
+ @ ./src/app.js 1:0-49
+
+ERROR in ./src/app.js
+Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.promise.js&apos; in &apos;/Users/hyunwoo/Desktop/DEV/webpackStudy/src&apos;
+ @ ./src/app.js 2:0-40
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위에서 보았듯이 babel-loader 를 사용하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;corejs&lt;/code&gt; 를 사용하여 대체 불가능한 소스를 변환하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel&lt;/code&gt; 이 변환한 코드를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack&lt;/code&gt; 이 읽다가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;corejs&lt;/code&gt; 를 알지 못하기 때문에 오류를 뱉어낸다.&lt;/p&gt;
+
+&lt;p&gt;그럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;corejs&lt;/code&gt; 패키지를 설치하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i core-js@2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;다시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt; 하면 에러가 사라진다.&lt;/p&gt;
+
+&lt;h4 id=&quot;정리&quot;&gt;정리&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i babel-loader @babel/core&lt;/code&gt; 설치&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel loader&lt;/code&gt; 를 웹팩에서 실행할때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel&lt;/code&gt; 을 실행해야 하기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel/core&lt;/code&gt; 를 설치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; 설정 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel.config.js&lt;/code&gt; 설정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@babel/preset-env&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;targets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// 브라우저 적용 버전&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;79&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;ie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;useBuiltIns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;usage&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 폴리필 사용&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;corejs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useBuiltIns: &quot;usage&quot;&lt;/code&gt; 설정을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ES5&lt;/code&gt; 에서 변환하지 못하는 모듈을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import&lt;/code&gt; 해 온다.
+이때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import&lt;/code&gt; 된 &lt;strong&gt;라이브러리&lt;/strong&gt;를 사용할때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;corejs&lt;/code&gt; 가 사용된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;5-sass-loader-응용&quot;&gt;5. sass-loader 응용&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;위에서 해본 과정을 토대로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sass&lt;/code&gt; 파일을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sass-loader&lt;/code&gt; 를 통해 변환해보자.&lt;/p&gt;
+
+&lt;p&gt;우선 &lt;a href=&quot;https://github.com/webpack-contrib/sass-loader&quot;&gt;sass-loader&lt;/a&gt; 문서를 보고 진행해본다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm i sass-loader sass&lt;/code&gt; 설치가 필요하다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; 에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sass&lt;/code&gt; 를 사용할 수 있게 수정해보자.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;scss|css&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// Creates `style` nodes from JS strings&lt;/span&gt;
+          &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;style-loader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// Translates CSS into CommonJS&lt;/span&gt;
+          &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;css-loader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// Compiles Sass to CSS&lt;/span&gt;
+          &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sass-loader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 실무에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;babel&lt;/code&gt; 을 사용하는 기초적인 법을 공부해보았다.&lt;/p&gt;
+
+&lt;p&gt;실제로 어떻게 쓰일지 간단한 프로젝트를 셋팅하면서 연습해봐야겟다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="babel" /><category term="F/E" /><category term="Babel" /><category term="Preset" /><category term="폴리필" /><category term="babel-loader" /><category term="sass-loader" /><summary type="html">:computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">Javascript HTML 접근 및 조작</title><link href="http://localhost:4000/javascript/htmlhandling/" rel="alternate" type="text/html" title="Javascript HTML 접근 및 조작" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/htmlhandling</id><content type="html" xml:base="http://localhost:4000/javascript/htmlhandling/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -89,7 +345,7 @@
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/154837773-d0990c80-77d6-495e-bafa-9e4a0a99edba.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;간단한 예를 들었으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 를 통해서 각 객체가 가지고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;properties&lt;/code&gt; 들을 볼 수 있으니 참고한다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="html" /><category term="parsing" /><category term="childNodes" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">바벨(Babel) 기초 개념</title><link href="http://localhost:4000/babel/Babel/" rel="alternate" type="text/html" title="바벨(Babel) 기초 개념" /><published>2022-02-19T00:00:00+09:00</published><updated>2022-02-19T00:00:00+09:00</updated><id>http://localhost:4000/babel/Babel</id><content type="html" xml:base="http://localhost:4000/babel/Babel/">&lt;hr /&gt;
+&lt;p&gt;간단한 예를 들었으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 를 통해서 각 객체가 가지고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;properties&lt;/code&gt; 들을 볼 수 있으니 참고한다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="html" /><category term="parsing" /><category term="childNodes" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">바벨(Babel) 기초 개념</title><link href="http://localhost:4000/babel/Babel/" rel="alternate" type="text/html" title="바벨(Babel) 기초 개념" /><published>2022-02-19T00:00:00+09:00</published><updated>2022-02-19T00:00:00+09:00</updated><id>http://localhost:4000/babel/Babel</id><content type="html" xml:base="http://localhost:4000/babel/Babel/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -382,7 +638,7 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="babel" /><category term="F/E" /><category term="Babel" /><category term="바벨 기초개념" /><summary type="html">:computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">VSCode 유용한 플러그인 목록</title><link href="http://localhost:4000/devenv/vscodePlugIn/" rel="alternate" type="text/html" title="VSCode 유용한 플러그인 목록" /><published>2022-02-15T00:00:00+09:00</published><updated>2022-02-15T00:00:00+09:00</updated><id>http://localhost:4000/devenv/vscodePlugIn</id><content type="html" xml:base="http://localhost:4000/devenv/vscodePlugIn/">&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/22/frontend-dev-env-babel.html#3-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="babel" /><category term="F/E" /><category term="Babel" /><category term="바벨 기초개념" /><summary type="html">:computer: 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">VSCode 유용한 플러그인 목록</title><link href="http://localhost:4000/devenv/vscodePlugIn/" rel="alternate" type="text/html" title="VSCode 유용한 플러그인 목록" /><published>2022-02-15T00:00:00+09:00</published><updated>2022-02-15T00:00:00+09:00</updated><id>http://localhost:4000/devenv/vscodePlugIn</id><content type="html" xml:base="http://localhost:4000/devenv/vscodePlugIn/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개발환경 설정과 관련된 설정을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -399,7 +655,7 @@
   &lt;li&gt;문법 검사 : ESLint, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eg2.tslint&quot;&gt;TSLint&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;실습 환경 보조 : &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&quot;&gt;Live Server&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;기타 : &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode&quot;&gt;Prettier&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager&quot;&gt;Project Manager&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag&quot;&gt;Auto Close Tag&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens&quot;&gt;GitLens&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings&quot;&gt;Atom Keymap&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings&quot;&gt;Jetbrains IDE Keymap&lt;/a&gt; 등&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="devEnv" /><category term="VS Code" /><category term="Plugin" /><category term="유용한 플러그인 모음" /><summary type="html">:computer: VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">클로저(Closure)</title><link href="http://localhost:4000/closure/closure/" rel="alternate" type="text/html" title="클로저(Closure)" /><published>2022-02-10T00:00:00+09:00</published><updated>2022-02-10T00:00:00+09:00</updated><id>http://localhost:4000/closure/closure</id><content type="html" xml:base="http://localhost:4000/closure/closure/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="devEnv" /><category term="VS Code" /><category term="Plugin" /><category term="유용한 플러그인 모음" /><summary type="html">:computer: VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">클로저(Closure)</title><link href="http://localhost:4000/closure/closure/" rel="alternate" type="text/html" title="클로저(Closure)" /><published>2022-02-10T00:00:00+09:00</published><updated>2022-02-10T00:00:00+09:00</updated><id>http://localhost:4000/closure/closure</id><content type="html" xml:base="http://localhost:4000/closure/closure/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -554,7 +810,7 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&quot;&gt;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="closure" /><category term="F/E" /><category term="클로저(closure)" /><category term="Lexical Scoping" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Vue Life Cycle</title><link href="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/" rel="alternate" type="text/html" title="Vue Life Cycle" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-08T00:00:00+09:00</updated><id>http://localhost:4000/vuelife/Vue%20%EB%9D%BC%EC%9D%B4%ED%94%84%20%EC%82%AC%EC%9D%B4%ED%81%B4</id><content type="html" xml:base="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/">&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&quot;&gt;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="closure" /><category term="F/E" /><category term="클로저(closure)" /><category term="Lexical Scoping" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Vue Life Cycle</title><link href="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/" rel="alternate" type="text/html" title="Vue Life Cycle" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-08T00:00:00+09:00</updated><id>http://localhost:4000/vuelife/Vue%20%EB%9D%BC%EC%9D%B4%ED%94%84%20%EC%82%AC%EC%9D%B4%ED%81%B4</id><content type="html" xml:base="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -684,7 +940,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&quot;&gt;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="vuelife" /><category term="F/E" /><category term="Vue" /><category term="instance life Cycle" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">VirtualDOM(가상돔)</title><link href="http://localhost:4000/virtualdom/VirtualDOM/" rel="alternate" type="text/html" title="VirtualDOM(가상돔)" /><published>2022-02-06T00:00:00+09:00</published><updated>2022-02-06T00:00:00+09:00</updated><id>http://localhost:4000/virtualdom/VirtualDOM</id><content type="html" xml:base="http://localhost:4000/virtualdom/VirtualDOM/">&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="vuelife" /><category term="F/E" /><category term="Vue" /><category term="instance life Cycle" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">VirtualDOM(가상돔)</title><link href="http://localhost:4000/virtualdom/VirtualDOM/" rel="alternate" type="text/html" title="VirtualDOM(가상돔)" /><published>2022-02-06T00:00:00+09:00</published><updated>2022-02-06T00:00:00+09:00</updated><id>http://localhost:4000/virtualdom/VirtualDOM</id><content type="html" xml:base="http://localhost:4000/virtualdom/VirtualDOM/">&lt;hr /&gt;
 &lt;p&gt;ㅃ
 :raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -744,7 +1000,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://velog.io/@planethoon/Virtual-DOM&quot;&gt;https://velog.io/@planethoon/Virtual-DOM&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.hanumoka.net/2018/08/15/web-20180815-web-virtual-dom/&quot;&gt;https://www.hanumoka.net/2018/08/15/web-20180815-web-virtual-dom/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="virtualdom" /><category term="VirtualDOM" /><category term="SPA" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Cookie &amp;amp; Session 개념 및 정리</title><link href="http://localhost:4000/cookiesession/cookiesession/" rel="alternate" type="text/html" title="Cookie &amp;amp; Session 개념 및 정리" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/cookiesession/cookiesession</id><content type="html" xml:base="http://localhost:4000/cookiesession/cookiesession/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="virtualdom" /><category term="VirtualDOM" /><category term="SPA" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Cookie &amp;amp; Session 개념 및 정리</title><link href="http://localhost:4000/cookiesession/cookiesession/" rel="alternate" type="text/html" title="Cookie &amp;amp; Session 개념 및 정리" /><published>2022-01-30T00:00:00+09:00</published><updated>2022-01-30T00:00:00+09:00</updated><id>http://localhost:4000/cookiesession/cookiesession</id><content type="html" xml:base="http://localhost:4000/cookiesession/cookiesession/">&lt;hr /&gt;
 &lt;p&gt;ㅃ
 :raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -936,7 +1192,7 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://interconnection.tistory.com/74&quot;&gt;https://interconnection.tistory.com/74&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="cookiesession" /><category term="Cookie(쿠키)" /><category term="Session(세션)" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">에라토스테네스의 체(소수구하기)</title><link href="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/" rel="alternate" type="text/html" title="에라토스테네스의 체(소수구하기)" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="cookiesession" /><category term="Cookie(쿠키)" /><category term="Session(세션)" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">에라토스테네스의 체(소수구하기)</title><link href="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/" rel="alternate" type="text/html" title="에라토스테네스의 체(소수구하기)" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/">&lt;hr /&gt;
 &lt;p&gt;ㅃ
 :raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1033,7 +1289,7 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
   &lt;li&gt;&lt;a href=&quot;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&quot;&gt;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&quot;&gt;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&quot;&gt;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="에라토스테네스의 체" /><category term="소수" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 실습 (7) - 주요 Plugin 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/" rel="alternate" type="text/html" title="Webpack 실습 (7) - 주요 Plugin 실습" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day7</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="에라토스테네스의 체" /><category term="소수" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Webpack 실습 (7) - 주요 Plugin 실습</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/" rel="alternate" type="text/html" title="Webpack 실습 (7) - 주요 Plugin 실습" /><published>2022-01-23T00:00:00+09:00</published><updated>2022-01-23T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day7</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1370,161 +1626,4 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Plugin" /><category term="주요 Plugin" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry><entry><title type="html">Webpack 실습 (6) - Plugin 기본 개념정리</title><link href="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/" rel="alternate" type="text/html" title="Webpack 실습 (6) - Plugin 기본 개념정리" /><published>2022-01-19T00:00:00+09:00</published><updated>2022-01-19T00:00:00+09:00</updated><id>http://localhost:4000/webpack/webpack%20%EC%8B%A4%EC%8A%B5%20day6</id><content type="html" xml:base="http://localhost:4000/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;실무에서 주로 사용하는 대표적인 로더들에 대한 실습을 진행해본다.&lt;/p&gt;
-
-&lt;h4 id=&quot;1-plugin-이란-무엇이며-역할은-무엇일까&quot;&gt;1. Plugin 이란 무엇이며 역할은 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;loader&lt;/code&gt; 를 통해서 파일단위로 다양한 처리를 하였다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 을 통해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundling&lt;/code&gt; 된 결과물을 처리한다.
-예를 들면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundling&lt;/code&gt; 된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;javascript&lt;/code&gt; 를 난독화하거나 특정 텍스트를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;추출&lt;/code&gt; 하는 용도이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-plugin-구현-실습&quot;&gt;2. Plugin 구현 실습&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;현재 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack&lt;/code&gt; &lt;a href=&quot;https://webpack.js.org/contribute/writing-a-plugin/&quot;&gt;공식 문서&lt;/a&gt;를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;custom&lt;/code&gt; 예제들을 많이 찾을 수 있다.&lt;/p&gt;
-
-&lt;p&gt;공식 문서에 있는 예제를 하나 가져와서 프로젝트에 만들어 보았다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//my-webpack-plugin.js&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Custom 화 한 plugin&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyWebpackPlugin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// plugin 이 종료되면 2번째 인자로 준 Callback 함수가 실행된다.&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hooks&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;My Plugin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;MyPlugin: done&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my-webpack-plugin.js&lt;/code&gt; 파일에 위와 같이 클레스를 정의한다.
-위 클레스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apply&lt;/code&gt; 함수에서 제공하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;complier&lt;/code&gt; 를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack build&lt;/code&gt; 가 끝나는 시점에 2번째 인자로 준 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;callback&lt;/code&gt; 함수가 실행되도록 할 계획으로 작성된 코드이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;complier&lt;/code&gt; 에 대해서는 정확히 이해가 되지 않아 좀 더 찾아봐서 추후에 따로 정리를 한번 해야될것 같다…ㅠ&lt;/p&gt;
-
-&lt;p&gt;우선 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 을 대신할 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;js&lt;/code&gt; 파일을 만들었으므로, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; 에 위 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;js&lt;/code&gt; 를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 처럼 실행하도록 설정을 바꿔보자&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyWebpackPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./my-webpack-plugin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./src/app.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./dist&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[name].js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyWebpackPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Class 객체 생성&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;loader&lt;/code&gt; 에 대한 설정을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;modules&lt;/code&gt; 에 작성하였다면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugins&lt;/code&gt; 에 작성하면 된다.
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;my-webpack-plugin.js&lt;/code&gt; 에서 작성한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; 에 대한 객체를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt; 를 통해 생성한다.&lt;/p&gt;
-
-&lt;p&gt;그 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt; 를 하면 어떻게 될까?&lt;/p&gt;
-
-&lt;h5 id=&quot;결과&quot;&gt;결과&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150137582-2ed54efa-f0d9-4a0c-9741-6894ee140c92.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;loader&lt;/code&gt; 를 실습할때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;module&lt;/code&gt;에 설정한 동작이 파일하나 혹은 여러개에 대해 반복 되었지만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 의 경우 한번만 동작하는 것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이유는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundling&lt;/code&gt; 된 결과물을 대상으로 즉, 우리가 자주 했던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.js&lt;/code&gt; ? 라 생각하면 될것 같다.
-어쨋든 이런 결과물을 대상으로 동작한다고 한다.&lt;/p&gt;
-
-&lt;p&gt;따라서, 우리가 실습에서 생성하는 결과물 파일은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.js&lt;/code&gt; 하나이기 때문에 한번만 동작하는 것을 확인할 수 있었다.&lt;/p&gt;
-
-&lt;h4 id=&quot;3-bannerplugin-의-compliation-인자&quot;&gt;3. BannerPlugin 의 Compliation 인자&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lcxfs1991/banner-webpack-plugin/blob/master/index.js&quot;&gt;BannerPlugin 코드&lt;/a&gt;(Webpack 의 내장 플러그인) 를 참고한 예제 코드를 가져와 보았다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Custom 화 한 plugin&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyWebpackPlugin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// plugin 이 종료되면 2번째 인자로 준 Callback 함수가 실행된다.&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// compiler.hooks.done.tap(&quot;My Plugin&quot;, (stats) =&amp;gt; {&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//   console.log(&quot;MyPlugin: done&quot;);&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// });&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// compiler.plugin() 함수로 후처리한다&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;emit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compilation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// Compliation 을 통해서 Webpack 이 번들링 한 결과물에 대한 접근을 할 수 있다.&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;compilation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;main.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MyWebpackPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source&lt;/code&gt; 를 찍어보니 진짜 번들링된것 같은 로그를 볼 수 있었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150140462-0582856e-333b-4efa-9176-8220253ac3c7.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그렇다면 실습으로 이번엔 해당 소스를 재정의 하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundling&lt;/code&gt; 된 결과 상단에 지정한 문자열을 추가하도록 하는 소스로 실습하였다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;emit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compilation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Compliation 을 통해서 Webpack 이 번들링 한 결과물에 대한 접근을 할 수 있다.&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;compilation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;main.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 번들링 된 main.js 파일 상단에 banner 문자열이 추가되도록 하는 소스&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;compilation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;main.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;banner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/**&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; * 이것은 BannerPlugin이 처리한 결과입니다.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; * Build Date: 2022-01-19&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; */&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;banner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;결과-1&quot;&gt;결과&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150141571-77c5ffe0-ba5c-4702-813a-383bdde61168.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위처럼 결과물인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main.js&lt;/code&gt; 파일 최상단에 입력한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;banner&lt;/code&gt; 내용이 들어가 있는 것을 볼 수 있다.&lt;/p&gt;
-
-&lt;h4 id=&quot;4-최종-정리&quot;&gt;4. 최종 정리&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;결과적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; 이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;webpack&lt;/code&gt; 이 번들링을 통해 여러개의 파일을 합치게 된 결과물에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후처리&lt;/code&gt; 를 한다고 이해하면 될 것 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150142194-fb1dc330-bc34-4184-9c66-99bb9dedf1cb.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;즉, 위 사진에서 빨간색으로 표시한 부분에서 최종적으로 번들링된 각각의 파일들에 대하여 원하는대로 처리를 한다고 이해하면 될 것 같다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&quot;&gt;https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Plugin" /><category term="기본개념" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="webpack" /><category term="Webpack" /><category term="Plugin" /><category term="주요 Plugin" /><summary type="html">:computer: 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.</summary></entry></feed>
