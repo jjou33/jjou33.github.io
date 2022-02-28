@@ -454,4 +454,10 @@ var store = [{
         "tags": ["F/E","Babel","Preset","폴리필","babel-loader","sass-loader"],
         "url": "/babel/BabelPreset/",
         "teaser": null
+      },{
+        "title": "공주구하기(Queue)",
+        "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 주어진 n 명의 인원을 순서대로 세워놓고 각자의 번호를 부여받으며, k 번째마다 탈락하며, 탈락한 인원을 제하고 순서는 그대로 이어간다. 마지막 남는 사람이 공주를 구한다. 공주구하는 인원 구하라. 2. 코드 function solution(n, k) { // n 까지의...","categories": ["Algorithm"],
+        "tags": ["Programming","Array","Queue"],
+        "url": "/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
