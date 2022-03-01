@@ -27,7 +27,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .initial-content,
@@ -69,11 +69,11 @@ body {
 }
 
 .page__title {
-  font-family: $serif;
+  font-family: $monospace;
   margin-top: 0;
   line-height: 1.2;
   color: #8cd2d5;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 0.5em;
 
   & + .page__meta {
@@ -83,7 +83,7 @@ body {
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
 .page__content {
@@ -94,29 +94,34 @@ body {
     border-bottom: 1px solid $border-color;
   }
 
-	h1, h2, h3, h4, h5, h6 {
-		.header-link {
-			position: relative;
-			left: 0.5em;
-			opacity: 0;
-			font-size: 0.6em;
-			-webkit-transition: opacity 0.2s ease-in-out 0.1s;
-			-moz-transition: opacity 0.2s ease-in-out 0.1s;
-			-o-transition: opacity 0.2s ease-in-out 0.1s;
-			transition: opacity 0.2s ease-in-out 0.1s;
-		}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    .header-link {
+      position: relative;
+      left: 0.5em;
+      opacity: 0;
+      font-size: 0.6em;
+      -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+      -moz-transition: opacity 0.2s ease-in-out 0.1s;
+      -o-transition: opacity 0.2s ease-in-out 0.1s;
+      transition: opacity 0.2s ease-in-out 0.1s;
+    }
 
-		&:hover .header-link {
-			opacity: 1;
-		}
-	}
+    &:hover .header-link {
+      opacity: 1;
+    }
+  }
 
   p,
   li,
   dl {
     font-size: 1em;
     strong {
-      color: #dadaa0;
+      color: #6dd2f0;
     }
   }
 
@@ -134,13 +139,13 @@ body {
   }
 
   p strong {
-    color: #dadaa0;
+    color: #6dd2f0;
   }
 
   a:not(.btn) {
     &:hover {
       text-decoration: underline;
- 
+
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
       }
@@ -218,7 +223,7 @@ body {
     }
 
     .page__title {
-      font-size: 1.0em;
+      font-size: 1em;
 
       @include breakpoint($small) {
         font-size: $type-size-1;
@@ -242,7 +247,7 @@ body {
   color: #fff;
   font-family: $caption-font-family;
   font-size: $type-size-7;
-  background: #43433c ;
+  background: #43433c;
   text-align: right;
   z-index: 5;
   opacity: 0.5;
@@ -319,7 +324,6 @@ body {
   }
 
   strong {
-    
     margin-right: 10px;
   }
 }
@@ -334,13 +338,13 @@ body {
   border-radius: $border-radius;
   background-color: #daaca0;
   font-family: $serif;
-  color:#000;
+  color: #000;
   a {
-    color:#000
+    color: #000;
   }
   &:hover {
     text-decoration: none;
-    color:  #da1b64;/* 커서 댈 때 색깔 */
+    color: #da1b64; /* 커서 댈 때 색깔 */
   }
 }
 
@@ -352,7 +356,7 @@ body {
   text-decoration: none;
   border: 1px solid $background-color;
   border-radius: $border-radius;
-  background-color:#8cd2d5;
+  background-color: #8cd2d5;
   font-family: $serif;
   color: #000;
 
@@ -361,7 +365,6 @@ body {
     color: mix(#00adb5, $text-color, 40%); /* 커서 댈 때 색깔 */
   }
 }
-
 
 .taxonomy__section {
   margin-bottom: 2em;
@@ -374,17 +377,17 @@ body {
   .archive__item-title {
     font-size: 0.9em;
     margin-top: 0;
-    color: #43433c ;
+    color: #43433c;
     margin-bottom: 0.3em;
     a {
-      font-size: 1.0em;
+      font-size: 1em;
       color: #8cd2d5;
     }
   }
 
   .archive__subtitle {
     font-size: 1.2em;
-    color: #dadaa0;
+    color: #8cd2d5;
     clear: both;
     border: 0;
   }
@@ -424,7 +427,7 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    color: #8cd2d5;
+    color: #e5f4ee;
     text-decoration: none;
     border-bottom: 1px solid $border-color;
     font-family: $global-font-family;

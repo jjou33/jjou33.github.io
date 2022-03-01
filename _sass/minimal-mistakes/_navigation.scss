@@ -497,7 +497,7 @@
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid $border-color;
-  color: #dadaa0 ;
+  color: #e3e989;
 }
 
 /*
@@ -516,7 +516,7 @@
   .nav__title {
     color: rgba(0, 0, 0, 0.541);
     font-size: $type-size-6;
-    background: #ffd24d;
+    background: #6dd2f0;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
@@ -569,6 +569,6 @@
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 3.25rem
+    padding-left: 3.25rem;
   }
 }
