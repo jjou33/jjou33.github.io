@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-01T22:44:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">공주구하기(Queue)</title><link href="http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="공주구하기(Queue)" /><published>2022-02-28T00:00:00+09:00</published><updated>2022-02-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-04T21:58:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">공주구하기(Queue)</title><link href="http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="공주구하기(Queue)" /><published>2022-02-28T00:00:00+09:00</published><updated>2022-02-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -429,7 +429,52 @@ Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.promise.js
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/154837773-d0990c80-77d6-495e-bafa-9e4a0a99edba.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;간단한 예를 들었으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 를 통해서 각 객체가 가지고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;properties&lt;/code&gt; 들을 볼 수 있으니 참고한다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="html" /><category term="parsing" /><category term="childNodes" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">바벨(Babel) 기초 개념</title><link href="http://localhost:4000/babel/Babel/" rel="alternate" type="text/html" title="바벨(Babel) 기초 개념" /><published>2022-02-19T00:00:00+09:00</published><updated>2022-02-19T00:00:00+09:00</updated><id>http://localhost:4000/babel/Babel</id><content type="html" xml:base="http://localhost:4000/babel/Babel/">&lt;hr /&gt;
+&lt;p&gt;간단한 예를 들었으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;console.dir&lt;/code&gt; 를 통해서 각 객체가 가지고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;properties&lt;/code&gt; 들을 볼 수 있으니 참고한다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="html" /><category term="parsing" /><category term="childNodes" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">preventDefault</title><link href="http://localhost:4000/javascript/htmlhandling-copy/" rel="alternate" type="text/html" title="preventDefault" /><published>2022-02-20T00:00:00+09:00</published><updated>2022-02-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/htmlhandling%20copy</id><content type="html" xml:base="http://localhost:4000/javascript/htmlhandling-copy/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;공부를 하다가 리마인드할겸 간단하게 적어본다.
+이벤트 코드 관련 동작에서 많이 사용되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preventDefault&lt;/code&gt;에 대하여 기록해본다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-epreventdefault-는-무엇인가&quot;&gt;2. e.preventDefault() 는 무엇인가?&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다.
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submit&lt;/code&gt; 혹은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;, &amp;lt;input&amp;gt;, &amp;lt;textarea&amp;gt; ..Tag&lt;/code&gt; 등의 태그를 통한 이벤트가 발생할 경우 새로고침 되는것을 막아준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a Tag&lt;/code&gt; 의 경우 정의한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;url&lt;/code&gt; 로 페이지를 이동해주는 기능을 가지고 있으나, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preventDefault&lt;/code&gt; 메서드를 실행시키면 이동하지 않는것과 같다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-실행-예&quot;&gt;3. 실행 예&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;우선 첫번째로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a Tag&lt;/code&gt; 를 사용하되, 사용자가 클릭하였을때 실제로 동작하지 않게 하기 위해서 위 메서드를 사용할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;검색어를 입력하세요&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;autofocus&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;reset&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn-reset&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;FormView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bindEvents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inputEl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;keyup&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onKeyup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resetEl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드에서 &lt;strong&gt;네이버 이동&lt;/strong&gt; 태그를 누르면 네이버로 이동하지만 preventDefault 메서드로 인하여 이동하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;두번째로는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submit&lt;/code&gt; 의 활용이다.
+보통 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submit&lt;/code&gt; 이벤트를 호출하는 순간 페이지가 깜빡이며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reload&lt;/code&gt; 되는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preventDefault&lt;/code&gt; 를 통해 이를 막아준다.&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="JavaScript" /><category term="JavaScript" /><category term="preventDefault" /><category term="Event" /><summary type="html">:computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">바벨(Babel) 기초 개념</title><link href="http://localhost:4000/babel/Babel/" rel="alternate" type="text/html" title="바벨(Babel) 기초 개념" /><published>2022-02-19T00:00:00+09:00</published><updated>2022-02-19T00:00:00+09:00</updated><id>http://localhost:4000/babel/Babel</id><content type="html" xml:base="http://localhost:4000/babel/Babel/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1276,101 +1321,4 @@ connectionless의 연결비용을 줄이는 것을 장점으로 비연결지향�
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://interconnection.tistory.com/74&quot;&gt;https://interconnection.tistory.com/74&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="cookiesession" /><category term="Cookie(쿠키)" /><category term="Session(세션)" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry><entry><title type="html">에라토스테네스의 체(소수구하기)</title><link href="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/" rel="alternate" type="text/html" title="에라토스테네스의 체(소수구하기)" /><published>2022-01-28T00:00:00+09:00</published><updated>2022-01-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/">&lt;hr /&gt;
-&lt;p&gt;ㅃ
-:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-소수&quot;&gt;1. 소수&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수&lt;/code&gt;에 대한 정의를 살펴볼 필요가 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소수는 1과 자기 자신으로만 나누어지는 수 이다.&lt;/li&gt;
-  &lt;li&gt;1은 소수가 아니다.&lt;/li&gt;
-  &lt;li&gt;모든 자연수는 소수들의 곱으로 표현된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위 개념을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에라토스테네스의 체&lt;/code&gt; 알고리즘을 알아보도록 한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-에라토스테네스의-체란&quot;&gt;2. 에라토스테네스의 체란?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;그럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;에라토스테네스의 체&lt;/code&gt; 가 무엇인지 알아보면 아래와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/150643048-607924d7-0b97-4c2e-832c-28a850e46c62.gif&quot; alt=&quot;264D383952BCC9CC31&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;주어진 숫자의 n의 제곱근 즉, 루트(n)의 값보다 작은 수의 배수를 모조리 n 보다 작은 범위에서 제거하면 된다는 개념을 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;자세한 개념은 아래 위키에서 확인하면 되며, 그럼 코드를 통해 확인해본 결과를 통해 조금 더 이해할 수 있도록 정리해보자.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-코드&quot;&gt;2. 코드&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PrimeNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 주어진 n 개의 true 값으로 채워진 배열을 만들고 0,1 은 false 로 변경&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 소수가 아닌 것들을 false 로 변경&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;3-결과정리&quot;&gt;3. 결과정리&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;먼저&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 코드를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 까지의 숫자를 의미하는 배열을 만들고 각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 값을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; 로 셋팅한다.
-그리고 0과 1은 소수가 아니므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 치환한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 소수가 아닌 것들을 false 로 변경&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true / false&lt;/code&gt; 의 의미는 각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 가 의미하는 숫자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수인지 아닌지&lt;/code&gt; 를 알려주는 것이다.&lt;/p&gt;
-
-&lt;p&gt;그럼 결과적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0 ~ n&lt;/code&gt; 까지만큼의 배열이 만들어져있고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0,1&lt;/code&gt; 번째만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 값이 변경된 배열을 셋팅할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그후 반복문으로 들어가게 되는데 처음 시작은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt; 부터 시작하므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i=2&lt;/code&gt; 로 셋팅하고 제곱수가 주어진 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 의 값 보다 작거나 같은경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true/false&lt;/code&gt; 를 확인한다.&lt;/p&gt;
-
-&lt;p&gt;여기까지 통과가 되면 해당 숫자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 는 소수로 인정하며 이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; 의 배수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제거(false 로 변경)&lt;/code&gt; 하는 작업을 진행한다.&lt;/p&gt;
-
-&lt;p&gt;즉, 2의 제곱 수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4&lt;/code&gt; 가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt; 가 되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt;보다 작은 수 이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;arr[4]&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt; 로 변경된 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j += i&lt;/code&gt; 을통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6,8,10&lt;/code&gt; 이 지워지게 된다.
-이렇게 되면 그다음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;값은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;이 되고 그다음은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4&lt;/code&gt;이지만 이미 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt; 의 배수로 지워졌기 때문에 소수가 아니라 판별하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5&lt;/code&gt; 로 넘어가게 된다.&lt;/p&gt;
-
-&lt;p&gt;이런식으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt; 보다 작은 각 배수들을 지워나가다 보면 결국 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt; 로 남아 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index&lt;/code&gt; 가 의미하는 숫자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Prime Number&lt;/code&gt; 즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;소수&lt;/code&gt;가 되는 것이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&quot;&gt;https://velog.io/@jakeseo_me/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-14-%EC%86%8C%EC%88%98-%EC%B0%BE%EA%B8%B0-%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&quot;&gt;https://namu.wiki/w/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%20%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&quot;&gt;https://ko.wikipedia.org/wiki/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98_%EC%B2%B4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="Algorithm" /><category term="Programming" /><category term="에라토스테네스의 체" /><category term="소수" /><summary type="html">:computer: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="cookiesession" /><category term="Cookie(쿠키)" /><category term="Session(세션)" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry></feed>

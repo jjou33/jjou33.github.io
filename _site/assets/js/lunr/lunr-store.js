@@ -443,6 +443,12 @@ var store = [{
         "url": "/babel/Babel/",
         "teaser": null
       },{
+        "title": "preventDefault",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 개요 공부를 하다가 리마인드할겸 간단하게 적어본다. 이벤트 코드 관련 동작에서 많이 사용되는 preventDefault에 대하여 기록해본다. 2. e.preventDefault() 는 무엇인가? 해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit 혹은 &lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag 등의 태그를 통한 이벤트가 발생할 경우 새로고침...","categories": ["JavaScript"],
+        "tags": ["JavaScript","preventDefault","Event"],
+        "url": "/javascript/htmlhandling-copy/",
+        "teaser": null
+      },{
         "title": "Javascript HTML 접근 및 조작",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. Javascript로 HTML 데이터를 파싱하고 핸들링하는 방법 기록 1. HTML 태그 정보 접근 예를 들어 아래와 같은 HTML의 XML 데이터가 있다고 하자. Javascript 를 통해서 이 값에 접근해본다. &lt;button data-category-name=\"espresso\" class=\"cafe-category-name btn bg-white shadow mx-1\" &gt; 에스프레소 &lt;/button&gt; &lt;button data-category-name=\"frappuccino\" class=\"cafe-category-name btn bg-white shadow...","categories": ["JavaScript"],
         "tags": ["JavaScript","html","parsing","childNodes"],
