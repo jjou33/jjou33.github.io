@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>preventDefault - Hippo Dev Blog</title>
-<meta name="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
+<!-- begin _includes/seo.html --><title>실행 컨텍스트(Execution Context) - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO MY WORLD">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="preventDefault">
-<meta property="og:url" content="http://localhost:4000/javascript/htmlhandling-copy/">
+<meta property="og:title" content="실행 컨텍스트(Execution Context)">
+<meta property="og:url" content="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">
 
 
-  <meta property="og:description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2022-02-20T00:00:00+09:00">
+  <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-03-09T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/javascript/htmlhandling-copy/">
+
+<link rel="canonical" href="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">
 
 
 
@@ -262,7 +262,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            <img class="emoji" title=":books:" alt=":books:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" height="20" width="20"> <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅  <span style="font-family:'Coming Soon';">78 <span style="font-family:'Cafe24Oneprettynight';">개 
+            <img class="emoji" title=":books:" alt=":books:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png" height="20" width="20"> <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅  <span style="font-family:'Coming Soon';">79 <span style="font-family:'Cafe24Oneprettynight';">개 
       </span></span></span>
 </li>
       <li>
@@ -273,6 +273,8 @@
                 
                     
                         <li><a href="/categories/Algorithm" class=""><img class="emoji" title=":black_nib:" alt=":black_nib:" src="https://github.githubassets.com/images/icons/emoji/unicode/2712.png" height="20" width="20"> Algorithm (23)</a></li>
+                    
+                
                     
                 
                     
@@ -345,6 +347,8 @@
             
                 
             
+                
+            
         </ul>
         
         <ul>
@@ -353,6 +357,8 @@
             
                 
                     <li><a href="/categories/webpack" class=""><img class="emoji" title=":pencil2:" alt=":pencil2:" src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png" height="20" width="20"> Webpack (20)</a></li>
+                
+            
                 
             
                 
@@ -420,6 +426,8 @@
                     <li><a href="/categories/babel" class=""><img class="emoji" title=":pencil2:" alt=":pencil2:" src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png" height="20" width="20"> 바벨(Babel) (2)</a></li>
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -429,6 +437,8 @@
             
                 
                     <li><a href="/categories/JavaScript" class=""><img class="emoji" title=":pencil2:" alt=":pencil2:" src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png" height="20" width="20"> JavaScript Basic (13)</a></li>
+                
+            
                 
             
                 
@@ -494,6 +504,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -515,6 +527,8 @@
             
                 
                     <li><a href="/categories/devhistory" class=""><img class="emoji" title=":pencil2:" alt=":pencil2:" src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png" height="20" width="20"> Develope History (3)</a></li>
+                
+            
                 
             
                 
@@ -571,6 +585,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -608,6 +624,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -621,6 +639,8 @@
             
                 
                     <li><a href="/categories/browserProcess" class=""> <img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> 브라우저 동작원리 (2)</a></li>
+                
+            
                 
             
                 
@@ -682,6 +702,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -705,6 +727,8 @@
             
                 
                     <li><a href="/categories/spa" class=""> <img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> Single Page Application (1)</a></li>
+                
+            
                 
             
                 
@@ -756,6 +780,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -793,6 +819,47 @@
             
                 
             
+                
+            
+        </ul>
+         <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <li><a href="/categories/executionContext" class=""> <img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> 실행 컨텍스트(Execution Context) (1)</a></li>
+                
+            
         </ul>
         <span class="nav__sub-title">
         <img class="emoji" title=":blue_book:" alt=":blue_book:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d8.png" height="20" width="20"> Develope Env(개발환경) </span>
@@ -809,6 +876,8 @@
             
                 
                     <li><a href="/categories/mac" class=""> <img class="emoji" title=":mag:" alt=":mag:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f50d.png" height="20" width="20"> MAC OS 설정 및 오류(2)</a></li>
+                
+            
                 
             
                 
@@ -872,6 +941,8 @@
             
                 
             
+                
+            
         </ul>
         <ul>
             
@@ -909,6 +980,8 @@
             
                 
             
+                
+            
         </ul>
       </li>
   </ul>
@@ -919,15 +992,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="preventDefault">
-    <meta itemprop="description" content=":computer: JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2022-02-20T00:00:00+09:00">
+    <meta itemprop="headline" content="실행 컨텍스트(Execution Context)">
+    <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2022-03-09T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            preventDefault
+            실행 컨텍스트(Execution Context)
 
           </h1>
           
@@ -955,11 +1028,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
     <span itemprop="keywords">
     
-      <a class="page__taxonomy-item-tag" rel="tag">Event</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Execution Context</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">preventDefault</a>
+      <a class="page__taxonomy-item-tag" rel="tag">실행컨텍스트</a>
     
     </span>
   </p>
@@ -981,7 +1054,7 @@
     
     
     
-    <a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>
+    <a href="/categories/#executioncontext" class="page__taxonomy-item-category" rel="tag">executionContext</a>
     
 
   </span>
@@ -990,7 +1063,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-20T00:00:00+09:00">February 20, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-09T00:00:00+09:00">March 9, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -1001,8 +1074,8 @@
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
 <li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
-<li><a href="#2-epreventdefault-%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80">2. e.preventDefault() 는 무엇인가?</a></li>
-<li><a href="#3-%EC%8B%A4%ED%96%89-%EC%98%88">3. 실행 예</a></li>
+<li><a href="#2-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 실행 컨텍스트란 무엇일까?</a></li>
+<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
             </nav>
@@ -1010,50 +1083,55 @@
         
         <hr>
 
-<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">JavaScript 문법 내용을 기록하기 위한 포스트입니다.</code></p>
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</code></p>
 <hr>
 
 <h4 id="1-개요">1. 개요</h4>
 
 <hr>
 
-<p>공부를 하다가 리마인드할겸 간단하게 적어본다.
-이벤트 코드 관련 동작에서 많이 사용되는 <code class="language-plaintext highlighter-rouge">preventDefault</code>에 대하여 기록해본다.</p>
+<p>좋은 기회로 프론트 관련 면접을 진행하던 중 <code class="language-plaintext highlighter-rouge">실행컨텍스트(Execution Context)</code> 에 대한 질문을 받게 되었다.</p>
 
-<h4 id="2-epreventdefault-는-무엇인가">2. e.preventDefault() 는 무엇인가?</h4>
+<p>아직 알지 못하는 부분이어서 대답을 잘 하지못하였지만 좋은 경험이었고 이어서 한번 디테일하게 작성해보아야 겠다는 생각이 들었다.</p>
 
-<hr>
+<p>중요한 부분은 이 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>가 <code class="language-plaintext highlighter-rouge">Javascript</code> 에서 굉장히 중요한 역할을 하고 있다는 것이고 아직까지 깊게 공부를 해본적이 없어 이번 기회에 정확히 짚어가고 싶어서 기록을 시작해본다.</p>
 
-<p>해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다.
-<code class="language-plaintext highlighter-rouge">submit</code> 혹은 <code class="language-plaintext highlighter-rouge">&lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag</code> 등의 태그를 통한 이벤트가 발생할 경우 새로고침 되는것을 막아준다.</p>
+<p>여러 기술블로그들을 보며 나름대로 정리해 보았다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">a Tag</code> 의 경우 정의한 <code class="language-plaintext highlighter-rouge">url</code> 로 페이지를 이동해주는 기능을 가지고 있으나, <code class="language-plaintext highlighter-rouge">preventDefault</code> 메서드를 실행시키면 이동하지 않는것과 같다.</p>
-
-<h4 id="3-실행-예">3. 실행 예</h4>
+<h4 id="2-실행-컨텍스트란-무엇일까">2. 실행 컨텍스트란 무엇일까?</h4>
 
 <hr>
 
-<p>우선 첫번째로 <code class="language-plaintext highlighter-rouge">a Tag</code> 를 사용하되, 사용자가 클릭하였을때 실제로 동작하지 않게 하기 위해서 위 메서드를 사용할 수 있다.</p>
+<p>실행 컨텍스트는 아래와 같은 개념을 가지고 있다.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;form&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"검색어를 입력하세요"</span> <span class="na">autofocus</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">class=</span><span class="s">"btn-reset"</span><span class="nt">&gt;&lt;/button&gt;</span>
-  <span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>실행 컨텍스트의 정의
+
+- 실행할 코드에 제공할 환경 정보들을 모아 놓은 객체
+- 자바스크립트의 동적 언어로서의 성격을 가장 잘 파악할 수 있는 개념
 </code></pre></div></div>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">FormView</span><span class="p">.</span><span class="nx">bindEvents</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">());</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">inputEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">onKeyup</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">resetEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
-<span class="p">};</span>
-</code></pre></div></div>
+<p>우리가 이러한 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>를 알아야 하는 이유는 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>가 활성화 될때 발생하는 현상들을 잘 파악하여 개발해야 되기 때문이다.</p>
 
-<p>위 코드에서 <strong>네이버 이동</strong> 태그를 누르면 네이버로 이동하지만 preventDefault 메서드로 인하여 이동하지 않는다.</p>
+<p>먼저 <code class="language-plaintext highlighter-rouge">Javascript</code>는 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>가 활성화 되는 시점에 아래와 같은 현상들이 발생한다.</p>
 
-<p>두번째로는 <code class="language-plaintext highlighter-rouge">submit</code> 의 활용이다.
-보통 <code class="language-plaintext highlighter-rouge">submit</code> 이벤트를 호출하는 순간 페이지가 깜빡이며 <code class="language-plaintext highlighter-rouge">Reload</code> 되는데 <code class="language-plaintext highlighter-rouge">preventDefault</code> 를 통해 이를 막아준다.</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">호이스팅</code>이 발생한다(<a href="https://jjou33.github.io/javascript/Hoisting/">다른 포스팅에서 다루고 있음</a>)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">외부 환경 정보</code>를 <code class="language-plaintext highlighter-rouge">구성</code>한다.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">this</code> 값을 설정한다.</li>
+</ul>
+
+<h4 id="참고-사이트">참고 사이트</h4>
+
+<hr>
+
+<p><a href="https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85">https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85</a></p>
+
+<p><a href="https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html">https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html</a></p>
+
+<p><a href="https://cornswrold.tistory.com/342">https://cornswrold.tistory.com/342</a></p>
 
         
       </section>
@@ -1062,23 +1140,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=preventDefault%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling-copy%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%8B%A4%ED%96%89+%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%28Execution+Context%29%20http%3A%2F%2Flocalhost%3A4000%2Fexecutioncontext%2F%25EC%258B%25A4%25ED%2596%2589%25EC%25BB%25A8%25ED%2585%258D%25EC%258A%25A4%25ED%258A%25B8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling-copy%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fexecutioncontext%2F%25EC%258B%25A4%25ED%2596%2589%25EC%25BB%25A8%25ED%2585%258D%25EC%258A%25A4%25ED%258A%25B8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fhtmlhandling-copy%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fexecutioncontext%2F%25EC%258B%25A4%25ED%2596%2589%25EC%25BB%25A8%25ED%2585%258D%25EC%258A%25A4%25ED%258A%25B8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/babel/Babel/" class="pagination--pager" title="바벨(Babel) 기초 개념
+      <a href="/javascript/preventDefault/" class="pagination--pager" title="preventDefault
 ">Previous</a>
     
     
-      <a href="/javascript/htmlhandling/" class="pagination--pager" title="Javascript HTML 접근 및 조작
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -1092,6 +1169,62 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/preventDefault/" rel="permalink">preventDefault
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.02
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Event</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">JavaScript</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">preventDefault</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
         
           
 
@@ -1275,62 +1408,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> JavaScript 문법과 관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/babel/Babel/" rel="permalink">바벨(Babel) 기초 개념
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.19
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">바벨 기초개념</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.
 </p>
   </article>
 </div>

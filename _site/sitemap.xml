@@ -297,10 +297,6 @@
 <lastmod>2022-02-19T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/javascript/htmlhandling-copy/</loc>
-<lastmod>2022-02-20T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/javascript/htmlhandling/</loc>
 <lastmod>2022-02-20T00:00:00+09:00</lastmod>
 </url>
@@ -311,6 +307,14 @@
 <url>
 <loc>http://localhost:4000/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/</loc>
 <lastmod>2022-02-28T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/javascript/preventDefault/</loc>
+<lastmod>2022-03-02T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/</loc>
+<lastmod>2022-03-09T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/babel</loc>
@@ -341,6 +345,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/eventLoop</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/executionContext</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/git</loc>

@@ -443,12 +443,6 @@ var store = [{
         "url": "/babel/Babel/",
         "teaser": null
       },{
-        "title": "preventDefault",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 개요 공부를 하다가 리마인드할겸 간단하게 적어본다. 이벤트 코드 관련 동작에서 많이 사용되는 preventDefault에 대하여 기록해본다. 2. e.preventDefault() 는 무엇인가? 해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit 혹은 &lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag 등의 태그를 통한 이벤트가 발생할 경우 새로고침...","categories": ["JavaScript"],
-        "tags": ["JavaScript","preventDefault","Event"],
-        "url": "/javascript/htmlhandling-copy/",
-        "teaser": null
-      },{
         "title": "Javascript HTML 접근 및 조작",
         "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. Javascript로 HTML 데이터를 파싱하고 핸들링하는 방법 기록 1. HTML 태그 정보 접근 예를 들어 아래와 같은 HTML의 XML 데이터가 있다고 하자. Javascript 를 통해서 이 값에 접근해본다. &lt;button data-category-name=\"espresso\" class=\"cafe-category-name btn bg-white shadow mx-1\" &gt; 에스프레소 &lt;/button&gt; &lt;button data-category-name=\"frappuccino\" class=\"cafe-category-name btn bg-white shadow...","categories": ["JavaScript"],
         "tags": ["JavaScript","html","parsing","childNodes"],
@@ -465,5 +459,17 @@ var store = [{
         "excerpt":":raising_hand: 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다. 1. 문제 요건 주어진 n 명의 인원을 순서대로 세워놓고 각자의 번호를 부여받으며, k 번째마다 탈락하며, 탈락한 인원을 제하고 순서는 그대로 이어간다. 마지막 남는 사람이 공주를 구한다. 공주구하는 인원 구하라. 2. 코드 function solution(n, k) { // n 까지의...","categories": ["Algorithm"],
         "tags": ["Programming","Array","Queue"],
         "url": "/algorithm/%EA%B3%B5%EC%A3%BC%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "preventDefault",
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 개요 공부를 하다가 리마인드할겸 간단하게 적어본다. 이벤트 코드 관련 동작에서 많이 사용되는 preventDefault에 대하여 기록해본다. 2. e.preventDefault() 는 무엇인가? 해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit 혹은 &lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag 등의 태그를 통한 이벤트가 발생할 경우 새로고침...","categories": ["JavaScript"],
+        "tags": ["JavaScript","preventDefault","Event"],
+        "url": "/javascript/preventDefault/",
+        "teaser": null
+      },{
+        "title": "실행 컨텍스트(Execution Context)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 좋은 기회로 프론트 관련 면접을 진행하던 중 실행컨텍스트(Execution Context) 에 대한 질문을 받게 되었다. 아직 알지 못하는 부분이어서 대답을 잘 하지못하였지만 좋은 경험이었고 이어서 한번 디테일하게 작성해보아야 겠다는 생각이 들었다. 중요한 부분은 이 실행 컨텍스트가 Javascript 에서 굉장히 중요한 역할을 하고...","categories": ["executionContext"],
+        "tags": ["F/E","실행컨텍스트","Execution Context"],
+        "url": "/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/",
         "teaser": null
       }]
