@@ -1076,7 +1076,13 @@
 <li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
 <li><a href="#2-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">2. 실행 컨텍스트란 무엇일까?</a></li>
 <li><a href="#3-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EA%B5%AC%EC%84%B1">3. 실행 컨텍스트 구성</a></li>
-<li><a href="#%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9D%98-call-stack-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B8%B0%EB%8A%A5">실행 컨텍스트의 Call Stack 순서와 기능</a></li>
+<li>
+<a href="#%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9D%98-call-stack-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B8%B0%EB%8A%A5">실행 컨텍스트의 Call Stack 순서와 기능</a><ul>
+<li><a href="#1-variable-environment">1. Variable Environment</a></li>
+<li><a href="#2-lexical-environment">2. Lexical Environment</a></li>
+<li><a href="#3-thisbinding">3. ThisBinding</a></li>
+</ul>
+</li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -1240,12 +1246,16 @@
 <p>위와 같은 소스가 실행되게 되면 어떤 순서로 <code class="language-plaintext highlighter-rouge">Call Stack</code>이 쌓이는지 알아본다.</p>
 
 <ul>
-  <li>Javascript 실행: <code class="language-plaintext highlighter-rouge">[전역컨텍스트]</code>
+  <li>Javascript 실행: <strong>[전역컨텍스트]</strong>
 </li>
-  <li>outer 실행: [전역컨텍스트, outer]</li>
-  <li>inner 실행: [전역컨텍스트, outer, inner]</li>
-  <li>inner 종료: [전역컨텍스트, outer]</li>
-  <li>outer 종료: [전역컨텍스트]</li>
+  <li>outer 실행 : <strong>[전역컨텍스트, outer]</strong>
+</li>
+  <li>inner 실행 : <strong>[전역컨텍스트, outer, inner]</strong>
+</li>
+  <li>inner 종료 : <strong>[전역컨텍스트, outer]</strong>
+</li>
+  <li>outer 종료 : <strong>[전역컨텍스트]</strong>
+</li>
 </ul>
 
 <p><img src="https://user-images.githubusercontent.com/56063287/157466130-18ea5664-1c0d-40e4-a86d-950dea34f04a.png" alt="image"></p>
@@ -1255,17 +1265,43 @@
 </li>
 </ul>
 
-<p><code class="language-plaintext highlighter-rouge">javascript</code>파일이 최초 실행 시점에 <code class="language-plaintext highlighter-rouge">전역 컨텍스트</code>가 활성화되고 <code class="language-plaintext highlighter-rouge">Call Stack</code>에</p>
+<p><code class="language-plaintext highlighter-rouge">javascript</code>파일이 최초 실행 시점에 <code class="language-plaintext highlighter-rouge">전역 컨텍스트</code>가 활성화되고 <code class="language-plaintext highlighter-rouge">Call Stack</code>에 쌓이게 된다.</p>
+
+<p>이후 <code class="language-plaintext highlighter-rouge">outer</code> 함수가 실행되면 <code class="language-plaintext highlighter-rouge">자바스크립트 엔진</code>은 <code class="language-plaintext highlighter-rouge">outer</code>에 대한 <code class="language-plaintext highlighter-rouge">환경 정보</code>를 수집해서 <code class="language-plaintext highlighter-rouge">outer</code> 실행 컨텍스트를 생성 후 <code class="language-plaintext highlighter-rouge">Call Stack</code>에 쌓는다.</p>
+
+<p>이후 <code class="language-plaintext highlighter-rouge">outer</code> 함수 내부의 <code class="language-plaintext highlighter-rouge">inner</code> 함수의 실행과 동시에 <code class="language-plaintext highlighter-rouge">inner</code>실행 컨텍스트가 생성되어 스택에 쌓이게 되면 <code class="language-plaintext highlighter-rouge">outer</code> 컨텍스트는 중단하고 <code class="language-plaintext highlighter-rouge">inner</code> 함수 내부 코드를 실행한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">inner</code> 함수의 실행이 종료되면 <code class="language-plaintext highlighter-rouge">Call Stack</code>에서 해당 컨텍스트가 제거되고 <code class="language-plaintext highlighter-rouge">outer</code> 함수가 이어서 진행된다.</p>
+
+<p>이와 같은 방식을 알기위해 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>를 구성할때 우리가 알아야 되는 부분들이 있다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">VariableEnvironment</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Lexical Environment</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ThisBinding</code></li>
+</ol>
+
+<h5 id="1-variable-environment">1. Variable Environment</h5>
+
+<hr>
+
+<h5 id="2-lexical-environment">2. Lexical Environment</h5>
+
+<hr>
+
+<h5 id="3-thisbinding">3. ThisBinding</h5>
+
+<hr>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
 <hr>
 
-<p><a href="https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85">https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85</a></p>
-
-<p><a href="https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html">https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html</a></p>
-
-<p><a href="https://cornswrold.tistory.com/342">https://cornswrold.tistory.com/342</a></p>
+<ol>
+  <li><a href="https://blog.leehov.in/28">https://blog.leehov.in/28</a></li>
+  <li><a href="https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC">https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC</a></li>
+  <li><a href="https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context">https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context</a></li>
+</ol>
 
         
       </section>

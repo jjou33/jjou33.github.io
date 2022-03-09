@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-09T23:52:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">실행 컨텍스트(Execution Context)(작성중)</title><link href="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" rel="alternate" type="text/html" title="실행 컨텍스트(Execution Context)(작성중)" /><published>2022-03-09T00:00:00+09:00</published><updated>2022-03-09T00:00:00+09:00</updated><id>http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-10T00:22:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">실행 컨텍스트(Execution Context)(작성중)</title><link href="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" rel="alternate" type="text/html" title="실행 컨텍스트(Execution Context)(작성중)" /><published>2022-03-09T00:00:00+09:00</published><updated>2022-03-09T00:00:00+09:00</updated><id>http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -148,11 +148,11 @@
 &lt;p&gt;위와 같은 소스가 실행되게 되면 어떤 순서로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt;이 쌓이는지 알아본다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Javascript 실행: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[전역컨텍스트]&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;outer 실행: [전역컨텍스트, outer]&lt;/li&gt;
-  &lt;li&gt;inner 실행: [전역컨텍스트, outer, inner]&lt;/li&gt;
-  &lt;li&gt;inner 종료: [전역컨텍스트, outer]&lt;/li&gt;
-  &lt;li&gt;outer 종료: [전역컨텍스트]&lt;/li&gt;
+  &lt;li&gt;Javascript 실행: &lt;strong&gt;[전역컨텍스트]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;outer 실행 : &lt;strong&gt;[전역컨텍스트, outer]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;inner 실행 : &lt;strong&gt;[전역컨텍스트, outer, inner]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;inner 종료 : &lt;strong&gt;[전역컨텍스트, outer]&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;outer 종료 : &lt;strong&gt;[전역컨텍스트]&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/157466130-18ea5664-1c0d-40e4-a86d-950dea34f04a.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
@@ -161,17 +161,43 @@
   &lt;li&gt;이미지 참조 : &lt;a href=&quot;https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context&quot;&gt;https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;javascript&lt;/code&gt;파일이 최초 실행 시점에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전역 컨텍스트&lt;/code&gt;가 활성화되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt;에&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;javascript&lt;/code&gt;파일이 최초 실행 시점에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전역 컨텍스트&lt;/code&gt;가 활성화되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt;에 쌓이게 된다.&lt;/p&gt;
+
+&lt;p&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt; 함수가 실행되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자바스크립트 엔진&lt;/code&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt;에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환경 정보&lt;/code&gt;를 수집해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt; 실행 컨텍스트를 생성 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt;에 쌓는다.&lt;/p&gt;
+
+&lt;p&gt;이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt; 함수 내부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inner&lt;/code&gt; 함수의 실행과 동시에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inner&lt;/code&gt;실행 컨텍스트가 생성되어 스택에 쌓이게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt; 컨텍스트는 중단하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inner&lt;/code&gt; 함수 내부 코드를 실행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;inner&lt;/code&gt; 함수의 실행이 종료되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Call Stack&lt;/code&gt;에서 해당 컨텍스트가 제거되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;outer&lt;/code&gt; 함수가 이어서 진행된다.&lt;/p&gt;
+
+&lt;p&gt;이와 같은 방식을 알기위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실행 컨텍스트&lt;/code&gt;를 구성할때 우리가 알아야 되는 부분들이 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;VariableEnvironment&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lexical Environment&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ThisBinding&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;1-variable-environment&quot;&gt;1. Variable Environment&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;2-lexical-environment&quot;&gt;2. Lexical Environment&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;3-thisbinding&quot;&gt;3. ThisBinding&lt;/h5&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85&quot;&gt;https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&quot;&gt;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="executionContext" /><category term="F/E" /><category term="실행컨텍스트" /><category term="Execution Context" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">preventDefault</title><link href="http://localhost:4000/javascript/preventDefault/" rel="alternate" type="text/html" title="preventDefault" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/javascript/preventDefault</id><content type="html" xml:base="http://localhost:4000/javascript/preventDefault/">&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.leehov.in/28&quot;&gt;https://blog.leehov.in/28&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC&quot;&gt;https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context&quot;&gt;https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="executionContext" /><category term="F/E" /><category term="실행컨텍스트" /><category term="Execution Context" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">preventDefault</title><link href="http://localhost:4000/javascript/preventDefault/" rel="alternate" type="text/html" title="preventDefault" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/javascript/preventDefault</id><content type="html" xml:base="http://localhost:4000/javascript/preventDefault/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JavaScript 문법 내용을 기록하기 위한 포스트입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
