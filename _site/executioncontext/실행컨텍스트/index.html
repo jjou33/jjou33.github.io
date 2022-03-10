@@ -1080,7 +1080,8 @@
 <a href="#%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9D%98-call-stack-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B8%B0%EB%8A%A5">실행 컨텍스트의 Call Stack 순서와 기능</a><ul>
 <li><a href="#1-variable-environment">1. Variable Environment</a></li>
 <li><a href="#2-lexical-environment">2. Lexical Environment</a></li>
-<li><a href="#3-thisbinding">3. ThisBinding</a></li>
+<li><a href="#3-scopechain">3. ScopeChain</a></li>
+<li><a href="#3-function-scope--block-scope">3. Function Scope &amp; Block Scope</a></li>
 </ul>
 </li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
@@ -1285,13 +1286,100 @@
 
 <hr>
 
+<ul>
+  <li>현재 컨텍스트 내의 식별자(변수)들에 대한 정보</li>
+  <li>외부 환경 정보</li>
+  <li>선언 시점의 LexicalEnvironment의 스냅샷</li>
+</ul>
+
 <h5 id="2-lexical-environment">2. Lexical Environment</h5>
 
 <hr>
 
-<h5 id="3-thisbinding">3. ThisBinding</h5>
+<p><code class="language-plaintext highlighter-rouge">Lexical Environment</code>는 <code class="language-plaintext highlighter-rouge">Javascript Engine</code>이 현재 읽고 있는 코드의 <code class="language-plaintext highlighter-rouge">Scope</code> 혹은 <code class="language-plaintext highlighter-rouge">Environment</code>를 말한다.</p>
+
+<p>새로운 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>는 괄로({})가 있을때마다 생성된다.</p>
+
+<p>또한 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>가 <code class="language-plaintext highlighter-rouge">JavaScript Engine</code>에게 현재의 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>를 알려주는 역할을 하고 이에 맞게 사용할 수 있는 변수를 설정한다.</p>
+
+<h5 id="3-scopechain">3. ScopeChain</h5>
 
 <hr>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/157688114-f109333f-1566-4831-b54a-8e99f1f07017.png" alt="image"></p>
+
+<ul>
+  <li>이미지 참조 : <a href="https://muscardinus.tistory.com/190">https://muscardinus.tistory.com/190</a>
+</li>
+</ul>
+
+<p>자신의 <code class="language-plaintext highlighter-rouge">Lexical Scope</code>밖으로 연결할 수 있는 연결고리를 <code class="language-plaintext highlighter-rouge">Scope Chain</code>이라고 이해하면 될 것 같다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Scope Chain</code>은 부모의 <code class="language-plaintext highlighter-rouge">Environment</code>의 변수들에 접근할 수 있는 역할을 해준다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayMyName</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">findName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="nx">printName</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">c</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">sayMyName</span><span class="p">()()();</span>
+</code></pre></div></div>
+
+<p>위 코드에서 보면 각 함수들은 부모의 <code class="language-plaintext highlighter-rouge">Container</code>에 있는 변수들에만 접근할 수 있다.</p>
+
+<p>즉, 자식이 부모의 변수에 접근할 수는 있지만, 부모가 자식의 변수에 접근할 수 없다.</p>
+
+<h5 id="3-function-scope--block-scope">3. Function Scope &amp; Block Scope</h5>
+
+<hr>
+
+<p>우리가 알고 있는 대부분의 언어는 <code class="language-plaintext highlighter-rouge">Block Scope</code>로 되어있고 이는 새로운 괄호가 생기면 또하나의 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>가 생긴다는 것이다.</p>
+
+<p>하지만, <code class="language-plaintext highlighter-rouge">Javascript</code>는 본질적으로 <code class="language-plaintext highlighter-rouge">Function Scope</code>로 되어있어 괄호가 아닌 <code class="language-plaintext highlighter-rouge">Global Scope</code>에서 <code class="language-plaintext highlighter-rouge">Function</code>이 있는 곳에만 새로운 <code class="language-plaintext highlighter-rouge">Local Environment</code>를 만든다.</p>
+
+<p>이는 우리가 해당 <code class="language-plaintext highlighter-rouge">Scope</code>안에서 사용할 수 있는 변수의 범위와 상관이 깊다.</p>
+
+<p>간단한예로 <code class="language-plaintext highlighter-rouge">JS</code>의 <code class="language-plaintext highlighter-rouge">var</code>와 <code class="language-plaintext highlighter-rouge">let, const</code>를 비교해 볼 수 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function Scope</span>
+<span class="kd">function</span> <span class="nx">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">final</span><span class="dl">"</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Block Scope</span>
+<span class="kd">function</span> <span class="nx">loop2</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">final</span><span class="dl">"</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">loop</span><span class="p">();</span>
+<span class="nx">loop2</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>위 코드에서 <code class="language-plaintext highlighter-rouge">loop</code>함수의 경우 결과는 아래와 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/157691031-2db8570f-ff57-43b0-a3d3-5a75a49119fd.png" alt="image"></p>
+
+<p><code class="language-plaintext highlighter-rouge">var</code>변수로 선언이 되었고 최종적으로 <code class="language-plaintext highlighter-rouge">i</code>가 증가되고 <code class="language-plaintext highlighter-rouge">i &lt; 5</code> 조건에 걸러질때는 이미 <code class="language-plaintext highlighter-rouge">i</code>값은 증가되어 5가 되었을 것이다.</p>
+
+<p>그러나 <code class="language-plaintext highlighter-rouge">Block Scope</code>일 경우 해당 반복문을 빠져나오면 <code class="language-plaintext highlighter-rouge">i</code>에 대한 접근이 불가능해야 할 것이지만 5로 접근이 가능한것을 볼 수 있다.</p>
+
+<p>반면, <code class="language-plaintext highlighter-rouge">loop2</code>의 경우는 실행하게 되면 아래와 같이 <code class="language-plaintext highlighter-rouge">Error</code>가 발생하는것을 볼 수 있다.
+<code class="language-plaintext highlighter-rouge">let</code>을 사용하면 괄호 안에서 <code class="language-plaintext highlighter-rouge">function Scope</code>가 아닌 <code class="language-plaintext highlighter-rouge">Block Scope</code>가 생성되기 때문에 <code class="language-plaintext highlighter-rouge">for</code>문 밖에서는 <code class="language-plaintext highlighter-rouge">i</code>값에 접근이 불가능하기 떄문이다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/157691848-39fa78e6-eca1-4db5-8b14-78e25141dddd.png" alt="image"></p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
@@ -1301,6 +1389,7 @@
   <li><a href="https://blog.leehov.in/28">https://blog.leehov.in/28</a></li>
   <li><a href="https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC">https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC</a></li>
   <li><a href="https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context">https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context</a></li>
+  <li><a href="https://muscardinus.tistory.com/190">https://muscardinus.tistory.com/190</a></li>
 </ol>
 
         
