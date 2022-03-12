@@ -1078,8 +1078,11 @@
 <li><a href="#3-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EA%B5%AC%EC%84%B1">3. 실행 컨텍스트 구성</a></li>
 <li>
 <a href="#%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%9D%98-call-stack-%EC%88%9C%EC%84%9C%EC%99%80-%EA%B8%B0%EB%8A%A5">실행 컨텍스트의 Call Stack 순서와 기능</a><ul>
-<li><a href="#1-variable-environment">1. Variable Environment</a></li>
-<li><a href="#2-lexical-environment">2. Lexical Environment</a></li>
+<li><a href="#1-lexical-environment">1. Lexical Environment</a></li>
+<li><a href="#2-variable-environment">2. Variable Environment</a></li>
+<li><a href="#2-1-environment-record">2-1. Environment Record</a></li>
+<li><a href="#2-2-outer-environment-record">2-2. outer Environment Record</a></li>
+<li><a href="#2-2-thisbinding">2-2. ThisBinding</a></li>
 <li><a href="#3-scopechain">3. ScopeChain</a></li>
 <li><a href="#3-function-scope--block-scope">3. Function Scope &amp; Block Scope</a></li>
 </ul>
@@ -1282,17 +1285,7 @@
   <li><code class="language-plaintext highlighter-rouge">ThisBinding</code></li>
 </ol>
 
-<h5 id="1-variable-environment">1. Variable Environment</h5>
-
-<hr>
-
-<ul>
-  <li>현재 컨텍스트 내의 식별자(변수)들에 대한 정보</li>
-  <li>외부 환경 정보</li>
-  <li>선언 시점의 LexicalEnvironment의 스냅샷</li>
-</ul>
-
-<h5 id="2-lexical-environment">2. Lexical Environment</h5>
+<h5 id="1-lexical-environment">1. Lexical Environment</h5>
 
 <hr>
 
@@ -1301,6 +1294,47 @@
 <p>새로운 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>는 괄로({})가 있을때마다 생성된다.</p>
 
 <p>또한 <code class="language-plaintext highlighter-rouge">실행 컨텍스트</code>가 <code class="language-plaintext highlighter-rouge">JavaScript Engine</code>에게 현재의 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>를 알려주는 역할을 하고 이에 맞게 사용할 수 있는 변수를 설정한다.</p>
+
+<h5 id="2-variable-environment">2. Variable Environment</h5>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">Variable Environment</code>의 구성요소 및 <code class="language-plaintext highlighter-rouge">Variable Environment</code>와 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>의 차이를 알아본다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">Variable Environment</code>는 <code class="language-plaintext highlighter-rouge">environment record</code>, <code class="language-plaintext highlighter-rouge">outer environment reference</code>, <code class="language-plaintext highlighter-rouge">ThisBinding</code>으로 구성된다.</p>
+
+<h5 id="2-1-environment-record">2-1. Environment Record</h5>
+
+<hr>
+
+<ul>
+  <li>현재 문맥의 식별자 정보(변수나 함수)
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">Variable Environment</code>의 경우 <code class="language-plaintext highlighter-rouge">var</code>로 선언된 변수 혹은 <code class="language-plaintext highlighter-rouge">함수 선언문</code>등을 저장한다.</li>
+    </ul>
+  </li>
+  <li>변수 객체</li>
+</ul>
+
+<h5 id="2-2-outer-environment-record">2-2. outer Environment Record</h5>
+
+<hr>
+
+<ul>
+  <li>상위 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>를 참조하는 포인터</li>
+  <li>중립된 자바스크립트 코드에서 <code class="language-plaintext highlighter-rouge">Scope</code>를 탐색하기 위해 사용</li>
+</ul>
+
+<h5 id="2-2-thisbinding">2-2. ThisBinding</h5>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">this</code>의 값이 결정되며, 전역 컨텍스트에서 <code class="language-plaintext highlighter-rouge">this</code>는 <code class="language-plaintext highlighter-rouge">global Object</code>를 가르킨다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">함수 실행 컨텍스트</code>에서 <code class="language-plaintext highlighter-rouge">this</code>는 호출 방식에 따라 달라진다.</p>
+
+<p>함수가 <code class="language-plaintext highlighter-rouge">Object reference</code>로 호출되었다면 <code class="language-plaintext highlighter-rouge">this</code>는 해당 객체를 가르키나, 그렇지 않다면 위에서 말한 <code class="language-plaintext highlighter-rouge">Global Object(window)</code> 혹은 <code class="language-plaintext highlighter-rouge">strict mode</code>에서는 <code class="language-plaintext highlighter-rouge">undefined</code>를 가르키고 있다.</p>
 
 <h5 id="3-scopechain">3. ScopeChain</h5>
 
@@ -1376,10 +1410,11 @@
 
 <p>그러나 <code class="language-plaintext highlighter-rouge">Block Scope</code>일 경우 해당 반복문을 빠져나오면 <code class="language-plaintext highlighter-rouge">i</code>에 대한 접근이 불가능해야 할 것이지만 5로 접근이 가능한것을 볼 수 있다.</p>
 
-<p>반면, <code class="language-plaintext highlighter-rouge">loop2</code>의 경우는 실행하게 되면 아래와 같이 <code class="language-plaintext highlighter-rouge">Error</code>가 발생하는것을 볼 수 있다.
-<code class="language-plaintext highlighter-rouge">let</code>을 사용하면 괄호 안에서 <code class="language-plaintext highlighter-rouge">function Scope</code>가 아닌 <code class="language-plaintext highlighter-rouge">Block Scope</code>가 생성되기 때문에 <code class="language-plaintext highlighter-rouge">for</code>문 밖에서는 <code class="language-plaintext highlighter-rouge">i</code>값에 접근이 불가능하기 떄문이다.</p>
+<p>반면, <code class="language-plaintext highlighter-rouge">loop2</code>의 경우는 실행하게 되면 아래와 같이 <code class="language-plaintext highlighter-rouge">Error</code>가 발생하는것을 볼 수 있다.</p>
 
 <p><img src="https://user-images.githubusercontent.com/56063287/157691848-39fa78e6-eca1-4db5-8b14-78e25141dddd.png" alt="image"></p>
+
+<p><code class="language-plaintext highlighter-rouge">let</code>을 사용하면 괄호 안에서 <code class="language-plaintext highlighter-rouge">function Scope</code>가 아닌 <code class="language-plaintext highlighter-rouge">Block Scope</code>가 생성되기 때문에 <code class="language-plaintext highlighter-rouge">for</code>문 밖에서는 <code class="language-plaintext highlighter-rouge">i</code>값에 접근이 불가능하기 떄문이다.</p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
@@ -1390,6 +1425,7 @@
   <li><a href="https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC">https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_3-environmentrecord%E1%84%8B%E1%85%AA-hoisting-%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B5%E1%86%BC</a></li>
   <li><a href="https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context">https://velog.io/@vlfflq2004/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-Execution-Context</a></li>
   <li><a href="https://muscardinus.tistory.com/190">https://muscardinus.tistory.com/190</a></li>
+  <li><a href="https://velog.io/@hoo00nn/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-%ED%99%98%EA%B2%BDExecution-Context">https://velog.io/@hoo00nn/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-%ED%99%98%EA%B2%BDExecution-Context</a></li>
 </ol>
 
         
