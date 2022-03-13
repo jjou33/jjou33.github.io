@@ -468,14 +468,14 @@ var store = [{
         "teaser": null
       },{
         "title": "실행 컨텍스트(Execution Context)(작성중)",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 좋은 기회로 실행컨텍스트(Execution Context) 에 대한 궁금증을 갖게 되었다. 중요한 부분은 이 실행 컨텍스트가 Javascript 에서 굉장히 중요한 역할을 하고 있다는 것이고 아직까지 깊게 공부를 해본적이 없어 이번 기회에 정확히 짚어가고 싶어서 기록을 시작해본다. 여러 기술블로그들을 보며 나름대로 정리해 보았다. 2....","categories": ["executionContext"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 좋은 기회로 실행컨텍스트(Execution Context) 에 대한 궁금증을 갖게 되었다. 중요한 부분은 이 실행 컨텍스트가 Javascript 에서 굉장히 중요한 역할을 하고 있다는 것이고 아직까지 깊게 공부를 해본적이 없어 이번 기회에 정확히 짚어가고 싶어서 기록을 시작해본다. 여러 기술블로그들을 보며 나름대로 정리해 보았다. 2....","categories": ["sdfg"],
         "tags": ["F/E","실행컨텍스트","Execution Context"],
-        "url": "/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-copy/",
+        "url": "/sdfg/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8(%EC%B2%AB%EB%B2%84%EC%A0%84)/",
         "teaser": null
       },{
         "title": "실행 컨텍스트(Execution Context)(작성중)",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 좋은 기회로 실행컨텍스트(Execution Context) 에 대한 궁금증을 갖게 되었다. 중요한 부분은 이 실행 컨텍스트가 Javascript 에서 굉장히 중요한 역할을 하고 있다는 것이고 아직까지 깊게 공부를 해본적이 없어 이번 기회에 정확히 짚어가고 싶어서 기록을 시작해본다. 여러 기술블로그들을 보며 나름대로 정리해 보았다. 이번...","categories": ["executionContext"],
-        "tags": ["F/E","실행컨텍스트","Execution Context"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 좋은 기회로 실행컨텍스트(Execution Context) 에 대한 궁금증을 갖게 되었다. 중요한 부분은 이 실행 컨텍스트가 Javascript 에서 굉장히 중요한 역할을 하고 있다는 것이고 아직까지 깊게 공부를 해본적이 없어 이번 기회에 정확히 짚어가고 싶어서 기록을 시작해본다. 여러 기술블로그들을 보며 나름대로 정리해 보았다. 2....","categories": ["executionContext"],
+        "tags": ["F/E","Execution Context","Lexical Environment","Variable Environment"],
         "url": "/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/",
         "teaser": null
       }]
