@@ -1,4 +1,232 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-14T23:36:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">실행 컨텍스트(Execution Context)</title><link href="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" rel="alternate" type="text/html" title="실행 컨텍스트(Execution Context)" /><published>2022-03-10T00:00:00+09:00</published><updated>2022-03-10T00:00:00+09:00</updated><id>http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-15T22:56:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">TDZ(Temporal Dead Zone)</title><link href="http://localhost:4000/tdz/tdz/" rel="alternate" type="text/html" title="TDZ(Temporal Dead Zone)" /><published>2022-03-15T00:00:00+09:00</published><updated>2022-03-15T00:00:00+09:00</updated><id>http://localhost:4000/tdz/tdz</id><content type="html" xml:base="http://localhost:4000/tdz/tdz/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;실행 컨텍스트를 공부하던 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt; 와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let,const&lt;/code&gt;간의 차이 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Variable Environment&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lexical Environmnet&lt;/code&gt;와의 환경 차이에 대해서 궁금증이 생겼다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;의 경우에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Creation Phase&lt;/code&gt; 단계에서 초기화 및 메모리값 할당(undefined)가 일어나지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let, const&lt;/code&gt;의 경우 변수 선언만 하고 실제 할당은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Execution Phase&lt;/code&gt;에서 실제 할당이 일어 나게되면 메모리에 값을 할당 되게 된다.&lt;/p&gt;
+
+&lt;p&gt;그렇다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let,const&lt;/code&gt;의 경우 호이스팅 현상이 일어나지 않는 것일까?&lt;/p&gt;
+
+&lt;p&gt;결과적으로 정답은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아니오&lt;/code&gt; 이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;let,const&lt;/code&gt; 또한 호이스팅이 일어나지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ(Temporal Dead Zone)&lt;/code&gt;에 의해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reference Error&lt;/code&gt;가 발상하는 것이다. 일종의 방어가 된다고 보면 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;이부분에 대하여 추가적으로 기록해 보겠다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-tdztemporal-dead-zone이란&quot;&gt;2. TDZ(Temporal Dead Zone)이란?&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Temporal Dead Zone&lt;/code&gt; 즉 코드 내 변수참조의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사각지대&lt;/code&gt;라는 의미를 가진다.&lt;/p&gt;
+
+&lt;p&gt;스코프의 시작 ~ 초기화 사이의 구간을 말한다.&lt;/p&gt;
+
+&lt;p&gt;해당 구간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록 스코프&lt;/code&gt; 내에서 실행컨텍스트가 실행되면서 해당 블록의 실행 컨텍스트 환경에 변수는 초기화가 되었으나 메모리에 값이 할당되지 않은 상태부터 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Execution Phase&lt;/code&gt;에서 해당 변수에 값을 할당할때까지의 구간이라고 생각하면 될 것 이다.&lt;/p&gt;
+
+&lt;p&gt;이 구간은 일명 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;라 불리며 죽은 공간으로 이해하면 될것 같다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-tdztemporal-dead-zone-동작과정&quot;&gt;3. TDZ(Temporal Dead Zone) 동작과정&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Hello&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드는 우리가 생각한대로 출력될 것이다.&lt;/p&gt;
+
+&lt;p&gt;전역 컨텍스트가 실행되면서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lexical Environment&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;변수가 담기고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hello&lt;/code&gt;값이 메모리에 할당되면서 정확한 출력이 이루어지는 것이다.&lt;/p&gt;
+
+&lt;p&gt;반면 아래의 경우를 보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Reference Error`
+const a = &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;;
+
+console.log(a) // Hello
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Creation Phase&lt;/code&gt;에서 실행 컨텍스트가 실행되면서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;의 변수가 선언되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Execution Phase&lt;/code&gt;로 넘어오면서 코드를 읽어가는 도중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt; 를 참조하는 구문을 읽는다.&lt;/p&gt;
+
+&lt;p&gt;이때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lexical Environment&lt;/code&gt;에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;의 변수가 메모리상에 올라가 있으나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var&lt;/code&gt;가 아니기 때문에 값이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;로 할당되지는 않았다.&lt;/p&gt;
+
+&lt;p&gt;따라서 위에서 말한 바로 이 구간까지가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt; 존이라고 불리우며 해당 구간에 있는 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReferenceError: Cannot access &apos;a&apos; before initialization&lt;/code&gt;가 발생한다고 생각하면 될것이다.&lt;/p&gt;
+
+&lt;p&gt;관련되서 이해하기 쉽게 참조할 수 있는 이미지가 있어 참고하도록 한다.&lt;/p&gt;
+
+&lt;p&gt;참고 사이트 : &lt;a href=&quot;https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/&quot;&gt;https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/158120357-f9e6a954-aad8-4b95-9809-f23e9d59d7d0.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;4-tdz-에-영향을-받는-구문은-무엇일까&quot;&gt;4. TDZ 에 영향을 받는 구문은 무엇일까?&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;아래 1~4번까지의 구문들은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;의 영향을 받는 구문이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;let, const 변수&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// let&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Does not work!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// throws `ReferenceError`&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-------------------&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; undefined&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; 10&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-------------------&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// const&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Does not work!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// throws `ReferenceError`&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-------------------&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; 3.14&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;class 구문&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Does not work!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myNissan&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// throws `ReferenceError`&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myNissan&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myNissan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; &apos;red&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;constructor() 내부의 super()&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MuscleCar&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Does not work!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myCar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MuscleCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;300HP&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// `ReferenceError`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MuscleCar&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myCar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MuscleCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;300HP&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; &apos;300HP&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 코드를 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor()&lt;/code&gt; 안에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;super()&lt;/code&gt;가 호출되기 전까지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;를 사용할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;는 인스턴스를 초기화하기 위해 부모 클래스의 생성자를 호출할 것을 제안한다.&lt;/p&gt;
+
+&lt;p&gt;부모 클래스의 생성자를 호출하고 인스턴스가 준비되면 자식 클래스에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt; 값을 변경할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;기본 함수 매개변수(Default Function Parameter)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;기본 매개변수는 글로벌과 함수 스코프 사이의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중간 스코프(intermidiate scope)&lt;/code&gt;에 위치한다. 기본 매개변수 또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt; 제한이 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Does not work!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// throws `ReferenceError`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기본 매개변수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;는 선언 전에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a = a&lt;/code&gt; 표현식의 오른쪽에서 사용되었다. a에서 참조 에러가 발생한다.&lt;/p&gt;
+
+&lt;p&gt;기본 매개변수는 선언 및 초기화 다음에 사용되어야 한다. 이 경우 init과 같은 다른 변수로 선언하여 사용한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; 4&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;반면 아래의 1~3번까지의 구문은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;의 영향을 받지 않는다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;var&lt;/li&gt;
+  &lt;li&gt;Function&lt;/li&gt;
+  &lt;li&gt;import&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Works!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;./myModule&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;5-tdz에서의-typeof-연산자의-동작&quot;&gt;5. TDZ에서의 typeof 연산자의 동작&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;typeof&lt;/code&gt; 연산자 또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;의 영향을 받을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;아래의 코드를 통해 확인해본다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;someVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Function scope&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; undefined&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;someVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Inner block scope&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// throws `ReferenceError`&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼저 위 코드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doSomething&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;함수 스코프&lt;/code&gt;와 내부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if&lt;/code&gt;문에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록 스코프&lt;/code&gt;가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;함수 스코프에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variable&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt;로 출력되는것으로 봐서는 호이스팅이 적용되고 메모리에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefied&lt;/code&gt;로 값이 할당된것을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;반면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if&lt;/code&gt;문의 블록스코프 에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;의 영향을 받게 되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reference Error&lt;/code&gt;가 발생하는 것을 볼 수 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/&quot;&gt;https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20191014&quot;&gt;https://ui.toast.com/weekly-pick/ko_20191014&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@open_h/Hoisting-and-TDZ&quot;&gt;https://velog.io/@open_h/Hoisting-and-TDZ&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="tdz" /><category term="F/E" /><category term="Hoisting" /><category term="TDZ" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">실행 컨텍스트(Execution Context)</title><link href="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" rel="alternate" type="text/html" title="실행 컨텍스트(Execution Context)" /><published>2022-03-10T00:00:00+09:00</published><updated>2022-03-10T00:00:00+09:00</updated><id>http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1468,64 +1696,4 @@ Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.promise.js
 
 &lt;p&gt;&lt;a href=&quot;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&quot;&gt;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="vuelife" /><category term="F/E" /><category term="Vue" /><category term="instance life Cycle" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">VirtualDOM(가상돔)</title><link href="http://localhost:4000/virtualdom/VirtualDOM/" rel="alternate" type="text/html" title="VirtualDOM(가상돔)" /><published>2022-02-06T00:00:00+09:00</published><updated>2022-02-06T00:00:00+09:00</updated><id>http://localhost:4000/virtualdom/VirtualDOM</id><content type="html" xml:base="http://localhost:4000/virtualdom/VirtualDOM/">&lt;hr /&gt;
-&lt;p&gt;ㅃ
-:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;실무에서 Vue.js 라는 SPA 개념의 프레임워크를 사용하면서 가상돔에 대한 궁금증이 생겼다.
-가상돔은 무엇이며 왜 사용해야할까? 간단하게만 정리해 보았다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-virtual-dom-은-무엇일까&quot;&gt;2. Virtual DOM 은 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;앞선 포스팅에서 브라우저가 그려지는 과정에 대해서 공부한적이 있다.&lt;/p&gt;
-
-&lt;p&gt;간단하게 복기하자면 브라우저는 아래와 같은 루트로 사용자의 호출부터 그려지기 까지의 과정이 실행된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/152685826-6677ed83-921a-4853-8e4c-9163ec28d859.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 진행되면 되는데 왜 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상DOM&lt;/code&gt; 이란 개념이 나온것일까?&lt;/p&gt;
-
-&lt;h4 id=&quot;3-virtual-dom-은-무엇을할까&quot;&gt;3. Virtual DOM 은 무엇을할까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;위와 같은 과정으로 사용자가 호출하고 서비스가 흘러간다면 문제될 것이 없을 것이다.&lt;/p&gt;
-
-&lt;p&gt;하지만, 근래에 프론트엔드의 트랜드의 변화로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SPA(Single Page Application)&lt;/code&gt;의 프레임워크가 생겨나면서 서버에 요청해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt; 소스를 받아오는게 아닌 수시로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 의 데이터를 변경해달라고 브라우저에게 요청하는 방식이 생겨났다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 되면 브라우저는 자바스크립트가 요청하는 모든 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM 변경&lt;/code&gt; 요청에 대해 실행하려 한다.
-브라우저는 요청이 오면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 트리를 분석하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt; 가 요청한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt; 를 찾아 요청사항을 수행하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSS&lt;/code&gt; 트리를 만들고 둘을 합쳐 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Render Tree&lt;/code&gt; 를 민들어 그리고 노출시킬 것이다.&lt;/p&gt;
-
-&lt;p&gt;하지만 수천개의 요청이 계속해서 온다면? 굉장히 효율적이지 못할 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Virtual DOM&lt;/code&gt; 은 이러한 단점을 개선하기 위해 등장하였다.&lt;/p&gt;
-
-&lt;p&gt;만약 10000번의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 변경 요청이 온다고 가정하자.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Virtual DOM&lt;/code&gt; 은 브라우저에서 그려지기 전에 먼저 10000번의 요청을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 을 추상화한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상DOM&lt;/code&gt; 에 업데이트 하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최종 완성된 DOM&lt;/code&gt;만 브라우저에서 위 과정을 통해 그리고 화면을 노출하면 된다.&lt;/p&gt;
-
-&lt;p&gt;즉, 불필요한 랜더링 횟수를 줄일 수 있는 것이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;4-virtual-dom-은-어떻게-빠르게-가능할까&quot;&gt;4. Virtual DOM 은 어떻게 빠르게 가능할까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;가상돔은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자바스크립트 객체&lt;/code&gt; 의 형태로 표현되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메모리&lt;/code&gt;상에서 동작하기 때문에 실제 렌더링되는 것이 아니어 시간이 빠르게 최소화 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React나 Vue&lt;/code&gt; 에서 이러한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상돔&lt;/code&gt; 을 통해 메모리 상에서 완성됨 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 을 실제 브라우저 DOM 과 동기화해준다고 한다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-및-출처-사이트&quot;&gt;참고 및 출처 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://velog.io/@planethoon/Virtual-DOM&quot;&gt;https://velog.io/@planethoon/Virtual-DOM&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.hanumoka.net/2018/08/15/web-20180815-web-virtual-dom/&quot;&gt;https://www.hanumoka.net/2018/08/15/web-20180815-web-virtual-dom/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="virtualdom" /><category term="VirtualDOM" /><category term="SPA" /><summary type="html">:computer: 개발간 기술개념 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="vuelife" /><category term="F/E" /><category term="Vue" /><category term="instance life Cycle" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>

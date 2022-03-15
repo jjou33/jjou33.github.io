@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Vue Life Cycle - Hippo Dev Blog</title>
+<!-- begin _includes/seo.html --><title>TDZ(Temporal Dead Zone) - Hippo Dev Blog</title>
 <meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Vue Life Cycle">
-<meta property="og:url" content="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/">
+<meta property="og:title" content="TDZ(Temporal Dead Zone)">
+<meta property="og:url" content="http://localhost:4000/tdz/tdz/">
 
 
   <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
@@ -34,7 +34,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-02-08T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-03-15T00:00:00+09:00">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/">
+<link rel="canonical" href="http://localhost:4000/tdz/tdz/">
 
 
 
@@ -1069,15 +1069,15 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Vue Life Cycle">
+    <meta itemprop="headline" content="TDZ(Temporal Dead Zone)">
     <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
-    <meta itemprop="datePublished" content="2022-02-08T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-03-15T00:00:00+09:00">
     
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            Vue Life Cycle
+            TDZ(Temporal Dead Zone)
 
           </h1>
           
@@ -1107,9 +1107,9 @@
     
       <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">instance life Cycle</a><span class="sep"> </span>
+      <a class="page__taxonomy-item-tag" rel="tag">Hoisting</a><span class="sep"> </span>
     
-      <a class="page__taxonomy-item-tag" rel="tag">Vue</a>
+      <a class="page__taxonomy-item-tag" rel="tag">TDZ</a>
     
     </span>
   </p>
@@ -1131,7 +1131,7 @@
     
     
     
-    <a href="/categories/#vuelife" class="page__taxonomy-item-category" rel="tag">vuelife</a>
+    <a href="/categories/#tdz" class="page__taxonomy-item-category" rel="tag">tdz</a>
     
 
   </span>
@@ -1140,7 +1140,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-08T00:00:00+09:00">February 8, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-15T00:00:00+09:00">March 15, 2022</time></p>
 
       </footer>
       <section class="page__content e-content" itemprop="text">
@@ -1151,19 +1151,10 @@
 <i class="fas fa-file-alt"></i> POST LIST</h4></header>
               <ul class="toc__menu">
 <li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
-<li>
-<a href="#2-vue-life-cycle%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0">2. Vue Life Cycle(인스턴스 생명주기)</a><ul>
-<li><a href="#2-1-beforecreate">2-1. BeforeCreate</a></li>
-<li><a href="#2-2-created">2-2. Created</a></li>
-<li><a href="#2-3-beforemount">2-3. BeforeMount</a></li>
-<li><a href="#2-4-mounted">2-4. mounted</a></li>
-<li><a href="#2-5-beforeupdate">2-5. BeforeUpdate</a></li>
-<li><a href="#2-6-updated">2-6. Updated</a></li>
-<li><a href="#2-7-beforedestroy">2-7. beforeDestroy</a></li>
-<li><a href="#2-8-destoryed">2-8. destoryed</a></li>
-</ul>
-</li>
-<li><a href="#3-%EC%A0%95%EB%A6%AC">3. 정리</a></li>
+<li><a href="#2-tdztemporal-dead-zone%EC%9D%B4%EB%9E%80">2. TDZ(Temporal Dead Zone)이란?</a></li>
+<li><a href="#3-tdztemporal-dead-zone-%EB%8F%99%EC%9E%91%EA%B3%BC%EC%A0%95">3. TDZ(Temporal Dead Zone) 동작과정</a></li>
+<li><a href="#4-tdz-%EC%97%90-%EC%98%81%ED%96%A5%EC%9D%84-%EB%B0%9B%EB%8A%94-%EA%B5%AC%EB%AC%B8%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C">4. TDZ 에 영향을 받는 구문은 무엇일까?</a></li>
+<li><a href="#5-tdz%EC%97%90%EC%84%9C%EC%9D%98-typeof-%EC%97%B0%EC%82%B0%EC%9E%90%EC%9D%98-%EB%8F%99%EC%9E%91">5. TDZ에서의 typeof 연산자의 동작</a></li>
 <li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
 </ul>
 
@@ -1179,128 +1170,226 @@
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">Vue</code> 에는 <code class="language-plaintext highlighter-rouge">인스턴스생명주기</code> 가 존재한다.
-이는 Vue Component 가 생성되고 최종 소멸될떄까지의 주기를 말한다.</p>
+<p>실행 컨텍스트를 공부하던 중 <code class="language-plaintext highlighter-rouge">var</code> 와 <code class="language-plaintext highlighter-rouge">let,const</code>간의 차이 즉, <code class="language-plaintext highlighter-rouge">Variable Environment</code>와 <code class="language-plaintext highlighter-rouge">Lexical Environmnet</code>와의 환경 차이에 대해서 궁금증이 생겼다.</p>
 
-<p>이런 라이프사이클을 이해해야지 <code class="language-plaintext highlighter-rouge">Hook</code> 의 사용도 좀 더 이해력있게 사용할 수 있을것이다. 또한, 각 시점에 해야하는 로직과 작업이 있기 때문에 그부분을 알기 위해서라도 이해는 필수 일 것 같다.</p>
+<p><code class="language-plaintext highlighter-rouge">var</code>의 경우에는 <code class="language-plaintext highlighter-rouge">Creation Phase</code> 단계에서 초기화 및 메모리값 할당(undefined)가 일어나지만 <code class="language-plaintext highlighter-rouge">let, const</code>의 경우 변수 선언만 하고 실제 할당은 <code class="language-plaintext highlighter-rouge">Execution Phase</code>에서 실제 할당이 일어 나게되면 메모리에 값을 할당 되게 된다.</p>
 
-<h4 id="2-vue-life-cycle인스턴스-생명주기">2. Vue Life Cycle(인스턴스 생명주기)</h4>
+<p>그렇다면 <code class="language-plaintext highlighter-rouge">let,const</code>의 경우 호이스팅 현상이 일어나지 않는 것일까?</p>
 
-<hr>
+<p>결과적으로 정답은 <code class="language-plaintext highlighter-rouge">아니오</code> 이다.</p>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/152927179-f575e1ef-7bb3-4ad8-b3f8-3bce4b5ea664.png" alt="image"></p>
+<p><code class="language-plaintext highlighter-rouge">let,const</code> 또한 호이스팅이 일어나지만 <code class="language-plaintext highlighter-rouge">TDZ(Temporal Dead Zone)</code>에 의해 <code class="language-plaintext highlighter-rouge">Reference Error</code>가 발상하는 것이다. 일종의 방어가 된다고 보면 될 것이다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Vue</code> 의 생명주기에는 크게 4가지로 나눌 수 있다.</p>
+<p>이부분에 대하여 추가적으로 기록해 보겠다.</p>
 
-<ul>
-  <li>Created</li>
-  <li>Mounted</li>
-  <li>Updated</li>
-  <li>Destroy</li>
-</ul>
-
-<p>크게는 4가지지만 그 안에 여러 단계의 <code class="language-plaintext highlighter-rouge">Hook</code> 이 존재한다.
-각 <code class="language-plaintext highlighter-rouge">Hook</code> 에 대한 정리가 필요할 것 같다.</p>
-
-<h5 id="2-1-beforecreate">2-1. BeforeCreate</h5>
+<h4 id="2-tdztemporal-dead-zone이란">2. TDZ(Temporal Dead Zone)이란?</h4>
 
 <hr>
 
-<p>가장 먼저 실행되는 단계인 <code class="language-plaintext highlighter-rouge">beforeCreate Hook</code> 는 <code class="language-plaintext highlighter-rouge">Vue 인스턴스</code> 가 초기화된 직후 발 생한다.</p>
+<p><code class="language-plaintext highlighter-rouge">TDZ</code>란 <code class="language-plaintext highlighter-rouge">Temporal Dead Zone</code> 즉 코드 내 변수참조의 <code class="language-plaintext highlighter-rouge">사각지대</code>라는 의미를 가진다.</p>
 
-<p>이 시점에는 <code class="language-plaintext highlighter-rouge">el</code> 즉, <code class="language-plaintext highlighter-rouge">DOM</code> 과 같은 화면 요소에 접근할 수 없고 <code class="language-plaintext highlighter-rouge">data, event, watcher</code> 접근하기 전이기 때문에 <code class="language-plaintext highlighter-rouge">data, methods</code> 에도 접근할 수 없다.</p>
+<p>스코프의 시작 ~ 초기화 사이의 구간을 말한다.</p>
 
-<h5 id="2-2-created">2-2. Created</h5>
+<p>해당 구간은 <code class="language-plaintext highlighter-rouge">블록 스코프</code> 내에서 실행컨텍스트가 실행되면서 해당 블록의 실행 컨텍스트 환경에 변수는 초기화가 되었으나 메모리에 값이 할당되지 않은 상태부터 실제 <code class="language-plaintext highlighter-rouge">Execution Phase</code>에서 해당 변수에 값을 할당할때까지의 구간이라고 생각하면 될 것 이다.</p>
 
-<hr>
+<p>이 구간은 일명 <code class="language-plaintext highlighter-rouge">TDZ</code>라 불리며 죽은 공간으로 이해하면 될것 같다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Created</code> 단계에서는 <code class="language-plaintext highlighter-rouge">computed, methods, watch</code> 등의 기능이 활성화 되어 접근이 가능하다. 또한 <code class="language-plaintext highlighter-rouge">data</code> 에 접근이 가능하기에 <code class="language-plaintext highlighter-rouge">data</code> 셋팅 및 <code class="language-plaintext highlighter-rouge">이벤트 리스너</code> 선언에 좋은 시점이다.</p>
-
-<p>또한, <code class="language-plaintext highlighter-rouge">서버에 데이터를 요청하여 받아오는 로직을 수행하기</code> 좋은 시점이다.</p>
-
-<h5 id="2-3-beforemount">2-3. BeforeMount</h5>
+<h4 id="3-tdztemporal-dead-zone-동작과정">3. TDZ(Temporal Dead Zone) 동작과정</h4>
 
 <hr>
 
-<p><code class="language-plaintext highlighter-rouge">Template</code> 속성에 지정되어 있는 마크업 속성을 <code class="language-plaintext highlighter-rouge">render()</code> 함수를 통해 변환한 후 <code class="language-plaintext highlighter-rouge">el</code> 속성에 지정한 <code class="language-plaintext highlighter-rouge">DOM</code>에 인스턴스를 부착하기 전에 호출되는 단계이다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">;</span>
 
-<p>즉, 가상 <code class="language-plaintext highlighter-rouge">DOM</code> 이 생성되어 있으나, 실제 <code class="language-plaintext highlighter-rouge">DOM</code> 에 부착되지 않은 상태를 말한다.</p>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// Hello</span>
+</code></pre></div></div>
 
-<p>이 시점에는 <code class="language-plaintext highlighter-rouge">render()</code> 함수가 호출되기 직전의 로직을 추가하는 것이 좋다.</p>
+<p>위 코드는 우리가 생각한대로 출력될 것이다.</p>
 
-<h5 id="2-4-mounted">2-4. mounted</h5>
+<p>전역 컨텍스트가 실행되면서 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>에 <code class="language-plaintext highlighter-rouge">a</code>변수가 담기고 <code class="language-plaintext highlighter-rouge">Hello</code>값이 메모리에 할당되면서 정확한 출력이 이루어지는 것이다.</p>
 
-<hr>
+<p>반면 아래의 경우를 보자.</p>
 
-<p>가장 많이 사용하는 시점이며 가상의 <code class="language-plaintext highlighter-rouge">DOM</code>의 내용이 실제 <code class="language-plaintext highlighter-rouge">DOM</code> 에 부착되고 난 뒤에 실행되는 <code class="language-plaintext highlighter-rouge">Hook</code> 으로 <code class="language-plaintext highlighter-rouge">this.$el, data, computed, methods, watch</code> 등 모든 요소에 접근이 가능하다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="k">throw</span> <span class="dl">'</span><span class="s1">Reference Error`
+const a = </span><span class="dl">'</span><span class="nx">Hello</span><span class="dl">'</span><span class="s1">;
 
-<p>부모와 자식 <code class="language-plaintext highlighter-rouge">component</code> 간의 <code class="language-plaintext highlighter-rouge">mounted hook</code> 순서는 아래 그림과 같다.</p>
+console.log(a) // Hello
+</span></code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/56063287/152930401-88d27a42-e213-46aa-849c-8861e747f252.png" alt="image"></p>
+<p><code class="language-plaintext highlighter-rouge">Creation Phase</code>에서 실행 컨텍스트가 실행되면서 <code class="language-plaintext highlighter-rouge">a</code>의 변수가 선언되고 <code class="language-plaintext highlighter-rouge">Execution Phase</code>로 넘어오면서 코드를 읽어가는 도중 <code class="language-plaintext highlighter-rouge">a</code> 를 참조하는 구문을 읽는다.</p>
 
-<p>부모 <code class="language-plaintext highlighter-rouge">component</code> 의 <code class="language-plaintext highlighter-rouge">mounted hook</code> 은 항상 자식 <code class="language-plaintext highlighter-rouge">component</code> 의 <code class="language-plaintext highlighter-rouge">mounted hook</code> 이후에 발생한다.</p>
+<p>이때 <code class="language-plaintext highlighter-rouge">Lexical Environment</code>에는 <code class="language-plaintext highlighter-rouge">a</code>의 변수가 메모리상에 올라가 있으나 <code class="language-plaintext highlighter-rouge">var</code>가 아니기 때문에 값이 <code class="language-plaintext highlighter-rouge">undefined</code>로 할당되지는 않았다.</p>
 
-<p>하지만, 모든 경우에 부모의 <code class="language-plaintext highlighter-rouge">mounted hook</code> 이 자식 <code class="language-plaintext highlighter-rouge">component</code>이 마운트 된 상태를 보장하지는 않는다.</p>
+<p>따라서 위에서 말한 바로 이 구간까지가 <code class="language-plaintext highlighter-rouge">TDZ</code> 존이라고 불리우며 해당 구간에 있는 경우 <code class="language-plaintext highlighter-rouge">ReferenceError: Cannot access 'a' before initialization</code>가 발생한다고 생각하면 될것이다.</p>
 
-<p>예를들어 자식 컴포넌트가 비동기로 데이터를 받아오는 경우가 있을 것이다.</p>
+<p>관련되서 이해하기 쉽게 참조할 수 있는 이미지가 있어 참고하도록 한다.</p>
 
-<p>하지만 이런 상황에서 상태를 보장받고 싶을때는 <code class="language-plaintext highlighter-rouge">this.$nextTick</code> 을 이요한다면, 모든 화면이 렌더링된 이후에 실행되므로 <code class="language-plaintext highlighter-rouge">mounted</code> 상태를 보장할 수 있다.</p>
+<p>참고 사이트 : <a href="https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/">https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/</a></p>
 
-<p>이 시점은 <code class="language-plaintext highlighter-rouge">화면 요소(DOM)를 제어하는 로직을 수행</code>하기 좋은 단계로 이해하면 된다.</p>
+<p><img src="https://user-images.githubusercontent.com/56063287/158120357-f9e6a954-aad8-4b95-9809-f23e9d59d7d0.png" alt="image"></p>
 
-<h5 id="2-5-beforeupdate">2-5. BeforeUpdate</h5>
-
-<hr>
-
-<p><code class="language-plaintext highlighter-rouge">component</code> 에서 사용되는 <code class="language-plaintext highlighter-rouge">data</code> 를 <code class="language-plaintext highlighter-rouge">$watch</code>속성으로 관찰 중 <code class="language-plaintext highlighter-rouge">data</code> 가 변경이되면 페이지는 재 렌더링 할 것이다.</p>
-
-<p>이때 재랜더링 하기 전에 <code class="language-plaintext highlighter-rouge">BeforeUpdate Hook</code> 이 실행된다.</p>
-
-<p>즉, <code class="language-plaintext highlighter-rouge">DOM</code> 을 다시 그리기 전에 호출되며, <code class="language-plaintext highlighter-rouge">변경 예정</code>인 데이터를 가지고 있는 단계이기에 이 값을 활용한 로직을 작성하기 좋은 시점이다.</p>
-
-<h5 id="2-6-updated">2-6. Updated</h5>
+<h4 id="4-tdz-에-영향을-받는-구문은-무엇일까">4. TDZ 에 영향을 받는 구문은 무엇일까?</h4>
 
 <hr>
 
-<p>데이터가 변경되어 <code class="language-plaintext highlighter-rouge">가상 DOM</code> 에서 렌더링 후 실제 <code class="language-plaintext highlighter-rouge">DOM</code> 이 변경된 이후에 호출되는 훅이며, 변경된 <code class="language-plaintext highlighter-rouge">data</code> 가 실제 <code class="language-plaintext highlighter-rouge">DOM</code> 에 적용된 상태이다.</p>
+<p>아래 1~4번까지의 구문들은 <code class="language-plaintext highlighter-rouge">TDZ</code>의 영향을 받는 구문이다.</p>
 
-<p>만약 변경된 값들을 <code class="language-plaintext highlighter-rouge">DOM</code> 을 이용해 접근하려면 <code class="language-plaintext highlighter-rouge">updated</code> 훅이 가장 적절하다.</p>
+<ol>
+  <li>let, const 변수</li>
+</ol>
 
-<p>주의할점은 이 시점에서 <code class="language-plaintext highlighter-rouge">data</code> 를 변경하게 되면 무한루프를 일으킬 수 있으므로 훅에서는 데이터를 직접 바꾸면 안된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// let</span>
 
-<p><code class="language-plaintext highlighter-rouge">mounted hook</code> 과 마찬가지로 <code class="language-plaintext highlighter-rouge">this.$nextTick</code> 을 이용해 모든 화면이 업데이트 된 이후의 상태를 보장할 수 있다.</p>
+<span class="c1">// Does not work!</span>
+<span class="nx">count</span><span class="p">;</span> <span class="c1">// throws `ReferenceError`</span>
+<span class="kd">let</span> <span class="nx">count</span><span class="p">;</span>
+<span class="nx">count</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="o">-------------------</span>
+<span class="kd">let</span> <span class="nx">count</span><span class="p">;</span>
+<span class="c1">// Works!</span>
+<span class="nx">count</span><span class="p">;</span> <span class="c1">// =&gt; undefined</span>
+<span class="nx">count</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1">// Works!</span>
+<span class="nx">count</span><span class="p">;</span> <span class="c1">// =&gt; 10</span>
+<span class="o">-------------------</span>
+<span class="c1">// const</span>
 
-<h5 id="2-7-beforedestroy">2-7. beforeDestroy</h5>
+<span class="c1">// Does not work!</span>
+<span class="nx">pi</span><span class="p">;</span> <span class="c1">// throws `ReferenceError`</span>
+<span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="o">-------------------</span>
+<span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="c1">// Works!</span>
+<span class="nx">pi</span><span class="p">;</span> <span class="c1">// =&gt; 3.14</span>
+</code></pre></div></div>
+
+<ol>
+  <li>class 구문</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Does not work!</span>
+<span class="kd">const</span> <span class="nx">myNissan</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// throws `ReferenceError`</span>
+<span class="kd">class</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// Works!</span>
+<span class="kd">const</span> <span class="nx">myNissan</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myNissan</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span> <span class="c1">// =&gt; 'red'</span>
+</code></pre></div></div>
+
+<ol>
+  <li>constructor() 내부의 super()</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MuscleCar</span> <span class="kd">extends</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">color</span><span class="p">,</span> <span class="nx">power</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">power</span> <span class="o">=</span> <span class="nx">power</span><span class="p">;</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// Does not work!</span>
+<span class="kd">const</span> <span class="nx">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MuscleCar</span><span class="p">(</span><span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">300HP</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// `ReferenceError`</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MuscleCar</span> <span class="kd">extends</span> <span class="nx">Car</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">color</span><span class="p">,</span> <span class="nx">power</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">power</span> <span class="o">=</span> <span class="nx">power</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// Works!</span>
+<span class="kd">const</span> <span class="nx">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MuscleCar</span><span class="p">(</span><span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">300HP</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myCar</span><span class="p">.</span><span class="nx">power</span><span class="p">;</span> <span class="c1">// =&gt; '300HP'</span>
+</code></pre></div></div>
+
+<p>이 코드를 보면 <code class="language-plaintext highlighter-rouge">constructor()</code> 안에서 <code class="language-plaintext highlighter-rouge">super()</code>가 호출되기 전까지 <code class="language-plaintext highlighter-rouge">this</code>를 사용할 수 없다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">TDZ</code>는 인스턴스를 초기화하기 위해 부모 클래스의 생성자를 호출할 것을 제안한다.</p>
+
+<p>부모 클래스의 생성자를 호출하고 인스턴스가 준비되면 자식 클래스에서 <code class="language-plaintext highlighter-rouge">this</code> 값을 변경할 수 있다.</p>
+
+<ol>
+  <li>기본 함수 매개변수(Default Function Parameter)</li>
+</ol>
+
+<p>기본 매개변수는 글로벌과 함수 스코프 사이의 <code class="language-plaintext highlighter-rouge">중간 스코프(intermidiate scope)</code>에 위치한다. 기본 매개변수 또한 <code class="language-plaintext highlighter-rouge">TDZ</code> 제한이 있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Does not work!</span>
+<span class="nx">square</span><span class="p">();</span> <span class="c1">// throws `ReferenceError`</span>
+</code></pre></div></div>
+
+<p>기본 매개변수 <code class="language-plaintext highlighter-rouge">a</code>는 선언 전에 <code class="language-plaintext highlighter-rouge">a = a</code> 표현식의 오른쪽에서 사용되었다. a에서 참조 에러가 발생한다.</p>
+
+<p>기본 매개변수는 선언 및 초기화 다음에 사용되어야 한다. 이 경우 init과 같은 다른 변수로 선언하여 사용한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">init</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Works!</span>
+<span class="nx">square</span><span class="p">();</span> <span class="c1">// =&gt; 4</span>
+</code></pre></div></div>
+
+<p>반면 아래의 1~3번까지의 구문은 <code class="language-plaintext highlighter-rouge">TDZ</code>의 영향을 받지 않는다.</p>
+
+<ol>
+  <li>var</li>
+  <li>Function</li>
+  <li>import</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Works!</span>
+<span class="nx">myFunction</span><span class="p">();</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">myFunction</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./myModule</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="5-tdz에서의-typeof-연산자의-동작">5. TDZ에서의 typeof 연산자의 동작</h4>
 
 <hr>
 
-<p>생성된 <code class="language-plaintext highlighter-rouge">instance</code> 가 해체되기 직전에 호출되며, 인스턴스의 모든 요소 및 속성에 접근이 가능하다.</p>
+<p><code class="language-plaintext highlighter-rouge">typeof</code> 연산자 또한 <code class="language-plaintext highlighter-rouge">TDZ</code>의 영향을 받을 수 있다.</p>
 
-<p>이 단계에서는 <code class="language-plaintext highlighter-rouge">이벤트 리스너 해제</code> 와 같은 인스턴스가 사라지기 전에 해야할 일들을 처리하면 된다.</p>
+<p>아래의 코드를 통해 확인해본다.</p>
 
-<h5 id="2-8-destoryed">2-8. destoryed</h5>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">doSomething</span><span class="p">(</span><span class="nx">someVal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Function scope</span>
+  <span class="k">typeof</span> <span class="nx">variable</span><span class="p">;</span> <span class="c1">// =&gt; undefined</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">someVal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Inner block scope</span>
+    <span class="k">typeof</span> <span class="nx">variable</span><span class="p">;</span> <span class="c1">// throws `ReferenceError`</span>
+    <span class="kd">let</span> <span class="nx">variable</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">doSomething</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</code></pre></div></div>
 
-<hr>
+<p>먼저 위 코드에서 <code class="language-plaintext highlighter-rouge">doSomething</code>의 <code class="language-plaintext highlighter-rouge">함수 스코프</code>와 내부의 <code class="language-plaintext highlighter-rouge">if</code>문에 있는 <code class="language-plaintext highlighter-rouge">블록 스코프</code>가 존재한다.</p>
 
-<p>인스턴스가 해체되고 난 후에 호출되며, 해체가 끝난 이후이기 때문에 인스턴스 속성에 접근할 수 없다.</p>
+<p>함수 스코프에서 <code class="language-plaintext highlighter-rouge">variable</code>의 경우 <code class="language-plaintext highlighter-rouge">undefined</code>로 출력되는것으로 봐서는 호이스팅이 적용되고 메모리에 <code class="language-plaintext highlighter-rouge">undefied</code>로 값이 할당된것을 볼 수 있다.</p>
 
-<p>또한, 하위 <code class="language-plaintext highlighter-rouge">Vue</code> 인스턴스 역시 삭제된다.</p>
-
-<h4 id="3-정리">3. 정리</h4>
-
-<hr>
-
-<p>처음 <code class="language-plaintext highlighter-rouge">vue</code> 개발을 진행할때 다양한 시점 즉, <code class="language-plaintext highlighter-rouge">Hook</code> 들을 크게 고려하지 않고 개발을 해왔다. 하지만, 공부를 하면 할수록 각 시점에 행해져야 할 작업들을 알게되고 점점복잡해질수록 이런 <code class="language-plaintext highlighter-rouge">Hook</code> 의 기능을 잘 알고 적용할 줄 알아야 할 것 같다.</p>
+<p>반면 <code class="language-plaintext highlighter-rouge">if</code>문의 블록스코프 에서는 <code class="language-plaintext highlighter-rouge">TDZ</code>의 영향을 받게 되어 <code class="language-plaintext highlighter-rouge">Reference Error</code>가 발생하는 것을 볼 수 있다.</p>
 
 <h4 id="참고-사이트">참고 사이트</h4>
 
 <hr>
 
-<p><a href="https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85">https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85</a></p>
-
-<p><a href="https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html">https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html</a></p>
-
-<p><a href="https://cornswrold.tistory.com/342">https://cornswrold.tistory.com/342</a></p>
+<ol>
+  <li><a href="https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/">https://dmitripavlutin.com/javascript-variables-and-temporal-dead-zone/</a></li>
+  <li><a href="https://ui.toast.com/weekly-pick/ko_20191014">https://ui.toast.com/weekly-pick/ko_20191014</a></li>
+  <li><a href="https://velog.io/@open_h/Hoisting-and-TDZ">https://velog.io/@open_h/Hoisting-and-TDZ</a></li>
+</ol>
 
         
       </section>
@@ -1309,23 +1398,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Vue+Life+Cycle%20http%3A%2F%2Flocalhost%3A4000%2Fvuelife%2FVue-%25EB%259D%25BC%25EC%259D%25B4%25ED%2594%2584-%25EC%2582%25AC%25EC%259D%25B4%25ED%2581%25B4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=TDZ%28Temporal+Dead+Zone%29%20http%3A%2F%2Flocalhost%3A4000%2Ftdz%2Ftdz%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fvuelife%2FVue-%25EB%259D%25BC%25EC%259D%25B4%25ED%2594%2584-%25EC%2582%25AC%25EC%259D%25B4%25ED%2581%25B4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftdz%2Ftdz%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fvuelife%2FVue-%25EB%259D%25BC%25EC%259D%25B4%25ED%2594%2584-%25EC%2582%25AC%25EC%259D%25B4%25ED%2581%25B4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Ftdz%2Ftdz%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/virtualdom/VirtualDOM/" class="pagination--pager" title="VirtualDOM(가상돔)
+      <a href="/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" class="pagination--pager" title="실행 컨텍스트(Execution Context)
 ">Previous</a>
     
     
-      <a href="/closure/closure/" class="pagination--pager" title="클로저(Closure)
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -1339,62 +1427,6 @@
     <div class="page__related">
       <h2 class="page__related-title">You may also enjoy</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/tdz/tdz/" rel="permalink">TDZ(Temporal Dead Zone)
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.15
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Hoisting</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">TDZ</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
-</p>
-  </article>
-</div>
-
-
         
           
 
@@ -1563,6 +1595,77 @@
 
 
     <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
+</p>
+  </article>
+</div>
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/babel/BabelPreset/" rel="permalink">바벨(Babel) 기초 개념 - Preset
+</a>
+      
+    </h2>
+    <small>
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.02.21
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+
+<span class="page__taxonomy">
+    <span itemprop="keywords">
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">babel-loader</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Babel</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Preset</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">sass-loader</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">폴리필</a>
+        
+    </span>
+</span>
+    </small>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 바벨(Babel) 학습 및 공부 내용을 기록하기 위한 포스트입니다.
 </p>
   </article>
 </div>
