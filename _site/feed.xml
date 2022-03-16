@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-15T22:56:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">TDZ(Temporal Dead Zone)</title><link href="http://localhost:4000/tdz/tdz/" rel="alternate" type="text/html" title="TDZ(Temporal Dead Zone)" /><published>2022-03-15T00:00:00+09:00</published><updated>2022-03-15T00:00:00+09:00</updated><id>http://localhost:4000/tdz/tdz</id><content type="html" xml:base="http://localhost:4000/tdz/tdz/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-16T23:36:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">메서드 체이닝(Method Chaining)</title><link href="http://localhost:4000/tdz/MethodChaining/" rel="alternate" type="text/html" title="메서드 체이닝(Method Chaining)" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/tdz/MethodChaining</id><content type="html" xml:base="http://localhost:4000/tdz/MethodChaining/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;로 구현 과제를 공부하던 도중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Method Chaining&lt;/code&gt;에 관한 부분을 알게 되었다.&lt;/p&gt;
+
+&lt;p&gt;유용한 구현법인 만큼 짧지만 기록해두어야 겠다는 생각이 들어 기록해본다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-메서드-체이닝method-chaining이란&quot;&gt;2. 메서드 체이닝(Method Chaining)이란?&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Method Chaing 이란?
+
+메서드가 객체를 반환하게 되면, 메서드의 반환 값인 객체를 통해 또 다른 메서드를 호출할 수 있다.
+이러한 프로그래밍 패턴을 메서드 체이닝(Method Chaining)이라 부른다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;예제&quot;&gt;예제&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 이벤트를 듣고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;트리거&lt;/code&gt; 될 때 사전에 정의한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;핸들러(기능)&lt;/code&gt;을 실행하게 해주는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;이란 메서드가 있다. 이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vue&lt;/code&gt; 에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;v-on&lt;/code&gt; 디렉티브와 같은 역할을 한다고 생각하면 될 것같다. 일종의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이벤트 리스너&lt;/code&gt; 역할로 생각하면 될 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// View.js&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eventName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;eventName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// helper.js&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;eventName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eventName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;여기서 의문점이 드는 부분은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;함수 안에 또 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;함수를 넣어 놓았다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;실제로 내부 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;함수의 경우 다른 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;helper.js&lt;/code&gt; 파일에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import&lt;/code&gt;를 통해 가져온 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;기능을 하는 함수이다.&lt;/p&gt;
+
+&lt;p&gt;코드를 보면 단순히 전달받은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target Element&lt;/code&gt;에 이벤트 리스너를 붙여 전달받은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;handler&lt;/code&gt; 함수를 실행해 주는 역할이다.&lt;/p&gt;
+
+&lt;p&gt;본론으로 돌아가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;View.js&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt; 함수를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eventName, handler&lt;/code&gt;를 받아 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;helper.js&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;on&lt;/code&gt;함수를 호출하여 기능을 실행하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;return&lt;/code&gt; 하게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;여기서 this 를 return 하는 것이 이 글의 핵심이다!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;앞서 개요에도 말했듯이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Method Chaining&lt;/code&gt;이란 &lt;strong&gt;메서드가 객체를 반환하여 해당 객체를 통해 또 다른 함수를 실행하는 패턴&lt;/strong&gt;이라고 알고 있다.&lt;/p&gt;
+
+&lt;p&gt;따라서 이는 아래와 같이 활용할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Controller&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;c1&quot;&gt;// ... 셍략&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;subscribeViewEvents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;searchFormView&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@submit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@reset&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.searchFormView&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;View.js&lt;/code&gt;를 상속(extends) 받아 첫번째 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@submit&lt;/code&gt; 이벤트에 대한 메소드를 실행하게 되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eventListener&lt;/code&gt;가 실행되고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this&lt;/code&gt; 객체를 리턴하게 된다.&lt;/p&gt;
+
+&lt;p&gt;이어서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reset&lt;/code&gt;이라는 또 다른 리스닝이 필요할 경우 이어서 실행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;오늘도 또 새로운걸 알게 되어 신나는 밤이다. :sunglasses:&lt;/p&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/&quot;&gt;https://jeonghwan-kim.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="tdz" /><category term="F/E" /><category term="Method Chaining" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">TDZ(Temporal Dead Zone)</title><link href="http://localhost:4000/tdz/tdz/" rel="alternate" type="text/html" title="TDZ(Temporal Dead Zone)" /><published>2022-03-15T00:00:00+09:00</published><updated>2022-03-15T00:00:00+09:00</updated><id>http://localhost:4000/tdz/tdz</id><content type="html" xml:base="http://localhost:4000/tdz/tdz/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1566,134 +1647,4 @@ Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.promise.js
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&quot;&gt;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="closure" /><category term="F/E" /><category term="클로저(closure)" /><category term="Lexical Scoping" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">Vue Life Cycle</title><link href="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/" rel="alternate" type="text/html" title="Vue Life Cycle" /><published>2022-02-08T00:00:00+09:00</published><updated>2022-02-08T00:00:00+09:00</updated><id>http://localhost:4000/vuelife/Vue%20%EB%9D%BC%EC%9D%B4%ED%94%84%20%EC%82%AC%EC%9D%B4%ED%81%B4</id><content type="html" xml:base="http://localhost:4000/vuelife/Vue-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vue&lt;/code&gt; 에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인스턴스생명주기&lt;/code&gt; 가 존재한다.
-이는 Vue Component 가 생성되고 최종 소멸될떄까지의 주기를 말한다.&lt;/p&gt;
-
-&lt;p&gt;이런 라이프사이클을 이해해야지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 의 사용도 좀 더 이해력있게 사용할 수 있을것이다. 또한, 각 시점에 해야하는 로직과 작업이 있기 때문에 그부분을 알기 위해서라도 이해는 필수 일 것 같다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-vue-life-cycle인스턴스-생명주기&quot;&gt;2. Vue Life Cycle(인스턴스 생명주기)&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/152927179-f575e1ef-7bb3-4ad8-b3f8-3bce4b5ea664.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vue&lt;/code&gt; 의 생명주기에는 크게 4가지로 나눌 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Created&lt;/li&gt;
-  &lt;li&gt;Mounted&lt;/li&gt;
-  &lt;li&gt;Updated&lt;/li&gt;
-  &lt;li&gt;Destroy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;크게는 4가지지만 그 안에 여러 단계의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 이 존재한다.
-각 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 에 대한 정리가 필요할 것 같다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-1-beforecreate&quot;&gt;2-1. BeforeCreate&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;가장 먼저 실행되는 단계인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beforeCreate Hook&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vue 인스턴스&lt;/code&gt; 가 초기화된 직후 발 생한다.&lt;/p&gt;
-
-&lt;p&gt;이 시점에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;el&lt;/code&gt; 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 과 같은 화면 요소에 접근할 수 없고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data, event, watcher&lt;/code&gt; 접근하기 전이기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data, methods&lt;/code&gt; 에도 접근할 수 없다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-2-created&quot;&gt;2-2. Created&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Created&lt;/code&gt; 단계에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;computed, methods, watch&lt;/code&gt; 등의 기능이 활성화 되어 접근이 가능하다. 또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 에 접근이 가능하기에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 셋팅 및 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이벤트 리스너&lt;/code&gt; 선언에 좋은 시점이다.&lt;/p&gt;
-
-&lt;p&gt;또한, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서버에 데이터를 요청하여 받아오는 로직을 수행하기&lt;/code&gt; 좋은 시점이다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-3-beforemount&quot;&gt;2-3. BeforeMount&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Template&lt;/code&gt; 속성에 지정되어 있는 마크업 속성을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render()&lt;/code&gt; 함수를 통해 변환한 후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;el&lt;/code&gt; 속성에 지정한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;에 인스턴스를 부착하기 전에 호출되는 단계이다.&lt;/p&gt;
-
-&lt;p&gt;즉, 가상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 이 생성되어 있으나, 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 에 부착되지 않은 상태를 말한다.&lt;/p&gt;
-
-&lt;p&gt;이 시점에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;render()&lt;/code&gt; 함수가 호출되기 직전의 로직을 추가하는 것이 좋다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-4-mounted&quot;&gt;2-4. mounted&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;가장 많이 사용하는 시점이며 가상의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;의 내용이 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 에 부착되고 난 뒤에 실행되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.$el, data, computed, methods, watch&lt;/code&gt; 등 모든 요소에 접근이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;부모와 자식 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt; 간의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted hook&lt;/code&gt; 순서는 아래 그림과 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/152930401-88d27a42-e213-46aa-849c-8861e747f252.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;부모 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted hook&lt;/code&gt; 은 항상 자식 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt; 의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted hook&lt;/code&gt; 이후에 발생한다.&lt;/p&gt;
-
-&lt;p&gt;하지만, 모든 경우에 부모의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted hook&lt;/code&gt; 이 자식 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt;이 마운트 된 상태를 보장하지는 않는다.&lt;/p&gt;
-
-&lt;p&gt;예를들어 자식 컴포넌트가 비동기로 데이터를 받아오는 경우가 있을 것이다.&lt;/p&gt;
-
-&lt;p&gt;하지만 이런 상황에서 상태를 보장받고 싶을때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.$nextTick&lt;/code&gt; 을 이요한다면, 모든 화면이 렌더링된 이후에 실행되므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted&lt;/code&gt; 상태를 보장할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이 시점은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화면 요소(DOM)를 제어하는 로직을 수행&lt;/code&gt;하기 좋은 단계로 이해하면 된다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-5-beforeupdate&quot;&gt;2-5. BeforeUpdate&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;component&lt;/code&gt; 에서 사용되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$watch&lt;/code&gt;속성으로 관찰 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 가 변경이되면 페이지는 재 렌더링 할 것이다.&lt;/p&gt;
-
-&lt;p&gt;이때 재랜더링 하기 전에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BeforeUpdate Hook&lt;/code&gt; 이 실행된다.&lt;/p&gt;
-
-&lt;p&gt;즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 을 다시 그리기 전에 호출되며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변경 예정&lt;/code&gt;인 데이터를 가지고 있는 단계이기에 이 값을 활용한 로직을 작성하기 좋은 시점이다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-6-updated&quot;&gt;2-6. Updated&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;데이터가 변경되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상 DOM&lt;/code&gt; 에서 렌더링 후 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 이 변경된 이후에 호출되는 훅이며, 변경된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 가 실제 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 에 적용된 상태이다.&lt;/p&gt;
-
-&lt;p&gt;만약 변경된 값들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 을 이용해 접근하려면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;updated&lt;/code&gt; 훅이 가장 적절하다.&lt;/p&gt;
-
-&lt;p&gt;주의할점은 이 시점에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; 를 변경하게 되면 무한루프를 일으킬 수 있으므로 훅에서는 데이터를 직접 바꾸면 안된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mounted hook&lt;/code&gt; 과 마찬가지로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;this.$nextTick&lt;/code&gt; 을 이용해 모든 화면이 업데이트 된 이후의 상태를 보장할 수 있다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-7-beforedestroy&quot;&gt;2-7. beforeDestroy&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;생성된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;instance&lt;/code&gt; 가 해체되기 직전에 호출되며, 인스턴스의 모든 요소 및 속성에 접근이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;이 단계에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이벤트 리스너 해제&lt;/code&gt; 와 같은 인스턴스가 사라지기 전에 해야할 일들을 처리하면 된다.&lt;/p&gt;
-
-&lt;h5 id=&quot;2-8-destoryed&quot;&gt;2-8. destoryed&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;인스턴스가 해체되고 난 후에 호출되며, 해체가 끝난 이후이기 때문에 인스턴스 속성에 접근할 수 없다.&lt;/p&gt;
-
-&lt;p&gt;또한, 하위 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vue&lt;/code&gt; 인스턴스 역시 삭제된다.&lt;/p&gt;
-
-&lt;h4 id=&quot;3-정리&quot;&gt;3. 정리&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;처음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vue&lt;/code&gt; 개발을 진행할때 다양한 시점 즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 들을 크게 고려하지 않고 개발을 해왔다. 하지만, 공부를 하면 할수록 각 시점에 행해져야 할 작업들을 알게되고 점점복잡해질수록 이런 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hook&lt;/code&gt; 의 기능을 잘 알고 적용할 줄 알아야 할 것 같다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85&quot;&gt;https://kr.vuejs.org/v2/guide/instance.html#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4-%ED%9B%85&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&quot;&gt;https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cornswrold.tistory.com/342&quot;&gt;https://cornswrold.tistory.com/342&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="vuelife" /><category term="F/E" /><category term="Vue" /><category term="instance life Cycle" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&quot;&gt;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="closure" /><category term="F/E" /><category term="클로저(closure)" /><category term="Lexical Scoping" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>

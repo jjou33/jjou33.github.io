@@ -321,6 +321,10 @@
 <lastmod>2022-03-15T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/tdz/MethodChaining/</loc>
+<lastmod>2022-03-16T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/babel</loc>
 </url>
 <url>
@@ -427,5 +431,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page16/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page17/</loc>
 </url>
 </urlset>
