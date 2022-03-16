@@ -7,6 +7,7 @@ categories:
 tags:
   - F/E
   - Method Chaining
+  - EventListner
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
@@ -65,7 +66,7 @@ export function on(target, eventName, handler) {
 
 본론으로 돌아가 `View.js`에서 `on` 함수를 통해 `eventName, handler`를 받아 `helper.js`의 `on`함수를 호출하여 기능을 실행하고 `this`를 `return` 하게 된다.
 
-**여기서 this 를 return 하는 것이 이 글의 핵심이다!**
+여기서 `this` 를 `return` 하는 것이 이 글의 핵심이다!
 
 앞서 개요에도 말했듯이 `Method Chaining`이란 **메서드가 객체를 반환하여 해당 객체를 통해 또 다른 함수를 실행하는 패턴**이라고 알고 있다.
 
@@ -94,3 +95,4 @@ export default class Controller {
 ---
 
 1. [https://jeonghwan-kim.github.io/](https://jeonghwan-kim.github.io/)
+2. [https://velog.io/@bigbrothershin/Javascript-method%EC%99%80-this](https://velog.io/@bigbrothershin/Javascript-method%EC%99%80-this)
