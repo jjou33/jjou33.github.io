@@ -1,4 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-17T00:15:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">메서드 체이닝(Method Chaining)</title><link href="http://localhost:4000/tdz/MethodChaining/" rel="alternate" type="text/html" title="메서드 체이닝(Method Chaining)" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/tdz/MethodChaining</id><content type="html" xml:base="http://localhost:4000/tdz/MethodChaining/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-18T22:45:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">Async / Defer 스크립트</title><link href="http://localhost:4000/asyncdefer/asyncdefer/" rel="alternate" type="text/html" title="Async / Defer 스크립트" /><published>2022-03-18T00:00:00+09:00</published><updated>2022-03-18T00:00:00+09:00</updated><id>http://localhost:4000/asyncdefer/asyncdefer</id><content type="html" xml:base="http://localhost:4000/asyncdefer/asyncdefer/">&lt;hr /&gt;
+
+&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;프론트엔드는 공부하면 할수록 알고싶어지는게 너무 많은것 같다.&lt;/p&gt;
+
+&lt;p&gt;이번엔 브라우저에서 화면이 그려질때 즉, HTML 을 읽어내려갈때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 태그를 만날때 진행되는 과정에 대해서 기록해본다.&lt;/p&gt;
+
+&lt;p&gt;우리가 흔히 웹 어플리케이션을 만들고 화면이 렌더링 되는과정에서 동적인 화면을 만들기 위해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt; 호출이 필요하다.&lt;/p&gt;
+
+&lt;p&gt;하지만 브라우저가 그려지는 엔진 특성상 복잡한 비즈니스의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;를 불러오게 되면 파일 용량이 상대적으로 크다.&lt;/p&gt;
+
+&lt;p&gt;그러나 우리가 알고 있는 브라우저는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML Parsing&lt;/code&gt; 과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javscript&lt;/code&gt; 로드를 병렬로 처리하지 않기 떄문에 이부분을 비동기로 불러오는 방법에 대해서 알아보자.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-async--defer-가-왜-필요할까&quot;&gt;2. Async / Defer 가 왜 필요할까?&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;일반적으로 브라우저는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt;파일을 받아서 상단부터 차례로 한줄씩 해석을 시작한다.&lt;/p&gt;
+
+&lt;p&gt;중간에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 태그를 읽게되면 이전까지 진행되고 있던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML Parsing&lt;/code&gt;작업을 일시적으로 멈추고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt; 파일을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Load&lt;/code&gt; 하는 방식으로 진행된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/159010116-ee9fa78a-2d80-4cb2-9bf4-0c5f8140663d.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이러한 과정은 몇가지 문제점을 일으킬 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;위치에 따라 동일한 동작을 하는 코드의 동작 가능 여부가 달라진다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;예를 들어 아래와 같은 코드가 있다고 해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 1. div 가 해석되어 DOM에 부착 전 호출&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;greet&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;greet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Greet Div&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 2. div 가 해석되어 DOM에 부착된 후 호출 / Greet Div 출력&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;greet&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 예시는 많이 극단적이기는 하지만 당연히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 가 그려지기 전인 1번의 경우 오류가 발생할 것이다.
+이처럼 동기적인 해석 방식으로 인해 개발자의 역량에 따라 에러가 발생할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;큰 용량의 파일을 불러올때 그 다음 태그가 보이지 않는다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;예를들면&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XXX.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 1. 용량이 큰 파일로 5초 이상 걸리는 JS 파일&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;greet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Greet Div&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 2. div 가 해석되어 DOM에 부착된 후 호출 / Greet Div 출력&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;greet&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 구문이 실행될때 1번 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JS&lt;/code&gt;파일을 다운받기 위해 5초간의 파싱이 멈추게 된다.&lt;/p&gt;
+
+&lt;p&gt;사용자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Greet Div&lt;/code&gt;를 화면에서 볼 수 없고 멈춘것 처럼 보인다.
+이러한 서비스는 사용자에게 불편한 사용경험을 제공한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-해결방안&quot;&gt;3. 해결방안&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;3-1-시점-조정&quot;&gt;3-1. 시점 조정&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;위와 같은 경우를 해결하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; 태그 최 하단에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 태그를 몰아서 넣는 방식으로 해결하기도 하였다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 이러한 방식은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;절반의 성공&lt;/code&gt;일 것이다.&lt;/p&gt;
+
+&lt;p&gt;이유는 고객은 모든 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;이 부착되어 그려진것 처럼 보이지만 실제로 인터렉티브한 동작을 할 경우 즉, 버튼을 누른다거나? 여타 기능을 시도했을때 이러한 기능이 담겨진 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt; 파일이 로드되지 못하였으므로 동작하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;이러한 경험또한 마찬가지로 부정적이기 때문에 &lt;strong&gt;이러한 해결법은 좋지 않다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;3-2-async--defer&quot;&gt;3-2. Async / Defer&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;이제 현재 해결방안으로 알고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async / Defer&lt;/code&gt; 에 대하여 이야기해 보자.&lt;/p&gt;
+
+&lt;p&gt;해결법은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;가 로드될 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML 파싱&lt;/code&gt;을 멈추지 않고 병렬로 진행하는 방식이다.&lt;/p&gt;
+
+&lt;h6 id=&quot;async&quot;&gt;Async&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt; 스크립트는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt;의 파싱을 중단시키지 않고 진행된다.
+즉, 중단없이 병렬로 스크립트 파일을 다운받는다는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/159010216-440b72f1-a6c7-44b4-baad-8261ed7f1ad8.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이러한 방식은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTML&lt;/code&gt; 파싱을 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;을 구성하면서 동시에 백그라운드에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt;파일을 불로올 수 있어 해결책으로 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 여기도 문제점이 발생한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;첫번째&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt;의 경우 &lt;strong&gt;스크립트 파일을 받아오는 것만 병렬로 실행&lt;/strong&gt;으로 인한 문제점이다.&lt;/p&gt;
+
+&lt;p&gt;파일의 로딩이 끝나는 즉시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt; 렌더를 멈추고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;파일의 해석을 시작한다.
+이로 인해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt; 속성으로 파일을 불러와도 스크립트의 오버해드 즉, 로드 시간이 길게 되면 문제가 발생할 여지가 있다는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;따라서, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;에 접근하는 기능을 갖는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;의 로드를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt;방식으로 불러오는것은 위험한 방법일 수 있다.&lt;/p&gt;
+
+&lt;p&gt;아래 코드를 확인해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Async1.js 는 로드되는데 5초가 걸립니다 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Async1.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Async2.js 는 로드되는데 1초가 걸립니다 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Async2.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async1.js&lt;/code&gt; 파일은 로드에 5초의 시간이 걸리는 반면 그보다 아래에 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async2.js&lt;/code&gt; 파일의 로드 시간은 1초 이다.&lt;/p&gt;
+
+&lt;p&gt;만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async2.js&lt;/code&gt; 파일이 먼저 로드되고 만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async1.js&lt;/code&gt; 의 스크립트와 의존성이 있다면 비정상적인 동작이 발생할 여지가 있을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;두번쨰&lt;/em&gt; 브라우저 함수 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOMContentLoaded&lt;/code&gt; 이벤트 콜백으로 시스템은 로드를 보장 후 관련된 기능을 실행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt;의 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완전 비동기&lt;/code&gt;로 동작하기 때문에 먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;의 렌더가 완료되었다 해도 의존성이 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;로드가 끝나지 않은 시점이기 떄문이다.&lt;/p&gt;
+
+&lt;p&gt;결과적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt; 스크립트의 경우 아래와 같은 경우에 효과적일 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Async 스크립트는 DOM에 직접 접근하지 않거나, 다른 스크립트에 의존적이지 않은 스크립트들을 독립적으로 실행해야 할때 효과적이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;defer&quot;&gt;Defer&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Defer&lt;/code&gt; 스크립트 또한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;렌더와 병렬로 진행된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/56063287/159012058-e647156d-417d-4a5c-a23d-602ba24c8af7.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Async&lt;/code&gt;와 다른점은 아래와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;첫번째&lt;/em&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;로드가 완료된 후 &lt;strong&gt;모든 DOM이 로드된 후 실행&lt;/strong&gt;된다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;두번째&lt;/em&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defer&lt;/code&gt; 스크립트는 &lt;strong&gt;선언 시점의 순서를 보장한다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Async1.js 는 로드되는데 5초가 걸립니다 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Async1.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;defer&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Async2.js 는 로드되는데 1초가 걸립니다 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Async2.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;defer&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defer&lt;/code&gt; 스크립트의 경우 로드 시간은 상이할 수 있어도 모든 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;의 렌더가 끝나는 시점에서부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;의 실행이 시작되고 선언한 순서대로 실행된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOMContentLoaded&lt;/code&gt; 이벤트 콜백의 경우에도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;defer&lt;/code&gt; 스크립트의 경우 로드된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Script&lt;/code&gt;들의 시점을 지연시키는 것이기 떄문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOMContentLoaded&lt;/code&gt; 이벤트가 발생하기 전에 이미 실행된 상태이다.&lt;/p&gt;
+
+&lt;p&gt;따라서, 기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DOM&lt;/code&gt;이 구성된 이후 모든 엘리먼트에 접근이 가능하고, 실행순서가 보장된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html&quot;&gt;https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.asamaru.net/2017/05/04/script-async-defer/&quot;&gt;https://blog.asamaru.net/2017/05/04/script-async-defer/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="asyncdefer" /><category term="F/E" /><category term="DOM" /><category term="Async / Defer" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">메서드 체이닝(Method Chaining)</title><link href="http://localhost:4000/devhistory/MethodChaining/" rel="alternate" type="text/html" title="메서드 체이닝(Method Chaining)" /><published>2022-03-16T00:00:00+09:00</published><updated>2022-03-16T00:00:00+09:00</updated><id>http://localhost:4000/devhistory/MethodChaining</id><content type="html" xml:base="http://localhost:4000/devhistory/MethodChaining/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -79,7 +255,8 @@
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jeonghwan-kim.github.io/&quot;&gt;https://jeonghwan-kim.github.io/&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="tdz" /><category term="F/E" /><category term="Method Chaining" /><category term="EventListner" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">TDZ(Temporal Dead Zone)</title><link href="http://localhost:4000/tdz/tdz/" rel="alternate" type="text/html" title="TDZ(Temporal Dead Zone)" /><published>2022-03-15T00:00:00+09:00</published><updated>2022-03-15T00:00:00+09:00</updated><id>http://localhost:4000/tdz/tdz</id><content type="html" xml:base="http://localhost:4000/tdz/tdz/">&lt;hr /&gt;
+  &lt;li&gt;&lt;a href=&quot;https://velog.io/@bigbrothershin/Javascript-method%EC%99%80-this&quot;&gt;https://velog.io/@bigbrothershin/Javascript-method%EC%99%80-this&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="devhistory" /><category term="F/E" /><category term="Method Chaining" /><category term="EventListner" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">TDZ(Temporal Dead Zone)</title><link href="http://localhost:4000/tdz/tdz/" rel="alternate" type="text/html" title="TDZ(Temporal Dead Zone)" /><published>2022-03-15T00:00:00+09:00</published><updated>2022-03-15T00:00:00+09:00</updated><id>http://localhost:4000/tdz/tdz</id><content type="html" xml:base="http://localhost:4000/tdz/tdz/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1492,159 +1669,4 @@ Module not found: Error: Can&apos;t resolve &apos;core-js/modules/es6.promise.js
   &lt;li&gt;문법 검사 : ESLint, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eg2.tslint&quot;&gt;TSLint&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;실습 환경 보조 : &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer&quot;&gt;Live Server&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;기타 : &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode&quot;&gt;Prettier&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager&quot;&gt;Project Manager&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag&quot;&gt;Auto Close Tag&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens&quot;&gt;GitLens&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings&quot;&gt;Atom Keymap&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings&quot;&gt;Jetbrains IDE Keymap&lt;/a&gt; 등&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="devEnv" /><category term="VS Code" /><category term="Plugin" /><category term="유용한 플러그인 모음" /><summary type="html">:computer: VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">클로저(Closure)</title><link href="http://localhost:4000/closure/closure/" rel="alternate" type="text/html" title="클로저(Closure)" /><published>2022-02-10T00:00:00+09:00</published><updated>2022-02-10T00:00:00+09:00</updated><id>http://localhost:4000/closure/closure</id><content type="html" xml:base="http://localhost:4000/closure/closure/">&lt;hr /&gt;
-
-&lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-개요&quot;&gt;1. 개요&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클로저(Closure)&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Javascript&lt;/code&gt; 에서 꾀나 기본적인 개념이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Scope&lt;/code&gt; 와도 많이 관련되어 있고 코드를 짜는데 있어서 변수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 범위(Lexical Scoping)&lt;/code&gt; 를 잘 고려해야 실수 없는 소스를 짤 수 있을것 같다.&lt;/p&gt;
-
-&lt;p&gt;완벽하지는 않지만 &lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping&quot;&gt;MDN&lt;/a&gt; 을 참고하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클로저(Closure)&lt;/code&gt; 에 대해 알아보고 기록을 해봐야 겠다는 생각이들어 포스팅을 남긴다.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-어휘적-범위lexical-scoping-이란-무엇일까&quot;&gt;2. 어휘적 범위(Lexical Scoping) 이란 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클로저(Closure)&lt;/code&gt; 는 함수와 함수가 선언된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 환경(Lexical environment)&lt;/code&gt;의 조합이다.&lt;/p&gt;
-
-&lt;p&gt;이는 자바스크립트의 고유의 개념이 아닌 함수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일급 객체&lt;/code&gt;로 취급하는 함수형 프로그래밍 언어에서 사용되는 중요한 특성이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클로저(Closure)&lt;/code&gt; 를 알기 전에 먼저 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 범위(Lexical Scoping)&lt;/code&gt; 에 대해서 먼저 알아본다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// hello&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 소스에서 console 은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hello&lt;/code&gt; 를 출력한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func2&lt;/code&gt; 는 부모 함수 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func1&lt;/code&gt; 의 내부함수 이기 때문에 자신의 내무 변수가 없음에도 부모함수의 에서 선언된 변수인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testVal&lt;/code&gt; 에 접근할 수 있다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;이 소스에서 우리가 이해해야 할 부분은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 범위 지정(Lexical Scoping)&lt;/code&gt; 과정에서 우리가 사용하는 변수가 어디까지 사용가능하며 어디에 선언되어 있는지를 고려한다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lexical&lt;/code&gt; 이란 의미도 이러한 것을 의미한다.&lt;/p&gt;
-
-&lt;p&gt;즉, 중첩된 함수는 외부 범위에서 선언된 변수를 자식 함수에서 접근할 수 있다는 것이다.&lt;/p&gt;
-
-&lt;h4 id=&quot;3-클로저closure-는-무엇일까&quot;&gt;3. 클로저(Closure) 는 무엇일까?&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;이제는 그럼 클로저는 무엇인지 MDN 의 예제를 참고하여 알아본다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;testVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;testVal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;returnFunc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;returnFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// hello 출력&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 소스는 동일하게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hello&lt;/code&gt; 를 출력하게 되는데 우리가 주의깊게 봐야할 부분이 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;returnFunc&lt;/code&gt; 변수에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func1&lt;/code&gt; 함수의 리턴함수인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func2&lt;/code&gt; 가 저장되고 실행한 것이다.&lt;/p&gt;
-
-&lt;p&gt;보통의 우리의 생각은 함수 내부의 지역변수들은 그 함수가 처리되는 동안에 존재한다고 생각하였고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func1&lt;/code&gt; 의 실행이 끝나면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testVal&lt;/code&gt; 변수에는 더이상 접근할 수 없다고 생각하였다.&lt;/p&gt;
-
-&lt;p&gt;그러나 자바스크립트에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func1&lt;/code&gt; 에서 함수를 리턴하고 리턴하는 함수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클로저(Closure)&lt;/code&gt; 를 형성하기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;returnFunc&lt;/code&gt; 를 통해서 계속해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testVal&lt;/code&gt; 변수에 접근할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;위 예시로 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;returnFunc&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func1&lt;/code&gt; 이 실행될때 리턴된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func2&lt;/code&gt; 함수의 인스턴스를 참소하고 있는 변수가 된다.&lt;/p&gt;
-
-&lt;p&gt;이때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;func2&lt;/code&gt; 는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testVal&lt;/code&gt; 이라는 변수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 환경(Lexical Environment)&lt;/code&gt;에 대한 참조를 유지한다.&lt;/p&gt;
-
-&lt;p&gt;따라서, 우리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;returnFunc&lt;/code&gt; 함수를 실행할 때 func2 에서 유지하고 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testVal&lt;/code&gt; 의 값을 사용할 수 있는 것이다.&lt;/p&gt;
-
-&lt;p&gt;MDN 의 다른 예제도 이해하기 쉽게 설명하고 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeAdder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeAdder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeAdder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//클로저에 x와 y의 환경이 저장됨&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 107 (x:5 + y:100 + z:2)&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;add10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 112 (x:10 + y:100 + z:2)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//함수 실행 시 클로저에 저장된 x, y값에 접근하여 값을 계산&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;구조는 첫번째 예제와 비슷하지만 여기서 이해해야 하는 부분은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add5, add10&lt;/code&gt; 이란 두개의 클로저가 각기 다른 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어휘적 환경(Lexical Environment)&lt;/code&gt; 를 가지고 있다는 점이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add5&lt;/code&gt; 의 클로저 내부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 는 5로 저장된 반면, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;add10&lt;/code&gt; 내부의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 는 10인걸 알 수 있다.&lt;/p&gt;
-
-&lt;p&gt;또한, 두개의 클로저는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;z&lt;/code&gt; 인자로 갖는 함수를 리턴된 함수이며 함수 내부 스코프에는 y 가 선언되어 있지 않은것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그러나 결과로 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; 값을 100으로 재할당하여 계산값을 리턴하는것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이부분에서 &lt;strong&gt;클로저가 리턴된 후에도 외부함수의 변수들에 접근 가능하다는 것을 보여주는 포인트&lt;/strong&gt;로 이 글에서는 설명하고 있다.&lt;/p&gt;
-
-&lt;h4 id=&quot;클로저를-이용한-프라이빗-메소드-연습&quot;&gt;클로저를 이용한 프라이빗 메소드 연습&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MDN&lt;/code&gt; 에 나와있는 프라이핏 메소드를 클로저를 활용하여 구현하는 연습을 통해 조금 더 클로저를 이해하는데 도움이 된 것 같다.&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeCounter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;privateCounter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;changeBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;privateCounter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;changeBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;decrement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;changeBy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;privateCounter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeCounter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;counter2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;makeCounter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 0 */&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 2 */&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;decrement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 1 */&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;counter2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 0 */&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 예저에서 보면 counter 변수에 익명함수 안에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;privateCounter, changeBy(메서드)&lt;/code&gt; 두개의 공유되는 어휘적 환경(Lexical Evnironment) 가 형성되는 것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그리고 리턴되는 객체에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;increment, decrement, value&lt;/code&gt; 등을 정의하여 각각의 함수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;privateCounter, changeBy(메서드)&lt;/code&gt;에 접근할 수 있지만, 외부에서 직접적으로는 접근할 수 없다.&lt;/p&gt;
-
-&lt;p&gt;또한, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;makeCounter&lt;/code&gt; 를 통해 여러개의 counter 를 만들어 각각의 고유한 클로저를 통해 노출되는 것을 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;자세한 사항은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping)&lt;/code&gt; 을 통해 확인할 수 있다.&lt;/p&gt;
-
-&lt;h4 id=&quot;참고-사이트&quot;&gt;참고 사이트&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&quot;&gt;https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures&lt;/a&gt;&lt;/p&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="closure" /><category term="F/E" /><category term="클로저(closure)" /><category term="Lexical Scoping" /><summary type="html">:computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="devEnv" /><category term="VS Code" /><category term="Plugin" /><category term="유용한 플러그인 모음" /><summary type="html">:computer: VSCODE 설정과 관련된 설정을 기록하는 포스트 입니다.</summary></entry></feed>

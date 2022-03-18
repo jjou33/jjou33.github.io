@@ -124,7 +124,8 @@
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "executionContext" %}
-                    <li><a href="/categories/executionContext" class=""> :bulb: 실행 컨텍스트(Execution Context) ({{category[1].size}})</a></li>
+                    <li><a href="/categories/executionContext" class=""> :bulb: 실행 컨텍스트
+                    (Execution Context) ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -132,6 +133,13 @@
             {% for category in site.categories %}
                 {% if category[0] == "tdz" %}
                     <li><a href="/categories/tdz" class=""> :bulb: TDZ(Temporal Dead Zone) ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+         <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "asyncdefer" %}
+                    <li><a href="/categories/asyncdefer" class=""> :bulb: Async / Defer Script ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

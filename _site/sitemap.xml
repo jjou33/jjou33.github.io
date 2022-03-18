@@ -321,8 +321,12 @@
 <lastmod>2022-03-15T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/tdz/MethodChaining/</loc>
+<loc>http://localhost:4000/devhistory/MethodChaining/</loc>
 <lastmod>2022-03-16T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/asyncdefer/asyncdefer/</loc>
+<lastmod>2022-03-18T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/categories/babel</loc>
@@ -332,6 +336,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/asyncdefer</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/browserProcess</loc>

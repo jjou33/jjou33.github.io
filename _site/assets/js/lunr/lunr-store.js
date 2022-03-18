@@ -480,8 +480,14 @@ var store = [{
         "teaser": null
       },{
         "title": "메서드 체이닝(Method Chaining)",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript로 구현 과제를 공부하던 도중 Method Chaining에 관한 부분을 알게 되었다. 유용한 구현법인 만큼 짧지만 기록해두어야 겠다는 생각이 들어 기록해본다. 2. 메서드 체이닝(Method Chaining)이란? Method Chaing 이란? 메서드가 객체를 반환하게 되면, 메서드의 반환 값인 객체를 통해 또 다른 메서드를 호출할 수...","categories": ["tdz"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript로 구현 과제를 공부하던 도중 Method Chaining에 관한 부분을 알게 되었다. 유용한 구현법인 만큼 짧지만 기록해두어야 겠다는 생각이 들어 기록해본다. 2. 메서드 체이닝(Method Chaining)이란? Method Chaing 이란? 메서드가 객체를 반환하게 되면, 메서드의 반환 값인 객체를 통해 또 다른 메서드를 호출할 수...","categories": ["devhistory"],
         "tags": ["F/E","Method Chaining","EventListner"],
-        "url": "/tdz/MethodChaining/",
+        "url": "/devhistory/MethodChaining/",
+        "teaser": null
+      },{
+        "title": "Async / Defer 스크립트",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 프론트엔드는 공부하면 할수록 알고싶어지는게 너무 많은것 같다. 이번엔 브라우저에서 화면이 그려질때 즉, HTML 을 읽어내려갈때 &lt;script&gt; 태그를 만날때 진행되는 과정에 대해서 기록해본다. 우리가 흔히 웹 어플리케이션을 만들고 화면이 렌더링 되는과정에서 동적인 화면을 만들기 위해서 Javascript 호출이 필요하다. 하지만 브라우저가 그려지는 엔진...","categories": ["asyncdefer"],
+        "tags": ["F/E","DOM","Async / Defer"],
+        "url": "/asyncdefer/asyncdefer/",
         "teaser": null
       }]
