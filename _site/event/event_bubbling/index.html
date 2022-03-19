@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Hippo Dev Blog - Page 4</title>
-<meta name="description" content="공부한 것을 기록하고 공유하는 방">
+<!-- begin _includes/seo.html --><title>이벤트 버븝링(Event Bubbling) - Hippo Dev Blog</title>
+<meta name="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
   <meta name="author" content=":raising_hand:HELLO MY WORLD">
   
+  <meta property="article:author" content=":raising_hand:HELLO MY WORLD">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hippo Dev Blog">
-<meta property="og:title" content="Hippo Dev Blog">
-<meta property="og:url" content="http://localhost:4000/page4/">
+<meta property="og:title" content="이벤트 버븝링(Event Bubbling)">
+<meta property="og:url" content="http://localhost:4000/event/event_bubbling/">
 
 
-  <meta property="og:description" content="공부한 것을 기록하고 공유하는 방">
-
-
-
+  <meta property="og:description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2022-03-18T00:00:00+09:00">
 
 
 
@@ -41,13 +45,9 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/page4/">
+<link rel="canonical" href="http://localhost:4000/event/event_bubbling/">
 
 
-  <link rel="prev" href="http://localhost:4000/page3/">
-
-
-  <link rel="next" href="http://localhost:4000/page5/">
 
 
 <script type="application/ld+json">
@@ -96,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -1235,38 +1235,242 @@
 
 
 
-  <div class="archive">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="이벤트 버븝링(Event Bubbling)">
+    <meta itemprop="description" content=":computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.">
+    <meta itemprop="datePublished" content="2022-03-18T00:00:00+09:00">
     
+    <div class="page__inner-wrap">
       
-          <h1 id="page-title" class="page__title"></h1>
-      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            이벤트 버븝링(Event Bubbling)
+
+          </h1>
+          
+
+  <p class="page__meta">
     
-    <h3 class="archive__subtitle">
-<img class="emoji" title=":calendar:" alt=":calendar:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png" height="20" width="20">  Recent Posts</h3>
+
+    
+
+    
+  </p>
 
 
-
-
-
-
-
-<div class="entries-list">
+        </header>
+      
+      <footer class="page__meta">
+        
+        
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a class="page__taxonomy-item-tag" rel="tag">Event Bubbling</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep"> </span>
+    
+      <a class="page__taxonomy-item-tag" rel="tag">이벤트 버블링</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+
+
+
+
+
+<p class="page__taxonomy">
+  <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+  <span itemprop="keywords">
+    
+    
+    
+    <a href="/categories/#event" class="page__taxonomy-item-category" rel="tag">event</a>
     
 
+  </span>
+</p>
 
 
-<div class="list__item">
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-03-18T00:00:00+09:00">March 18, 2022</time></p>
+
+      </footer>
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> POST LIST</h4></header>
+              <ul class="toc__menu">
+<li><a href="#1-%EA%B0%9C%EC%9A%94">1. 개요</a></li>
+<li><a href="#2-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B2%84%EB%B8%94%EB%A7%81event-bubbling%EC%9D%B4%EB%9E%80">2. 이벤트 버블링(Event Bubbling)이란?</a></li>
+<li><a href="#%EC%B0%B8%EA%B3%A0-%EC%82%AC%EC%9D%B4%ED%8A%B8">참고 사이트</a></li>
+</ul>
+
+            </nav>
+          </aside>
+        
+        <hr>
+
+<p><img class="emoji" title=":raising_hand:" alt=":raising_hand:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f64b.png" height="20" width="20">  <code class="language-plaintext highlighter-rouge">프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.</code></p>
+<hr>
+
+<h4 id="1-개요">1. 개요</h4>
+
+<hr>
+
+<p><code class="language-plaintext highlighter-rouge">Javascript</code>를 공부하면서 굉장히 많이 보이는게 <code class="language-plaintext highlighter-rouge">Event</code>관련 기능들이다.</p>
+
+<p>이번에는 <code class="language-plaintext highlighter-rouge">Event</code>의 전달 과정의 첫번째로 <code class="language-plaintext highlighter-rouge">이벤트 버블링</code>을 기록해보고자 한다.</p>
+
+<p>대충은 알고 있지만 모든 정리를 하면 더욱 내것이 되는 기분이라 좀 더 자세히 다뤄봐야 겠다.</p>
+
+<h4 id="2-이벤트-버블링event-bubbling이란">2. 이벤트 버블링(Event Bubbling)이란?</h4>
+
+<hr>
+
+<p>이벤트 버블링이란 무엇일까?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>이벤트 버블리은 특정 화면 요소에서 이벤트가 발생했을 때 해당 이벤트가 더 상위의 화면 즉, 트리로 구성되어 있는 HTML 요소 중 구조상으로 상위에 있는 요소들로 전달되어 가는 특성을 의미한다.
+
+</code></pre></div></div>
+
+<p>간단히 예를 보자면 아래와 같은 코드가 있다고 가정한다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"one"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"two"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"three"</span><span class="nt">&gt;</span>Div Three<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>이에 이벤트 버블링은 아래와 같이 전달된다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/159124999-e24ace96-5dbf-4c00-92e3-baadcc7f674b.png" alt="image"></p>
+
+<p>이제 버블링이 어떻게 진행되는지 <code class="language-plaintext highlighter-rouge">Javascript</code>로직을 통해 확인해본다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">divs</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">divs</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">div</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">));</span>
+
+<span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>첫번째로 우리는 <code class="language-plaintext highlighter-rouge">querySelectorAll</code>을 통해 <code class="language-plaintext highlighter-rouge">div</code>태그의 <code class="language-plaintext highlighter-rouge">Elements</code>를 모두 <code class="language-plaintext highlighter-rouge">divs</code>변수에 할당하였다.</p>
+
+<p>그리고 순회하면서 각 <code class="language-plaintext highlighter-rouge">div</code> 태그에 <code class="language-plaintext highlighter-rouge">click</code> 이벤트를 걸고 <code class="language-plaintext highlighter-rouge">logEvent()</code> 함수가 실행되게 끔 하였다.</p>
+
+<p>여기서 우리가 3번째 <code class="language-plaintext highlighter-rouge">div</code> 태그를 클릭하면 어떻게 로그가 출력이 될까?</p>
+
+<p>각 <code class="language-plaintext highlighter-rouge">div</code>에 이벤트 리스터를 통해 클릭 이벤트를 감지하도록 하였기 때문에 <code class="language-plaintext highlighter-rouge">three</code>만 출력되지 않을까?
+처음엔 이렇게 생각했지만 결과는 아래와 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/56063287/159125295-2cafce9b-80b7-4404-8659-3f1a76192351.png" alt="image"></p>
+
+<p><code class="language-plaintext highlighter-rouge">three</code> 부터 <code class="language-plaintext highlighter-rouge">two, one</code> 차례로 전파가 되는것을 볼 수 있다.</p>
+
+<p>진행 순서는 아래와 같다.</p>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">3번째(class="three")</code> div 를 클릭하면 <code class="language-plaintext highlighter-rouge">Click 이벤트 헨들러</code>가 동작한다.</li>
+  <li>동작 후 상단의 <code class="language-plaintext highlighter-rouge">2번째 div</code>에 할당된 <code class="language-plaintext highlighter-rouge">이벤트 헨들러</code>가 동작한다.</li>
+  <li>후 <code class="language-plaintext highlighter-rouge">1번째 div</code>에 할당된 <code class="language-plaintext highlighter-rouge">이벤트 핸들러</code> 동작</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">document</code> 객체를 만날 때까지, 각 요소에 할당된 <code class="language-plaintext highlighter-rouge">이벤트 핸들러</code>가 동작한다.</li>
+</ol>
+
+<p>이렇게 동작하는 이유는 <strong>브라우저가 이벤트를 감지하는 방식</strong> 때문이다.</p>
+
+<p>결과적으로 정리하면 위와 같은 동작을 아래와 같이 정리할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>브라우저는 특정 화면 요소에서 이벤트가 발생했을 때 그 이벤트를 최상위에 있는 화면 요소까지 이벤트를 전파 시킨다.
+이런 흐름을 '이벤트 버블링’이라고 부른다.
+
+이벤트가 제일 깊은 곳에 있는 요소에서 시작해 부모 요소를 거슬러 올라가며 발생하는 모양이 마치 물속 거품(bubble)과 닮았기 때문이다.
+</code></pre></div></div>
+
+<h4 id="참고-사이트">참고 사이트</h4>
+
+<hr>
+
+<ol>
+  <li><a href="https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html">https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html</a></li>
+  <li><a href="https://blog.asamaru.net/2017/05/04/script-async-defer/">https://blog.asamaru.net/2017/05/04/script-async-defer/</a></li>
+</ol>
+
+        
+      </section>
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%9D%B4%EB%B2%A4%ED%8A%B8+%EB%B2%84%EB%B8%9D%EB%A7%81%28Event+Bubbling%29%20http%3A%2F%2Flocalhost%3A4000%2Fevent%2Fevent_bubbling%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fevent%2Fevent_bubbling%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Flocalhost%3A4000%2Fevent%2Fevent_bubbling%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/asyncdefer/asyncdefer/" class="pagination--pager" title="Async / Defer 스크립트
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/algorithm/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/" rel="permalink">에라토스테네스의 체(소수구하기)
+        <a href="/asyncdefer/asyncdefer/" rel="permalink">Async / Defer 스크립트
 </a>
       
     </h2>
     <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.28
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.18
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 
@@ -1275,17 +1479,17 @@
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Programming</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">Async / Defer</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">소수</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">DOM</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">에라토스테네스의 체</a>
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a>
         
     </span>
 </span>
@@ -1301,28 +1505,28 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 알고리즘 공부 간 기록이 필요한 문제들에 대한 정리를 기록하는 포스트 입니다.
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day7/" rel="permalink">Webpack 실습 (7) - 주요 Plugin 실습
+        <a href="/devhistory/MethodChaining/" rel="permalink">메서드 체이닝(Method Chaining)
 </a>
       
     </h2>
     <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.23
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.16
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 
@@ -1331,17 +1535,17 @@
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Plugin</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">EventListner</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">주요 Plugin</a>
+        <a class="page__taxonomy-item-tag" rel="tag">Method Chaining</a>
         
     </span>
 </span>
@@ -1357,28 +1561,28 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day6/" rel="permalink">Webpack 실습 (6) - Plugin 기본 개념정리
+        <a href="/tdz/tdz/" rel="permalink">TDZ(Temporal Dead Zone)
 </a>
       
     </h2>
     <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.19
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.15
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 
@@ -1387,17 +1591,17 @@
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Plugin</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">Hoisting</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">기본개념</a>
+        <a class="page__taxonomy-item-tag" rel="tag">TDZ</a>
         
     </span>
 </span>
@@ -1413,28 +1617,28 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>
 
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/git/git-ignore-add/" rel="permalink">Git ignore 생성 및 적용
+        <a href="/executioncontext/%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8/" rel="permalink">실행 컨텍스트(Execution Context)
 </a>
       
     </h2>
     <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.15
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.03.10
       <!--Archive page 용-: (post -> page)-->
 <!--page__taxonomy.html에서 가져 옴-->
 
@@ -1443,12 +1647,22 @@
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Git ignore</a><span class="sep">
+        <a class="page__taxonomy-item-tag" rel="tag">Execution Context</a><span class="sep">
         </span>
         
         
         
-        <a class="page__taxonomy-item-tag" rel="tag">Git</a>
+        <a class="page__taxonomy-item-tag" rel="tag">F/E</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Lexical Environment</a><span class="sep">
+        </span>
+        
+        
+        
+        <a class="page__taxonomy-item-tag" rel="tag">Variable Environment</a>
         
     </span>
 </span>
@@ -1464,152 +1678,17 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> Git과 관련된 설정을 기록하는 포스트 입니다.
+    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.
 </p>
   </article>
 </div>
 
 
+        
+      </div>
+    </div>
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/webpack/webpack-%EC%8B%A4%EC%8A%B5-day5/" rel="permalink">Webpack 실습 (5) - 주요 Loader 실습
-</a>
-      
-    </h2>
-    <small>
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.01.12
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-
-<span class="page__taxonomy">
-    <span itemprop="keywords">
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">css-loader</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">file-loader</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">style-loader</a><span class="sep">
-        </span>
-        
-        
-        
-        <a class="page__taxonomy-item-tag" rel="tag">Webpack</a>
-        
-    </span>
-</span>
-    </small>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description"><img class="emoji" title=":computer:" alt=":computer:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png" height="20" width="20"> 개인적인 Webpack 학습 및 공부 내용을 기록하기 위한 포스트입니다.
-</p>
-  </article>
-</div>
-
-
   
-</div>
-
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-      
-        <li><a href="/page3/">Previous</a></li>
-      
-    
-
-    
-    
-      <li><a href="/">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-        
-        
-        
-        <li><a href="/page2/">2</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page3/">3</a></li>
-      
-    
-      
-        <li><a href="/page4/" class="disabled current">4</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page5/">5</a></li>
-      
-    
-      
-        
-        
-        
-        <li><a href="/page6/">6</a></li>
-      
-    
-
-    
-    
-      <li><a href="#" class="disabled">…</a></li>
-    
-
-    
-      <li><a href="/page17/">17</a></li>
-    
-
-    
-    
-      <li><a href="/page5/">Next</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
 </div>
     </div>
 

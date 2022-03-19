@@ -490,4 +490,10 @@ var store = [{
         "tags": ["F/E","DOM","Async / Defer"],
         "url": "/asyncdefer/asyncdefer/",
         "teaser": null
+      },{
+        "title": "이벤트 버븝링(Event Bubbling)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript를 공부하면서 굉장히 많이 보이는게 Event관련 기능들이다. 이번에는 Event의 전달 과정의 첫번째로 이벤트 버블링을 기록해보고자 한다. 대충은 알고 있지만 모든 정리를 하면 더욱 내것이 되는 기분이라 좀 더 자세히 다뤄봐야 겠다. 2. 이벤트 버블링(Event Bubbling)이란? 이벤트 버블링이란 무엇일까? 이벤트 버블리은 특정...","categories": ["event"],
+        "tags": ["F/E","Event Bubbling","이벤트 버블링"],
+        "url": "/event/event_bubbling/",
+        "teaser": null
       }]

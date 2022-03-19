@@ -329,6 +329,10 @@
 <lastmod>2022-03-18T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/event/event_bubbling/</loc>
+<lastmod>2022-03-18T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/babel</loc>
 </url>
 <url>
@@ -357,6 +361,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/devhistory</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/event</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/eventLoop</loc>

@@ -143,6 +143,13 @@
                 {% endif %}
             {% endfor %}
         </ul>
+         <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "event" %}
+                    <li><a href="/categories/event" class=""> :bulb: Event Bubbling, Capture, Delegate 동작관련 모음 ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
         :blue_book: Develope Env(개발환경) </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
