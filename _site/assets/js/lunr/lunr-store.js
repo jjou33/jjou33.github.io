@@ -496,4 +496,10 @@ var store = [{
         "tags": ["F/E","Event Bubbling","이벤트 버블링"],
         "url": "/event/event_bubbling/",
         "teaser": null
+      },{
+        "title": "이벤트 버븝링(Event Bubbling)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript를 공부하면서 굉장히 많이 보이는게 Event관련 기능들이다. 이번에는 앞선 이벤트 버블링에 이어 Event의 전달 과정의 두번째로 이벤트 캡쳐을 기록해보고자 한다. 2. 이벤트 캡쳐란? 이벤트 캡처링이란 이벤트 버블링과는 반대로 동작한다고 이해하면 된다. DOM의 최상단 즉, window 로부터 이벤트가 발생한 요소까지 이벤트를 전파한다....","categories": ["event"],
+        "tags": ["F/E","Event Bubbling","이벤트 버블링"],
+        "url": "/event/event_capture/",
+        "teaser": null
       }]
