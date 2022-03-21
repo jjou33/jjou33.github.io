@@ -462,9 +462,9 @@ var store = [{
         "teaser": null
       },{
         "title": "preventDefault",
-        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 개요 공부를 하다가 리마인드할겸 간단하게 적어본다. 이벤트 코드 관련 동작에서 많이 사용되는 preventDefault에 대하여 기록해본다. 2. e.preventDefault() 는 무엇인가? 해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit 혹은 &lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag 등의 태그를 통한 이벤트가 발생할 경우 새로고침...","categories": ["JavaScript"],
+        "excerpt":":raising_hand: JavaScript 문법 내용을 기록하기 위한 포스트입니다. 1. 개요 공부를 하다가 리마인드할겸 간단하게 적어본다. 이벤트 코드 관련 동작에서 많이 사용되는 preventDefault에 대하여 기록해본다. 2. e.preventDefault() 는 무엇인가? 해당 메서드는 태그에서 기본적으로 정의된 이벤트를 작동하지 못하게 하는 메서드이다. submit 혹은 &lt;a&gt;, &lt;input&gt;, &lt;textarea&gt; ..Tag 등의 태그를 통한 이벤트가 발생할 경우 새로고침...","categories": ["event"],
         "tags": ["JavaScript","preventDefault","Event"],
-        "url": "/javascript/preventDefault/",
+        "url": "/event/preventDefault/",
         "teaser": null
       },{
         "title": "실행 컨텍스트(Execution Context)",
@@ -491,15 +491,15 @@ var store = [{
         "url": "/asyncdefer/asyncdefer/",
         "teaser": null
       },{
-        "title": "이벤트 버븝링(Event Bubbling)",
+        "title": "이벤트 버블링(Event Bubbling)",
         "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript를 공부하면서 굉장히 많이 보이는게 Event관련 기능들이다. 이번에는 Event의 전달 과정의 첫번째로 이벤트 버블링을 기록해보고자 한다. 대충은 알고 있지만 모든 정리를 하면 더욱 내것이 되는 기분이라 좀 더 자세히 다뤄봐야 겠다. 2. 이벤트 버블링(Event Bubbling)이란? 이벤트 버블링이란 무엇일까? 이벤트 버블리은 특정...","categories": ["event"],
         "tags": ["F/E","Event Bubbling","이벤트 버블링"],
         "url": "/event/event_bubbling/",
         "teaser": null
       },{
-        "title": "이벤트 버븝링(Event Bubbling)",
+        "title": "이벤트 캡처링(Event Capture)",
         "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 Javascript를 공부하면서 굉장히 많이 보이는게 Event관련 기능들이다. 이번에는 앞선 이벤트 버블링에 이어 Event의 전달 과정의 두번째로 이벤트 캡쳐을 기록해보고자 한다. 2. 이벤트 캡쳐란? 이벤트 캡처링이란 이벤트 버블링과는 반대로 동작한다고 이해하면 된다. DOM의 최상단 즉, window 로부터 이벤트가 발생한 요소까지 이벤트를 전파한다....","categories": ["event"],
-        "tags": ["F/E","Event Bubbling","이벤트 버블링"],
+        "tags": ["F/E","Event Capture","이벤트 캡처"],
         "url": "/event/event_capture/",
         "teaser": null
       }]

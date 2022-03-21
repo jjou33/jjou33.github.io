@@ -1,13 +1,13 @@
 ---
-title: "이벤트 버븝링(Event Bubbling)"
+title: "이벤트 캡처링(Event Capture)"
 excerpt: " :computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
   - event
 tags:
   - F/E
-  - Event Bubbling
-  - 이벤트 버블링
+  - Event Capture
+  - 이벤트 캡처
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
@@ -72,6 +72,19 @@ function logEvent(event) {
 ```
 
 ![image](https://user-images.githubusercontent.com/56063287/159166849-e16ef1dd-cf12-4106-95f7-f66e4661b2e3.png)
+
+#### 3. stopPropagation
+
+---
+
+버블링, 캡처링과 같은 이벤트 전파를 막기 위한 방법은 없을까?
+
+방법은 `stopPropagation()` 메서드를 사용하는 것이다.
+
+특정 태그 단계에서 이벤트 요소에 `stopPropagation` 함수를 실행하면 캡처링을 막을 수 있다.
+
+하지만, 이와 관련해서는 권장하지 않는 몇몇가지의 이유가 있으니 코드를 고려해서 사용해야 한다.
+참고 사이트 : [https://ko.javascript.info/bubbling-and-capturing](https://ko.javascript.info/bubbling-and-capturing)
 
 #### 참고 사이트
 
