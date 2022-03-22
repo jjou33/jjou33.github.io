@@ -502,4 +502,10 @@ var store = [{
         "tags": ["F/E","Event Capture","이벤트 캡처"],
         "url": "/event/event_capture/",
         "teaser": null
+      },{
+        "title": "React 상태 끌어올리기",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 React에 대해서 공부하던 중 컴포넌트 설계 시 State를 어디서 관리해야 해야 하는가? 에 대해서 간략하게 정리해보고자 한다. 우리가 각 기능별 Component를 나누고자 할때 실제 각 기능별 Component에서 state를 관리하게 되면 한가지 문제점이 발생한다. 한가지의 기능 예를들어 검색창에 대한 Component를 만든다고 가정하자....","categories": ["component"],
+        "tags": ["F/E","리엑트(React)","컴포넌트 설계","State 설계"],
+        "url": "/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/",
+        "teaser": null
       }]

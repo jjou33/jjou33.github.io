@@ -337,6 +337,10 @@
 <lastmod>2022-03-20T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/</loc>
+<lastmod>2022-03-22T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/babel</loc>
 </url>
 <url>
@@ -356,6 +360,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/cloudfront</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/component</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/cookiesession</loc>
