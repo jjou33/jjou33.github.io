@@ -508,4 +508,10 @@ var store = [{
         "tags": ["F/E","리엑트(React)","컴포넌트 설계","State 설계"],
         "url": "/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "Component 재사용 방법(작성중)",
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 개요 React의 Component를 설계할때 많이 사용하는 재사용에 대해서 알아보자. 공부를 하던 중 관련하여 기억할만한 부분이 있어 한번 포스팅해본다. 먼저 React에서 컴포넌트를 설계할때 방법들 중 아래의 2가지를 살펴보겠다. Class 상속 props 를 활용한 컴포넌트 담기 결과적으로 React의 공식 문서에서 아래와 같이 Class 상속으로...","categories": ["component"],
+        "tags": ["F/E","리엑트(React)","컴포넌트 설계","재사용방법","상속, 합성(담기)"],
+        "url": "/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/",
+        "teaser": null
       }]
