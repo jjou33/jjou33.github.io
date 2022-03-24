@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-24T00:54:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">Component 재사용 방법(작성중)</title><link href="http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="Component 재사용 방법(작성중)" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-24T01:11:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hippo Dev Blog</title><subtitle>공부한 것을 기록하고 공유하는 방</subtitle><author><name>:raising_hand:HELLO MY WORLD</name></author><entry><title type="html">Component 재사용 방법(작성중)</title><link href="http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/" rel="alternate" type="text/html" title="Component 재사용 방법(작성중)" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95</id><content type="html" xml:base="http://localhost:4000/component/%EC%9E%AC%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -121,7 +121,7 @@ UI가 아닌 기능을 여러 컴포넌트에서 재사용하기를 원한다면
 
 &lt;p&gt;이제 비교대상인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;props&lt;/code&gt;를 통해 어떻게 변경될지 확인해보자.&lt;/p&gt;
 
-&lt;h4 id=&quot;props-를-이용한-컴포넌트-재사용&quot;&gt;Props 를 이용한 컴포넌트 재사용&lt;/h4&gt;
+&lt;h4 id=&quot;3props-를-이용한-컴포넌트-재사용&quot;&gt;3.Props 를 이용한 컴포넌트 재사용&lt;/h4&gt;
 
 &lt;hr /&gt;
 
@@ -198,7 +198,7 @@ UI가 아닌 기능을 여러 컴포넌트에서 재사용하기를 원한다면
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://ko.reactjs.org/docs/composition-vs-inheritance.html&quot;&gt;https://ko.reactjs.org/docs/composition-vs-inheritance.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="component" /><category term="F/E" /><category term="리엑트(React)" /><category term="컴포넌트 설계" /><category term="재사용방법" /><category term="상속, 합성(담기)" /><summary type="html">:computer: React 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">React 상태 끌어올리기</title><link href="http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="React 상태 끌어올리기" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/">&lt;hr /&gt;
+&lt;/ol&gt;</content><author><name>:raising_hand:HELLO MY WORLD</name></author><category term="component" /><category term="React" /><category term="재사용방법" /><category term="컴포넌트 설계" /><category term="상속" /><category term="합성(담기)" /><summary type="html">:computer: React 개발관련 공부내용을 기록하는 포스트 입니다.</summary></entry><entry><title type="html">React 상태 끌어올리기</title><link href="http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/" rel="alternate" type="text/html" title="React 상태 끌어올리기" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/component/state%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0/">&lt;hr /&gt;
 
 &lt;p&gt;:raising_hand:  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
