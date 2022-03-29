@@ -290,7 +290,7 @@ var store = [{
         "title": "CSS 관련 링크",
         "excerpt":"  :raising_hand:  프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다.    1. 관련링크     Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 많다.   이때 정규식을 쓰면 좋은데 자주쓰는 것들을 익히기 좋은 사이트가 있어 기록해논다.   http://www.w3bai.com/ko/tags/att_input_pattern.html   2. CSS Color 관련 링크        https://www.w3schools.com/colors/colors_names.asp   https://material.io/design/color/the-color-system.html#tools-for-picking-colors   https://color.adobe.com/ko/explore   위 세가지 사이트에서 색상을 찾기 유용하다.  ","categories": ["htmlcss"],
         "tags": ["F/E","CSS Reference"],
-        "url": "/htmlcss/css-reference-copy/",
+        "url": "/htmlcss/css-reference/",
         "teaser": null
       },{
         "title": "Git Password -> Token 변경 이슈",
