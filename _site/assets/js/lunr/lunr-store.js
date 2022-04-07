@@ -516,7 +516,7 @@ var store = [{
         "teaser": null
       },{
         "title": "setState 중복 사용 시 주의사항",
-        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 상태 변경 시 기억할 사항 기본적으로 setState를 사용할때 아래와 같이 작성을 한다. this.setState({ value : \"\"; value2 : \"\"; ... }) 만약 클릭 시 값이 1씩 증가하는 컴포넌트 기능을 가진 개발이 필요하다고 하자. this.setState({ value: this.state.value + 1 ... }) ... this.setState({...","categories": ["reactTips"],
+        "excerpt":":raising_hand: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다. 1. 상태 변경 시 기억할 사항 기본적으로 setState를 사용할때 아래와 같이 작성을 한다. this.setState({ value : \"\"; value2 : \"\"; }) 만약 클릭 시 값이 1씩 증가하는 컴포넌트 기능을 가진 개발이 필요하다고 하자. this.setState({ value: this.state.value + 1 ... }) ... this.setState({ value:...","categories": ["reactTips"],
         "tags": ["F/E","리엑트(React)","State 중복사용","비동기처리"],
         "url": "/reacttips/state-%EC%A4%91%EB%B3%B5%EC%82%AC%EC%9A%A9/",
         "teaser": null
