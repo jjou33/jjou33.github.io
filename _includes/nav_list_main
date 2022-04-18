@@ -50,6 +50,13 @@
         </ul>
         <ul>
             {% for category in site.categories %}
+                {% if category[0] == "eslint" %}
+                    <li><a href="/categories/beslintbel" class="">:pencil2: eslint ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
                 {% if category[0] == "JavaScript" %}
                     <li><a href="/categories/JavaScript" class="">:pencil2: JavaScript Basic ({{category[1].size}})</a></li>
                 {% endif %}
