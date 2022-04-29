@@ -83,7 +83,7 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "react" %}
-                    <li><a href="/categories/react" class="">:pushpin: React 개념 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/react" class="">:pushpin: React DEV History ({{category[1].size}})</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
