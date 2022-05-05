@@ -1,5 +1,5 @@
 ---
-title: "Cookie & Session 개념정리"
+title: "이벤트 루프(Event Loop)"
 layout: archive
 permalink: categories/eventLoop
 author_profile: true

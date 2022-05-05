@@ -1,5 +1,5 @@
 ---
-title: "Cookie & Session 개념정리"
+title: "Single Page Application"
 layout: archive
 permalink: categories/spa
 author_profile: true
