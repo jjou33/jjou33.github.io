@@ -107,49 +107,49 @@
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "cookiesession" %}
-                    <li><a href="/categories/cookiesession" class=""> :bulb: Cookie & Session ({{category[1].size}})</a></li>
+                    <li><a href="/categories/cookiesession" class=""> :bulb: Cookie & Session</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "virtualdom" %}
-                    <li><a href="/categories/virtualdom" class=""> :bulb: VirtualDOM(가상돔) ({{category[1].size}})</a></li>
+                    <li><a href="/categories/virtualdom" class=""> :bulb: VirtualDOM(가상돔)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "browserProcess" %}
-                    <li><a href="/categories/browserProcess" class=""> :bulb: 브라우저 동작원리 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/browserProcess" class=""> :bulb: 브라우저 동작원리</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "eventLoop" %}
-                    <li><a href="/categories/eventLoop" class=""> :bulb: 이벤트루프(EventLoop) ({{category[1].size}})</a></li>
+                    <li><a href="/categories/eventLoop" class=""> :bulb: 이벤트루프(EventLoop)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "spa" %}
-                    <li><a href="/categories/spa" class=""> :bulb: Single Page Application ({{category[1].size}})</a></li>
+                    <li><a href="/categories/spa" class=""> :bulb: Single Page Application</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "vuelife" %}
-                    <li><a href="/categories/vuelife" class=""> :bulb: Vue Life Cycle ({{category[1].size}})</a></li>
+                    <li><a href="/categories/vuelife" class=""> :bulb: Vue Life Cycle</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "closure" %}
-                    <li><a href="/categories/closure" class=""> :bulb: 클로저(Closure) ({{category[1].size}})</a></li>
+                    <li><a href="/categories/closure" class=""> :bulb: 클로저(Closure)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -157,42 +157,49 @@
             {% for category in site.categories %}
                 {% if category[0] == "executionContext" %}
                     <li><a href="/categories/executionContext" class=""> :bulb: 실행 컨텍스트
-                    (Execution Context) ({{category[1].size}})</a></li>
+                    (Execution Context)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "tdz" %}
-                    <li><a href="/categories/tdz" class=""> :bulb: TDZ(Temporal Dead Zone) ({{category[1].size}})</a></li>
+                    <li><a href="/categories/tdz" class=""> :bulb: TDZ(Temporal Dead Zone)</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "asyncdefer" %}
-                    <li><a href="/categories/asyncdefer" class=""> :bulb: Async / Defer Script ({{category[1].size}})</a></li>
+                    <li><a href="/categories/asyncdefer" class=""> :bulb: Async / Defer Script</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "event" %}
-                    <li><a href="/categories/event" class=""> :bulb: Event Bubbling, Capture, Delegate 동작관련 모음 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/event" class=""> :bulb: Event Bubbling, Capture, Delegate 동작관련 모음</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "incoding" %}
-                    <li><a href="/categories/incoding" class=""> :bulb: Incoding 과 Encrypt 의 차이 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/incoding" class=""> :bulb: Incoding 과 Encrypt 의 차이</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "render" %}
-                    <li><a href="/categories/render" class=""> :bulb: CSR 과 SSR 의 차이 ({{category[1].size}})</a></li>
+                    <li><a href="/categories/render" class=""> :bulb: CSR 과 SSR 의 차이</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "thvsde" %}
+                    <li><a href="/categories/thvsde" class=""> :bulb: throttling 과 debouncing</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
