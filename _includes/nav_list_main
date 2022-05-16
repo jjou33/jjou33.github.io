@@ -203,6 +203,13 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "design" %}
+                    <li><a href="/categories/design" class=""> :bulb: 디자인 패턴(Design Pattern) </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
         :blue_book: Develope Env(개발환경) </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
