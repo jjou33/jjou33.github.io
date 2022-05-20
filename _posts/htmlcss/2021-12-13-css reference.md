@@ -34,4 +34,12 @@ Javscript 혹은 css 로 특정 값에 대한 이벤트를 먹이는 경우가 �
 2. [https://material.io/design/color/the-color-system.html#tools-for-picking-colors](https://material.io/design/color/the-color-system.html#tools-for-picking-colors)
 3. [https://color.adobe.com/ko/explore](https://color.adobe.com/ko/explore)
 
+#### 3. favicon 다운로드 관련 링크
+
+---
+
+1. [https://www.favicon-generator.org/](https://www.favicon-generator.org/)
+
+원하는 파일을 `Generator`에서 변환하여 사용하면 된다.
+
 **_위 세가지 사이트에서 색상을 찾기 유용하다._**

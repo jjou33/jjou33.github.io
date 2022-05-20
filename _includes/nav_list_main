@@ -76,7 +76,22 @@
                 {% endif %}
             {% endfor %}
         </ul>
-        
+        <span class="nav__sub-title">
+        :notebook: VUE </span>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "vuelife" %}
+                    <li><a href="/categories/vuelife" class=""> :trophy: Vue Life Cycle</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "vueDev" %}
+                    <li><a href="/categories/vueDev" class=""> :trophy: Vue DEV History</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
         :orange_book: React </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
@@ -136,13 +151,6 @@
             {% for category in site.categories %}
                 {% if category[0] == "spa" %}
                     <li><a href="/categories/spa" class=""> :bulb: Single Page Application</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for category in site.categories %}
-                {% if category[0] == "vuelife" %}
-                    <li><a href="/categories/vuelife" class=""> :bulb: Vue Life Cycle</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
