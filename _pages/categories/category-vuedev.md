@@ -1,5 +1,5 @@
 ---
-title: "Vue.js 라이프 사이클"
+title: "Vue 개발 중 기록 포스팅"
 layout: archive
 permalink: categories/vueDev
 author_profile: true
