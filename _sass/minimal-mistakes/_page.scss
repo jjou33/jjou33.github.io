@@ -122,7 +122,7 @@ body {
   dl {
     font-size: 1em;
     strong {
-      color: #a9f7eb;
+      color: #9ffaed;
     }
   }
 
@@ -173,6 +173,17 @@ body {
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+  }
+  table {
+    tr:first-child td {
+      color: black;
+      background-color: #bcebe4;
+    }
+    td {
+      color: black;
+      background-color: whitesmoke;
+      border-style: solid;
+    }
   }
 }
 
