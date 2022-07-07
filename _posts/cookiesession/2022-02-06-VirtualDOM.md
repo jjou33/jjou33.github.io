@@ -10,6 +10,7 @@ tags:
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
+classes: wide
 ---
 
 <hr>ㅃ

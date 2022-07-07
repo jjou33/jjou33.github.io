@@ -6,3 +6,16 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+@font-face {
+    font-family: "Maplestory";
+    src: url("../font/Maplestory.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Maplestory Light";
+    src: url("../font/MaplestoryLT.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

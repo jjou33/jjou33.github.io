@@ -8,246 +8,524 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            :books: <span style="font-family:'Cafe24Oneprettynight';">전체 포스팅 </style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+        <i class="fa-solid fa-layer-group"></i>
+         <span style="font-family:'Maplestory'; color: #FFF89A;"> &nbsp; 전체 포스팅 </style> 
+         <span style="font-family:'Maplestory'; color: #FFF89A">{{sum}}</style> 
+         <span style="font-family:'Maplestory'; color: #FFF89A" >개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
         <span class="nav__sub-title">
-         :closed_book: ALGORITHM</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/Algorithm" class="">:black_nib: Algorithm ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+            <i class="fa-solid fa-caret-right"></i>
+            &nbsp;ALGORITHM
+        </span>
+                <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "Algorithm" %}
+                <li>
+                <div class="icon_Box">
+                    <i class="fa fa-code"></i>
+                </div>
+                    <a href="/categories/Algorithm" class=""> &nbsp;&nbsp;Algorithm 
+                                    <span>
+                                        ( {{category[1].size}} )
+                                    </span>
+                    </a>
+                </li>
+
+            
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
-        :green_book: Web - Front End </span>
+            <i class="fa-solid fa-caret-right"></i>
+            &nbsp;Web - Front End </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
-            <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
-            <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
-                {% if category[0] == "Vue" %}
-                    <li><a href="/categories/Vue" class=""> Vue Study Note ({{category[1].size}})</a></li>
+                {% if category[0] == "webpack" %}
+                <li>
+                <div class="icon_Box">
+                    <i class="fa-solid fa-car"></i>  
+                </div>
+                    <a href="/categories/webpack" class="">&nbsp;&nbsp; Webpack 
+                                <span>
+                                    ( {{category[1].size}} )
+                                </span>
+                    </a>
+                </li>
+
+            
                 {% endif %}
             {% endfor %}
         </ul>
         
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "webpack" %}
-                    <li><a href="/categories/webpack" class="">:pencil2: Webpack ({{category[1].size}})</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for category in site.categories %}
                 {% if category[0] == "babel" %}
-                    <li><a href="/categories/babel" class="">:pencil2: 바벨(Babel) ({{category[1].size}})</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for category in site.categories %}
-                {% if category[0] == "eslint" %}
-                    <li><a href="/categories/beslintbel" class="">:pencil2: eslint ({{category[1].size}})</a></li>
+                <li>
+                <div class="icon_Box">
+                    <i class="fa-solid fa-child-reaching"></i>
+                </div>
+                    <a href="/categories/babel" class="">&nbsp;&nbsp;  바벨(Babel)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+
+            
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "JavaScript" %}
-                    <li><a href="/categories/JavaScript" class="">:pencil2: JavaScript Basic ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                    <i class="fa-brands fa-js-square"></i>
+                    </div>
+                    <a href="/categories/JavaScript" class="">&nbsp;&nbsp; JavaScript Basic
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "htmlcss" %}
-                    <li><a href="/categories/htmlcss" class="">:pencil2: HTML, CSS Basic ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                    <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <a href="/categories/htmlcss" class="">&nbsp;&nbsp; HTML, CSS Basic
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "devhistory" %}
-                    <li><a href="/categories/devhistory" class="">:pencil2: Develope History ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <a href="/categories/devhistory" class="">&nbsp;&nbsp; JS DEV History
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <span class="nav__sub-title">
-        :notebook: VUE </span>
+            <i class="fa-solid fa-caret-right"></i>
+            &nbsp;VUE 
+        </span>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "vuelife" %}
-                    <li><a href="/categories/vuelife" class=""> :trophy: Vue Life Cycle</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-vuejs"></i>
+                    </div>
+                    <a href="/categories/vuelife" class="">&nbsp;&nbsp;Vue Life Cycle
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "vueDev" %}
-                    <li><a href="/categories/vueDev" class=""> :trophy: Vue DEV History</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <a href="/categories/vueDev" class="">&nbsp;&nbsp;Vue DEV History
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <span class="nav__sub-title">
-        :orange_book: React </span>
+            <i class="fa-solid fa-caret-right"></i>
+        &nbsp;React </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             {% for category in site.categories %}
-                {% if category[0] == "react" %}
-                    <li><a href="/categories/react" class="">:pushpin: React DEV History ({{category[1].size}})</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for category in site.categories %}
                 {% if category[0] == "reactTips" %}
-                    <li><a href="/categories/reactTips" class="">:pushpin: React 사용 팁 ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <a href="/categories/reactTips" class="">&nbsp;&nbsp; React 사용 팁 
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "component" %}
-                    <li><a href="/categories/component" class="">:pushpin: React 컴포넌트 설계 관련 ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-regular fa-paste"></i>
+                    </div>
+                    <a href="/categories/component" class="">&nbsp;&nbsp; React 컴포넌트 설계 관련 
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "react" %}
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <a href="/categories/react" class="">&nbsp;&nbsp; React DEV History 
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <span class="nav__sub-title">
-        :notebook_with_decorative_cover: Web - 기술개념 </span>
+            <i class="fa-solid fa-caret-right"></i>
+        &nbsp; Web - 기술개념 </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "security" %}
-                    <li><a href="/categories/security" class=""> :bulb: Web Security</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <a href="/categories/security" class=""> &nbsp;&nbsp; Web Security
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "cookiesession" %}
-                    <li><a href="/categories/cookiesession" class=""> :bulb: Cookie & Session</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-cookie"></i>
+                    </div>
+                    <a href="/categories/cookiesession" class=""> &nbsp;&nbsp; Cookie & Session
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "virtualdom" %}
-                    <li><a href="/categories/virtualdom" class=""> :bulb: VirtualDOM(가상돔)</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-vr-cardboard"></i>
+                    </div>
+                    <a href="/categories/virtualdom" class=""> &nbsp;&nbsp; VirtualDOM(가상돔)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "browserProcess" %}
-                    <li><a href="/categories/browserProcess" class=""> :bulb: 브라우저 동작원리</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-chrome"></i>
+                    </div>
+                    <a href="/categories/browserProcess" class=""> &nbsp;&nbsp; 브라우저 동작원리
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "eventLoop" %}
-                    <li><a href="/categories/eventLoop" class=""> :bulb: 이벤트루프(EventLoop)</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </div>
+                    <a href="/categories/eventLoop" class=""> &nbsp;&nbsp; 이벤트루프(EventLoop)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "spa" %}
-                    <li><a href="/categories/spa" class=""> :bulb: Single Page Application</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-dice-one"></i>
+                    </div>
+                    <a href="/categories/spa" class=""> &nbsp;&nbsp; Single Page Application
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "closure" %}
-                    <li><a href="/categories/closure" class=""> :bulb: 클로저(Closure)</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-house-lock"></i>
+                    </div>
+                    <a href="/categories/closure" class=""> &nbsp;&nbsp; 클로저(Closure)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "executionContext" %}
-                    <li><a href="/categories/executionContext" class=""> :bulb: 실행 컨텍스트
-                    (Execution Context)</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-earlybirds"></i>
+                    </div>
+                    <a href="/categories/executionContext" class=""> &nbsp;&nbsp; 실행 컨텍스트
+                        (Execution Context)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "tdz" %}
-                    <li><a href="/categories/tdz" class=""> :bulb: TDZ(Temporal Dead Zone)</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-not-equal"></i>
+                    </div>
+                    <a href="/categories/tdz" class=""> &nbsp;&nbsp; TDZ(Temporal Dead Zone)
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "asyncdefer" %}
-                    <li><a href="/categories/asyncdefer" class=""> :bulb: Async / Defer Script</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-parachute-box"></i>
+                    </div>
+                    <a href="/categories/asyncdefer" class=""> &nbsp;&nbsp; Async / Defer Script
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                   
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "event" %}
-                    <li><a href="/categories/event" class=""> :bulb: Event Bubbling, Capture, Delegate 동작관련 모음</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-plane"></i>
+                    </div>
+                    <a href="/categories/event" class=""> &nbsp;&nbsp; Event Bubbling, Capture, Delegate 동작관련 모음
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
          <ul>
             {% for category in site.categories %}
                 {% if category[0] == "incoding" %}
-                    <li><a href="/categories/incoding" class=""> :bulb: Incoding 과 Encrypt 의 차이</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <a href="/categories/incoding" class=""> &nbsp;&nbsp; Incoding 과 Encrypt 의 차이
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "render" %}
-                    <li><a href="/categories/render" class=""> :bulb: CSR 과 SSR 의 차이</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <a href="/categories/render" class=""> &nbsp;&nbsp; CSR 과 SSR 의 차이
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "thvsde" %}
-                    <li><a href="/categories/thvsde" class=""> :bulb: throttling 과 debouncing</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                    <a href="/categories/thvsde" class=""> &nbsp;&nbsp; throttling 과 debouncing
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "design" %}
-                    <li><a href="/categories/design" class=""> :bulb: 디자인 패턴(Design Pattern) </a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <a href="/categories/design" class=""> &nbsp;&nbsp; 디자인 패턴(Design Pattern) 
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <span class="nav__sub-title">
-        :blue_book: Develope Env(개발환경) </span>
+            <i class="fa-solid fa-caret-right"></i>
+        &nbsp; Develope Env(개발환경) </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
             <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
             <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
             {% for category in site.categories %}
                 {% if category[0] == "mac" %}
-                    <li><a href="/categories/mac" class=""> :mag: MAC OS 설정 및 오류({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+                    <a href="/categories/mac" class=""> &nbsp;&nbsp; MAC OS 설정 및 오류
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "devEnv" %}
-                    <li><a href="/categories/devEnv" class=""> :mag: 개발 환경 설정 ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <a href="/categories/devEnv" class=""> &nbsp;&nbsp; 개발 환경 설정 
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "git" %}
-                    <li><a href="/categories/git" class=""> :mag: Git 관련 설정 ({{category[1].size}})</a></li>
+                <li>
+                    <div class="icon_Box">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <a href="/categories/git" class=""> &nbsp;&nbsp; Git 관련 설정 ({{category[1].size}})
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                    
                 {% endif %}
             {% endfor %}
         </ul>

@@ -73,7 +73,7 @@
   }
 
   a {
-    color: #8cd2d5;
+    color: #C1F4C5;
   }
 }
 
@@ -90,12 +90,12 @@
 
   h4 {
     font-size: 1.2em;
-    color: #6dd2f0;
+    color: $hilight-color;
   }
 
   li {
     font-size: 0.8em;
-    color: #fff;
+    color: $text-color;
   }
 
   h5 {
@@ -104,7 +104,7 @@
   }
 
   h6 {
-    color: #a9f7eb;
+    color: $hilight-color;
     font-size: 0.95em;
   }
 }
@@ -112,8 +112,10 @@
 .archive__item-excerpt {
   margin-top: 0;
   font-size: 0.7em;
+
   & + p {
     text-indent: 0;
+    color: $subPrimary-color;
   }
 
   a {
@@ -193,7 +195,7 @@
   }
   .page__title {
     font-size: 1.1em;
-    color: #e3e989;
+    color: $main-header-text-color;
   }
 }
 

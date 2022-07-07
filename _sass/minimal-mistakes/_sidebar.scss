@@ -28,6 +28,9 @@
     }
 
     &.sticky {
+      // float: left;
+      // margin-left: -1.5rem;
+      // width: 280px;
       overflow-y: auto;
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
@@ -186,56 +189,188 @@
   }
 }
 
-.author__urls-wrapper {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: $sans-serif;
-  z-index: 20;
-  cursor: pointer;
+.navigation-wrapper {
 
-  li:last-child {
-    a {
-      margin-bottom: 0;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .author__urls {
-    span.label {
-      padding-left: 5px;
-    }
-  }
 
-  @include breakpoint($large) {
-    display: block;
-  }
-
-  button {
+  .navigation_list
+  {
     position: relative;
-    margin-bottom: 0;
-
-    &:before {
-      @supports (pointer-events: none) {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-      }
-    }
-
-    &.open {
-      &:before {
-        pointer-events: auto;
-      }
-    }
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    width: 220px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
   }
+
+  .navigation_list ul 
+  {
+    display: flex;
+    width: 100px;
+  }
+
+  .navigation_list ul li
+  {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+
+  .navigation_list ul li a
+  {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .navigation_list ul li a .hover_Icon
+  {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #252a34;
+  }
+
+  .navigation_list ul li.active a .hover_Icon
+  {
+    transform: translateY(-32px);
+  }
+
+  .navigation_list ul li a .hover_Text
+  {
+    position: absolute;
+    color: #252a34;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .navigation_list ul li.active a .hover_Text
+  {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
+  .hover_indicator
+  {
+    position: absolute;
+    top: -30%;
+    left: 24%;
+    width: 50px;
+    height: 50px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid #252a34;
+    transition: 0.5s;
+  }
+
+  .hover_indicator::before
+  {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 #252a34;
+  }
+
+  .hover_indicator::after
+  {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 #252a34;
+  }
+
+  .navigation_list ul li:nth-child(1).active ~ .hover_indicator
+  {
+    transform: translateX(calc(33px * 0));
+  }
+  .navigation_list ul li:nth-child(2).active ~ .hover_indicator
+  {
+    transform: translateX(calc(33px * 1));
+  }
+  .navigation_list ul li:nth-child(3).active ~ .hover_indicator
+  {
+    transform: translateX(calc(33px * 2));
+  }
+  // position: relative;
+  // display: table-cell;
+  // vertical-align: middle;
+  // font-family: $sans-serif;
+  // z-index: 20;
+  // cursor: pointer;
+
+  // li:last-child {
+  //   a {
+  //     margin-bottom: 0;
+  //   }
+  // }
+
+  // .author__urls {
+  //   span.label {
+  //     padding-left: 5px;
+  //   }
+  // }
+
+  // @include breakpoint($large) {
+  //   display: block;
+  // }
+
+  // button {
+  //   position: relative;
+  //   margin-bottom: 0;
+
+  //   &:before {
+  //     @supports (pointer-events: none) {
+  //       content: "";
+  //       position: fixed;
+  //       top: 0;
+  //       left: 0;
+  //       width: 100%;
+  //       height: 100%;
+  //       pointer-events: none;
+  //     }
+  //   }
+
+  //   &.open {
+  //     &:before {
+  //       pointer-events: auto;
+  //     }
+  //   }
+
+  //   @include breakpoint($large) {
+  //     display: none;
+  //   }
+  // }
 }
 
 .author__urls {
