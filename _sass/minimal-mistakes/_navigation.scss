@@ -590,11 +590,25 @@
   text-transform: uppercase;
   color: $hilight-color;
 
+  ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
-}
+  ul li {
+    position: relative;
+    list-style: none;
+  }
 
-.effect_container {
+  ul li a {
+    position: relative;
+    text-decoration: none;
+    line-height: 1em;
+    letter-spacing: 2px;
 
+  }
 }
 /*
      Table of contents navigation

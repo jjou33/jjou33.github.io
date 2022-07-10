@@ -24,7 +24,7 @@
                 {% if category[0] == "Algorithm" %}
                 <li>
                 <div class="icon_Box">
-                    <i class="fa fa-code"></i>
+                    <img src="https://img.icons8.com/external-becris-flat-becris/64/000000/external-algorithm-data-science-becris-flat-becris.png"/>
                 </div>
                     <a href="/categories/Algorithm" class=""> &nbsp;&nbsp;Algorithm 
                                     <span>
@@ -46,7 +46,7 @@
                 {% if category[0] == "webpack" %}
                 <li>
                 <div class="icon_Box">
-                    <i class="fa-solid fa-car"></i>  
+                    <img src="https://img.icons8.com/color/48/000000/webpack.png"/>
                 </div>
                     <a href="/categories/webpack" class="">&nbsp;&nbsp; Webpack 
                                 <span>
@@ -54,18 +54,15 @@
                                 </span>
                     </a>
                 </li>
-
-            
                 {% endif %}
             {% endfor %}
-        </ul>
-        
+        </ul>        
         <ul>
             {% for category in site.categories %}
                 {% if category[0] == "babel" %}
                 <li>
                 <div class="icon_Box">
-                    <i class="fa-solid fa-child-reaching"></i>
+                    <img src="https://img.icons8.com/dusk/64/000000/babel.png"/>
                 </div>
                     <a href="/categories/babel" class="">&nbsp;&nbsp;  바벨(Babel)
                         <span>
@@ -83,9 +80,25 @@
                 {% if category[0] == "JavaScript" %}
                 <li>
                     <div class="icon_Box">
-                    <i class="fa-brands fa-js-square"></i>
+                        <img src="https://img.icons8.com/color/48/000000/javascript--v1.png"/>
                     </div>
                     <a href="/categories/JavaScript" class="">&nbsp;&nbsp; JavaScript Basic
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "typescript" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/color/48/000000/typescript.png"/>
+                    </div>
+                    <a href="/categories/typescript" class="">&nbsp;&nbsp; Typescript Basic
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -99,7 +112,7 @@
                 {% if category[0] == "htmlcss" %}
                 <li>
                     <div class="icon_Box">
-                    <i class="fa-brands fa-html5"></i>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-html-mobile-app-development-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                     <a href="/categories/htmlcss" class="">&nbsp;&nbsp; HTML, CSS Basic
                         <span>
@@ -115,7 +128,7 @@
                 {% if category[0] == "devhistory" %}
                 <li>
                     <div class="icon_Box">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
+                        <img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/64/000000/external-software-developer-digital-asset-and-intangible-product-parzival-1997-outline-color-parzival-1997.png"/>
                     </div>
                     <a href="/categories/devhistory" class="">&nbsp;&nbsp; JS DEV History
                         <span>
@@ -135,7 +148,7 @@
                 {% if category[0] == "vuelife" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-vuejs"></i>
+                        <img src="https://img.icons8.com/color/48/000000/vue-js.png"/>
                     </div>
                     <a href="/categories/vuelife" class="">&nbsp;&nbsp;Vue Life Cycle
                         <span>
@@ -151,7 +164,7 @@
                 {% if category[0] == "vueDev" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/64/000000/external-software-developer-digital-asset-and-intangible-product-parzival-1997-outline-color-parzival-1997.png"/>
                     </div>
                     <a href="/categories/vueDev" class="">&nbsp;&nbsp;Vue DEV History
                         <span>
@@ -162,6 +175,7 @@
                 {% endif %}
             {% endfor %}
         </ul>
+
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
         &nbsp;React </span>
@@ -171,7 +185,7 @@
                 {% if category[0] == "reactTips" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-react"></i>
+                        <img src="https://img.icons8.com/plasticine/100/000000/react.png"/>
                     </div>
                     <a href="/categories/reactTips" class="">&nbsp;&nbsp; React 사용 팁 
                         <span>
@@ -187,7 +201,7 @@
                 {% if category[0] == "component" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-regular fa-paste"></i>
+                        <img src="https://img.icons8.com/external-prettycons-lineal-color-prettycons/49/000000/external-browser-user-interface-prettycons-lineal-color-prettycons-11.png"/>
                     </div>
                     <a href="/categories/component" class="">&nbsp;&nbsp; React 컴포넌트 설계 관련 
                         <span>
@@ -203,7 +217,7 @@
                 {% if category[0] == "react" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/64/000000/external-software-developer-digital-asset-and-intangible-product-parzival-1997-outline-color-parzival-1997.png"/>
                     </div>
                     <a href="/categories/react" class="">&nbsp;&nbsp; React DEV History 
                         <span>
@@ -223,7 +237,7 @@
                 {% if category[0] == "security" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-shield-halved"></i>
+                        <img src="https://img.icons8.com/cute-clipart/64/000000/keyhole-shield.png"/>
                     </div>
                     <a href="/categories/security" class=""> &nbsp;&nbsp; Web Security
                         <span>
@@ -239,7 +253,7 @@
                 {% if category[0] == "cookiesession" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-cookie"></i>
+                        <img src="https://img.icons8.com/color/48/000000/cookie.png"/>
                     </div>
                     <a href="/categories/cookiesession" class=""> &nbsp;&nbsp; Cookie & Session
                         <span>
@@ -256,7 +270,7 @@
                 {% if category[0] == "virtualdom" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-vr-cardboard"></i>
+                        <img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/64/000000/external-virtual-shopstreaming-parzival-1997-outline-color-parzival-1997.png"/>
                     </div>
                     <a href="/categories/virtualdom" class=""> &nbsp;&nbsp; VirtualDOM(가상돔)
                         <span>
@@ -273,7 +287,7 @@
                 {% if category[0] == "browserProcess" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-chrome"></i>
+                        <img src="https://img.icons8.com/color/48/000000/chrome--v1.png"/>
                     </div>
                     <a href="/categories/browserProcess" class=""> &nbsp;&nbsp; 브라우저 동작원리
                         <span>
@@ -290,7 +304,7 @@
                 {% if category[0] == "eventLoop" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-rotate-left"></i>
+                        <img src="https://img.icons8.com/external-prettycons-flat-prettycons/47/000000/external-sync-technology-prettycons-flat-prettycons.png"/>
                     </div>
                     <a href="/categories/eventLoop" class=""> &nbsp;&nbsp; 이벤트루프(EventLoop)
                         <span>
@@ -307,7 +321,7 @@
                 {% if category[0] == "spa" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-dice-one"></i>
+                        <img src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/000000/external-application-real-estate-xnimrodx-lineal-color-xnimrodx.png"/>
                     </div>
                     <a href="/categories/spa" class=""> &nbsp;&nbsp; Single Page Application
                         <span>
@@ -324,7 +338,7 @@
                 {% if category[0] == "closure" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-house-lock"></i>
+                        <img src="https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-developer-devops-soft-fill-soft-fill-juicy-fish-2.png"/>
                     </div>
                     <a href="/categories/closure" class=""> &nbsp;&nbsp; 클로저(Closure)
                         <span>
@@ -341,7 +355,7 @@
                 {% if category[0] == "executionContext" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-earlybirds"></i>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-context-automation-technology-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                     <a href="/categories/executionContext" class=""> &nbsp;&nbsp; 실행 컨텍스트
                         (Execution Context)
@@ -359,7 +373,7 @@
                 {% if category[0] == "tdz" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-not-equal"></i>
+                        <img src="https://img.icons8.com/dusk/64/000000/skull.png"/>
                     </div>
                     <a href="/categories/tdz" class=""> &nbsp;&nbsp; TDZ(Temporal Dead Zone)
                         <span>
@@ -376,7 +390,7 @@
                 {% if category[0] == "asyncdefer" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-parachute-box"></i>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-coding-computer-programming-icons-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                     <a href="/categories/asyncdefer" class=""> &nbsp;&nbsp; Async / Defer Script
                         <span>
@@ -393,7 +407,7 @@
                 {% if category[0] == "event" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-plane"></i>
+                        <img src="https://img.icons8.com/external-flat-satawat-anukul/64/000000/external-action-travel-flat-satawat-anukul.png"/>
                     </div>
                     <a href="/categories/event" class=""> &nbsp;&nbsp; Event Bubbling, Capture, Delegate 동작관련 모음
                         <span>
@@ -410,7 +424,7 @@
                 {% if category[0] == "incoding" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-rocket"></i>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-encryption-cyber-security-flaticons-lineal-color-flat-icons-3.png"/>
                     </div>
                     <a href="/categories/incoding" class=""> &nbsp;&nbsp; Incoding 과 Encrypt 의 차이
                         <span>
@@ -427,7 +441,7 @@
                 {% if category[0] == "render" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-pen-ruler"></i>
+                        <img src="https://img.icons8.com/external-frizty-kerismaker/48/000000/external-Rendering-graphic-design-frizty-kerismaker.png"/>
                     </div>
                     <a href="/categories/render" class=""> &nbsp;&nbsp; CSR 과 SSR 의 차이
                         <span>
@@ -444,7 +458,7 @@
                 {% if category[0] == "thvsde" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-repeat"></i>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-rocket-achievements-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                     <a href="/categories/thvsde" class=""> &nbsp;&nbsp; throttling 과 debouncing
                         <span>
@@ -460,7 +474,7 @@
                 {% if category[0] == "design" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-circle-nodes"></i>
+                        <img src="https://img.icons8.com/fluency/48/000000/windows10-personalization.png"/>
                     </div>
                     <a href="/categories/design" class=""> &nbsp;&nbsp; 디자인 패턴(Design Pattern) 
                         <span>
@@ -483,7 +497,7 @@
                 {% if category[0] == "mac" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-apple"></i>
+                        <img src="https://img.icons8.com/fluency/48/000000/macbook.png"/>
                     </div>
                     <a href="/categories/mac" class=""> &nbsp;&nbsp; MAC OS 설정 및 오류
                         <span>
@@ -500,7 +514,7 @@
                 {% if category[0] == "devEnv" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-solid fa-terminal"></i>
+                        <img src="https://img.icons8.com/fluency/48/000000/visual-studio.png"/>
                     </div>
                     <a href="/categories/devEnv" class=""> &nbsp;&nbsp; 개발 환경 설정 
                         <span>
@@ -517,7 +531,7 @@
                 {% if category[0] == "git" %}
                 <li>
                     <div class="icon_Box">
-                        <i class="fa-brands fa-github"></i>
+                        <img src="https://img.icons8.com/plasticine/100/000000/github.png"/>
                     </div>
                     <a href="/categories/git" class=""> &nbsp;&nbsp; Git 관련 설정 ({{category[1].size}})
                         <span>
