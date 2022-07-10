@@ -1,5 +1,5 @@
 ---
-title: "Typescript 관련 "
+title: "Typescript 이란 무엇일까? "
 excerpt: " :computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
