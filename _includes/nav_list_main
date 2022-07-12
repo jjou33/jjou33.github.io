@@ -125,6 +125,22 @@
         </ul>
         <ul>
             {% for category in site.categories %}
+                {% if category[0] == "jest" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/000000/external-test-design-thinking-wanicon-lineal-color-wanicon.png"/>
+                    </div>
+                    <a href="/categories/jest" class="">&nbsp;&nbsp; Jest
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
                 {% if category[0] == "devhistory" %}
                 <li>
                     <div class="icon_Box">
