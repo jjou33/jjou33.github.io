@@ -14,7 +14,7 @@ classes: wide
 ---
 
 <hr>
-:raising_hand:  ```Vue 개발 중 공부내용을 기록하는 포스트 입니다.```
+:raising_hand:  ```개발환경 에러에 대한 내용 및 해결방안을 기록하는 포스트 입니다.```
 <hr>
 
 #### 1. 개요
@@ -25,7 +25,7 @@ classes: wide
 
 #### 2. requireConfigFile 에러
 
----
+---≈≈
 
 ![image](https://user-images.githubusercontent.com/56063287/176060049-99679efc-42b6-4110-9b1f-a258a4e831d7.png)
 
