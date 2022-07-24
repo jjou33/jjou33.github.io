@@ -39,6 +39,26 @@
         </ul>
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
+            &nbsp;Project Diary(실무)
+        </span>
+                <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "projectdesign" %}
+                <li>
+                <div class="icon_Box">
+                    <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-tools-mobile-app-development-flaticons-lineal-color-flat-icons.png"/>
+                </div>
+                    <a href="/categories/projectdesign" class=""> &nbsp;&nbsp;프로젝트 구성
+                                    <span>
+                                        ( {{category[1].size}} )
+                                    </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <span class="nav__sub-title">
+            <i class="fa-solid fa-caret-right"></i>
             &nbsp;Web - Front End </span>
         <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
         <ul>
@@ -219,7 +239,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-prettycons-lineal-color-prettycons/49/000000/external-browser-user-interface-prettycons-lineal-color-prettycons-11.png"/>
                     </div>
-                    <a href="/categories/component" class="">&nbsp;&nbsp; React 컴포넌트 설계 관련 
+                    <a href="/categories/component" class="">&nbsp;&nbsp; React 컴포넌트 설계 
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -322,7 +342,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-prettycons-flat-prettycons/47/000000/external-sync-technology-prettycons-flat-prettycons.png"/>
                     </div>
-                    <a href="/categories/eventLoop" class=""> &nbsp;&nbsp; 이벤트루프(EventLoop)
+                    <a href="/categories/eventLoop" class=""> &nbsp;&nbsp; EventLoop
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -339,7 +359,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/000000/external-application-real-estate-xnimrodx-lineal-color-xnimrodx.png"/>
                     </div>
-                    <a href="/categories/spa" class=""> &nbsp;&nbsp; Single Page Application
+                    <a href="/categories/spa" class=""> &nbsp;&nbsp; SPA
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -374,7 +394,6 @@
                         <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-context-automation-technology-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                     <a href="/categories/executionContext" class=""> &nbsp;&nbsp; 실행 컨텍스트
-                        (Execution Context)
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -391,7 +410,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/dusk/64/000000/skull.png"/>
                     </div>
-                    <a href="/categories/tdz" class=""> &nbsp;&nbsp; TDZ(Temporal Dead Zone)
+                    <a href="/categories/tdz" class=""> &nbsp;&nbsp; TDZ
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -408,7 +427,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-coding-computer-programming-icons-flaticons-lineal-color-flat-icons.png"/>
                     </div>
-                    <a href="/categories/asyncdefer" class=""> &nbsp;&nbsp; Async / Defer Script
+                    <a href="/categories/asyncdefer" class=""> &nbsp;&nbsp; Async / Defer
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -425,7 +444,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-flat-satawat-anukul/64/000000/external-action-travel-flat-satawat-anukul.png"/>
                     </div>
-                    <a href="/categories/event" class=""> &nbsp;&nbsp; Event Bubbling, Capture, Delegate 동작관련 모음
+                    <a href="/categories/event" class=""> &nbsp;&nbsp; Event Bubbling, Capture, Delegate
                         <span>
                             ( {{category[1].size}} )
                         </span>
@@ -459,7 +478,7 @@
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/external-frizty-kerismaker/48/000000/external-Rendering-graphic-design-frizty-kerismaker.png"/>
                     </div>
-                    <a href="/categories/render" class=""> &nbsp;&nbsp; CSR 과 SSR 의 차이
+                    <a href="/categories/render" class=""> &nbsp;&nbsp; CSR VS SSR
                         <span>
                             ( {{category[1].size}} )
                         </span>
