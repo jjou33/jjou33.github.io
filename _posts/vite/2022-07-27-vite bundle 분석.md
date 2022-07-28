@@ -1,9 +1,9 @@
 ---
-title: "[프로젝트 일기] 1. Vite 는 무엇이 다를까?"
+title: "Vite 는 무엇이 다를까?"
 excerpt: " :computer: 프로젝트 구성 및 진행 내용을 업데이트 합니다."
 
 categories:
-  - projectdesign
+  - vite
 tags:
   - 고도화 프로젝트
   - Vite
@@ -14,7 +14,7 @@ classes: wide
 ---
 
 <hr>
-:raising_hand:  ******프로젝트 구성 및 진행 내용을 기록하기 위한 포스트입니다.******
+:raising_hand:  ```vite 관련 공부 내용을 기록하기 위한 포스트입니다.```
 <hr>
 
 #### 개요
