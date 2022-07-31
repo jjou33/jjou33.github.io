@@ -122,7 +122,7 @@ body {
   dl {
     font-size: 1em;
     strong {
-      color: $hilight-color;
+      color: $page-hilight-color;
     }
   }
 
@@ -140,7 +140,7 @@ body {
   }
 
   p strong {
-    color: $hilight-color;
+    color: $page-hilight-color;
   }
 
   a:not(.btn) {

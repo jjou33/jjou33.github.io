@@ -5,13 +5,14 @@
 /* Colors */
 $background-color: #252a34 !default;
 $hilight-color: #C1F4C5 !default; // 
+$page-hilight-color: #FFF89A !default;// 페이지 내 강조 색상
 $text-color: white !default; // 글자색
 
 $paginator-number-color: #C1F4C5 !default;
 $main-header-text-color: #FFF89A !default; // 페이지 최상단 타이틀 색
 
 $nav_count_color: #FFF89A !default; // 좌측메뉴 숫자 색
-$primary-color: #5cf3eb  !default;
+$primary-color: #FFF89A  !default;
 $subPrimary-color: #A0D995 !default;
 $title-color: #eaeaea !default;
 $border-color: mix(#eaeaea, $background-color, 20%) !default;
