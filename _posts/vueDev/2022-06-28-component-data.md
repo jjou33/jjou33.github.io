@@ -3,7 +3,7 @@ title: "[VUE DEV History] 데이터 전달 방법"
 excerpt: " :computer: 프론트엔드 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
-  - devHistory
+  - vueDev
 tags:
   - F/E
   - Vue
