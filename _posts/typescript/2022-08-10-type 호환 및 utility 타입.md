@@ -1,13 +1,13 @@
 ---
-title: "[Typescript] 타입추론, 타입가드"
+title: "[Typescript] 타입 호환 및 utility 타입"
 excerpt: " :computer: Typescript 개발관련 공부내용을 기록하는 포스트 입니다."
 
 categories:
   - typescript
 tags:
   - typescript
-  - 타입 추론
-  - 타입 가드
+  - 타입 호환
+  - 타입 utility
 toc: true
 toc_sticky: true
 toc_label: "POST LIST"
