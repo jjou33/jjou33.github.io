@@ -120,6 +120,7 @@ body {
   p,
   li,
   dl {
+    font-family: $codeFont;
     font-size: 1em;
     strong {
       color: $page-hilight-color;
@@ -311,7 +312,7 @@ body {
 .page__meta {
   margin-top: 2em;
   color: $muted-text-color;
-  font-family: $sans-serif;
+  font-family: $codeFont;
   font-size: $type-size-6;
 
   p {
