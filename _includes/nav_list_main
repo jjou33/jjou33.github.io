@@ -90,6 +90,22 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "vue3" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/color/48/000000/vue-js.png"/>
+                    </div>
+                    <a href="/categories/vue3" class="">&nbsp;&nbsp; Vue3
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
             &nbsp;Web - Front End </span>
