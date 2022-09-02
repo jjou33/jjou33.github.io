@@ -37,7 +37,26 @@
                 {% endif %}
             {% endfor %}
         </ul>
-
+        <span class="nav__sub-title">
+            <i class="fa-solid fa-caret-right"></i>
+            &nbsp;Vue3
+        </span>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "vue3" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/color/48/000000/vue-js.png"/>
+                    </div>
+                    <a href="/categories/vue3" class="">&nbsp;&nbsp; Vue3
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
             &nbsp;Project Diary(실무)
@@ -50,6 +69,22 @@
                     <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-tools-mobile-app-development-flaticons-lineal-color-flat-icons.png"/>
                 </div>
                     <a href="/categories/projectdesign" class=""> &nbsp;&nbsp; 개발환경 구성
+                                    <span>
+                                        ( {{category[1].size}} )
+                                    </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "npmvspnpm" %}
+                <li>
+                <div class="icon_Box">
+                    <img src="https://img.icons8.com/color/48/000000/npm.png"/>
+                </div>
+                    <a href="/categories/npmvspnpm" class=""> &nbsp;&nbsp; pnpm
                                     <span>
                                         ( {{category[1].size}} )
                                     </span>
@@ -90,22 +125,7 @@
                 {% endif %}
             {% endfor %}
         </ul>
-        <ul>
-            {% for category in site.categories %}
-                {% if category[0] == "vue3" %}
-                <li>
-                    <div class="icon_Box">
-                        <img src="https://img.icons8.com/color/48/000000/vue-js.png"/>
-                    </div>
-                    <a href="/categories/vue3" class="">&nbsp;&nbsp; Vue3
-                        <span>
-                            ( {{category[1].size}} )
-                        </span>
-                    </a>
-                </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
             &nbsp;Web - Front End </span>
