@@ -104,7 +104,7 @@ classes: wide
 
 위 공식문서를 요약하자면 아래와 같다.
 
-******
+```
 node_modules
 ├── foo -> ./.pnpm/foo@1.0.0/node_modules/foo
 └── .pnpm
@@ -120,7 +120,8 @@ node_modules
     └── qar@2.0.0
         └── node_modules
             └── qar -> <store>/qar
-******
+```
+
 **foo** 의 경우 **bar** ,**qar** 를 의존성으로 가지고 있다고 가정하자
 
 **pnpm** 은 설치 시 **bar@1.0.0**, **foo@1.0.0**, **qar@2.0.0** 을 모두 **hard link** 로 콘텐츠 주소 지정 저장소를 링크하게 된다.
