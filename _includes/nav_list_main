@@ -43,12 +43,28 @@
         </span>
         <ul>
             {% for category in site.categories %}
+                {% if category[0] == "lifecyclehooks" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/dusk/64/000000/circular-arrows--v1.png"/>
+                    </div>
+                    <a href="/categories/lifecyclehooks" class="">&nbsp;&nbsp; Life Cycle Hooks
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
                 {% if category[0] == "vue3" %}
                 <li>
                     <div class="icon_Box">
                         <img src="https://img.icons8.com/color/48/000000/vue-js.png"/>
                     </div>
-                    <a href="/categories/vue3" class="">&nbsp;&nbsp; Vue3
+                    <a href="/categories/vue3" class="">&nbsp;&nbsp; DEV History
                         <span>
                             ( {{category[1].size}} )
                         </span>
