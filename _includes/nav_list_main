@@ -141,6 +141,22 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        <ul>
+            {% for category in site.categories %}
+                {% if category[0] == "cypress" %}
+                <li>
+                    <div class="icon_Box">
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-unit-testing-computer-programming-icons-flaticons-lineal-color-flat-icons.png"/>
+                    </div>
+                    <a href="/categories/cypress" class="">&nbsp;&nbsp; Cypress
+                        <span>
+                            ( {{category[1].size}} )
+                        </span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
 
         <span class="nav__sub-title">
             <i class="fa-solid fa-caret-right"></i>
