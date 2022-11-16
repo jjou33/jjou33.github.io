@@ -310,7 +310,23 @@
                 <div class="icon_Box">
                     <img src="https://img.icons8.com/plasticine/100/000000/react.png" />
                 </div>
-                <a href="/categories/reactblog" class="">&nbsp;&nbsp; React 블로그 개발
+                <a href="/categories/reactblog" class="">&nbsp;&nbsp; React 블로그 개발일지
+                    <span>
+                        ( {{category[1].size}} )
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+            {% if category[0] == "emotion" %}
+            <li>
+                <div class="icon_Box">
+                    <img src="https://img.icons8.com/stickers/100/null/css-filetype.png" />
+                </div>
+                <a href="/categories/emotion" class="">&nbsp;&nbsp; Emotion
                     <span>
                         ( {{category[1].size}} )
                     </span>
